@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import sys
 import six
 import datetime
 import pandas as pd
 from functools import wraps
 
+def export_as_api(func):
+    mod = sys.modules[func.__module__]
+    if hasattr(mod, '__all__'):
+        mod.__all__.append(func.__name__)
+    else:
+        mod.__all__ = [func.__name__]
+    return func
 
 def assert_auth(func):
     @wraps(func)
