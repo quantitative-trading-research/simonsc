@@ -8,10 +8,15 @@
 
 .. module:: simonsc.api
 
-history_bars -获取历史数据
+history_bars -获取BAR数据（日线/分钟线）
 ---------------------------------
 
 .. autofunction:: history_bars
+
+history_snapshot -获取level2快照数据
+---------------------------------
+
+.. autofunction:: history_snapshot
 
 
 交易日期接口
