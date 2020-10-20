@@ -51,7 +51,7 @@ def all_instruments(type: str=None, date: Union[str, datetime.datetime, datetime
 @assert_auth
 @export_as_api
 def history_bars(
-    order_book_id: str,
+    order_book_ids: str,
     bar_count: int,
     frequency: str,
     dt: datetime.datetime,
@@ -171,7 +171,7 @@ def history_bars(
 @assert_auth
 @export_as_api
 def history_snapshot(
-    order_book_id: str,
+    order_book_ids: str,
     bar_count: int,
     dt: datetime,
     fields: List[str]=None,
