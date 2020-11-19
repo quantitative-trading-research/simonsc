@@ -58,3 +58,15 @@ simons的设计哲学主要关注在统一性
     api/instrument_api
     api/financial_data_api
 
+.. toctree::
+   :caption: 数据字典
+   :hidden:
+   
+   data_dictionary/stock
+   data_dictionary/index
+   data_dictionary/industry_and_conception
+   data_dictionary/fund
+   data_dictionary/bond
+   data_dictionary/macroeconomic
+   data_dictionary/quantitative_factor
+   
