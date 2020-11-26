@@ -134,7 +134,7 @@ def history_bars(
 def history_snapshot(
     order_book_id: str,
     bar_count: int,
-    dt: datetime,
+    dt: datetime.datetime,
     fields: List[str]=None,
     skip_suspended: bool=True,
     include_now: bool=False,
