@@ -6,9 +6,10 @@ sys.modules["ROOT_DIR"] = os.path.abspath(os.path.dirname(__file__))
 
 from .api import *
 from .client import SimonsClient
+from .config import *
 
 
-def auth(username, password, host='10.201.16.1', port=60001):
+def auth(username, password, host=server_host, port=server_port):
     SimonsClient.set_auth_params(host=host, port=port, username=username, password=password)
     
     
