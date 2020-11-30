@@ -8,7 +8,7 @@ from .api import *
 from .client import SimonsClient
 
 
-def auth(username, password, host='10.201.16.1', port=6001):
+def auth(username, password, host='10.201.16.1', port=60001):
     SimonsClient.set_auth_params(host=host, port=port, username=username, password=password)
     
     
