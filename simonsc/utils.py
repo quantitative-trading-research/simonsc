@@ -9,7 +9,7 @@ import pandas as pd
 from functools import wraps
 from pymysql.converters import conversions, escape_item, encoders
 
-from simons.object.table import *
+from simonsc.object.table import *
 from sqlalchemy.sql import compiler
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.dialects import mysql as mysql_dialetct
