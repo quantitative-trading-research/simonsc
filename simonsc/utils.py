@@ -79,44 +79,8 @@ def get_fundamentals_sql_from_query(query_object, date=None, statDate=None):
         "query_object must be a sqlalchemy's Query object. But what passed in was: " + str(type(query_object))
 
     stat_date = statDate
-
     offset = query_object._offset
-    # query_object._offset = None
-    # query_object._limit = None
-
-    tablenames = get_tables_from_sql(str(query_object.statement))
-    tables = [get_table_class(name) for name in tablenames]
-
-    by_year = False
-    # if date:
-    #    date = CalendarService.get_previous_trade_date(date)
-    only_year = bool({"bank_indicator_acc", "security_indicator_acc",
-                      "insurance_indicator_acc"} & set(tablenames))
-
-    # for table in tables:
-    #     if date:
-    #         query_object = query_object.filter(table.day == date)
-    #     else:
-    #         if hasattr(table, 'statDate'):
-    #             query_object = query_object.filter(table.statDate == stat_date)
-    #         else:
-    #             # 估值表, 在非交易日没有数据
-    #             # 所以如果传入的非交易日, 就需要取得前一个交易日
-    #             assert table is StockValuation
-    #             if trade_day_not_after_stat_date is None:
-    #                 trade_day_not_after_stat_date = CalendarService.get_previous_trade_date(stat_date)
-    #             query_object = query_object.filter(table.day == trade_day_not_after_stat_date)
-
-    # 连表
-    # for table in tables[1:]:
-    #     query_object = query_object.filter(table.code == tables[0].code)
-    # limit = 100
-    # 恢复 offset, limit
-    # limit = 100000
     query_object = query_object.offset(offset)
-    # query_object._limit = 10000
-    # query_object = query_object.limit(limit)
-    # print(query_object)
     sql = compile_query(query_object)
     return sql
 

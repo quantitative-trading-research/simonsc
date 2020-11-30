@@ -4,3 +4,5 @@ requests
 thriftpy2 >= 0.4.11
 pyarrow == 1.0.1
 msgpack>=0.5.0
+sqlalchemy
+pymysql
