@@ -5,8 +5,6 @@ import socket
 import sys
 import six
 import threading
-import time
-import requests
 from os import path
 import pyarrow as pa
 
@@ -146,4 +144,3 @@ class SimonsClient(object):
 
     def __getattr__(self, method):
         return lambda **kwargs: self(method, **kwargs)
-            
