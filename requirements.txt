@@ -1,5 +1,5 @@
 six
-pandas
+pandas=1.0.5
 requests
 thriftpy2 >= 0.4.11
 pyarrow == 1.0.1
