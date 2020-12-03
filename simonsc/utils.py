@@ -9,7 +9,8 @@ import pandas as pd
 from functools import wraps
 from pymysql.converters import conversions, escape_item, encoders
 
-from simonsc.object.table import *
+from simonsc.object.wind_table import *
+from simonsc.object.csmar_table import *
 from sqlalchemy.sql import compiler
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.dialects import mysql as mysql_dialetct
@@ -62,7 +63,7 @@ def convert_datetime_to_str(dt):
 
 
 def get_tables_from_sql(sql):
-
+    all_tables = wind_tables + csmar_tables
     table_str = "|".join(all_tables)
     # r'Cash_Flow|Balance_Sheet|Income_Statement|Financial_Indicator'
     m = re.findall(table_str, sql)
@@ -70,7 +71,9 @@ def get_tables_from_sql(sql):
 
 
 def get_table_class(tablename):
-    return class_dict[tablename.upper()]
+    for class_dict in [csmar_class_dict, wind_class_dict]:
+        if tablename.upper() in class_dict:
+            return class_dict[tablename.upper()]
 
 
 def get_fundamentals_sql_from_query(query_object, date=None, statDate=None):
