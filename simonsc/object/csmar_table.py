@@ -1,14 +1,14 @@
 from sqlalchemy import Column, String, DECIMAL, DateTime, BIGINT, SMALLINT, INTEGER, LargeBinary
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.dialects.mysql import LONGTEXT
-csmar_tables = ['BOND_CFETS_DQUOTE_HIS_DQ', 'BOND_CFETS_PLEDGEDREPO_HDQ', 'BOND_QUOTATION', 'BOND_QUOTATIONDERIVATIVE', 'BOND_QUOTATIONLATEST', 'BOND_QUOTATIONS', 'FUND_MKT_QUOTATION', 'FUND_MKT_QUOTATIONLATEST', 'FUND_QUOTATION', 'IDX_MKT_QUOTATION', 'IDX_WEIGHT', 'STK_FIN_BALANCE', 'STK_FIN_CASHFLOW', 'STK_FIN_CASHFLOWINDEX', 'STK_FIN_CASHFLOWINDRECT', 'STK_FIN_CASHFLOWINDRECTTTM', 'STK_FIN_CASHFLOWTTM', 'STK_FIN_CONSTRUCT', 'STK_FIN_DEBTPAY', 'STK_FIN_DEVELOPMENT', 'STK_FIN_DIVIDISTRIB', 'STK_FIN_EARNPOWER', 'STK_FIN_FINANCIALINDEXQ', 'STK_FIN_FORECFIN', 'STK_FIN_FORECFINNEW', 'STK_FIN_INCOME', 'STK_FIN_INCOMETTM', 'STK_FIN_IPODISCLOSEINDEX', 'STK_FIN_LCDISCLOSEINDEX', 'STK_FIN_OPERATE', 'STK_FIN_PERSHARE', 'STK_FIN_QUITRAFIN', 'STK_FIN_QUITRAFINNEW', 'STK_FIN_QUITRASIMFIN', 'STK_FIN_RELATIVEVALUE', 'STK_FIN_RELFORCDATE', 'STK_FIN_RISK', 'STK_FIN_SIMFORECFIN', 'STK_HOLDER_CONTROLCHART', 'STK_HOLDER_CONTROLLER', 'STK_HOLDER_DETAIL', 'STK_HOLDER_EQUITYNATUREALL', 'STK_HOLDER_INCRORDESR', 'STK_HOLDER_NUMBER', 'STK_HOLDER_PLEDGE', 'STK_HOLDER_RELATION', 'STK_HOLDER_SYSTEMATICS', 'STK_HOLDER_TOP10', 'STK_HOLDER_TOP10FLOATING', 'STK_INDFI_BASIS', 'STK_INDFI_CASHFLOW', 'STK_INDFI_CONSTRUCT', 'STK_INDFI_CRN', 'STK_INDFI_DEBTPAY', 'STK_INDFI_DEVELOPMENT', 'STK_INDFI_DIVIDISTRIB', 'STK_INDFI_EARNPOWER', 'STK_INDFI_HHI', 'STK_INDFI_INDTRAJECTORY', 'STK_INDFI_LERNERINDEX', 'STK_INDFI_LPESV', 'STK_INDFI_NPESV', 'STK_INDFI_OPERATE', 'STK_INDFI_PERSHARE', 'STK_INDFI_RELATIVEVALUE', 'STK_INDFI_RISK', 'STK_INSTITUTIONHOLDERALIAS', 'STK_LOCKSHARES_SUMMARY', 'STK_LOCK_SHARES', 'STK_MKT_ADJUSTFACTOR', 'STK_MKT_BLOCKTRADE', 'STK_MKT_QUOTATION', 'STK_MKT_QUOTATIONLATEST', 'STK_MKT_REPRICEFACTOR', 'STK_NOTES_ACCOUNTINGPOLICY', 'STK_NOTES_ADMINEXPENSE', 'STK_NOTES_AFSFINASSECT', 'STK_NOTES_AP', 'STK_NOTES_APSD', 'STK_NOTES_AR', 'STK_NOTES_ARSD', 'STK_NOTES_ASSETIMPAIRMENT', 'STK_NOTES_BASICCONTENT', 'STK_NOTES_BILLRANDP', 'STK_NOTES_BILLRANDPSPECIAL', 'STK_NOTES_BONDSPAYABLE', 'STK_NOTES_BUSINESSTAXAPPEND', 'STK_NOTES_CAPITALRESERVE', 'STK_NOTES_CAPITALSTOCK', 'STK_NOTES_CBD', 'STK_NOTES_CBDSD', 'STK_NOTES_CIP', 'STK_NOTES_CIPCHANGE', 'STK_NOTES_DEFERREDINCOMETAX', 'STK_NOTES_DEVEXPENSE', 'STK_NOTES_DIVIDENDPAYABLE', 'STK_NOTES_DR', 'STK_NOTES_DRSD', 'STK_NOTES_EQUITYINVEST', 'STK_NOTES_EQUITYINVESTCOINFO', 'STK_NOTES_FAIRVALUEB', 'STK_NOTES_FINANCECOSTS', 'STK_NOTES_FIXEDASSECT', 'STK_NOTES_GOODWILL', 'STK_NOTES_GOVGRANTS', 'STK_NOTES_IMPJNTFIN', 'STK_NOTES_INTERESTPAYABLE', 'STK_NOTES_INVASSECT', 'STK_NOTES_INVENTORIES', 'STK_NOTES_INVESTMENTINC', 'STK_NOTES_INVEXIT', 'STK_NOTES_LONGTERMLOAN', 'STK_NOTES_LONGTERMPREPAIDFEE', 'STK_NOTES_MACHABALANCE', 'STK_NOTES_MONETARYFUNDS', 'STK_NOTES_NLDONEYEAR', 'STK_NOTES_NOMTAXRATE', 'STK_NOTES_NONBUSEXP', 'STK_NOTES_NONBUSINC', 'STK_NOTES_NONRECURRING', 'STK_NOTES_OAR', 'STK_NOTES_OARSD', 'STK_NOTES_OCASSECT', 'STK_NOTES_OP', 'STK_NOTES_OPERATEINCOMECOSTS', 'STK_NOTES_OPSD', 'STK_NOTES_PAYRECBUS', 'STK_NOTES_PAYSALARY', 'STK_NOTES_REALESTATE', 'STK_NOTES_SELLEXPENSE', 'STK_NOTES_SHORTTERMLOAN', 'STK_NOTES_SUBJOINT', 'STK_NOTES_SURPLUSRESERVE', 'STK_NOTES_TAXPAYABLE', 'STK_NOTES_TOPFIVEBP', 'STK_NOTES_TRADFINASSECT', 'STK_NOTES_UDP', 'STK_ORIGINALHOLDERS', 'STK_PERSONALHOLDERALIAS', 'STK_RELATIONSHIP_BACKGROUND', 'STK_SHARES_STRUCTURE', 'STK_SHARES_STRUCTURE_DAILY']
+csmar_tables = ['bond_cfets_dquote_his_dq', 'bond_cfets_pledgedrepo_hdq', 'bond_quotation', 'bond_quotationderivative', 'bond_quotationlatest', 'bond_quotations', 'fund_mkt_quotation', 'fund_mkt_quotationlatest', 'fund_quotation', 'idx_mkt_quotation', 'idx_weight', 'stk_fin_balance', 'stk_fin_cashflow', 'stk_fin_cashflowindex', 'stk_fin_cashflowindrect', 'stk_fin_cashflowindrectttm', 'stk_fin_cashflowttm', 'stk_fin_construct', 'stk_fin_debtpay', 'stk_fin_development', 'stk_fin_dividistrib', 'stk_fin_earnpower', 'stk_fin_financialindexq', 'stk_fin_forecfin', 'stk_fin_forecfinnew', 'stk_fin_income', 'stk_fin_incomettm', 'stk_fin_ipodiscloseindex', 'stk_fin_lcdiscloseindex', 'stk_fin_operate', 'stk_fin_pershare', 'stk_fin_quitrafin', 'stk_fin_quitrafinnew', 'stk_fin_quitrasimfin', 'stk_fin_relativevalue', 'stk_fin_relforcdate', 'stk_fin_risk', 'stk_fin_simforecfin', 'stk_holder_controlchart', 'stk_holder_controller', 'stk_holder_detail', 'stk_holder_equitynatureall', 'stk_holder_incrordesr', 'stk_holder_number', 'stk_holder_pledge', 'stk_holder_relation', 'stk_holder_systematics', 'stk_holder_top10', 'stk_holder_top10floating', 'stk_indfi_basis', 'stk_indfi_cashflow', 'stk_indfi_construct', 'stk_indfi_crn', 'stk_indfi_debtpay', 'stk_indfi_development', 'stk_indfi_dividistrib', 'stk_indfi_earnpower', 'stk_indfi_hhi', 'stk_indfi_indtrajectory', 'stk_indfi_lernerindex', 'stk_indfi_lpesv', 'stk_indfi_npesv', 'stk_indfi_operate', 'stk_indfi_pershare', 'stk_indfi_relativevalue', 'stk_indfi_risk', 'stk_institutionholderalias', 'stk_lock_shares', 'stk_lockshares_summary', 'stk_mkt_adjustfactor', 'stk_mkt_blocktrade', 'stk_mkt_quotation', 'stk_mkt_quotationlatest', 'stk_mkt_repricefactor', 'stk_notes_accountingpolicy', 'stk_notes_adminexpense', 'stk_notes_afsfinassect', 'stk_notes_ap', 'stk_notes_apsd', 'stk_notes_ar', 'stk_notes_arsd', 'stk_notes_assetimpairment', 'stk_notes_basiccontent', 'stk_notes_billrandp', 'stk_notes_billrandpspecial', 'stk_notes_bondspayable', 'stk_notes_businesstaxappend', 'stk_notes_capitalreserve', 'stk_notes_capitalstock', 'stk_notes_cbd', 'stk_notes_cbdsd', 'stk_notes_cip', 'stk_notes_cipchange', 'stk_notes_deferredincometax', 'stk_notes_devexpense', 'stk_notes_dividendpayable', 'stk_notes_dr', 'stk_notes_drsd', 'stk_notes_equityinvest', 'stk_notes_equityinvestcoinfo', 'stk_notes_fairvalueb', 'stk_notes_financecosts', 'stk_notes_fixedassect', 'stk_notes_goodwill', 'stk_notes_govgrants', 'stk_notes_impjntfin', 'stk_notes_interestpayable', 'stk_notes_invassect', 'stk_notes_inventories', 'stk_notes_investmentinc', 'stk_notes_invexit', 'stk_notes_longtermloan', 'stk_notes_longtermprepaidfee', 'stk_notes_machabalance', 'stk_notes_monetaryfunds', 'stk_notes_nldoneyear', 'stk_notes_nomtaxrate', 'stk_notes_nonbusexp', 'stk_notes_nonbusinc', 'stk_notes_nonrecurring', 'stk_notes_oar', 'stk_notes_oarsd', 'stk_notes_ocassect', 'stk_notes_op', 'stk_notes_operateincomecosts', 'stk_notes_opsd', 'stk_notes_payrecbus', 'stk_notes_paysalary', 'stk_notes_realestate', 'stk_notes_sellexpense', 'stk_notes_shorttermloan', 'stk_notes_subjoint', 'stk_notes_surplusreserve', 'stk_notes_taxpayable', 'stk_notes_topfivebp', 'stk_notes_tradfinassect', 'stk_notes_udp', 'stk_originalholders', 'stk_personalholderalias', 'stk_relationship_background', 'stk_shares_structure', 'stk_shares_structure_daily']
 Base = declarative_base()
 metadata = Base.metadata
 
 
-class BOND_CFETS_DQUOTE_HIS_DQ(Base):
+class bond_cfets_dquote_his_dq(Base):
 
-    __tablename__ = 'BOND_CFETS_DQUOTE_HIS_DQ'
+    __tablename__ = 'bond_cfets_dquote_his_dq'
 
     ACCRUEDINTEREST = Column(DECIMAL(16, 6), doc="应计利息")
     AMOUNT = Column(DECIMAL(20, 4), doc="成交额")
@@ -44,9 +44,9 @@ class BOND_CFETS_DQUOTE_HIS_DQ(Base):
     VOLUME = Column(BIGINT, doc="成交量")
 
 
-class BOND_CFETS_PLEDGEDREPO_HDQ(Base):
+class bond_cfets_pledgedrepo_hdq(Base):
 
-    __tablename__ = 'BOND_CFETS_PLEDGEDREPO_HDQ'
+    __tablename__ = 'bond_cfets_pledgedrepo_hdq'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="成交额")
     AVGPRICEINTEREST = Column(DECIMAL(10, 6), doc="本期平均利率")
@@ -80,9 +80,9 @@ class BOND_CFETS_PLEDGEDREPO_HDQ(Base):
     VOLUME = Column(BIGINT, doc="成交量")
 
 
-class BOND_QUOTATION(Base):
+class bond_quotation(Base):
 
-    __tablename__ = 'BOND_QUOTATION'
+    __tablename__ = 'bond_quotation'
 
     ACCRUEDINTEREST = Column(DECIMAL(16, 6), doc="应计利息")
     AMOUNT = Column(DECIMAL(20, 3), doc="成交额")
@@ -125,9 +125,9 @@ class BOND_QUOTATION(Base):
     VOLUME = Column(BIGINT, doc="成交量")
 
 
-class BOND_QUOTATIONDERIVATIVE(Base):
+class bond_quotationderivative(Base):
 
-    __tablename__ = 'BOND_QUOTATIONDERIVATIVE'
+    __tablename__ = 'bond_quotationderivative'
 
     ADJUSTMENTDURATION = Column(DECIMAL(20, 6), doc="修正久期")
     BONDNATUREID = Column(String(12), doc="债券类型ID")
@@ -157,9 +157,9 @@ class BOND_QUOTATIONDERIVATIVE(Base):
     YEARPAYTIME = Column(DECIMAL(6, 2), doc="年付息次数")
 
 
-class BOND_QUOTATIONLATEST(Base):
+class bond_quotationlatest(Base):
 
-    __tablename__ = 'BOND_QUOTATIONLATEST'
+    __tablename__ = 'bond_quotationlatest'
 
     ACCRUEDINTEREST = Column(DECIMAL(16, 6), doc="应计利息")
     AMOUNT = Column(DECIMAL(20, 3), doc="成交额")
@@ -201,9 +201,9 @@ class BOND_QUOTATIONLATEST(Base):
     VOLUME = Column(BIGINT, doc="成交量")
 
 
-class BOND_QUOTATIONS(Base):
+class bond_quotations(Base):
 
-    __tablename__ = 'BOND_QUOTATIONS'
+    __tablename__ = 'bond_quotations'
 
     AMOUNT = Column(DECIMAL(20, 3), doc="成交金额")
     AMPLITUDE = Column(DECIMAL(16, 6), doc="振幅")
@@ -227,9 +227,9 @@ class BOND_QUOTATIONS(Base):
     VOLUME = Column(BIGINT, doc="成交量")
 
 
-class FUND_MKT_QUOTATION(Base):
+class fund_mkt_quotation(Base):
 
-    __tablename__ = 'FUND_MKT_QUOTATION'
+    __tablename__ = 'fund_mkt_quotation'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="成交金额")
     AMPLITUDE = Column(DECIMAL(10, 6), doc="振幅")
@@ -269,9 +269,9 @@ class FUND_MKT_QUOTATION(Base):
     VOLUME = Column(DECIMAL(18, 2), doc="成交量")
 
 
-class FUND_MKT_QUOTATIONLATEST(Base):
+class fund_mkt_quotationlatest(Base):
 
-    __tablename__ = 'FUND_MKT_QUOTATIONLATEST'
+    __tablename__ = 'fund_mkt_quotationlatest'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="成交金额")
     AMPLITUDE = Column(DECIMAL(10, 6), doc="振幅")
@@ -310,9 +310,9 @@ class FUND_MKT_QUOTATIONLATEST(Base):
     VOLUME = Column(DECIMAL(18, 2), doc="成交量")
 
 
-class FUND_QUOTATION(Base):
+class fund_quotation(Base):
 
-    __tablename__ = 'FUND_QUOTATION'
+    __tablename__ = 'fund_quotation'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="成交金额")
     AMPLITUDE = Column(DECIMAL(10, 6), doc="振幅")
@@ -334,9 +334,9 @@ class FUND_QUOTATION(Base):
     VOLUME = Column(DECIMAL(18, 2), doc="成交量")
 
 
-class IDX_MKT_QUOTATION(Base):
+class idx_mkt_quotation(Base):
 
-    __tablename__ = 'IDX_MKT_QUOTATION'
+    __tablename__ = 'idx_mkt_quotation'
 
     AMOUNT = Column(DECIMAL(18, 2), doc="成份证券成交金额")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -352,21 +352,21 @@ class IDX_MKT_QUOTATION(Base):
     LOWPRICE = Column(DECIMAL(18, 2), doc="收盘指数")
     OPENPRICE = Column(DECIMAL(18, 2), doc="开盘指数")
     SAMPLENUMBER = Column(DECIMAL(20, 0))
-    SECURITYID = Column(DECIMAL(20, 0), doc="指数ID")
+    SECURITYID = Column(DECIMAL(20, 0), primary_key=True, doc="%s")
     SYMBOL = Column(String(30), doc="指数代码")
     TOTALMARKETVALUE = Column(DECIMAL(30, 2))
     TOTALSHARES = Column(DECIMAL(30, 0))
-    TRADINGDATE = Column(DateTime, doc="交易日期")
-    UPDATEID = Column(BIGINT, primary_key=True, doc="%s")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="%s")
+    UPDATEID = Column(BIGINT, doc="数据ID")
     UPDATESTATE = Column(SMALLINT, doc="Update状态")
     UPDATETIME = Column(DateTime, doc="Update时间")
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     VOLUME = Column(DECIMAL(18, 2), doc="成份证券成交量")
 
 
-class IDX_WEIGHT(Base):
+class idx_weight(Base):
 
-    __tablename__ = 'IDX_WEIGHT'
+    __tablename__ = 'idx_weight'
 
     BUSINESSTIME = Column(DateTime)
     SAMPLESECURITYCODE = Column(String(20), doc="样本证券代码")
@@ -382,9 +382,9 @@ class IDX_WEIGHT(Base):
     WEIGHT = Column(DECIMAL(10, 4), doc="权重")
 
 
-class STK_FIN_BALANCE(Base):
+class stk_fin_balance(Base):
 
-    __tablename__ = 'STK_FIN_BALANCE'
+    __tablename__ = 'stk_fin_balance'
 
     A001 = Column(DECIMAL(20, 2))
     A0011 = Column(DECIMAL(20, 2))
@@ -535,9 +535,9 @@ class STK_FIN_BALANCE(Base):
     UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
-class STK_FIN_CASHFLOW(Base):
+class stk_fin_cashflow(Base):
 
-    __tablename__ = 'STK_FIN_CASHFLOW'
+    __tablename__ = 'stk_fin_cashflow'
 
     BUSINESSTIME = Column(DateTime)
     C001 = Column(DECIMAL(20, 2))
@@ -620,9 +620,9 @@ class STK_FIN_CASHFLOW(Base):
     UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
-class STK_FIN_CASHFLOWINDEX(Base):
+class stk_fin_cashflowindex(Base):
 
-    __tablename__ = 'STK_FIN_CASHFLOWINDEX'
+    __tablename__ = 'stk_fin_cashflowindex'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CASHINCREASE = Column(DECIMAL(20, 6), doc="现金及等价物净增加额")
@@ -685,9 +685,9 @@ class STK_FIN_CASHFLOWINDEX(Base):
     WAGEINCASHTTM = Column(DECIMAL(20, 6), doc="支付给职工以及为职工支付的现金TTM")
 
 
-class STK_FIN_CASHFLOWINDRECT(Base):
+class stk_fin_cashflowindrect(Base):
 
-    __tablename__ = 'STK_FIN_CASHFLOWINDRECT'
+    __tablename__ = 'stk_fin_cashflowindrect'
 
     BUSINESSTIME = Column(DateTime)
     D0001 = Column(DECIMAL(20, 2))
@@ -731,9 +731,9 @@ class STK_FIN_CASHFLOWINDRECT(Base):
     UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
-class STK_FIN_CASHFLOWINDRECTTTM(Base):
+class stk_fin_cashflowindrectttm(Base):
 
-    __tablename__ = 'STK_FIN_CASHFLOWINDRECTTTM'
+    __tablename__ = 'stk_fin_cashflowindrectttm'
 
     AMORTIZATIONOFDEFERREDEXPENSES = Column(DECIMAL(20, 2), doc="长期待摊费用摊销")
     AMORTIZATIONOFINTANGIBLEASSETS = Column(DECIMAL(20, 2), doc="无形资产摊销")
@@ -774,9 +774,9 @@ class STK_FIN_CASHFLOWINDRECTTTM(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_CASHFLOWTTM(Base):
+class stk_fin_cashflowttm(Base):
 
-    __tablename__ = 'STK_FIN_CASHFLOWTTM'
+    __tablename__ = 'stk_fin_cashflowttm'
 
     BEGINCASHEQUIVALENT = Column(DECIMAL(20, 2), doc="期初现金及现金等价物余额")
     BORROWFROMCENTRALBANKINCREASE = Column(DECIMAL(20, 2), doc="向中央银行借款净增加额")
@@ -857,9 +857,9 @@ class STK_FIN_CASHFLOWTTM(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_CONSTRUCT(Base):
+class stk_fin_construct(Base):
 
-    __tablename__ = 'STK_FIN_CONSTRUCT'
+    __tablename__ = 'stk_fin_construct'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CASHRATIO = Column(DECIMAL(20, 6), doc="现金资产比率")
@@ -908,9 +908,9 @@ class STK_FIN_CONSTRUCT(Base):
     WORKINGCAPITALTOEQUITY = Column(DECIMAL(20, 6), doc="营运资金对净资产比率")
 
 
-class STK_FIN_DEBTPAY(Base):
+class stk_fin_debtpay(Base):
 
-    __tablename__ = 'STK_FIN_DEBTPAY'
+    __tablename__ = 'stk_fin_debtpay'
 
     ASSETLIABILITYRATIO = Column(DECIMAL(20, 6), doc="资产负债率")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -949,9 +949,9 @@ class STK_FIN_DEBTPAY(Base):
     WORKINGCAPITALTOLIABILITY = Column(DECIMAL(20, 6), doc="营运资金与借款比")
 
 
-class STK_FIN_DEVELOPMENT(Base):
+class stk_fin_development(Base):
 
-    __tablename__ = 'STK_FIN_DEVELOPMENT'
+    __tablename__ = 'stk_fin_development'
 
     ACCRUALS = Column(DECIMAL(20, 6), doc="应计项目")
     ASSETSGROWTHA = Column(DECIMAL(20, 6), doc="总资产增长率A")
@@ -1022,9 +1022,9 @@ class STK_FIN_DEVELOPMENT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_DIVIDISTRIB(Base):
+class stk_fin_dividistrib(Base):
 
-    __tablename__ = 'STK_FIN_DIVIDISTRIB'
+    __tablename__ = 'stk_fin_dividistrib'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CHANGEINVALUE = Column(DECIMAL(20, 6), doc="每股股利变动值")
@@ -1050,9 +1050,9 @@ class STK_FIN_DIVIDISTRIB(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_EARNPOWER(Base):
+class stk_fin_earnpower(Base):
 
-    __tablename__ = 'STK_FIN_EARNPOWER'
+    __tablename__ = 'stk_fin_earnpower'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     EBIT = Column(DECIMAL(20, 6), doc="息税前利润")
@@ -1141,9 +1141,9 @@ class STK_FIN_EARNPOWER(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_FINANCIALINDEXQ(Base):
+class stk_fin_financialindexq(Base):
 
-    __tablename__ = 'STK_FIN_FINANCIALINDEXQ'
+    __tablename__ = 'stk_fin_financialindexq'
 
     BUSINESSEXPENSERATEA = Column(DECIMAL(20, 6), doc="业务及管理费用率A")
     BUSINESSEXPENSERATEB = Column(DECIMAL(20, 6), doc="业务及管理费用率B")
@@ -1234,9 +1234,9 @@ class STK_FIN_FINANCIALINDEXQ(Base):
     VALUECHANGENETINCOMETOPROFIT = Column(DECIMAL(20, 6), doc="金融活动利润占比")
 
 
-class STK_FIN_FORECFIN(Base):
+class stk_fin_forecfin(Base):
 
-    __tablename__ = 'STK_FIN_FORECFIN'
+    __tablename__ = 'stk_fin_forecfin'
 
     AUDITSTATUS = Column(String(2), doc="预审计情况")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -1270,9 +1270,9 @@ class STK_FIN_FORECFIN(Base):
     UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
-class STK_FIN_FORECFINNEW(Base):
+class stk_fin_forecfinnew(Base):
 
-    __tablename__ = 'STK_FIN_FORECFINNEW'
+    __tablename__ = 'stk_fin_forecfinnew'
 
     AUDITSTATUS = Column(String(2), doc="预审计情况")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -1306,9 +1306,9 @@ class STK_FIN_FORECFINNEW(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_INCOME(Base):
+class stk_fin_income(Base):
 
-    __tablename__ = 'STK_FIN_INCOME'
+    __tablename__ = 'stk_fin_income'
 
     B001 = Column(DECIMAL(20, 2))
     B0011 = Column(DECIMAL(20, 2))
@@ -1396,9 +1396,9 @@ class STK_FIN_INCOME(Base):
     UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
-class STK_FIN_INCOMETTM(Base):
+class stk_fin_incomettm(Base):
 
-    __tablename__ = 'STK_FIN_INCOMETTM'
+    __tablename__ = 'stk_fin_incomettm'
 
     ASSETIMPAIRMENTLOSS = Column(DECIMAL(20, 2), doc="资产减值损失")
     ASSETMANAGEMENTBUSINESS = Column(DECIMAL(20, 2), doc="其中：受托客户资产管理业务净收入")
@@ -1472,9 +1472,9 @@ class STK_FIN_INCOMETTM(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_IPODISCLOSEINDEX(Base):
+class stk_fin_ipodiscloseindex(Base):
 
-    __tablename__ = 'STK_FIN_IPODISCLOSEINDEX'
+    __tablename__ = 'stk_fin_ipodiscloseindex'
 
     ASSETTURNOVER = Column(DECIMAL(20, 4), doc="总资产周转率")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -1507,9 +1507,9 @@ class STK_FIN_IPODISCLOSEINDEX(Base):
     UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
-class STK_FIN_LCDISCLOSEINDEX(Base):
+class stk_fin_lcdiscloseindex(Base):
 
-    __tablename__ = 'STK_FIN_LCDISCLOSEINDEX'
+    __tablename__ = 'stk_fin_lcdiscloseindex'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     DEBTTOASSETRATIO = Column(DECIMAL(20, 4), doc="资产负债率")
@@ -1532,9 +1532,9 @@ class STK_FIN_LCDISCLOSEINDEX(Base):
     UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
-class STK_FIN_OPERATE(Base):
+class stk_fin_operate(Base):
 
-    __tablename__ = 'STK_FIN_OPERATE'
+    __tablename__ = 'stk_fin_operate'
 
     ASSETTURNOVERA = Column(DECIMAL(20, 6), doc="总资产周转率A")
     ASSETTURNOVERB = Column(DECIMAL(20, 6), doc="总资产周转率B")
@@ -1615,9 +1615,9 @@ class STK_FIN_OPERATE(Base):
     WORKINGCAPITALTURNOVERTTM = Column(DECIMAL(20, 6), doc="营运资金（资本）周转率TTM")
 
 
-class STK_FIN_PERSHARE(Base):
+class stk_fin_pershare(Base):
 
-    __tablename__ = 'STK_FIN_PERSHARE'
+    __tablename__ = 'stk_fin_pershare'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CAPITALSURPLUSPERSHARE = Column(DECIMAL(20, 6), doc="每股资本公积")
@@ -1721,9 +1721,9 @@ class STK_FIN_PERSHARE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_QUITRAFIN(Base):
+class stk_fin_quitrafin(Base):
 
-    __tablename__ = 'STK_FIN_QUITRAFIN'
+    __tablename__ = 'stk_fin_quitrafin'
 
     ASSET = Column(DECIMAL(20, 2), doc="总资产")
     ASSETCHANGERATIO = Column(DECIMAL(20, 2), doc="总资产变动幅度%")
@@ -1774,9 +1774,9 @@ class STK_FIN_QUITRAFIN(Base):
     UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
-class STK_FIN_QUITRAFINNEW(Base):
+class stk_fin_quitrafinnew(Base):
 
-    __tablename__ = 'STK_FIN_QUITRAFINNEW'
+    __tablename__ = 'stk_fin_quitrafinnew'
 
     ASSET = Column(DECIMAL(20, 2), doc="总资产")
     ASSETCHANGERATIO = Column(DECIMAL(20, 2), doc="总资产变动幅度%")
@@ -1826,9 +1826,9 @@ class STK_FIN_QUITRAFINNEW(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_QUITRASIMFIN(Base):
+class stk_fin_quitrasimfin(Base):
 
-    __tablename__ = 'STK_FIN_QUITRASIMFIN'
+    __tablename__ = 'stk_fin_quitrasimfin'
 
     ABSTRACT = Column(LONGTEXT, doc="业绩简要说明")
     ASSET = Column(DECIMAL(20, 2), doc="总资产")
@@ -1864,9 +1864,9 @@ class STK_FIN_QUITRASIMFIN(Base):
     UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
-class STK_FIN_RELATIVEVALUE(Base):
+class stk_fin_relativevalue(Base):
 
-    __tablename__ = 'STK_FIN_RELATIVEVALUE'
+    __tablename__ = 'stk_fin_relativevalue'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     ENDDATE = Column(DateTime, doc="截止日期")
@@ -1927,9 +1927,9 @@ class STK_FIN_RELATIVEVALUE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_RELFORCDATE(Base):
+class stk_fin_relforcdate(Base):
 
-    __tablename__ = 'STK_FIN_RELFORCDATE'
+    __tablename__ = 'stk_fin_relforcdate'
 
     ACCOUPERI = Column(DateTime, primary_key=True, doc="%s")
     ACTRELDATE = Column(DateTime, doc="实际批露日期")
@@ -1948,9 +1948,9 @@ class STK_FIN_RELFORCDATE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_RISK(Base):
+class stk_fin_risk(Base):
 
-    __tablename__ = 'STK_FIN_RISK'
+    __tablename__ = 'stk_fin_risk'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     DFL = Column(DECIMAL(20, 6), doc="财务杠杆")
@@ -1967,9 +1967,9 @@ class STK_FIN_RISK(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_FIN_SIMFORECFIN(Base):
+class stk_fin_simforecfin(Base):
 
-    __tablename__ = 'STK_FIN_SIMFORECFIN'
+    __tablename__ = 'stk_fin_simforecfin'
 
     ABSTRACT = Column(LONGTEXT, doc="业绩预告摘要")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -1987,9 +1987,9 @@ class STK_FIN_SIMFORECFIN(Base):
     UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
-class STK_HOLDER_CONTROLCHART(Base):
+class stk_holder_controlchart(Base):
 
-    __tablename__ = 'STK_HOLDER_CONTROLCHART'
+    __tablename__ = 'stk_holder_controlchart'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CONTROLLINGRELATIONCHART = Column(LargeBinary(16777216), doc="控股关系图")
@@ -2003,9 +2003,9 @@ class STK_HOLDER_CONTROLCHART(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_HOLDER_CONTROLLER(Base):
+class stk_holder_controller(Base):
 
-    __tablename__ = 'STK_HOLDER_CONTROLLER'
+    __tablename__ = 'stk_holder_controller'
 
     ACTUALCONTROLLER = Column(String(240), doc="实际控制人名称")
     ACTUALCONTROLLERBACKGROUND = Column(String(4000), doc="实际控制人背景")
@@ -2034,9 +2034,9 @@ class STK_HOLDER_CONTROLLER(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_HOLDER_DETAIL(Base):
+class stk_holder_detail(Base):
 
-    __tablename__ = 'STK_HOLDER_DETAIL'
+    __tablename__ = 'stk_holder_detail'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CATEGORYCODE = Column(String(12), doc="股东类别编码")
@@ -2067,9 +2067,9 @@ class STK_HOLDER_DETAIL(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_HOLDER_EQUITYNATUREALL(Base):
+class stk_holder_equitynatureall(Base):
 
-    __tablename__ = 'STK_HOLDER_EQUITYNATUREALL'
+    __tablename__ = 'stk_holder_equitynatureall'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CONTROLLER = Column(String(1800), doc="实际控制人名称")
@@ -2108,9 +2108,9 @@ class STK_HOLDER_EQUITYNATUREALL(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_HOLDER_INCRORDESR(Base):
+class stk_holder_incrordesr(Base):
 
-    __tablename__ = 'STK_HOLDER_INCRORDESR'
+    __tablename__ = 'stk_holder_incrordesr'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     ENDDATE = Column(DateTime, doc="截止日期")
@@ -2126,9 +2126,9 @@ class STK_HOLDER_INCRORDESR(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_HOLDER_NUMBER(Base):
+class stk_holder_number(Base):
 
-    __tablename__ = 'STK_HOLDER_NUMBER'
+    __tablename__ = 'stk_holder_number'
 
     ASHAREHOLDERS = Column(DECIMAL(20, 0), doc="A股股东户数")
     BSHAREHOLDERS = Column(DECIMAL(20, 0), doc="B股东户数")
@@ -2148,9 +2148,9 @@ class STK_HOLDER_NUMBER(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_HOLDER_PLEDGE(Base):
+class stk_holder_pledge(Base):
 
-    __tablename__ = 'STK_HOLDER_PLEDGE'
+    __tablename__ = 'stk_holder_pledge'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     COMMENTS = Column(LONGTEXT, doc="备注")
@@ -2170,9 +2170,9 @@ class STK_HOLDER_PLEDGE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_HOLDER_RELATION(Base):
+class stk_holder_relation(Base):
 
-    __tablename__ = 'STK_HOLDER_RELATION'
+    __tablename__ = 'stk_holder_relation'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     ENDDATE = Column(DateTime, doc="截止日期")
@@ -2193,9 +2193,9 @@ class STK_HOLDER_RELATION(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_HOLDER_SYSTEMATICS(Base):
+class stk_holder_systematics(Base):
 
-    __tablename__ = 'STK_HOLDER_SYSTEMATICS'
+    __tablename__ = 'stk_holder_systematics'
 
     BANKHOLDPROPORTION = Column(DECIMAL(10, 4), doc="银行持股比例")
     BANKHOLDSHARES = Column(DECIMAL(20, 2), doc="银行持股数量")
@@ -2227,9 +2227,9 @@ class STK_HOLDER_SYSTEMATICS(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_HOLDER_TOP10(Base):
+class stk_holder_top10(Base):
 
-    __tablename__ = 'STK_HOLDER_TOP10'
+    __tablename__ = 'stk_holder_top10'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CHANGENUM = Column(DECIMAL(20, 4), doc="变动数量")
@@ -2262,9 +2262,9 @@ class STK_HOLDER_TOP10(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_HOLDER_TOP10FLOATING(Base):
+class stk_holder_top10floating(Base):
 
-    __tablename__ = 'STK_HOLDER_TOP10FLOATING'
+    __tablename__ = 'stk_holder_top10floating'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CHANGENUM = Column(DECIMAL(20, 4), doc="变动数量")
@@ -2292,9 +2292,9 @@ class STK_HOLDER_TOP10FLOATING(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_BASIS(Base):
+class stk_indfi_basis(Base):
 
-    __tablename__ = 'STK_INDFI_BASIS'
+    __tablename__ = 'stk_indfi_basis'
 
     ACCOUNTSPAYABLE = Column(DECIMAL(30, 6), doc="行业应付账款")
     AMORINTA = Column(DECIMAL(30, 6), doc="行业无形资产摊销")
@@ -2380,9 +2380,9 @@ class STK_INDFI_BASIS(Base):
     WORKINGCAPITAL = Column(DECIMAL(30, 6), doc="行业营运资金")
 
 
-class STK_INDFI_CASHFLOW(Base):
+class stk_indfi_cashflow(Base):
 
-    __tablename__ = 'STK_INDFI_CASHFLOW'
+    __tablename__ = 'stk_indfi_cashflow'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CASHFLOWRISK = Column(DECIMAL(20, 6), doc="行业现金流风险")
@@ -2408,9 +2408,9 @@ class STK_INDFI_CASHFLOW(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_CONSTRUCT(Base):
+class stk_indfi_construct(Base):
 
-    __tablename__ = 'STK_INDFI_CONSTRUCT'
+    __tablename__ = 'stk_indfi_construct'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CASHRATIO = Column(DECIMAL(20, 6), doc="行业现金资产比率")
@@ -2449,9 +2449,9 @@ class STK_INDFI_CONSTRUCT(Base):
     WORKINGCAPITALTOCURRENT = Column(DECIMAL(20, 6), doc="行业营运资金对净资产比率")
 
 
-class STK_INDFI_CRN(Base):
+class stk_indfi_crn(Base):
 
-    __tablename__ = 'STK_INDFI_CRN'
+    __tablename__ = 'stk_indfi_crn'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CR_10A = Column(DECIMAL(20, 6), doc="CR_10（主营业务收入）")
@@ -2477,9 +2477,9 @@ class STK_INDFI_CRN(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_DEBTPAY(Base):
+class stk_indfi_debtpay(Base):
 
-    __tablename__ = 'STK_INDFI_DEBTPAY'
+    __tablename__ = 'stk_indfi_debtpay'
 
     ASSETLIABILITYRATIO = Column(DECIMAL(20, 6), doc="行业资产负债率")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -2516,9 +2516,9 @@ class STK_INDFI_DEBTPAY(Base):
     WORKINGCAPITALTOLIABILITY = Column(DECIMAL(20, 6), doc="行业营运资金与借款比")
 
 
-class STK_INDFI_DEVELOPMENT(Base):
+class stk_indfi_development(Base):
 
-    __tablename__ = 'STK_INDFI_DEVELOPMENT'
+    __tablename__ = 'stk_indfi_development'
 
     ASSETSGROWTH = Column(DECIMAL(20, 6), doc="行业总资产增长率")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -2552,9 +2552,9 @@ class STK_INDFI_DEVELOPMENT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_DIVIDISTRIB(Base):
+class stk_indfi_dividistrib(Base):
 
-    __tablename__ = 'STK_INDFI_DIVIDISTRIB'
+    __tablename__ = 'stk_indfi_dividistrib'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     DISTRIBUTIONRATE = Column(DECIMAL(20, 6), doc="行业股利分配率")
@@ -2573,9 +2573,9 @@ class STK_INDFI_DIVIDISTRIB(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_EARNPOWER(Base):
+class stk_indfi_earnpower(Base):
 
-    __tablename__ = 'STK_INDFI_EARNPOWER'
+    __tablename__ = 'stk_indfi_earnpower'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     EBITDATOREVENUE = Column(DECIMAL(20, 6), doc="行业息税折旧摊销前营业利润率")
@@ -2616,9 +2616,9 @@ class STK_INDFI_EARNPOWER(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_HHI(Base):
+class stk_indfi_hhi(Base):
 
-    __tablename__ = 'STK_INDFI_HHI'
+    __tablename__ = 'stk_indfi_hhi'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     ENDDATE = Column(DateTime, doc="截止日期")
@@ -2638,9 +2638,9 @@ class STK_INDFI_HHI(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_INDTRAJECTORY(Base):
+class stk_indfi_indtrajectory(Base):
 
-    __tablename__ = 'STK_INDFI_INDTRAJECTORY'
+    __tablename__ = 'stk_indfi_indtrajectory'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CROSSSYMBOL = Column(String(6), doc="AB股交叉码")
@@ -2655,9 +2655,9 @@ class STK_INDFI_INDTRAJECTORY(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_LERNERINDEX(Base):
+class stk_indfi_lernerindex(Base):
 
-    __tablename__ = 'STK_INDFI_LERNERINDEX'
+    __tablename__ = 'stk_indfi_lernerindex'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     ENDDATE = Column(DateTime, doc="截止日期")
@@ -2674,59 +2674,9 @@ class STK_INDFI_LERNERINDEX(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_LPESV(Base):
+class stk_indfi_lpesv(Base):
 
-    __tablename__ = 'STK_INDFI_LPESV'
-
-    ASSETSGROWTH = Column(DECIMAL(20, 2), doc="总资产增长率")
-    ASSETTURNOVER = Column(DECIMAL(20, 2), doc="总资产周转率")
-    AVERAGECAPITALGROWTHRATE3Y = Column(DECIMAL(20, 2), doc="三年资本平均增长率")
-    AVERAGESALESGROWTHRATE3Y = Column(DECIMAL(20, 2), doc="三年销售平均增长率")
-    BADASSETSRATIOA = Column(DECIMAL(20, 2), doc="不良资产比率")
-    BADASSETSRATIOB = Column(DECIMAL(20, 2), doc="不良资产比率（旧制度）")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    CASHFLOWSRATIO = Column(DECIMAL(20, 2), doc="现金流动负债比率")
-    CASHTOASSET = Column(DECIMAL(20, 2), doc="资产现金回收率")
-    CONTINGENTDEBTRATIO = Column(DECIMAL(20, 2), doc="或有负债比率")
-    COSTEXPENSERATIOSA = Column(DECIMAL(20, 2), doc="成本费用占主营营业收入比重")
-    COSTEXPENSERATIOSB = Column(DECIMAL(20, 2), doc="成本费用占营业收入比重")
-    CURRENTASSETTURNOVER = Column(DECIMAL(20, 2), doc="流动资产周转率")
-    DEBTRATIO = Column(DECIMAL(20, 2), doc="带息负债比率")
-    DEBTTOASSETRATIO = Column(DECIMAL(20, 2), doc="资产负债率")
-    EBITDA = Column(DECIMAL(20, 2), doc="EBITDA率")
-    EQUITYAPPRECIATIONRATIO = Column(DECIMAL(20, 2), doc="资本保值增值率")
-    EQUITYGROWTHRATIO = Column(DECIMAL(20, 2), doc="资本积累率")
-    EVA = Column(DECIMAL(20, 2), doc="经济增加值率")
-    GROSSPROFITRATE = Column(DECIMAL(20, 2), doc="主营业务利润率")
-    INDUSTRYCODE = Column(String(200), doc="行业代码")
-    INDUSTRYNAME = Column(String(200), doc="行业名称")
-    INTERESTCOVERAGERATIO = Column(DECIMAL(20, 2), doc="已获利息倍数")
-    INVENTORYTURNOVER = Column(DECIMAL(20, 2), doc="存货周转率")
-    NCFTONETPROFIT = Column(DECIMAL(20, 2), doc="盈余现金保障倍数")
-    PERIODCOSTTOMAININCOME = Column(DECIMAL(20, 2), doc="期间费用占主营营业收入的比率")
-    PROFITTOCOST = Column(DECIMAL(20, 2), doc="成本费用利润率")
-    QUICKRATIO = Column(DECIMAL(20, 2), doc="速动比率")
-    RECEIVABLESTURNOVER = Column(DECIMAL(20, 2), doc="应收账款周转率")
-    RECSTOCKTOCURRENTASSETS = Column(DECIMAL(20, 2), doc="两金占流动资产比重")
-    RETURNONCAPITAL = Column(DECIMAL(20, 2), doc="资本收益率")
-    ROA = Column(DECIMAL(20, 2), doc="总资产报酬率")
-    ROE = Column(DECIMAL(20, 2), doc="净资产收益率")
-    ROS = Column(DECIMAL(20, 2), doc="销售（营业）利润率")
-    SALESGROWTHRATE = Column(DECIMAL(20, 2), doc="销售（营业）增长率")
-    SALESRATEGROWTHRATE = Column(DECIMAL(20, 2), doc="销售（营业）利率增长率")
-    SGNYEAR = Column(String(4), doc="发布年份")
-    STANDARD = Column(String(1), doc="标准标识")
-    STATISTICALCALIBRE = Column(String(1), doc="统计口径")
-    TR = Column(DECIMAL(20, 2), doc="技术投入比率")
-    UPDATEID = Column(BIGINT, primary_key=True, doc="%s")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
-
-
-class STK_INDFI_NPESV(Base):
-
-    __tablename__ = 'STK_INDFI_NPESV'
+    __tablename__ = 'stk_indfi_lpesv'
 
     ASSETSGROWTH = Column(DECIMAL(20, 2), doc="总资产增长率")
     ASSETTURNOVER = Column(DECIMAL(20, 2), doc="总资产周转率")
@@ -2774,9 +2724,59 @@ class STK_INDFI_NPESV(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_OPERATE(Base):
+class stk_indfi_npesv(Base):
 
-    __tablename__ = 'STK_INDFI_OPERATE'
+    __tablename__ = 'stk_indfi_npesv'
+
+    ASSETSGROWTH = Column(DECIMAL(20, 2), doc="总资产增长率")
+    ASSETTURNOVER = Column(DECIMAL(20, 2), doc="总资产周转率")
+    AVERAGECAPITALGROWTHRATE3Y = Column(DECIMAL(20, 2), doc="三年资本平均增长率")
+    AVERAGESALESGROWTHRATE3Y = Column(DECIMAL(20, 2), doc="三年销售平均增长率")
+    BADASSETSRATIOA = Column(DECIMAL(20, 2), doc="不良资产比率")
+    BADASSETSRATIOB = Column(DECIMAL(20, 2), doc="不良资产比率（旧制度）")
+    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
+    CASHFLOWSRATIO = Column(DECIMAL(20, 2), doc="现金流动负债比率")
+    CASHTOASSET = Column(DECIMAL(20, 2), doc="资产现金回收率")
+    CONTINGENTDEBTRATIO = Column(DECIMAL(20, 2), doc="或有负债比率")
+    COSTEXPENSERATIOSA = Column(DECIMAL(20, 2), doc="成本费用占主营营业收入比重")
+    COSTEXPENSERATIOSB = Column(DECIMAL(20, 2), doc="成本费用占营业收入比重")
+    CURRENTASSETTURNOVER = Column(DECIMAL(20, 2), doc="流动资产周转率")
+    DEBTRATIO = Column(DECIMAL(20, 2), doc="带息负债比率")
+    DEBTTOASSETRATIO = Column(DECIMAL(20, 2), doc="资产负债率")
+    EBITDA = Column(DECIMAL(20, 2), doc="EBITDA率")
+    EQUITYAPPRECIATIONRATIO = Column(DECIMAL(20, 2), doc="资本保值增值率")
+    EQUITYGROWTHRATIO = Column(DECIMAL(20, 2), doc="资本积累率")
+    EVA = Column(DECIMAL(20, 2), doc="经济增加值率")
+    GROSSPROFITRATE = Column(DECIMAL(20, 2), doc="主营业务利润率")
+    INDUSTRYCODE = Column(String(200), doc="行业代码")
+    INDUSTRYNAME = Column(String(200), doc="行业名称")
+    INTERESTCOVERAGERATIO = Column(DECIMAL(20, 2), doc="已获利息倍数")
+    INVENTORYTURNOVER = Column(DECIMAL(20, 2), doc="存货周转率")
+    NCFTONETPROFIT = Column(DECIMAL(20, 2), doc="盈余现金保障倍数")
+    PERIODCOSTTOMAININCOME = Column(DECIMAL(20, 2), doc="期间费用占主营营业收入的比率")
+    PROFITTOCOST = Column(DECIMAL(20, 2), doc="成本费用利润率")
+    QUICKRATIO = Column(DECIMAL(20, 2), doc="速动比率")
+    RECEIVABLESTURNOVER = Column(DECIMAL(20, 2), doc="应收账款周转率")
+    RECSTOCKTOCURRENTASSETS = Column(DECIMAL(20, 2), doc="两金占流动资产比重")
+    RETURNONCAPITAL = Column(DECIMAL(20, 2), doc="资本收益率")
+    ROA = Column(DECIMAL(20, 2), doc="总资产报酬率")
+    ROE = Column(DECIMAL(20, 2), doc="净资产收益率")
+    ROS = Column(DECIMAL(20, 2), doc="销售（营业）利润率")
+    SALESGROWTHRATE = Column(DECIMAL(20, 2), doc="销售（营业）增长率")
+    SALESRATEGROWTHRATE = Column(DECIMAL(20, 2), doc="销售（营业）利率增长率")
+    SGNYEAR = Column(String(4), doc="发布年份")
+    STANDARD = Column(String(1), doc="标准标识")
+    STATISTICALCALIBRE = Column(String(1), doc="统计口径")
+    TR = Column(DECIMAL(20, 2), doc="技术投入比率")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="%s")
+    UPDATESTATE = Column(SMALLINT, doc="Update状态")
+    UPDATETIME = Column(DateTime, doc="Update时间")
+    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class stk_indfi_operate(Base):
+
+    __tablename__ = 'stk_indfi_operate'
 
     ASSETTURNOVERA = Column(DECIMAL(20, 6), doc="行业总资产周转率A")
     ASSETTURNOVERB = Column(DECIMAL(20, 6), doc="行业总资产周转率B")
@@ -2819,9 +2819,9 @@ class STK_INDFI_OPERATE(Base):
     WORKINGCAPITALTURNOVERB = Column(DECIMAL(20, 6), doc="行业营运资金（资本）周转率B")
 
 
-class STK_INDFI_PERSHARE(Base):
+class stk_indfi_pershare(Base):
 
-    __tablename__ = 'STK_INDFI_PERSHARE'
+    __tablename__ = 'stk_indfi_pershare'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CASHINCREASEPERSHAREA = Column(DECIMAL(20, 6), doc="行业每股现金净流量A")
@@ -2866,9 +2866,9 @@ class STK_INDFI_PERSHARE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_RELATIVEVALUE(Base):
+class stk_indfi_relativevalue(Base):
 
-    __tablename__ = 'STK_INDFI_RELATIVEVALUE'
+    __tablename__ = 'stk_indfi_relativevalue'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     ENDDATE = Column(DateTime, doc="截止日期")
@@ -2895,9 +2895,9 @@ class STK_INDFI_RELATIVEVALUE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INDFI_RISK(Base):
+class stk_indfi_risk(Base):
 
-    __tablename__ = 'STK_INDFI_RISK'
+    __tablename__ = 'stk_indfi_risk'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     DFL = Column(DECIMAL(20, 6), doc="行业财务杠杆")
@@ -2917,9 +2917,9 @@ class STK_INDFI_RISK(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_INSTITUTIONHOLDERALIAS(Base):
+class stk_institutionholderalias(Base):
 
-    __tablename__ = 'STK_INSTITUTIONHOLDERALIAS'
+    __tablename__ = 'stk_institutionholderalias'
 
     ALIAS = Column(String(200), doc="机构别名")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -2934,30 +2934,9 @@ class STK_INSTITUTIONHOLDERALIAS(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_LOCKSHARES_SUMMARY(Base):
+class stk_lock_shares(Base):
 
-    __tablename__ = 'STK_LOCKSHARES_SUMMARY'
-
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    HOLDERNUMBER = Column(BIGINT, doc="解禁股东家数")
-    INSTITUTIONID = Column(DECIMAL(20, 0), primary_key=True, doc="%s")
-    LISTEDDATE = Column(DateTime, primary_key=True, doc="%s")
-    LISTEDSHARES = Column(DECIMAL(20, 4), doc="本期解禁流通股数")
-    PROPORTION1 = Column(DECIMAL(10, 4), doc="本期解禁流通股数占总限售股数比例")
-    PROPORTION2 = Column(DECIMAL(10, 4), doc="占流通A股比例")
-    PROPORTION3 = Column(DECIMAL(10, 4), doc="占总股本比例")
-    REMAINEDLOCKSHARES = Column(DECIMAL(20, 4), doc="剩余限售股数量")
-    SYMBOL = Column(String(20), doc="证券代码")
-    TOTALLOCKSHARES = Column(DECIMAL(20, 4), doc="总限售股数")
-    UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
-
-
-class STK_LOCK_SHARES(Base):
-
-    __tablename__ = 'STK_LOCK_SHARES'
+    __tablename__ = 'stk_lock_shares'
 
     ADDSHARES = Column(DECIMAL(20, 2), doc="本期增加限售股数")
     BEGINNINGSHARES = Column(DECIMAL(20, 2), doc="期初持有数量")
@@ -2985,9 +2964,30 @@ class STK_LOCK_SHARES(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_MKT_ADJUSTFACTOR(Base):
+class stk_lockshares_summary(Base):
 
-    __tablename__ = 'STK_MKT_ADJUSTFACTOR'
+    __tablename__ = 'stk_lockshares_summary'
+
+    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
+    HOLDERNUMBER = Column(BIGINT, doc="解禁股东家数")
+    INSTITUTIONID = Column(DECIMAL(20, 0), primary_key=True, doc="%s")
+    LISTEDDATE = Column(DateTime, primary_key=True, doc="%s")
+    LISTEDSHARES = Column(DECIMAL(20, 4), doc="本期解禁流通股数")
+    PROPORTION1 = Column(DECIMAL(10, 4), doc="本期解禁流通股数占总限售股数比例")
+    PROPORTION2 = Column(DECIMAL(10, 4), doc="占流通A股比例")
+    PROPORTION3 = Column(DECIMAL(10, 4), doc="占总股本比例")
+    REMAINEDLOCKSHARES = Column(DECIMAL(20, 4), doc="剩余限售股数量")
+    SYMBOL = Column(String(20), doc="证券代码")
+    TOTALLOCKSHARES = Column(DECIMAL(20, 4), doc="总限售股数")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    UPDATESTATE = Column(SMALLINT, doc="Update状态")
+    UPDATETIME = Column(DateTime, doc="Update时间")
+    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class stk_mkt_adjustfactor(Base):
+
+    __tablename__ = 'stk_mkt_adjustfactor'
 
     BUSINESSTIME = Column(DateTime, doc="UTS更新字段")
     BWARDFACTOR = Column(DECIMAL(12, 6), doc="后复权因子")
@@ -3003,9 +3003,9 @@ class STK_MKT_ADJUSTFACTOR(Base):
     UTSID = Column(DECIMAL(20, 0))
 
 
-class STK_MKT_BLOCKTRADE(Base):
+class stk_mkt_blocktrade(Base):
 
-    __tablename__ = 'STK_MKT_BLOCKTRADE'
+    __tablename__ = 'stk_mkt_blocktrade'
 
     AMOUNT = Column(DECIMAL(26, 6), doc="成交额")
     AMOUNTUNIT = Column(String(20), doc="成交额对应单位")
@@ -3032,9 +3032,9 @@ class STK_MKT_BLOCKTRADE(Base):
     VOLUMEUNIT = Column(String(20), doc="成交量对应单位")
 
 
-class STK_MKT_QUOTATION(Base):
+class stk_mkt_quotation(Base):
 
-    __tablename__ = 'STK_MKT_QUOTATION'
+    __tablename__ = 'stk_mkt_quotation'
 
     ACIRCULATEDSHARE = Column(DECIMAL(20, 2), doc="流通A股股本")
     AFTERHOURSAMOUNT = Column(DECIMAL(20, 0), doc="盘后成交金额")
@@ -3081,9 +3081,9 @@ class STK_MKT_QUOTATION(Base):
     VOLUME = Column(BIGINT, doc="成交量")
 
 
-class STK_MKT_QUOTATIONLATEST(Base):
+class stk_mkt_quotationlatest(Base):
 
-    __tablename__ = 'STK_MKT_QUOTATIONLATEST'
+    __tablename__ = 'stk_mkt_quotationlatest'
 
     ACIRCULATEDSHARE = Column(DECIMAL(20, 2), doc="流通A股股本")
     AFTERHOURSAMOUNT = Column(DECIMAL(20, 0), doc="盘后成交金额")
@@ -3129,9 +3129,9 @@ class STK_MKT_QUOTATIONLATEST(Base):
     VOLUME = Column(BIGINT, doc="成交量")
 
 
-class STK_MKT_REPRICEFACTOR(Base):
+class stk_mkt_repricefactor(Base):
 
-    __tablename__ = 'STK_MKT_REPRICEFACTOR'
+    __tablename__ = 'stk_mkt_repricefactor'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     BWARDFACTOR1 = Column(DECIMAL(12, 6), doc="后复权因子")
@@ -3159,9 +3159,9 @@ class STK_MKT_REPRICEFACTOR(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_ACCOUNTINGPOLICY(Base):
+class stk_notes_accountingpolicy(Base):
 
-    __tablename__ = 'STK_NOTES_ACCOUNTINGPOLICY'
+    __tablename__ = 'stk_notes_accountingpolicy'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     ENDDATE = Column(DateTime, doc="会计期间")
@@ -3176,9 +3176,9 @@ class STK_NOTES_ACCOUNTINGPOLICY(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_ADMINEXPENSE(Base):
+class stk_notes_adminexpense(Base):
 
-    __tablename__ = 'STK_NOTES_ADMINEXPENSE'
+    __tablename__ = 'stk_notes_adminexpense'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="本期金额")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3197,9 +3197,9 @@ class STK_NOTES_ADMINEXPENSE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_AFSFINASSECT(Base):
+class stk_notes_afsfinassect(Base):
 
-    __tablename__ = 'STK_NOTES_AFSFINASSECT'
+    __tablename__ = 'stk_notes_afsfinassect'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 2), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3219,9 +3219,9 @@ class STK_NOTES_AFSFINASSECT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_AP(Base):
+class stk_notes_ap(Base):
 
-    __tablename__ = 'STK_NOTES_AP'
+    __tablename__ = 'stk_notes_ap'
 
     AGE = Column(String(200), doc="账龄")
     BEGINNINGBALANCE = Column(DECIMAL(20, 4), doc="期初余额")
@@ -3243,9 +3243,9 @@ class STK_NOTES_AP(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_APSD(Base):
+class stk_notes_apsd(Base):
 
-    __tablename__ = 'STK_NOTES_APSD'
+    __tablename__ = 'stk_notes_apsd'
 
     ARREARSAGING = Column(String(400), doc="欠款帐龄")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3271,9 +3271,9 @@ class STK_NOTES_APSD(Base):
     VESTINGPERIOD = Column(SMALLINT, doc="期间归属")
 
 
-class STK_NOTES_AR(Base):
+class stk_notes_ar(Base):
 
-    __tablename__ = 'STK_NOTES_AR'
+    __tablename__ = 'stk_notes_ar'
 
     AGE = Column(String(200), doc="账龄")
     BADDEBTPROVISIONINCREASE = Column(DECIMAL(20, 4), doc="坏账准备本期增加")
@@ -3307,9 +3307,9 @@ class STK_NOTES_AR(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_ARSD(Base):
+class stk_notes_arsd(Base):
 
-    __tablename__ = 'STK_NOTES_ARSD'
+    __tablename__ = 'stk_notes_arsd'
 
     AGEORDATE = Column(String(400), doc="欠款帐龄或日期")
     BADDEBTPROVISION = Column(DECIMAL(20, 4), doc="坏账准备金额")
@@ -3337,9 +3337,9 @@ class STK_NOTES_ARSD(Base):
     VESTINGPERIOD = Column(SMALLINT, doc="期间归属")
 
 
-class STK_NOTES_ASSETIMPAIRMENT(Base):
+class stk_notes_assetimpairment(Base):
 
-    __tablename__ = 'STK_NOTES_ASSETIMPAIRMENT'
+    __tablename__ = 'stk_notes_assetimpairment'
 
     ADDOTHER = Column(DECIMAL(20, 4), doc="本期增加额-其他")
     BEGINNINGYEARVALUE = Column(DECIMAL(20, 4), doc="年初数")
@@ -3362,9 +3362,9 @@ class STK_NOTES_ASSETIMPAIRMENT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_BASICCONTENT(Base):
+class stk_notes_basiccontent(Base):
 
-    __tablename__ = 'STK_NOTES_BASICCONTENT'
+    __tablename__ = 'stk_notes_basiccontent'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     ENDDATE = Column(DateTime, doc="会计期间")
@@ -3378,9 +3378,9 @@ class STK_NOTES_BASICCONTENT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_BILLRANDP(Base):
+class stk_notes_billrandp(Base):
 
-    __tablename__ = 'STK_NOTES_BILLRANDP'
+    __tablename__ = 'stk_notes_billrandp'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 2), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3401,9 +3401,9 @@ class STK_NOTES_BILLRANDP(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_BILLRANDPSPECIAL(Base):
+class stk_notes_billrandpspecial(Base):
 
-    __tablename__ = 'STK_NOTES_BILLRANDPSPECIAL'
+    __tablename__ = 'stk_notes_billrandpspecial'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CATEGORY = Column(SMALLINT, doc="类别")
@@ -3427,9 +3427,9 @@ class STK_NOTES_BILLRANDPSPECIAL(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_BONDSPAYABLE(Base):
+class stk_notes_bondspayable(Base):
 
-    __tablename__ = 'STK_NOTES_BONDSPAYABLE'
+    __tablename__ = 'stk_notes_bondspayable'
 
     BEGINNINGINTERESTPAYABLE = Column(DECIMAL(20, 4), doc="期初应付利息")
     BEGINNINGYEARVALUE = Column(DECIMAL(20, 4), doc="年初余额")
@@ -3467,9 +3467,9 @@ class STK_NOTES_BONDSPAYABLE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_BUSINESSTAXAPPEND(Base):
+class stk_notes_businesstaxappend(Base):
 
-    __tablename__ = 'STK_NOTES_BUSINESSTAXAPPEND'
+    __tablename__ = 'stk_notes_businesstaxappend'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="本期金额")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3488,9 +3488,9 @@ class STK_NOTES_BUSINESSTAXAPPEND(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_CAPITALRESERVE(Base):
+class stk_notes_capitalreserve(Base):
 
-    __tablename__ = 'STK_NOTES_CAPITALRESERVE'
+    __tablename__ = 'stk_notes_capitalreserve'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 2), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3511,9 +3511,9 @@ class STK_NOTES_CAPITALRESERVE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_CAPITALSTOCK(Base):
+class stk_notes_capitalstock(Base):
 
-    __tablename__ = 'STK_NOTES_CAPITALSTOCK'
+    __tablename__ = 'stk_notes_capitalstock'
 
     ADDITIONAL = Column(DECIMAL(20, 4), doc="增发")
     ADJUSTMENTSHAREREFORM = Column(DECIMAL(20, 4), doc="股改调整")
@@ -3546,9 +3546,9 @@ class STK_NOTES_CAPITALSTOCK(Base):
     VERIFICATIONINSTRUCTIONS = Column(String(4000), doc="验资说明")
 
 
-class STK_NOTES_CBD(Base):
+class stk_notes_cbd(Base):
 
-    __tablename__ = 'STK_NOTES_CBD'
+    __tablename__ = 'stk_notes_cbd'
 
     AGE = Column(String(200), doc="账龄")
     BADDEBTPROVISIONINCREASE = Column(DECIMAL(20, 4), doc="坏账准备本期增加")
@@ -3582,9 +3582,9 @@ class STK_NOTES_CBD(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_CBDSD(Base):
+class stk_notes_cbdsd(Base):
 
-    __tablename__ = 'STK_NOTES_CBDSD'
+    __tablename__ = 'stk_notes_cbdsd'
 
     AGEORDATE = Column(String(400), doc="欠款帐龄或日期")
     BADDEBTPROVISION = Column(DECIMAL(20, 4), doc="坏账准备金额")
@@ -3612,9 +3612,9 @@ class STK_NOTES_CBDSD(Base):
     VESTINGPERIOD = Column(SMALLINT, doc="期间归属")
 
 
-class STK_NOTES_CIP(Base):
+class stk_notes_cip(Base):
 
-    __tablename__ = 'STK_NOTES_CIP'
+    __tablename__ = 'stk_notes_cip'
 
     BEGINNINGBOOKBALANCE = Column(DECIMAL(20, 2), doc="期初账面余额")
     BEGINNINGBOOKVALUE = Column(DECIMAL(20, 2), doc="期初账面价值")
@@ -3640,9 +3640,9 @@ class STK_NOTES_CIP(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_CIPCHANGE(Base):
+class stk_notes_cipchange(Base):
 
-    __tablename__ = 'STK_NOTES_CIPCHANGE'
+    __tablename__ = 'stk_notes_cipchange'
 
     BEGINNINGBALANCE = Column(DECIMAL(20, 2), doc="期初余额")
     BUDGETAMOUNT = Column(DECIMAL(20, 2), doc="预算数")
@@ -3674,9 +3674,9 @@ class STK_NOTES_CIPCHANGE(Base):
     WORKINGSCHEDULE = Column(DECIMAL(20, 2), doc="工程进度")
 
 
-class STK_NOTES_DEFERREDINCOMETAX(Base):
+class stk_notes_deferredincometax(Base):
 
-    __tablename__ = 'STK_NOTES_DEFERREDINCOMETAX'
+    __tablename__ = 'stk_notes_deferredincometax'
 
     BEGINNINGYEARVALUE = Column(DECIMAL(20, 4), doc="年初数")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3696,9 +3696,9 @@ class STK_NOTES_DEFERREDINCOMETAX(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_DEVEXPENSE(Base):
+class stk_notes_devexpense(Base):
 
-    __tablename__ = 'STK_NOTES_DEVEXPENSE'
+    __tablename__ = 'stk_notes_devexpense'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 4), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3721,9 +3721,9 @@ class STK_NOTES_DEVEXPENSE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_DIVIDENDPAYABLE(Base):
+class stk_notes_dividendpayable(Base):
 
-    __tablename__ = 'STK_NOTES_DIVIDENDPAYABLE'
+    __tablename__ = 'stk_notes_dividendpayable'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 2), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3742,9 +3742,9 @@ class STK_NOTES_DIVIDENDPAYABLE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_DR(Base):
+class stk_notes_dr(Base):
 
-    __tablename__ = 'STK_NOTES_DR'
+    __tablename__ = 'stk_notes_dr'
 
     AGE = Column(String(200), doc="账龄")
     BEGINNINGBALANCE = Column(DECIMAL(20, 4), doc="期初余额")
@@ -3766,9 +3766,9 @@ class STK_NOTES_DR(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_DRSD(Base):
+class stk_notes_drsd(Base):
 
-    __tablename__ = 'STK_NOTES_DRSD'
+    __tablename__ = 'stk_notes_drsd'
 
     ARREARSAGING = Column(String(400), doc="欠款帐龄")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3794,9 +3794,9 @@ class STK_NOTES_DRSD(Base):
     VESTINGPERIOD = Column(SMALLINT, doc="期间归属")
 
 
-class STK_NOTES_EQUITYINVEST(Base):
+class stk_notes_equityinvest(Base):
 
-    __tablename__ = 'STK_NOTES_EQUITYINVEST'
+    __tablename__ = 'stk_notes_equityinvest'
 
     ACCOUNTINGMETHODS = Column(String(100), doc="核算方法")
     BEGINNINGBALANCE = Column(DECIMAL(20, 4), doc="期初余额")
@@ -3821,9 +3821,9 @@ class STK_NOTES_EQUITYINVEST(Base):
     VOTESCALE = Column(String(100), doc="表决权比例")
 
 
-class STK_NOTES_EQUITYINVESTCOINFO(Base):
+class stk_notes_equityinvestcoinfo(Base):
 
-    __tablename__ = 'STK_NOTES_EQUITYINVESTCOINFO'
+    __tablename__ = 'stk_notes_equityinvestcoinfo'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     COMPANYNAME = Column(String(1000), doc="被投资单位名称")
@@ -3844,9 +3844,9 @@ class STK_NOTES_EQUITYINVESTCOINFO(Base):
     YEARTOTALOPERATINGINCOME = Column(DECIMAL(20, 4), doc="本年营业收入总额")
 
 
-class STK_NOTES_FAIRVALUEB(Base):
+class stk_notes_fairvalueb(Base):
 
-    __tablename__ = 'STK_NOTES_FAIRVALUEB'
+    __tablename__ = 'stk_notes_fairvalueb'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 2), doc="期初数")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3872,9 +3872,9 @@ class STK_NOTES_FAIRVALUEB(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_FINANCECOSTS(Base):
+class stk_notes_financecosts(Base):
 
-    __tablename__ = 'STK_NOTES_FINANCECOSTS'
+    __tablename__ = 'stk_notes_financecosts'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="本期金额")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3892,9 +3892,9 @@ class STK_NOTES_FINANCECOSTS(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_FIXEDASSECT(Base):
+class stk_notes_fixedassect(Base):
 
-    __tablename__ = 'STK_NOTES_FIXEDASSECT'
+    __tablename__ = 'stk_notes_fixedassect'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 4), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3924,9 +3924,9 @@ class STK_NOTES_FIXEDASSECT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_GOODWILL(Base):
+class stk_notes_goodwill(Base):
 
-    __tablename__ = 'STK_NOTES_GOODWILL'
+    __tablename__ = 'stk_notes_goodwill'
 
     BEGINNINGBALANCE = Column(DECIMAL(20, 2), doc="期初余额")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3953,9 +3953,9 @@ class STK_NOTES_GOODWILL(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_GOVGRANTS(Base):
+class stk_notes_govgrants(Base):
 
-    __tablename__ = 'STK_NOTES_GOVGRANTS'
+    __tablename__ = 'stk_notes_govgrants'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="本期金额")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -3975,9 +3975,9 @@ class STK_NOTES_GOVGRANTS(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_IMPJNTFIN(Base):
+class stk_notes_impjntfin(Base):
 
-    __tablename__ = 'STK_NOTES_IMPJNTFIN'
+    __tablename__ = 'stk_notes_impjntfin'
 
     ADJUSTMENTS = Column(DECIMAL(20, 2), doc="调整事项")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4015,9 +4015,9 @@ class STK_NOTES_IMPJNTFIN(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_INTERESTPAYABLE(Base):
+class stk_notes_interestpayable(Base):
 
-    __tablename__ = 'STK_NOTES_INTERESTPAYABLE'
+    __tablename__ = 'stk_notes_interestpayable'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 2), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4038,9 +4038,9 @@ class STK_NOTES_INTERESTPAYABLE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_INVASSECT(Base):
+class stk_notes_invassect(Base):
 
-    __tablename__ = 'STK_NOTES_INVASSECT'
+    __tablename__ = 'stk_notes_invassect'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 4), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4064,9 +4064,9 @@ class STK_NOTES_INVASSECT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_INVENTORIES(Base):
+class stk_notes_inventories(Base):
 
-    __tablename__ = 'STK_NOTES_INVENTORIES'
+    __tablename__ = 'stk_notes_inventories'
 
     BEGINNINGBOOKBALANCE = Column(DECIMAL(20, 2), doc="期初账面余额")
     BEGINNINGBOOKVALUE = Column(DECIMAL(20, 2), doc="期初账面价值")
@@ -4096,9 +4096,9 @@ class STK_NOTES_INVENTORIES(Base):
     WRITEOFFPROVISION = Column(DECIMAL(20, 2), doc="其中：跌价准备本期冲销")
 
 
-class STK_NOTES_INVESTMENTINC(Base):
+class stk_notes_investmentinc(Base):
 
-    __tablename__ = 'STK_NOTES_INVESTMENTINC'
+    __tablename__ = 'stk_notes_investmentinc'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="本期金额")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4117,9 +4117,9 @@ class STK_NOTES_INVESTMENTINC(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_INVEXIT(Base):
+class stk_notes_invexit(Base):
 
-    __tablename__ = 'STK_NOTES_INVEXIT'
+    __tablename__ = 'stk_notes_invexit'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CURRENCY = Column(String(100), doc="币种")
@@ -4140,9 +4140,9 @@ class STK_NOTES_INVEXIT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_LONGTERMLOAN(Base):
+class stk_notes_longtermloan(Base):
 
-    __tablename__ = 'STK_NOTES_LONGTERMLOAN'
+    __tablename__ = 'stk_notes_longtermloan'
 
     BEGINNINGYEARVALUE = Column(DECIMAL(20, 4), doc="年初数")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4161,9 +4161,9 @@ class STK_NOTES_LONGTERMLOAN(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_LONGTERMPREPAIDFEE(Base):
+class stk_notes_longtermprepaidfee(Base):
 
-    __tablename__ = 'STK_NOTES_LONGTERMPREPAIDFEE'
+    __tablename__ = 'stk_notes_longtermprepaidfee'
 
     AMORTIZATIONYEAR = Column(DECIMAL(20, 4), doc="其中：本年摊销 ")
     BEGINNINGYEARVALUE = Column(DECIMAL(20, 4), doc="年初数")
@@ -4186,9 +4186,9 @@ class STK_NOTES_LONGTERMPREPAIDFEE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_MACHABALANCE(Base):
+class stk_notes_machabalance(Base):
 
-    __tablename__ = 'STK_NOTES_MACHABALANCE'
+    __tablename__ = 'stk_notes_machabalance'
 
     AMOUNT = Column(DECIMAL(20, 2), doc="金额")
     AMOUNTTOTOTALASSETS = Column(DECIMAL(20, 2), doc="占总资产比重")
@@ -4210,9 +4210,9 @@ class STK_NOTES_MACHABALANCE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_MONETARYFUNDS(Base):
+class stk_notes_monetaryfunds(Base):
 
-    __tablename__ = 'STK_NOTES_MONETARYFUNDS'
+    __tablename__ = 'stk_notes_monetaryfunds'
 
     BEGINNINGEXCHANGERATE = Column(String(40), doc="期初汇率")
     BEGINNINGFOREIGNAMOUNT = Column(DECIMAL(20, 2), doc="期初外币金额")
@@ -4238,9 +4238,9 @@ class STK_NOTES_MONETARYFUNDS(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_NLDONEYEAR(Base):
+class stk_notes_nldoneyear(Base):
 
-    __tablename__ = 'STK_NOTES_NLDONEYEAR'
+    __tablename__ = 'stk_notes_nldoneyear'
 
     BEGINNINGYEARVALUE = Column(DECIMAL(20, 4), doc="年初数")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4259,9 +4259,9 @@ class STK_NOTES_NLDONEYEAR(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_NOMTAXRATE(Base):
+class stk_notes_nomtaxrate(Base):
 
-    __tablename__ = 'STK_NOTES_NOMTAXRATE'
+    __tablename__ = 'stk_notes_nomtaxrate'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     ENDDATE = Column(DateTime, doc="会计期间")
@@ -4278,30 +4278,9 @@ class STK_NOTES_NOMTAXRATE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_NONBUSEXP(Base):
+class stk_notes_nonbusexp(Base):
 
-    __tablename__ = 'STK_NOTES_NONBUSEXP'
-
-    AMOUNT = Column(DECIMAL(20, 4), doc="本期金额")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    CURRENCY = Column(String(12), doc="币种")
-    ENDDATE = Column(DateTime, doc="会计期间")
-    EXPLANATION = Column(LONGTEXT, doc="说明")
-    INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
-    ITEM = Column(String(400), doc="项目")
-    PREVIOUSAMOUNT = Column(DECIMAL(20, 4), doc="上期金额")
-    SOURCE = Column(SMALLINT, doc="数据来源")
-    STATETYPECODE = Column(SMALLINT, doc="报表类型")
-    SYMBOL = Column(String(12), doc="股票代码")
-    UPDATEID = Column(BIGINT, primary_key=True, doc="%s")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
-
-
-class STK_NOTES_NONBUSINC(Base):
-
-    __tablename__ = 'STK_NOTES_NONBUSINC'
+    __tablename__ = 'stk_notes_nonbusexp'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="本期金额")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4320,9 +4299,30 @@ class STK_NOTES_NONBUSINC(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_NONRECURRING(Base):
+class stk_notes_nonbusinc(Base):
 
-    __tablename__ = 'STK_NOTES_NONRECURRING'
+    __tablename__ = 'stk_notes_nonbusinc'
+
+    AMOUNT = Column(DECIMAL(20, 4), doc="本期金额")
+    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
+    CURRENCY = Column(String(12), doc="币种")
+    ENDDATE = Column(DateTime, doc="会计期间")
+    EXPLANATION = Column(LONGTEXT, doc="说明")
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+    ITEM = Column(String(400), doc="项目")
+    PREVIOUSAMOUNT = Column(DECIMAL(20, 4), doc="上期金额")
+    SOURCE = Column(SMALLINT, doc="数据来源")
+    STATETYPECODE = Column(SMALLINT, doc="报表类型")
+    SYMBOL = Column(String(12), doc="股票代码")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="%s")
+    UPDATESTATE = Column(SMALLINT, doc="Update状态")
+    UPDATETIME = Column(DateTime, doc="Update时间")
+    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class stk_notes_nonrecurring(Base):
+
+    __tablename__ = 'stk_notes_nonrecurring'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CURRENCYCODE = Column(String(12), doc="币种")
@@ -4340,9 +4340,9 @@ class STK_NOTES_NONRECURRING(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_OAR(Base):
+class stk_notes_oar(Base):
 
-    __tablename__ = 'STK_NOTES_OAR'
+    __tablename__ = 'stk_notes_oar'
 
     AGE = Column(String(200), doc="账龄")
     BADDEBTPROVISIONINCREASE = Column(DECIMAL(20, 4), doc="坏账准备本期增加")
@@ -4376,9 +4376,9 @@ class STK_NOTES_OAR(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_OARSD(Base):
+class stk_notes_oarsd(Base):
 
-    __tablename__ = 'STK_NOTES_OARSD'
+    __tablename__ = 'stk_notes_oarsd'
 
     AGEORDATE = Column(String(400), doc="欠款帐龄或日期")
     BADDEBTPROVISION = Column(DECIMAL(20, 4), doc="坏账准备金额")
@@ -4406,9 +4406,9 @@ class STK_NOTES_OARSD(Base):
     VESTINGPERIOD = Column(SMALLINT, doc="期间归属")
 
 
-class STK_NOTES_OCASSECT(Base):
+class stk_notes_ocassect(Base):
 
-    __tablename__ = 'STK_NOTES_OCASSECT'
+    __tablename__ = 'stk_notes_ocassect'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 2), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4427,9 +4427,9 @@ class STK_NOTES_OCASSECT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_OP(Base):
+class stk_notes_op(Base):
 
-    __tablename__ = 'STK_NOTES_OP'
+    __tablename__ = 'stk_notes_op'
 
     AGE = Column(String(200), doc="账龄")
     BEGINNINGBALANCE = Column(DECIMAL(20, 4), doc="期初余额")
@@ -4451,9 +4451,9 @@ class STK_NOTES_OP(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_OPERATEINCOMECOSTS(Base):
+class stk_notes_operateincomecosts(Base):
 
-    __tablename__ = 'STK_NOTES_OPERATEINCOMECOSTS'
+    __tablename__ = 'stk_notes_operateincomecosts'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     CATEGORY = Column(SMALLINT, doc="类别")
@@ -4490,9 +4490,9 @@ class STK_NOTES_OPERATEINCOMECOSTS(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_OPSD(Base):
+class stk_notes_opsd(Base):
 
-    __tablename__ = 'STK_NOTES_OPSD'
+    __tablename__ = 'stk_notes_opsd'
 
     ARREARSAGING = Column(String(400), doc="欠款帐龄")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4518,9 +4518,9 @@ class STK_NOTES_OPSD(Base):
     VESTINGPERIOD = Column(SMALLINT, doc="期间归属")
 
 
-class STK_NOTES_PAYRECBUS(Base):
+class stk_notes_payrecbus(Base):
 
-    __tablename__ = 'STK_NOTES_PAYRECBUS'
+    __tablename__ = 'stk_notes_payrecbus'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="本期发生额")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4540,9 +4540,9 @@ class STK_NOTES_PAYRECBUS(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_PAYSALARY(Base):
+class stk_notes_paysalary(Base):
 
-    __tablename__ = 'STK_NOTES_PAYSALARY'
+    __tablename__ = 'stk_notes_paysalary'
 
     BEGINNINGYEARVALUE = Column(DECIMAL(20, 4), doc="年初数")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4563,9 +4563,9 @@ class STK_NOTES_PAYSALARY(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_REALESTATE(Base):
+class stk_notes_realestate(Base):
 
-    __tablename__ = 'STK_NOTES_REALESTATE'
+    __tablename__ = 'stk_notes_realestate'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 4), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4588,9 +4588,9 @@ class STK_NOTES_REALESTATE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_SELLEXPENSE(Base):
+class stk_notes_sellexpense(Base):
 
-    __tablename__ = 'STK_NOTES_SELLEXPENSE'
+    __tablename__ = 'stk_notes_sellexpense'
 
     AMOUNT = Column(DECIMAL(20, 4), doc="本期金额")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4609,9 +4609,9 @@ class STK_NOTES_SELLEXPENSE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_SHORTTERMLOAN(Base):
+class stk_notes_shorttermloan(Base):
 
-    __tablename__ = 'STK_NOTES_SHORTTERMLOAN'
+    __tablename__ = 'stk_notes_shorttermloan'
 
     BEGINNINGYEARVALUE = Column(DECIMAL(20, 4), doc="年初数")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4630,9 +4630,9 @@ class STK_NOTES_SHORTTERMLOAN(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_SUBJOINT(Base):
+class stk_notes_subjoint(Base):
 
-    __tablename__ = 'STK_NOTES_SUBJOINT'
+    __tablename__ = 'stk_notes_subjoint'
 
     BUSINESSSCOPE = Column(String(4000), doc="经营范围")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4666,9 +4666,9 @@ class STK_NOTES_SUBJOINT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_SURPLUSRESERVE(Base):
+class stk_notes_surplusreserve(Base):
 
-    __tablename__ = 'STK_NOTES_SURPLUSRESERVE'
+    __tablename__ = 'stk_notes_surplusreserve'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 2), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4689,9 +4689,9 @@ class STK_NOTES_SURPLUSRESERVE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_TAXPAYABLE(Base):
+class stk_notes_taxpayable(Base):
 
-    __tablename__ = 'STK_NOTES_TAXPAYABLE'
+    __tablename__ = 'stk_notes_taxpayable'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 2), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4711,9 +4711,9 @@ class STK_NOTES_TAXPAYABLE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_TOPFIVEBP(Base):
+class stk_notes_topfivebp(Base):
 
-    __tablename__ = 'STK_NOTES_TOPFIVEBP'
+    __tablename__ = 'stk_notes_topfivebp'
 
     BUSINESSINSTITUTIONID = Column(DECIMAL(20, 0), doc="业务往来机构ID")
     BUSINESSINSTITUTIONNAME = Column(String(200), doc="业务往来机构名称")
@@ -4736,9 +4736,9 @@ class STK_NOTES_TOPFIVEBP(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_TRADFINASSECT(Base):
+class stk_notes_tradfinassect(Base):
 
-    __tablename__ = 'STK_NOTES_TRADFINASSECT'
+    __tablename__ = 'stk_notes_tradfinassect'
 
     BEGINNINGVALUE = Column(DECIMAL(20, 2), doc="期初值")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4758,9 +4758,9 @@ class STK_NOTES_TRADFINASSECT(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_NOTES_UDP(Base):
+class stk_notes_udp(Base):
 
-    __tablename__ = 'STK_NOTES_UDP'
+    __tablename__ = 'stk_notes_udp'
 
     BEGINNINGVALUEASLEFT = Column(DECIMAL(20, 2), doc="调整后期初未分配利润")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4792,9 +4792,9 @@ class STK_NOTES_UDP(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_ORIGINALHOLDERS(Base):
+class stk_originalholders(Base):
 
-    __tablename__ = 'STK_ORIGINALHOLDERS'
+    __tablename__ = 'stk_originalholders'
 
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
     COMMENTS = Column(String(1000), doc="备注")
@@ -4818,9 +4818,9 @@ class STK_ORIGINALHOLDERS(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_PERSONALHOLDERALIAS(Base):
+class stk_personalholderalias(Base):
 
-    __tablename__ = 'STK_PERSONALHOLDERALIAS'
+    __tablename__ = 'stk_personalholderalias'
 
     ALIAS = Column(String(200), primary_key=True, doc="%s")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4835,9 +4835,9 @@ class STK_PERSONALHOLDERALIAS(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_RELATIONSHIP_BACKGROUND(Base):
+class stk_relationship_background(Base):
 
-    __tablename__ = 'STK_RELATIONSHIP_BACKGROUND'
+    __tablename__ = 'stk_relationship_background'
 
     BUSINESSSCOPE = Column(String(4000), doc="经营范围")
     BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
@@ -4860,9 +4860,9 @@ class STK_RELATIONSHIP_BACKGROUND(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_SHARES_STRUCTURE(Base):
+class stk_shares_structure(Base):
 
-    __tablename__ = 'STK_SHARES_STRUCTURE'
+    __tablename__ = 'stk_shares_structure'
 
     ALLOCATIONLESHARES = Column(DECIMAL(20, 0), doc="配售法人股")
     ALLOCATIONSHARES = Column(DECIMAL(20, 0), doc="募集法人股")
@@ -4909,9 +4909,9 @@ class STK_SHARES_STRUCTURE(Base):
     UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
-class STK_SHARES_STRUCTURE_DAILY(Base):
+class stk_shares_structure_daily(Base):
 
-    __tablename__ = 'STK_SHARES_STRUCTURE_DAILY'
+    __tablename__ = 'stk_shares_structure_daily'
 
     ALLOCATIONLESHARES = Column(DECIMAL(20, 0), doc="配售法人股")
     ALLOCATIONSHARES = Column(DECIMAL(20, 0), doc="募集法人股")
@@ -4958,146 +4958,146 @@ class STK_SHARES_STRUCTURE_DAILY(Base):
 
 
 csmar_class_dict = {
-    'BOND_CFETS_DQUOTE_HIS_DQ': BOND_CFETS_DQUOTE_HIS_DQ,
-    'BOND_CFETS_PLEDGEDREPO_HDQ': BOND_CFETS_PLEDGEDREPO_HDQ,
-    'BOND_QUOTATION': BOND_QUOTATION,
-    'BOND_QUOTATIONDERIVATIVE': BOND_QUOTATIONDERIVATIVE,
-    'BOND_QUOTATIONLATEST': BOND_QUOTATIONLATEST,
-    'BOND_QUOTATIONS': BOND_QUOTATIONS,
-    'FUND_MKT_QUOTATION': FUND_MKT_QUOTATION,
-    'FUND_MKT_QUOTATIONLATEST': FUND_MKT_QUOTATIONLATEST,
-    'FUND_QUOTATION': FUND_QUOTATION,
-    'IDX_MKT_QUOTATION': IDX_MKT_QUOTATION,
-    'IDX_WEIGHT': IDX_WEIGHT,
-    'STK_FIN_BALANCE': STK_FIN_BALANCE,
-    'STK_FIN_CASHFLOW': STK_FIN_CASHFLOW,
-    'STK_FIN_CASHFLOWINDEX': STK_FIN_CASHFLOWINDEX,
-    'STK_FIN_CASHFLOWINDRECT': STK_FIN_CASHFLOWINDRECT,
-    'STK_FIN_CASHFLOWINDRECTTTM': STK_FIN_CASHFLOWINDRECTTTM,
-    'STK_FIN_CASHFLOWTTM': STK_FIN_CASHFLOWTTM,
-    'STK_FIN_CONSTRUCT': STK_FIN_CONSTRUCT,
-    'STK_FIN_DEBTPAY': STK_FIN_DEBTPAY,
-    'STK_FIN_DEVELOPMENT': STK_FIN_DEVELOPMENT,
-    'STK_FIN_DIVIDISTRIB': STK_FIN_DIVIDISTRIB,
-    'STK_FIN_EARNPOWER': STK_FIN_EARNPOWER,
-    'STK_FIN_FINANCIALINDEXQ': STK_FIN_FINANCIALINDEXQ,
-    'STK_FIN_FORECFIN': STK_FIN_FORECFIN,
-    'STK_FIN_FORECFINNEW': STK_FIN_FORECFINNEW,
-    'STK_FIN_INCOME': STK_FIN_INCOME,
-    'STK_FIN_INCOMETTM': STK_FIN_INCOMETTM,
-    'STK_FIN_IPODISCLOSEINDEX': STK_FIN_IPODISCLOSEINDEX,
-    'STK_FIN_LCDISCLOSEINDEX': STK_FIN_LCDISCLOSEINDEX,
-    'STK_FIN_OPERATE': STK_FIN_OPERATE,
-    'STK_FIN_PERSHARE': STK_FIN_PERSHARE,
-    'STK_FIN_QUITRAFIN': STK_FIN_QUITRAFIN,
-    'STK_FIN_QUITRAFINNEW': STK_FIN_QUITRAFINNEW,
-    'STK_FIN_QUITRASIMFIN': STK_FIN_QUITRASIMFIN,
-    'STK_FIN_RELATIVEVALUE': STK_FIN_RELATIVEVALUE,
-    'STK_FIN_RELFORCDATE': STK_FIN_RELFORCDATE,
-    'STK_FIN_RISK': STK_FIN_RISK,
-    'STK_FIN_SIMFORECFIN': STK_FIN_SIMFORECFIN,
-    'STK_HOLDER_CONTROLCHART': STK_HOLDER_CONTROLCHART,
-    'STK_HOLDER_CONTROLLER': STK_HOLDER_CONTROLLER,
-    'STK_HOLDER_DETAIL': STK_HOLDER_DETAIL,
-    'STK_HOLDER_EQUITYNATUREALL': STK_HOLDER_EQUITYNATUREALL,
-    'STK_HOLDER_INCRORDESR': STK_HOLDER_INCRORDESR,
-    'STK_HOLDER_NUMBER': STK_HOLDER_NUMBER,
-    'STK_HOLDER_PLEDGE': STK_HOLDER_PLEDGE,
-    'STK_HOLDER_RELATION': STK_HOLDER_RELATION,
-    'STK_HOLDER_SYSTEMATICS': STK_HOLDER_SYSTEMATICS,
-    'STK_HOLDER_TOP10': STK_HOLDER_TOP10,
-    'STK_HOLDER_TOP10FLOATING': STK_HOLDER_TOP10FLOATING,
-    'STK_INDFI_BASIS': STK_INDFI_BASIS,
-    'STK_INDFI_CASHFLOW': STK_INDFI_CASHFLOW,
-    'STK_INDFI_CONSTRUCT': STK_INDFI_CONSTRUCT,
-    'STK_INDFI_CRN': STK_INDFI_CRN,
-    'STK_INDFI_DEBTPAY': STK_INDFI_DEBTPAY,
-    'STK_INDFI_DEVELOPMENT': STK_INDFI_DEVELOPMENT,
-    'STK_INDFI_DIVIDISTRIB': STK_INDFI_DIVIDISTRIB,
-    'STK_INDFI_EARNPOWER': STK_INDFI_EARNPOWER,
-    'STK_INDFI_HHI': STK_INDFI_HHI,
-    'STK_INDFI_INDTRAJECTORY': STK_INDFI_INDTRAJECTORY,
-    'STK_INDFI_LERNERINDEX': STK_INDFI_LERNERINDEX,
-    'STK_INDFI_LPESV': STK_INDFI_LPESV,
-    'STK_INDFI_NPESV': STK_INDFI_NPESV,
-    'STK_INDFI_OPERATE': STK_INDFI_OPERATE,
-    'STK_INDFI_PERSHARE': STK_INDFI_PERSHARE,
-    'STK_INDFI_RELATIVEVALUE': STK_INDFI_RELATIVEVALUE,
-    'STK_INDFI_RISK': STK_INDFI_RISK,
-    'STK_INSTITUTIONHOLDERALIAS': STK_INSTITUTIONHOLDERALIAS,
-    'STK_LOCKSHARES_SUMMARY': STK_LOCKSHARES_SUMMARY,
-    'STK_LOCK_SHARES': STK_LOCK_SHARES,
-    'STK_MKT_ADJUSTFACTOR': STK_MKT_ADJUSTFACTOR,
-    'STK_MKT_BLOCKTRADE': STK_MKT_BLOCKTRADE,
-    'STK_MKT_QUOTATION': STK_MKT_QUOTATION,
-    'STK_MKT_QUOTATIONLATEST': STK_MKT_QUOTATIONLATEST,
-    'STK_MKT_REPRICEFACTOR': STK_MKT_REPRICEFACTOR,
-    'STK_NOTES_ACCOUNTINGPOLICY': STK_NOTES_ACCOUNTINGPOLICY,
-    'STK_NOTES_ADMINEXPENSE': STK_NOTES_ADMINEXPENSE,
-    'STK_NOTES_AFSFINASSECT': STK_NOTES_AFSFINASSECT,
-    'STK_NOTES_AP': STK_NOTES_AP,
-    'STK_NOTES_APSD': STK_NOTES_APSD,
-    'STK_NOTES_AR': STK_NOTES_AR,
-    'STK_NOTES_ARSD': STK_NOTES_ARSD,
-    'STK_NOTES_ASSETIMPAIRMENT': STK_NOTES_ASSETIMPAIRMENT,
-    'STK_NOTES_BASICCONTENT': STK_NOTES_BASICCONTENT,
-    'STK_NOTES_BILLRANDP': STK_NOTES_BILLRANDP,
-    'STK_NOTES_BILLRANDPSPECIAL': STK_NOTES_BILLRANDPSPECIAL,
-    'STK_NOTES_BONDSPAYABLE': STK_NOTES_BONDSPAYABLE,
-    'STK_NOTES_BUSINESSTAXAPPEND': STK_NOTES_BUSINESSTAXAPPEND,
-    'STK_NOTES_CAPITALRESERVE': STK_NOTES_CAPITALRESERVE,
-    'STK_NOTES_CAPITALSTOCK': STK_NOTES_CAPITALSTOCK,
-    'STK_NOTES_CBD': STK_NOTES_CBD,
-    'STK_NOTES_CBDSD': STK_NOTES_CBDSD,
-    'STK_NOTES_CIP': STK_NOTES_CIP,
-    'STK_NOTES_CIPCHANGE': STK_NOTES_CIPCHANGE,
-    'STK_NOTES_DEFERREDINCOMETAX': STK_NOTES_DEFERREDINCOMETAX,
-    'STK_NOTES_DEVEXPENSE': STK_NOTES_DEVEXPENSE,
-    'STK_NOTES_DIVIDENDPAYABLE': STK_NOTES_DIVIDENDPAYABLE,
-    'STK_NOTES_DR': STK_NOTES_DR,
-    'STK_NOTES_DRSD': STK_NOTES_DRSD,
-    'STK_NOTES_EQUITYINVEST': STK_NOTES_EQUITYINVEST,
-    'STK_NOTES_EQUITYINVESTCOINFO': STK_NOTES_EQUITYINVESTCOINFO,
-    'STK_NOTES_FAIRVALUEB': STK_NOTES_FAIRVALUEB,
-    'STK_NOTES_FINANCECOSTS': STK_NOTES_FINANCECOSTS,
-    'STK_NOTES_FIXEDASSECT': STK_NOTES_FIXEDASSECT,
-    'STK_NOTES_GOODWILL': STK_NOTES_GOODWILL,
-    'STK_NOTES_GOVGRANTS': STK_NOTES_GOVGRANTS,
-    'STK_NOTES_IMPJNTFIN': STK_NOTES_IMPJNTFIN,
-    'STK_NOTES_INTERESTPAYABLE': STK_NOTES_INTERESTPAYABLE,
-    'STK_NOTES_INVASSECT': STK_NOTES_INVASSECT,
-    'STK_NOTES_INVENTORIES': STK_NOTES_INVENTORIES,
-    'STK_NOTES_INVESTMENTINC': STK_NOTES_INVESTMENTINC,
-    'STK_NOTES_INVEXIT': STK_NOTES_INVEXIT,
-    'STK_NOTES_LONGTERMLOAN': STK_NOTES_LONGTERMLOAN,
-    'STK_NOTES_LONGTERMPREPAIDFEE': STK_NOTES_LONGTERMPREPAIDFEE,
-    'STK_NOTES_MACHABALANCE': STK_NOTES_MACHABALANCE,
-    'STK_NOTES_MONETARYFUNDS': STK_NOTES_MONETARYFUNDS,
-    'STK_NOTES_NLDONEYEAR': STK_NOTES_NLDONEYEAR,
-    'STK_NOTES_NOMTAXRATE': STK_NOTES_NOMTAXRATE,
-    'STK_NOTES_NONBUSEXP': STK_NOTES_NONBUSEXP,
-    'STK_NOTES_NONBUSINC': STK_NOTES_NONBUSINC,
-    'STK_NOTES_NONRECURRING': STK_NOTES_NONRECURRING,
-    'STK_NOTES_OAR': STK_NOTES_OAR,
-    'STK_NOTES_OARSD': STK_NOTES_OARSD,
-    'STK_NOTES_OCASSECT': STK_NOTES_OCASSECT,
-    'STK_NOTES_OP': STK_NOTES_OP,
-    'STK_NOTES_OPERATEINCOMECOSTS': STK_NOTES_OPERATEINCOMECOSTS,
-    'STK_NOTES_OPSD': STK_NOTES_OPSD,
-    'STK_NOTES_PAYRECBUS': STK_NOTES_PAYRECBUS,
-    'STK_NOTES_PAYSALARY': STK_NOTES_PAYSALARY,
-    'STK_NOTES_REALESTATE': STK_NOTES_REALESTATE,
-    'STK_NOTES_SELLEXPENSE': STK_NOTES_SELLEXPENSE,
-    'STK_NOTES_SHORTTERMLOAN': STK_NOTES_SHORTTERMLOAN,
-    'STK_NOTES_SUBJOINT': STK_NOTES_SUBJOINT,
-    'STK_NOTES_SURPLUSRESERVE': STK_NOTES_SURPLUSRESERVE,
-    'STK_NOTES_TAXPAYABLE': STK_NOTES_TAXPAYABLE,
-    'STK_NOTES_TOPFIVEBP': STK_NOTES_TOPFIVEBP,
-    'STK_NOTES_TRADFINASSECT': STK_NOTES_TRADFINASSECT,
-    'STK_NOTES_UDP': STK_NOTES_UDP,
-    'STK_ORIGINALHOLDERS': STK_ORIGINALHOLDERS,
-    'STK_PERSONALHOLDERALIAS': STK_PERSONALHOLDERALIAS,
-    'STK_RELATIONSHIP_BACKGROUND': STK_RELATIONSHIP_BACKGROUND,
-    'STK_SHARES_STRUCTURE': STK_SHARES_STRUCTURE,
-    'STK_SHARES_STRUCTURE_DAILY': STK_SHARES_STRUCTURE_DAILY,
+    'bond_cfets_dquote_his_dq': bond_cfets_dquote_his_dq,
+    'bond_cfets_pledgedrepo_hdq': bond_cfets_pledgedrepo_hdq,
+    'bond_quotation': bond_quotation,
+    'bond_quotationderivative': bond_quotationderivative,
+    'bond_quotationlatest': bond_quotationlatest,
+    'bond_quotations': bond_quotations,
+    'fund_mkt_quotation': fund_mkt_quotation,
+    'fund_mkt_quotationlatest': fund_mkt_quotationlatest,
+    'fund_quotation': fund_quotation,
+    'idx_mkt_quotation': idx_mkt_quotation,
+    'idx_weight': idx_weight,
+    'stk_fin_balance': stk_fin_balance,
+    'stk_fin_cashflow': stk_fin_cashflow,
+    'stk_fin_cashflowindex': stk_fin_cashflowindex,
+    'stk_fin_cashflowindrect': stk_fin_cashflowindrect,
+    'stk_fin_cashflowindrectttm': stk_fin_cashflowindrectttm,
+    'stk_fin_cashflowttm': stk_fin_cashflowttm,
+    'stk_fin_construct': stk_fin_construct,
+    'stk_fin_debtpay': stk_fin_debtpay,
+    'stk_fin_development': stk_fin_development,
+    'stk_fin_dividistrib': stk_fin_dividistrib,
+    'stk_fin_earnpower': stk_fin_earnpower,
+    'stk_fin_financialindexq': stk_fin_financialindexq,
+    'stk_fin_forecfin': stk_fin_forecfin,
+    'stk_fin_forecfinnew': stk_fin_forecfinnew,
+    'stk_fin_income': stk_fin_income,
+    'stk_fin_incomettm': stk_fin_incomettm,
+    'stk_fin_ipodiscloseindex': stk_fin_ipodiscloseindex,
+    'stk_fin_lcdiscloseindex': stk_fin_lcdiscloseindex,
+    'stk_fin_operate': stk_fin_operate,
+    'stk_fin_pershare': stk_fin_pershare,
+    'stk_fin_quitrafin': stk_fin_quitrafin,
+    'stk_fin_quitrafinnew': stk_fin_quitrafinnew,
+    'stk_fin_quitrasimfin': stk_fin_quitrasimfin,
+    'stk_fin_relativevalue': stk_fin_relativevalue,
+    'stk_fin_relforcdate': stk_fin_relforcdate,
+    'stk_fin_risk': stk_fin_risk,
+    'stk_fin_simforecfin': stk_fin_simforecfin,
+    'stk_holder_controlchart': stk_holder_controlchart,
+    'stk_holder_controller': stk_holder_controller,
+    'stk_holder_detail': stk_holder_detail,
+    'stk_holder_equitynatureall': stk_holder_equitynatureall,
+    'stk_holder_incrordesr': stk_holder_incrordesr,
+    'stk_holder_number': stk_holder_number,
+    'stk_holder_pledge': stk_holder_pledge,
+    'stk_holder_relation': stk_holder_relation,
+    'stk_holder_systematics': stk_holder_systematics,
+    'stk_holder_top10': stk_holder_top10,
+    'stk_holder_top10floating': stk_holder_top10floating,
+    'stk_indfi_basis': stk_indfi_basis,
+    'stk_indfi_cashflow': stk_indfi_cashflow,
+    'stk_indfi_construct': stk_indfi_construct,
+    'stk_indfi_crn': stk_indfi_crn,
+    'stk_indfi_debtpay': stk_indfi_debtpay,
+    'stk_indfi_development': stk_indfi_development,
+    'stk_indfi_dividistrib': stk_indfi_dividistrib,
+    'stk_indfi_earnpower': stk_indfi_earnpower,
+    'stk_indfi_hhi': stk_indfi_hhi,
+    'stk_indfi_indtrajectory': stk_indfi_indtrajectory,
+    'stk_indfi_lernerindex': stk_indfi_lernerindex,
+    'stk_indfi_lpesv': stk_indfi_lpesv,
+    'stk_indfi_npesv': stk_indfi_npesv,
+    'stk_indfi_operate': stk_indfi_operate,
+    'stk_indfi_pershare': stk_indfi_pershare,
+    'stk_indfi_relativevalue': stk_indfi_relativevalue,
+    'stk_indfi_risk': stk_indfi_risk,
+    'stk_institutionholderalias': stk_institutionholderalias,
+    'stk_lock_shares': stk_lock_shares,
+    'stk_lockshares_summary': stk_lockshares_summary,
+    'stk_mkt_adjustfactor': stk_mkt_adjustfactor,
+    'stk_mkt_blocktrade': stk_mkt_blocktrade,
+    'stk_mkt_quotation': stk_mkt_quotation,
+    'stk_mkt_quotationlatest': stk_mkt_quotationlatest,
+    'stk_mkt_repricefactor': stk_mkt_repricefactor,
+    'stk_notes_accountingpolicy': stk_notes_accountingpolicy,
+    'stk_notes_adminexpense': stk_notes_adminexpense,
+    'stk_notes_afsfinassect': stk_notes_afsfinassect,
+    'stk_notes_ap': stk_notes_ap,
+    'stk_notes_apsd': stk_notes_apsd,
+    'stk_notes_ar': stk_notes_ar,
+    'stk_notes_arsd': stk_notes_arsd,
+    'stk_notes_assetimpairment': stk_notes_assetimpairment,
+    'stk_notes_basiccontent': stk_notes_basiccontent,
+    'stk_notes_billrandp': stk_notes_billrandp,
+    'stk_notes_billrandpspecial': stk_notes_billrandpspecial,
+    'stk_notes_bondspayable': stk_notes_bondspayable,
+    'stk_notes_businesstaxappend': stk_notes_businesstaxappend,
+    'stk_notes_capitalreserve': stk_notes_capitalreserve,
+    'stk_notes_capitalstock': stk_notes_capitalstock,
+    'stk_notes_cbd': stk_notes_cbd,
+    'stk_notes_cbdsd': stk_notes_cbdsd,
+    'stk_notes_cip': stk_notes_cip,
+    'stk_notes_cipchange': stk_notes_cipchange,
+    'stk_notes_deferredincometax': stk_notes_deferredincometax,
+    'stk_notes_devexpense': stk_notes_devexpense,
+    'stk_notes_dividendpayable': stk_notes_dividendpayable,
+    'stk_notes_dr': stk_notes_dr,
+    'stk_notes_drsd': stk_notes_drsd,
+    'stk_notes_equityinvest': stk_notes_equityinvest,
+    'stk_notes_equityinvestcoinfo': stk_notes_equityinvestcoinfo,
+    'stk_notes_fairvalueb': stk_notes_fairvalueb,
+    'stk_notes_financecosts': stk_notes_financecosts,
+    'stk_notes_fixedassect': stk_notes_fixedassect,
+    'stk_notes_goodwill': stk_notes_goodwill,
+    'stk_notes_govgrants': stk_notes_govgrants,
+    'stk_notes_impjntfin': stk_notes_impjntfin,
+    'stk_notes_interestpayable': stk_notes_interestpayable,
+    'stk_notes_invassect': stk_notes_invassect,
+    'stk_notes_inventories': stk_notes_inventories,
+    'stk_notes_investmentinc': stk_notes_investmentinc,
+    'stk_notes_invexit': stk_notes_invexit,
+    'stk_notes_longtermloan': stk_notes_longtermloan,
+    'stk_notes_longtermprepaidfee': stk_notes_longtermprepaidfee,
+    'stk_notes_machabalance': stk_notes_machabalance,
+    'stk_notes_monetaryfunds': stk_notes_monetaryfunds,
+    'stk_notes_nldoneyear': stk_notes_nldoneyear,
+    'stk_notes_nomtaxrate': stk_notes_nomtaxrate,
+    'stk_notes_nonbusexp': stk_notes_nonbusexp,
+    'stk_notes_nonbusinc': stk_notes_nonbusinc,
+    'stk_notes_nonrecurring': stk_notes_nonrecurring,
+    'stk_notes_oar': stk_notes_oar,
+    'stk_notes_oarsd': stk_notes_oarsd,
+    'stk_notes_ocassect': stk_notes_ocassect,
+    'stk_notes_op': stk_notes_op,
+    'stk_notes_operateincomecosts': stk_notes_operateincomecosts,
+    'stk_notes_opsd': stk_notes_opsd,
+    'stk_notes_payrecbus': stk_notes_payrecbus,
+    'stk_notes_paysalary': stk_notes_paysalary,
+    'stk_notes_realestate': stk_notes_realestate,
+    'stk_notes_sellexpense': stk_notes_sellexpense,
+    'stk_notes_shorttermloan': stk_notes_shorttermloan,
+    'stk_notes_subjoint': stk_notes_subjoint,
+    'stk_notes_surplusreserve': stk_notes_surplusreserve,
+    'stk_notes_taxpayable': stk_notes_taxpayable,
+    'stk_notes_topfivebp': stk_notes_topfivebp,
+    'stk_notes_tradfinassect': stk_notes_tradfinassect,
+    'stk_notes_udp': stk_notes_udp,
+    'stk_originalholders': stk_originalholders,
+    'stk_personalholderalias': stk_personalholderalias,
+    'stk_relationship_background': stk_relationship_background,
+    'stk_shares_structure': stk_shares_structure,
+    'stk_shares_structure_daily': stk_shares_structure_daily,
 }
