@@ -304,9 +304,62 @@ def history_transaction(
         >>> print(data)
         
     """
-
-
-
-
-
-
+@assert_auth
+@export_as_api
+def get_factor_exposure(
+    order_book_ids: List[str],
+    bar_count: int,
+    dt: datetime.datetime,
+    fields: List[str]=None,
+    frequency: str='1d',
+) -> pd.DataFrame:
+    """获取指定合约的历史因子数据，支持任意日频率xd(1d,5d)和分钟频率xm(1m,3m,5m,15m)的历史因子数据（当前只支持1d）。
+    
+    :param order_book_id: 合约代码
+    :param bar_count: 获取的历史数据数量，必填项
+    :param dt: 获取数据的截止日期时间，e.g. “2020-09-18”
+    :param fields: 返回数据字段。必填项。见因子数据数据字典。
+    :param frequency: 获取数据什么样的频率进行。'1d'或'1m'分别表示每日和每分钟，默认为1d
+    
+    Example1::
+    
+    获取中国平安和万科A(order_book_ids), 2020-09-18(dt)之前10(bar_count)天的return_mean_5和returns_skew_20(fields)因子数据
+    
+    ..  code-block:: python3
+        
+        import pandas as pd
+        from simonsc.api import get_factor_exposure
+    
+        # 
+        >>> dt = pd.Timestamp("2020-09-18")
+        >>> fields=["datetime","return_mean_5","returns_skew_20"]
+        >>> order_book_id_list = ["000001.XSHE","000002.XSHE"]
+        >>> factor_exposure = get_factor_exposure(order_book_ids=order_book_id_list, dt=dt, bar_count=10, fields=fields, frequency="1d")
+        >>> print(factor_exposure)
+                                          return_mean_5  returns_skew_20
+            order_book_id datetime                                  
+            000001.XSHE   2020-09-07      -0.001771         0.585366
+                          2020-09-08       0.003992         0.499581
+                          2020-09-09      -0.001237         0.683064
+                          2020-09-10       0.005955         0.571358
+                          2020-09-11       0.000848         0.744097
+                          2020-09-14       0.004979         0.487314
+                          2020-09-15      -0.000927         0.436575
+                          2020-09-16       0.003097         0.357694
+                          2020-09-17       0.003072         0.572409
+                          2020-09-18       0.013797         0.365532
+            000002.XSHE   2020-09-07       0.008380        -0.107046
+                          2020-09-08       0.007832        -0.028114
+                          2020-09-09       0.003366        -0.196695
+                          2020-09-10       0.004690        -0.285299
+                          2020-09-11      -0.000413         0.327043
+                          2020-09-14      -0.005120         0.512526
+                          2020-09-15      -0.002978         0.489892
+                          2020-09-16       0.001579         0.271366
+                          2020-09-17      -0.002774         0.348217
+                          2020-09-18       0.009297         1.139321
+                          
+    """
+    dt = convert_datetime_to_str(dt)
+   
+    return SimonsClient.instance().get_factor_exposure(**locals())  

@@ -57,6 +57,7 @@ simons的设计哲学主要关注在统一性
     api/trading_data_api
     api/instrument_api
     api/financial_data_api
+    api/quantitative_factor_api
 
 .. toctree::
    :caption: 数据字典
