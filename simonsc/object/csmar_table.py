@@ -1,7 +1,7 @@
 from sqlalchemy import Column, String, DECIMAL, DateTime, BIGINT, SMALLINT, INTEGER, LargeBinary
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.dialects.mysql import LONGTEXT
-csmar_tables = ['bond_agency', 'bond_basiccredit', 'bond_basicinfo', 'bond_bondtype', 'bond_bs', 'bond_cfdm', 'bond_cfets_dquote_his_dq', 'bond_cfets_pledgedrepo_hdq', 'bond_cfetsclosingyield', 'bond_cfetsvaluationindex', 'bond_cfim', 'bond_conversion', 'bond_conversionrate', 'bond_convertinfo', 'bond_convertissue', 'bond_convertprice', 'bond_crmwinfo', 'bond_currencyswapcurve', 'bond_discloseindex', 'bond_fixreporate', 'bond_guarantorinfo', 'bond_guarantorrating', 'bond_inbankod', 'bond_info', 'bond_interestfloat', 'bond_is', 'bond_issuecost', 'bond_issuer', 'bond_issueregiinfo', 'bond_lastquotationmonth', 'bond_lastquotationweek', 'bond_lastquotationyear', 'bond_mkttrade', 'bond_nafmiipricntrlcrv', 'bond_otc_quotationhis', 'bond_otc_quotationoptimal', 'bond_payment', 'bond_quotation', 'bond_quotationderivative', 'bond_quotationlatest', 'bond_quotationmonth', 'bond_quotations', 'bond_quotationweek', 'bond_quotationyear', 'bond_ratetype', 'bond_rating', 'bond_redemption', 'bond_repayterm', 'bond_repototal', 'bond_repovariety', 'bond_shcvaluation', 'bond_shcyield', 'bond_stagesredemption', 'bond_suspentioninfo', 'bond_tenderissue', 'bond_tenderresult', 'bond_treasyield', 'fund_allocation', 'fund_areaclass', 'fund_bwardfactor', 'fund_classinfochange', 'fund_custodian', 'fund_daynav', 'fund_etfconstitsec', 'fund_etfpchasredemlis', 'fund_evl_dayahay', 'fund_evl_dayamth', 'fund_evl_dayasen', 'fund_evl_dayayear', 'fund_evl_daythryear', 'fund_evl_weekahay', 'fund_evl_weekayear', 'fund_evl_weekthryear', 'fund_feeschange', 'fund_fundcodeinfo', 'fund_fundcompany', 'fund_funddividend', 'fund_fundmanager', 'fund_fwardfactor', 'fund_holderstructure', 'fund_indexreturn', 'fund_industrystockclass', 'fund_jajxrate', 'fund_listing', 'fund_mainpersonnel', 'fund_mkt_bwardquotation', 'fund_mkt_fwardquotation', 'fund_mkt_lastbwardquotem', 'fund_mkt_lastbwardquotew', 'fund_mkt_lastbwardquotey', 'fund_mkt_lastfwardquotem', 'fund_mkt_lastfwardquotew', 'fund_mkt_lastfwardquotey', 'fund_mkt_lastquotationmonth', 'fund_mkt_lastquotationweek', 'fund_mkt_lastquotationyear', 'fund_mkt_quotation', 'fund_mkt_quotationlatest', 'fund_mkt_quotationmonth', 'fund_mkt_quotationweek', 'fund_mkt_quotationyear', 'fund_mktdayreturn', 'fund_mktmonthreturn', 'fund_mktpf_pfm', 'fund_mktpf_pfm_week', 'fund_mktweekreturn', 'fund_mktyearreturn', 'fund_nav', 'fund_nav_month', 'fund_nav_pfm', 'fund_nav_pfm_month', 'fund_nav_pfm_week', 'fund_nav_pfm_year', 'fund_nav_week', 'fund_nav_year', 'fund_performance_compare', 'fund_performance_deviation', 'fund_portfolio_abs', 'fund_portfolio_bondcredit', 'fund_portfolio_bondvariety', 'fund_portfolio_currency', 'fund_portfolio_stock', 'fund_promoter', 'fund_prospectuses', 'fund_ptf_bondspe', 'fund_ptf_bsstock', 'fund_ptf_bsstocktotal', 'fund_ptf_der', 'fund_ptf_fund', 'fund_purchredchg', 'fund_quotation', 'fund_reportdate', 'fund_resolution', 'fund_sharechange', 'fund_shareholdercompany', 'fund_shsecrate', 'fund_stracontract', 'fund_stractshare', 'fund_strader', 'fund_strainfo', 'fund_stranav', 'fund_straquotation', 'fund_strbder', 'fund_strbinfo', 'fund_strbnav', 'fund_strbquotation', 'fund_strinfo', 'fund_strmder', 'fund_strmnav', 'fund_strmquotation', 'fund_strtrackamonth', 'fund_strtrackaweek', 'fund_strtrackbmonth', 'fund_strtrackbweek', 'fund_tenholders', 'fund_unitclassinfo', 'idx_closeweight', 'idx_closeweightfree', 'idx_mkt_quotation', 'idx_weight', 'mac_area_ampimonth', 'mac_area_ampiyear', 'mac_area_cpimonth', 'mac_area_cpiyear', 'mac_area_fixedassetsidx', 'mac_area_fixedassetsidxyear', 'mac_area_gdpquarter', 'mac_area_gdpyear', 'mac_area_ppimonth', 'mac_area_ppiyear', 'mac_area_purchaseidxmonth', 'mac_area_purchaseidxyear', 'mac_area_rpimonth', 'mac_area_rpiyear', 'mac_areagdp_expendyear', 'mac_areagdp_idx1978year', 'mac_areagdp_idxyear', 'mac_areagdp_incomeyear', 'mac_bondyieldsd', 'mac_fixedbaseidx', 'mac_industry_ppimonth', 'mac_industry_ppiyear', 'mac_statsinfo_calendar', 'pled_agrrepamt', 'pled_agrrepdetl', 'pled_amtstat', 'pled_ltvratio', 'pled_repbysecco', 'pled_sectrdvol', 'pled_stkfrzdetl', 'pled_stkratio', 'pled_stktrdvol', 'pled_trddetl', 'smt_collateral', 'smt_collaterald', 'smt_traded', 'smt_tradesumd', 'smt_underlyingsd', 'stk_dividend', 'stk_eq_rs_info', 'stk_eq_rs_plan', 'stk_eq_rs_result', 'stk_eq_seo_plan', 'stk_eq_seo_private', 'stk_eq_seo_publicinfo', 'stk_eq_seo_publicresult', 'stk_fin_balance', 'stk_fin_cashflow', 'stk_fin_cashflowindex', 'stk_fin_cashflowindrect', 'stk_fin_cashflowindrectttm', 'stk_fin_cashflowttm', 'stk_fin_construct', 'stk_fin_debtpay', 'stk_fin_development', 'stk_fin_dividistrib', 'stk_fin_earnpower', 'stk_fin_financialindexq', 'stk_fin_forecfin', 'stk_fin_forecfinnew', 'stk_fin_income', 'stk_fin_incomettm', 'stk_fin_ipodiscloseindex', 'stk_fin_lcdiscloseindex', 'stk_fin_operate', 'stk_fin_pershare', 'stk_fin_quitrafin', 'stk_fin_quitrafinnew', 'stk_fin_quitrasimfin', 'stk_fin_relativevalue', 'stk_fin_relforcdate', 'stk_fin_risk', 'stk_fin_simforecfin', 'stk_guarantee_main', 'stk_guarantee_son', 'stk_guarantee_statistics', 'stk_holder_controlchart', 'stk_holder_controller', 'stk_holder_detail', 'stk_holder_equitynatureall', 'stk_holder_incrordesr', 'stk_holder_number', 'stk_holder_pledge', 'stk_holder_relation', 'stk_holder_systematics', 'stk_holder_top10', 'stk_holder_top10floating', 'stk_indfi_basis', 'stk_indfi_cashflow', 'stk_indfi_construct', 'stk_indfi_crn', 'stk_indfi_debtpay', 'stk_indfi_development', 'stk_indfi_dividistrib', 'stk_indfi_earnpower', 'stk_indfi_hhi', 'stk_indfi_indtrajectory', 'stk_indfi_lernerindex', 'stk_indfi_lpesv', 'stk_indfi_npesv', 'stk_indfi_operate', 'stk_indfi_pershare', 'stk_indfi_relativevalue', 'stk_indfi_risk', 'stk_institutionholderalias', 'stk_lock_shares', 'stk_lockshares_summary', 'stk_ma_assetreplace', 'stk_ma_assetstopay', 'stk_ma_assettrans', 'stk_ma_cashpayment', 'stk_ma_cdr', 'stk_ma_equitytransfer', 'stk_ma_merger', 'stk_ma_otherparty', 'stk_ma_participant', 'stk_ma_stockpayment', 'stk_ma_tenderoffer', 'stk_ma_tradingmain', 'stk_ma_tradingschedule', 'stk_ma_underlying', 'stk_mkt_adjustfactor', 'stk_mkt_blocktrade', 'stk_mkt_divident', 'stk_mkt_dividentnew', 'stk_mkt_quotation', 'stk_mkt_quotationlatest', 'stk_mkt_repricefactor', 'stk_notes_accountingpolicy', 'stk_notes_adminexpense', 'stk_notes_afsfinassect', 'stk_notes_ap', 'stk_notes_apsd', 'stk_notes_ar', 'stk_notes_arsd', 'stk_notes_assetimpairment', 'stk_notes_basiccontent', 'stk_notes_billrandp', 'stk_notes_billrandpspecial', 'stk_notes_bondspayable', 'stk_notes_businesstaxappend', 'stk_notes_capitalreserve', 'stk_notes_capitalstock', 'stk_notes_cbd', 'stk_notes_cbdsd', 'stk_notes_cip', 'stk_notes_cipchange', 'stk_notes_deferredincometax', 'stk_notes_devexpense', 'stk_notes_dividendpayable', 'stk_notes_dr', 'stk_notes_drsd', 'stk_notes_equityinvest', 'stk_notes_equityinvestcoinfo', 'stk_notes_fairvalueb', 'stk_notes_financecosts', 'stk_notes_fixedassect', 'stk_notes_goodwill', 'stk_notes_govgrants', 'stk_notes_impjntfin', 'stk_notes_interestpayable', 'stk_notes_invassect', 'stk_notes_inventories', 'stk_notes_investmentinc', 'stk_notes_invexit', 'stk_notes_longtermloan', 'stk_notes_longtermprepaidfee', 'stk_notes_machabalance', 'stk_notes_monetaryfunds', 'stk_notes_nldoneyear', 'stk_notes_nomtaxrate', 'stk_notes_nonbusexp', 'stk_notes_nonbusinc', 'stk_notes_nonrecurring', 'stk_notes_oar', 'stk_notes_oarsd', 'stk_notes_ocassect', 'stk_notes_op', 'stk_notes_operateincomecosts', 'stk_notes_opsd', 'stk_notes_payrecbus', 'stk_notes_paysalary', 'stk_notes_realestate', 'stk_notes_sellexpense', 'stk_notes_shorttermloan', 'stk_notes_subjoint', 'stk_notes_surplusreserve', 'stk_notes_taxpayable', 'stk_notes_topfivebp', 'stk_notes_tradfinassect', 'stk_notes_udp', 'stk_originalholders', 'stk_personalholderalias', 'stk_relationship_background', 'stk_rpt_ralatedparty', 'stk_rpt_transactions', 'stk_rpt_transfer', 'stk_shares_structure', 'stk_shares_structure_daily', 'stk_sr_difference', 'stk_sr_equitychange', 'stk_sr_implement', 'stk_sr_indexm', 'stk_sr_repumain', 'stk_sr_schedule', 'tbl_chn_bond_infochg']
+csmar_tables = ['bond_agency', 'bond_basiccredit', 'bond_basicinfo', 'bond_bondtype', 'bond_bs', 'bond_calpretrdinfo', 'bond_cfdm', 'bond_cfets_dquote_his_dq', 'bond_cfets_pledgedrepo_hdq', 'bond_cfetsclosingyield', 'bond_cfetsvaluationindex', 'bond_cfim', 'bond_conversion', 'bond_conversionrate', 'bond_convertinfo', 'bond_convertissue', 'bond_convertprice', 'bond_crmwinfo', 'bond_currencyswapcurve', 'bond_discloseindex', 'bond_fixreporate', 'bond_guarantorinfo', 'bond_guarantorrating', 'bond_inbankod', 'bond_info', 'bond_interestfloat', 'bond_is', 'bond_issuecost', 'bond_issuer', 'bond_issueregiinfo', 'bond_lastquotationmonth', 'bond_lastquotationweek', 'bond_lastquotationyear', 'bond_mkttrade', 'bond_nafmiipricntrlcrv', 'bond_otc_quotationhis', 'bond_otc_quotationoptimal', 'bond_payment', 'bond_pretrdinfo', 'bond_pretrdinfohistory', 'bond_quotation', 'bond_quotationderivative', 'bond_quotationlatest', 'bond_quotationmonth', 'bond_quotations', 'bond_quotationweek', 'bond_quotationyear', 'bond_ratetype', 'bond_rating', 'bond_redemption', 'bond_repayterm', 'bond_repototal', 'bond_repovariety', 'bond_shcvaluation', 'bond_shcyield', 'bond_stagesredemption', 'bond_suspentioninfo', 'bond_tenderissue', 'bond_tenderresult', 'bond_treasyield', 'cmo_pretrdinfo', 'cmo_pretrdinfohistory', 'cost_riskfree', 'ffut_calpretrdinfo', 'ffut_pretrdinfo', 'ffut_pretrdinfohistory', 'fund_allocation', 'fund_areaclass', 'fund_bwardfactor', 'fund_calpretrdinfo', 'fund_classinfochange', 'fund_custodian', 'fund_daynav', 'fund_etfconstitsec', 'fund_etfpchasredemlis', 'fund_evl_dayahay', 'fund_evl_dayamth', 'fund_evl_dayasen', 'fund_evl_dayayear', 'fund_evl_daythryear', 'fund_evl_weekahay', 'fund_evl_weekayear', 'fund_evl_weekthryear', 'fund_feeschange', 'fund_fundcodeinfo', 'fund_fundcompany', 'fund_funddividend', 'fund_fundmanager', 'fund_fwardfactor', 'fund_holderstructure', 'fund_indexreturn', 'fund_industrystockclass', 'fund_jajxrate', 'fund_listing', 'fund_mainpersonnel', 'fund_mkt_bwardquotation', 'fund_mkt_fwardquotation', 'fund_mkt_lastbwardquotem', 'fund_mkt_lastbwardquotew', 'fund_mkt_lastbwardquotey', 'fund_mkt_lastfwardquotem', 'fund_mkt_lastfwardquotew', 'fund_mkt_lastfwardquotey', 'fund_mkt_lastquotationmonth', 'fund_mkt_lastquotationweek', 'fund_mkt_lastquotationyear', 'fund_mkt_quotation', 'fund_mkt_quotationlatest', 'fund_mkt_quotationmonth', 'fund_mkt_quotationweek', 'fund_mkt_quotationyear', 'fund_mktdayreturn', 'fund_mktmonthreturn', 'fund_mktpf_pfm', 'fund_mktpf_pfm_week', 'fund_mktweekreturn', 'fund_mktyearreturn', 'fund_nav', 'fund_nav_month', 'fund_nav_pfm', 'fund_nav_pfm_month', 'fund_nav_pfm_week', 'fund_nav_pfm_year', 'fund_nav_week', 'fund_nav_year', 'fund_performance_compare', 'fund_performance_deviation', 'fund_portfolio_abs', 'fund_portfolio_bondcredit', 'fund_portfolio_bondvariety', 'fund_portfolio_currency', 'fund_portfolio_stock', 'fund_pretrdinfo', 'fund_pretrdinfohistory', 'fund_promoter', 'fund_prospectuses', 'fund_ptf_bondspe', 'fund_ptf_bsstock', 'fund_ptf_bsstocktotal', 'fund_ptf_der', 'fund_ptf_fund', 'fund_purchredchg', 'fund_quotation', 'fund_reportdate', 'fund_resolution', 'fund_sharechange', 'fund_shareholdercompany', 'fund_shsecrate', 'fund_stracontract', 'fund_stractshare', 'fund_strader', 'fund_strainfo', 'fund_stranav', 'fund_straquotation', 'fund_strbder', 'fund_strbinfo', 'fund_strbnav', 'fund_strbquotation', 'fund_strinfo', 'fund_strmder', 'fund_strmnav', 'fund_strmquotation', 'fund_strtrackamonth', 'fund_strtrackaweek', 'fund_strtrackbmonth', 'fund_strtrackbweek', 'fund_tenholders', 'fund_unitclassinfo', 'fut_calpretrdinfo', 'fut_pretrdinfo', 'fut_pretrdinfohistory', 'idx_closeweight', 'idx_closeweightfree', 'idx_indexinfo', 'idx_mkt_lastquotationweek', 'idx_mkt_quotation', 'idx_samplechange', 'idx_samplelatest', 'idx_weight', 'idx_weightnextday', 'io_calpretrdinfo', 'io_pretrdinfo', 'io_pretrdinfohistory', 'mac_area_ampimonth', 'mac_area_ampiyear', 'mac_area_cpimonth', 'mac_area_cpiyear', 'mac_area_fixedassetsidx', 'mac_area_fixedassetsidxyear', 'mac_area_gdpquarter', 'mac_area_gdpyear', 'mac_area_industrysalevalue', 'mac_area_industryvalueadd', 'mac_area_ppimonth', 'mac_area_ppiyear', 'mac_area_productoutputmonth', 'mac_area_productoutputyear', 'mac_area_purchaseidxmonth', 'mac_area_purchaseidxyear', 'mac_area_rpimonth', 'mac_area_rpiyear', 'mac_areagdp_expendyear', 'mac_areagdp_idx1978year', 'mac_areagdp_idxyear', 'mac_areagdp_incomeyear', 'mac_bondyieldsd', 'mac_fixedbaseidx', 'mac_industry_financialyear', 'mac_industry_ppimonth', 'mac_industry_ppiyear', 'mac_industry_saleinventory', 'mac_industry_valueadd', 'mac_industryvalueadd', 'mac_statsinfo_calendar', 'plate_bondchange', 'plate_bondchangelatest', 'plate_bondsamplechange', 'plate_concept', 'plate_fundchange', 'plate_fundchangelatest', 'plate_fundsamplechange', 'plate_futurechange', 'plate_futurechangelatest', 'plate_futuresamplechange', 'plate_indexchange', 'plate_indexchangelatest', 'plate_indexsamplechange', 'plate_platetree', 'plate_platetree_state2', 'plate_sochange', 'plate_sochangelatest', 'plate_sosamplechange', 'plate_stockchange', 'plate_stockchangelatest', 'plate_stocksamplechange', 'pled_agrrepamt', 'pled_agrrepdetl', 'pled_amtstat', 'pled_ltvratio', 'pled_repbysecco', 'pled_sectrdvol', 'pled_stkfrzdetl', 'pled_stkratio', 'pled_stktrdvol', 'pled_trddetl', 'pub_chnadmdivisioncode', 'pub_codingschema', 'pub_continuingcontract', 'pub_eventtype', 'pub_exchangeinfo', 'pub_indclassifysets', 'pub_indclassifyversion', 'pub_institutionidchange', 'pub_institutioninfo', 'pub_isocontrycode', 'pub_isocurrencycode', 'pub_mainconcontract', 'pub_maincontract', 'pub_personnelinfo', 'pub_pretradinginfo', 'pub_securityconstant', 'pub_securityinfo', 'sh_securityinfo', 'smt_collateral', 'smt_collaterald', 'smt_traded', 'smt_tradesumd', 'smt_underlyingsd', 'so_calpretrdinfo', 'so_pretrdinfo', 'so_pretrdinfohistory', 'stk_af_analystrank', 'stk_af_forecast', 'stk_af_ratingchange', 'stk_af_ratingstatistic', 'stk_af_targetvalue', 'stk_calendard', 'stk_dividend', 'stk_eq_ipo_coinfo', 'stk_eq_ipo_employeeinfo', 'stk_eq_ipo_info', 'stk_eq_ipo_ipocg', 'stk_eq_ipo_marketexhibit', 'stk_eq_ipo_overallot', 'stk_eq_ipo_result', 'stk_eq_rs_info', 'stk_eq_rs_plan', 'stk_eq_rs_result', 'stk_eq_seo_plan', 'stk_eq_seo_private', 'stk_eq_seo_publicinfo', 'stk_eq_seo_publicresult', 'stk_eventlist', 'stk_fin_balance', 'stk_fin_cashflow', 'stk_fin_cashflowindex', 'stk_fin_cashflowindrect', 'stk_fin_cashflowindrectttm', 'stk_fin_cashflowttm', 'stk_fin_construct', 'stk_fin_debtpay', 'stk_fin_development', 'stk_fin_dividistrib', 'stk_fin_earnpower', 'stk_fin_financialindexq', 'stk_fin_forecfin', 'stk_fin_forecfinnew', 'stk_fin_income', 'stk_fin_incomettm', 'stk_fin_ipodiscloseindex', 'stk_fin_lcdiscloseindex', 'stk_fin_operate', 'stk_fin_pershare', 'stk_fin_quitrafin', 'stk_fin_quitrafinnew', 'stk_fin_quitrasimfin', 'stk_fin_relativevalue', 'stk_fin_relforcdate', 'stk_fin_risk', 'stk_fin_simforecfin', 'stk_forecast', 'stk_guarantee_main', 'stk_guarantee_son', 'stk_guarantee_statistics', 'stk_holder_controlchart', 'stk_holder_controller', 'stk_holder_detail', 'stk_holder_equitynatureall', 'stk_holder_incrordesr', 'stk_holder_number', 'stk_holder_pledge', 'stk_holder_relation', 'stk_holder_systematics', 'stk_holder_top10', 'stk_holder_top10floating', 'stk_indfi_basis', 'stk_indfi_cashflow', 'stk_indfi_construct', 'stk_indfi_crn', 'stk_indfi_debtpay', 'stk_indfi_development', 'stk_indfi_dividistrib', 'stk_indfi_earnpower', 'stk_indfi_hhi', 'stk_indfi_indtrajectory', 'stk_indfi_lernerindex', 'stk_indfi_lpesv', 'stk_indfi_npesv', 'stk_indfi_operate', 'stk_indfi_pershare', 'stk_indfi_relativevalue', 'stk_indfi_risk', 'stk_industryclass', 'stk_institutionholderalias', 'stk_institutioninfo', 'stk_itemchange', 'stk_listedcoinfochg', 'stk_lock_shares', 'stk_lockshares_summary', 'stk_ma_assetreplace', 'stk_ma_assetstopay', 'stk_ma_assettrans', 'stk_ma_cashpayment', 'stk_ma_cdr', 'stk_ma_equitytransfer', 'stk_ma_merger', 'stk_ma_otherparty', 'stk_ma_participant', 'stk_ma_stockpayment', 'stk_ma_tenderoffer', 'stk_ma_tradingmain', 'stk_ma_tradingschedule', 'stk_ma_underlying', 'stk_mkt_adjustfactor', 'stk_mkt_blocktrade', 'stk_mkt_capitalflow', 'stk_mkt_capitalflows', 'stk_mkt_divident', 'stk_mkt_dividentnew', 'stk_mkt_exchangerate', 'stk_mkt_nightcale', 'stk_mkt_quotation', 'stk_mkt_quotationlatest', 'stk_mkt_repricefactor', 'stk_notes_accountingpolicy', 'stk_notes_adminexpense', 'stk_notes_afsfinassect', 'stk_notes_ap', 'stk_notes_apsd', 'stk_notes_ar', 'stk_notes_arsd', 'stk_notes_assetimpairment', 'stk_notes_basiccontent', 'stk_notes_billrandp', 'stk_notes_billrandpspecial', 'stk_notes_bondspayable', 'stk_notes_businesstaxappend', 'stk_notes_capitalreserve', 'stk_notes_capitalstock', 'stk_notes_cbd', 'stk_notes_cbdsd', 'stk_notes_cip', 'stk_notes_cipchange', 'stk_notes_deferredincometax', 'stk_notes_devexpense', 'stk_notes_dividendpayable', 'stk_notes_dr', 'stk_notes_drsd', 'stk_notes_equityinvest', 'stk_notes_equityinvestcoinfo', 'stk_notes_fairvalueb', 'stk_notes_financecosts', 'stk_notes_fixedassect', 'stk_notes_goodwill', 'stk_notes_govgrants', 'stk_notes_impjntfin', 'stk_notes_interestpayable', 'stk_notes_invassect', 'stk_notes_inventories', 'stk_notes_investmentinc', 'stk_notes_invexit', 'stk_notes_longtermloan', 'stk_notes_longtermprepaidfee', 'stk_notes_machabalance', 'stk_notes_monetaryfunds', 'stk_notes_nldoneyear', 'stk_notes_nomtaxrate', 'stk_notes_nonbusexp', 'stk_notes_nonbusinc', 'stk_notes_nonrecurring', 'stk_notes_oar', 'stk_notes_oarsd', 'stk_notes_ocassect', 'stk_notes_op', 'stk_notes_operateincomecosts', 'stk_notes_opsd', 'stk_notes_payrecbus', 'stk_notes_paysalary', 'stk_notes_realestate', 'stk_notes_sellexpense', 'stk_notes_shorttermloan', 'stk_notes_subjoint', 'stk_notes_surplusreserve', 'stk_notes_taxpayable', 'stk_notes_topfivebp', 'stk_notes_tradfinassect', 'stk_notes_udp', 'stk_originalholders', 'stk_personalholderalias', 'stk_pretrdinfo', 'stk_pretrdinfohistory', 'stk_relationship_background', 'stk_rpt_ralatedparty', 'stk_rpt_transactions', 'stk_rpt_transfer', 'stk_shares_structure', 'stk_shares_structure_daily', 'stk_sr_difference', 'stk_sr_equitychange', 'stk_sr_implement', 'stk_sr_indexm', 'stk_sr_repumain', 'stk_sr_schedule', 'stk_stockinfo', 'stk_suspentioninfo', 'stk_view_stockinfo', 'stk_view_stockinfohistory', 'sz_securityinfo', 'sz_securityinfohistory', 'tbl_chn_bond_infochg', 'zz_bondcloseweight', 'zz_bondtermstructure', 'zz_bondvaluation', 'zz_divisoradjustment']
 Base = declarative_base()
 metadata = Base.metadata
 
@@ -21,10 +21,6 @@ class bond_agency(Base):
     COMMENTS = Column(String(2000), doc="备注")
     ID_0067 = Column(BIGINT, doc="巨潮记录ID")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_basiccredit(Base):
@@ -41,10 +37,6 @@ class bond_basiccredit(Base):
     USEDCREDITAMOUNT = Column(DECIMAL(20, 2), doc="已使用授信额度")
     UNUSEDCREDITAMOUNT = Column(DECIMAL(20, 2), doc="未使用授信额度")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CURRENCY = Column(String(200), doc="币种")
 
 
@@ -113,10 +105,6 @@ class bond_basicinfo(Base):
     COMMENTS = Column(String(2000), doc="备注")
     ID_0063 = Column(BIGINT, doc="巨潮记录ID")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     OPTIONTYPE = Column(String(20), doc="行权类型")
     CALLORPUT = Column(String(10), doc="看涨看跌")
     RATEOPTIONSTARTCYCLE = Column(DECIMAL(10, 2), doc="票面利率选择权开始周期")
@@ -143,10 +131,6 @@ class bond_bondtype(Base):
     AMOUNTCHANGE = Column(DECIMAL(12, 4), doc="成交额增减")
     AMOUNTRATIO = Column(DECIMAL(8, 4), doc="占总成交比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_bs(Base):
@@ -279,10 +263,31 @@ class bond_bs(Base):
     A003 = Column(DECIMAL(20, 2), doc="所有者权益合计")
     A004 = Column(DECIMAL(20, 2), doc="负债与所有者权益总计")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class bond_calpretrdinfo(Base):
+
+    __tablename__ = 'bond_calpretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), primary_key=True, doc="交易代码")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    ISSUEPRICE = Column(DECIMAL(12, 4), doc="发行价格")
+    PARVALUERATE = Column(DECIMAL(7, 3), doc="票面利率")
+    INTERESTSTARTDATE = Column(DateTime, doc="计息日期")
+    LATESTCLOSEPRICE = Column(DECIMAL(10, 3), doc="前收盘价")
+    INTERESTDAYS = Column(INTEGER, doc="计息天数")
+    ACCRUEDINTEREST = Column(DECIMAL(16, 6), doc="应计利息")
+    MINTICKSIZE = Column(DECIMAL(10, 3), doc="价格档位")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    ISDIVIDEND = Column(SMALLINT, doc="是否付息日")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    UPDATEID = Column(BIGINT, doc="数据ID")
 
 
 class bond_cfdm(Base):
@@ -361,10 +366,6 @@ class bond_cfdm(Base):
     C008 = Column(DECIMAL(20, 2), doc="期初现金及现金等价物余额")
     C006 = Column(DECIMAL(20, 2), doc="期末现金及现金等价物余额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_cfets_dquote_his_dq(Base):
@@ -399,10 +400,6 @@ class bond_cfets_dquote_his_dq(Base):
     OPTIONTYPE = Column(String(80), doc="选择权类别")
     OPTIONDATE = Column(DateTime, doc="选择权日期")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_cfets_pledgedrepo_hdq(Base):
@@ -435,10 +432,6 @@ class bond_cfets_pledgedrepo_hdq(Base):
     PRINCIPAL = Column(DECIMAL(20, 4), doc="本金额")
     SETTLEMENTDAY = Column(DECIMAL(10, 4), doc="结算天数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_cfetsclosingyield(Base):
@@ -453,10 +446,6 @@ class bond_cfetsclosingyield(Base):
     TERM = Column(DECIMAL(10, 4), doc="期限")
     YIELD = Column(DECIMAL(10, 4), doc="收益率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_cfetsvaluationindex(Base):
@@ -483,10 +472,6 @@ class bond_cfetsvaluationindex(Base):
     VALURATEDURATION = Column(DECIMAL(10, 2), doc="估值利率久期")
     VALURATECONVEXITY = Column(DECIMAL(10, 2), doc="估值利率凸性")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_cfim(Base):
@@ -525,10 +510,6 @@ class bond_cfim(Base):
     D000207 = Column(DECIMAL(20, 2), doc="现金等价物的期初余额")
     D0002 = Column(DECIMAL(20, 2), doc="现金及现金等价物净增加额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_conversion(Base):
@@ -554,10 +535,6 @@ class bond_conversion(Base):
     REMAINAMOUNT = Column(DECIMAL(20, 2), doc="可转债剩余金额")
     TOTNUMSHARES = Column(DECIMAL(20, 0), doc="转股后总股本")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_conversionrate(Base):
@@ -574,10 +551,6 @@ class bond_conversionrate(Base):
     APPLYENDDATE = Column(DateTime, doc="结束适用日")
     DECLAREDATE = Column(DateTime, doc="比例公布日")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_convertinfo(Base):
@@ -646,10 +619,6 @@ class bond_convertinfo(Base):
     COMPENSATEINTERESTTERMS = Column(LONGTEXT, doc="补偿利息条款")
     PUTENDDATE = Column(DateTime, doc="回售截止日期")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     ISADJDEPOINTERATE = Column(String(20), doc="是否随存款利率调整")
     RELATIVETRANS = Column(DECIMAL(10, 2), doc="相对转股期")
     ADJUSTMENTSTARTDATE = Column(DateTime, doc="修正起始时间")
@@ -719,10 +688,6 @@ class bond_convertissue(Base):
     OFFLINESUCCESSRATIO = Column(DECIMAL(18, 8), doc="网下中签率")
     UNDERWRITINGBALANCE = Column(DECIMAL(20, 2), doc="包销余额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_convertprice(Base):
@@ -741,10 +706,6 @@ class bond_convertprice(Base):
     ADJUSTREASON = Column(String(400), doc="变动原因")
     COMMENTS = Column(String(4000), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_crmwinfo(Base):
@@ -775,10 +736,6 @@ class bond_crmwinfo(Base):
     CREDITPROTECTENDDATE = Column(DateTime, doc="信用保护到期日")
     PAYTYPE = Column(String(100), doc="付费方式")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CURRENCY = Column(String(200), doc="币种")
 
 
@@ -794,10 +751,6 @@ class bond_currencyswapcurve(Base):
     PRICETYPE = Column(String(40), doc="价格类型")
     PRICE = Column(DECIMAL(10, 2), doc="价格")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_discloseindex(Base):
@@ -829,10 +782,6 @@ class bond_discloseindex(Base):
     ASSETTURNOVER = Column(DECIMAL(20, 4), doc="总资产周转率")
     NETCASHFLOWPERSHARE = Column(DECIMAL(20, 2), doc="每股净现金流量")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_fixreporate(Base):
@@ -846,10 +795,6 @@ class bond_fixreporate(Base):
     TERM = Column(String(20), doc="期限")
     REPOFIXRATE = Column(DECIMAL(10, 4), doc="回购定盘利率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_guarantorinfo(Base):
@@ -872,10 +817,6 @@ class bond_guarantorinfo(Base):
     GUARANTEETERM = Column(String(400), doc="担保期限")
     GUARANTEERANGE = Column(String(400), doc="担保范围")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     GUARANTEELETTERCONTENT = Column(LONGTEXT)
 
 
@@ -900,10 +841,6 @@ class bond_guarantorrating(Base):
     VIEWS = Column(String(4000), doc="评级观点")
     ANALYST = Column(String(400), doc="分析师")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_inbankod(Base):
@@ -924,10 +861,6 @@ class bond_inbankod(Base):
     TICKCOUNT = Column(DECIMAL(18, 4), doc="成交笔数")
     TICKCOUNTCHANGE = Column(DECIMAL(18, 4), doc="成交笔数增减")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_info(Base):
@@ -962,10 +895,6 @@ class bond_info(Base):
     COMMENTS = Column(String(600), doc="备注")
     ID_0007 = Column(BIGINT, doc="巨潮记录ID")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     INTERESTBASIS = Column(String(7), doc="计息基础")
     FIRSTPAYINTERESTDATE = Column(DateTime, doc="第一次付息日")
     GTASYMBOL = Column(String(100), doc="国泰安代码")
@@ -990,10 +919,6 @@ class bond_interestfloat(Base):
     INTERESTRATE = Column(DECIMAL(7, 3), doc="实际利率")
     COMMENTS = Column(String(1000), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_is(Base):
@@ -1065,10 +990,6 @@ class bond_is(Base):
     B0061 = Column(DECIMAL(20, 2), doc="归属于母公司所有者的综合收益总额")
     B0062 = Column(DECIMAL(20, 2), doc="归属于少数股东的综合收益总额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_issuecost(Base):
@@ -1088,10 +1009,6 @@ class bond_issuecost(Base):
     ACCOUNTANTFEE = Column(DECIMAL(20, 2), doc="会计师费用")
     LAWYERFEE = Column(DECIMAL(20, 2), doc="律师费用")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CURRENCY = Column(String(200), doc="币种")
 
 
@@ -1140,10 +1057,6 @@ class bond_issuer(Base):
     COMMENTS = Column(String(4000), doc="备注")
     ID_0117 = Column(BIGINT, doc="巨潮记录ID")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_issueregiinfo(Base):
@@ -1164,10 +1077,6 @@ class bond_issueregiinfo(Base):
     ISSTAGING = Column(String(20), doc="是否可分期")
     LEADUNDERWRITER = Column(String(2000), doc="主承销商")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CURRENCY = Column(String(200), doc="币种")
 
 
@@ -1210,10 +1119,6 @@ class bond_lastquotationmonth(Base):
     AVERAGETURNOVERRATE = Column(DECIMAL(16, 6), doc="月平均换手率")
     TRADINGDAYS = Column(SMALLINT, doc="月交易天数")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_lastquotationweek(Base):
@@ -1255,10 +1160,6 @@ class bond_lastquotationweek(Base):
     AMPLITUDE = Column(DECIMAL(16, 6), doc="周振幅")
     TRADINGDAYS = Column(SMALLINT, doc="周交易天数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_lastquotationyear(Base):
@@ -1300,10 +1201,6 @@ class bond_lastquotationyear(Base):
     AVERAGETURNOVERRATE = Column(DECIMAL(16, 6), doc="年平均换手率")
     TRADINGDAYS = Column(SMALLINT, doc="年交易天数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_mkttrade(Base):
@@ -1320,10 +1217,6 @@ class bond_mkttrade(Base):
     MEMBER = Column(INTEGER, doc="参与成员数")
     MEMBERCHANGE = Column(BIGINT, doc="参与家数增减")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_nafmiipricntrlcrv(Base):
@@ -1336,10 +1229,6 @@ class bond_nafmiipricntrlcrv(Base):
     TERM = Column(BIGINT, doc="期限")
     RATE = Column(DECIMAL(10, 2), doc="利率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_otc_quotationhis(Base):
@@ -1373,10 +1262,6 @@ class bond_otc_quotationhis(Base):
     QUOTEBANK = Column(String(80), doc="报价银行")
     INSTITUTIONID = Column(String(24), doc="报价银行ID")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_otc_quotationoptimal(Base):
@@ -1402,10 +1287,6 @@ class bond_otc_quotationoptimal(Base):
     BONDTYPEID = Column(String(16), doc="债券类别ID")
     BONDTYPE = Column(String(160), doc="债券类别")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_payment(Base):
@@ -1431,10 +1312,56 @@ class bond_payment(Base):
     INTERESTTAXRATE = Column(DECIMAL(7, 3), doc="利息税率")
     ID_0075 = Column(BIGINT, doc="巨潮记录ID")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class bond_pretrdinfo(Base):
+
+    __tablename__ = 'bond_pretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), primary_key=True, doc="交易代码")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    ISSUEPRICE = Column(DECIMAL(7, 2), doc="发行价格")
+    PARVALUERATE = Column(DECIMAL(7, 3), doc="票面利率")
+    INTERESTSTARTDATE = Column(DateTime, doc="计息日期")
+    LATESTCLOSE = Column(DECIMAL(20, 3), doc="前收盘价格")
+    INTERESTDAYS = Column(INTEGER, doc="计息天数")
+    ACCRUEDINTEREST = Column(DECIMAL(16, 6), doc="应计利息")
+    MINTICKSIZE = Column(DECIMAL(10, 3), doc="价格档位")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    ISDIVIDEND = Column(SMALLINT, doc="是否付息日")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class bond_pretrdinfohistory(Base):
+
+    __tablename__ = 'bond_pretrdinfohistory'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), primary_key=True, doc="交易代码")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    ISSUEPRICE = Column(DECIMAL(7, 2), doc="发行价格")
+    PARVALUERATE = Column(DECIMAL(7, 3), doc="票面利率")
+    INTERESTSTARTDATE = Column(DateTime, doc="计息日期")
+    LATESTCLOSE = Column(DECIMAL(20, 3), doc="前收盘价格")
+    INTERESTDAYS = Column(INTEGER, doc="计息天数")
+    ACCRUEDINTEREST = Column(DECIMAL(16, 6), doc="应计利息")
+    MINTICKSIZE = Column(DECIMAL(10, 3), doc="价格档位")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    ISDIVIDEND = Column(SMALLINT, doc="是否付息日")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    UPDATEID = Column(BIGINT, doc="数据ID")
 
 
 class bond_quotation(Base):
@@ -1476,10 +1403,6 @@ class bond_quotation(Base):
     DISTANCE = Column(INTEGER, doc="距前交易日天数")
     FILLING = Column(SMALLINT, doc="填充标识")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_quotationderivative(Base):
@@ -1508,10 +1431,6 @@ class bond_quotationderivative(Base):
     CURRENTYIELD = Column(DECIMAL(20, 6), doc="现期收益率")
     INTERESTRETURNS = Column(DECIMAL(20, 6), doc="利息回报率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_quotationlatest(Base):
@@ -1552,10 +1471,6 @@ class bond_quotationlatest(Base):
     AVGPRICE = Column(DECIMAL(10, 3), doc="均价")
     DISTANCE = Column(INTEGER, doc="距前交易日天数")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_quotationmonth(Base):
@@ -1597,10 +1512,6 @@ class bond_quotationmonth(Base):
     TRADINGDAYS = Column(SMALLINT, doc="月交易天数")
     FILLING = Column(SMALLINT, doc="填充标识")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_quotations(Base):
@@ -1623,10 +1534,6 @@ class bond_quotations(Base):
     CHANGERATIO = Column(DECIMAL(16, 6), doc="涨跌幅")
     AMPLITUDE = Column(DECIMAL(16, 6), doc="振幅")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_quotationweek(Base):
@@ -1669,10 +1576,6 @@ class bond_quotationweek(Base):
     TRADINGDAYS = Column(SMALLINT, doc="周交易天数")
     FILLING = Column(SMALLINT, doc="填充标识")
     UPDATEID = Column(BIGINT, primary_key=True)
-    UPDATESTATE = Column(SMALLINT)
-    UPDATETIME = Column(DateTime)
-    BUSINESSTIME = Column(DateTime)
-    UTSID = Column(BIGINT)
 
 
 class bond_quotationyear(Base):
@@ -1714,10 +1617,6 @@ class bond_quotationyear(Base):
     TRADINGDAYS = Column(SMALLINT, doc="年交易天数")
     FILLING = Column(SMALLINT, doc="填充标识")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_ratetype(Base):
@@ -1732,10 +1631,6 @@ class bond_ratetype(Base):
     AMOUNTCHANGE = Column(DECIMAL(12, 4), doc="成交额增减")
     AMOUNTRATIO = Column(DECIMAL(8, 4), doc="占总成交比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_rating(Base):
@@ -1760,10 +1655,6 @@ class bond_rating(Base):
     VIEWS = Column(String(4000), doc="评级观点")
     ANALYST = Column(String(400), doc="分析员")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     SYMBOL = Column(String(20), doc="债券代码")
     EXCHANGECODE = Column(String(10), doc="交易市场编码")
     BONDRATETYPE = Column(SMALLINT, doc="债项评级类型")
@@ -1789,10 +1680,6 @@ class bond_redemption(Base):
     COMMISSIONRATE = Column(DECIMAL(18, 8), doc="兑付手续费率")
     ID_0075 = Column(BIGINT, doc="巨潮记录ID")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_repayterm(Base):
@@ -1807,10 +1694,6 @@ class bond_repayterm(Base):
     AMOUNTCHANGE = Column(DECIMAL(12, 4), doc="成交额增减")
     AMOUNTRATIO = Column(DECIMAL(8, 4), doc="占总成交比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_repototal(Base):
@@ -1828,10 +1711,6 @@ class bond_repototal(Base):
     MEMBER = Column(BIGINT, doc="参与家数")
     MEMBERCHANGE = Column(BIGINT, doc="参与家数增减")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_repovariety(Base):
@@ -1853,10 +1732,6 @@ class bond_repovariety(Base):
     RATIOCHANGE = Column(DECIMAL(9, 4), doc="当日涨跌幅")
     VOLUMECHANGE = Column(INTEGER, doc="成交笔数增减")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_shcvaluation(Base):
@@ -1897,10 +1772,6 @@ class bond_shcvaluation(Base):
     FNLACCRUEDINTEREST = Column(DECIMAL(30, 4), doc="日终应计利息")
     REMAININGPRINCIPAL = Column(DECIMAL(30, 4), doc="剩余本金")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_shcyield(Base):
@@ -1918,10 +1789,6 @@ class bond_shcyield(Base):
     VALUEN = Column(DECIMAL(10, 4), doc="N值")
     VALUEK = Column(DECIMAL(10, 4), doc="K值")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_stagesredemption(Base):
@@ -1935,10 +1802,6 @@ class bond_stagesredemption(Base):
     STAGENREPAYMENTRATIO = Column(DECIMAL(10, 2), doc="第N期偿还比例")
     THENCALCULATIONYEAREND = Column(BIGINT, doc="第N个计算年度末")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_suspentioninfo(Base):
@@ -1958,10 +1821,6 @@ class bond_suspentioninfo(Base):
     RESANNOUNCEMENTDATE = Column(DateTime, doc="复牌公告日期")
     REASON = Column(String(400), doc="停牌原因")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_tenderissue(Base):
@@ -1979,10 +1838,6 @@ class bond_tenderissue(Base):
     PAYMENTDATE = Column(DateTime, doc="缴款日")
     CHARGESTANDARD = Column(String(100), doc="手续费标准")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     TENDEROBJECT = Column(String(400), doc="招标对象")
     WINNINGTYPEEXPLANATION = Column(String(400), doc="中标确定方式说明")
     TENDERRATEFLOOR = Column(DECIMAL(10, 2), doc="招标利率下限")
@@ -2027,10 +1882,6 @@ class bond_tenderresult(Base):
     AVERAGEWININGPRICE = Column(DECIMAL(10, 4), doc="全场中标价格")
     AVERAGEWININGSPREAD = Column(DECIMAL(10, 4), doc="全场中标利差")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class bond_treasyield(Base):
@@ -2043,10 +1894,186 @@ class bond_treasyield(Base):
     REMAININGYEARS = Column(DECIMAL(18, 4), doc="剩余年限")
     YIELD = Column(DECIMAL(18, 8), doc="收益率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class cmo_pretrdinfo(Base):
+
+    __tablename__ = 'cmo_pretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), primary_key=True, doc="证券ID")
+    DECLAREDATE = Column(DateTime, doc="业务发生日期")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), doc="交易代码")
+    EXCHANGESYMBOL = Column(String(20), doc="交易所原始代码")
+    EXCHANGECODE = Column(String(6), doc="交易所代码")
+    OPTIONTYPE = Column(String(20), doc="期权类型")
+    CALLORPUT = Column(String(10), doc="合约类型")
+    STRIKEPRICE = Column(DECIMAL(10, 4), doc="行权价")
+    UNDERLYINGSECURITYID = Column(DECIMAL(20, 0), doc="标的证券ID")
+    UNDERLYINGSYMBOL = Column(String(10), doc="标的期货交易代码")
+    UNDERLYINGSHORTNAME = Column(String(20), doc="标的期货简称")
+    LISTEDDATE = Column(DateTime, doc="行权起始日")
+    EXPIREDATE = Column(DateTime, doc="行权到期日")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    UNDERLYINGPRECLOSEPRICE = Column(DECIMAL(10, 3), doc="标的期货前收盘")
+    UNDERLYINGPRESETTLEPRICE = Column(DECIMAL(10, 3), doc="标的期货前结算")
+    UNDERLYINGPREPOSITION = Column(DECIMAL(20, 0), doc="标的期货昨持仓量")
+    LIMITUP = Column(DECIMAL(10, 4), doc="涨停价格")
+    LIMITDOWN = Column(DECIMAL(10, 4), doc="跌停价格")
+    PRECLOSEPRICE = Column(DECIMAL(10, 4), doc="前收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(10, 4), doc="前结算价")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    BENCHMARKOPENPRICE = Column(DECIMAL(10, 4), doc="开盘基准价")
+    CONTRACTMULTIPLE = Column(BIGINT, doc="合约乘数")
+    MARGINUNIT = Column(DECIMAL(11, 4), doc="单位保证金")
+    MINCHANGEUNIT = Column(DECIMAL(10, 4), doc="最小变动单位")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    STATUS = Column(String(20), doc="交易状态")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+
+
+class cmo_pretrdinfohistory(Base):
+
+    __tablename__ = 'cmo_pretrdinfohistory'
+
+    SECURITYID = Column(DECIMAL(20, 0), primary_key=True, doc="证券ID")
+    DECLAREDATE = Column(DateTime, doc="业务发生日期")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), doc="交易代码")
+    EXCHANGESYMBOL = Column(String(20), doc="交易所原始代码")
+    EXCHANGECODE = Column(String(6), doc="交易所代码")
+    OPTIONTYPE = Column(String(20), doc="期权类型")
+    CALLORPUT = Column(String(10), doc="合约类型")
+    STRIKEPRICE = Column(DECIMAL(10, 4), doc="行权价")
+    UNDERLYINGSECURITYID = Column(DECIMAL(20, 0), doc="标的证券ID")
+    UNDERLYINGSYMBOL = Column(String(10), doc="标的期货交易代码")
+    UNDERLYINGSHORTNAME = Column(String(20), doc="标的期货简称")
+    LISTEDDATE = Column(DateTime, doc="行权起始日")
+    EXPIREDATE = Column(DateTime, doc="行权到期日")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    UNDERLYINGPRECLOSEPRICE = Column(DECIMAL(10, 3), doc="标的期货前收盘")
+    UNDERLYINGPRESETTLEPRICE = Column(DECIMAL(10, 3), doc="标的期货前结算")
+    UNDERLYINGPREPOSITION = Column(DECIMAL(20, 0), doc="标的期货昨持仓量")
+    LIMITUP = Column(DECIMAL(10, 4), doc="涨停价格")
+    LIMITDOWN = Column(DECIMAL(10, 4), doc="跌停价格")
+    PRECLOSEPRICE = Column(DECIMAL(10, 4), doc="前收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(10, 4), doc="前结算价")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    BENCHMARKOPENPRICE = Column(DECIMAL(10, 4), doc="开盘基准价")
+    CONTRACTMULTIPLE = Column(BIGINT, doc="合约乘数")
+    MARGINUNIT = Column(DECIMAL(11, 4), doc="单位保证金")
+    MINCHANGEUNIT = Column(DECIMAL(10, 4), doc="最小变动单位")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    STATUS = Column(String(20), doc="交易状态")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class cost_riskfree(Base):
+
+    __tablename__ = 'cost_riskfree'
+
+    BENCHMARKID = Column(String(12), doc="无风险利率基准ID")
+    BENCHMARK = Column(String(200), doc="无风险利率基准")
+    TRADINGDATE = Column(DateTime, doc="统计日期")
+    INTERESTRATE = Column(DECIMAL(18, 6), doc="无风险利率")
+    INTERESTRATEDAILY = Column(DECIMAL(18, 6), doc="日度化无风险利率")
+    INTERESTRATEWEEKLY = Column(DECIMAL(18, 6), doc="周度化无风险利率")
+    INTERESTRATEMONTHLY = Column(DECIMAL(18, 6), doc="月度化无风险利率")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class ffut_calpretrdinfo(Base):
+
+    __tablename__ = 'ffut_calpretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    DECLAREDATE = Column(DateTime, doc="业务发生日期")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), primary_key=True, doc="交易代码")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    UPPERLMTPRC = Column(DECIMAL(9, 3), doc="涨停价格")
+    LOWERLMTPRC = Column(DECIMAL(9, 3), doc="跌停价格")
+    LATESTCLOSEPRICE = Column(DECIMAL(10, 3), doc="前收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(10, 3), doc="前结算价")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    CHANGERATIOLIMITTYPEID = Column(SMALLINT, doc="涨跌幅限制类型")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    BENCHMARKOPENPRICE = Column(DECIMAL(10, 3), doc="开盘基准价")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    UPDATEID2 = Column(BIGINT, doc="数据ID2")
+    SOURCETABLE = Column(String(100), doc="源表")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    MINCHANGEUNIT = Column(DECIMAL(10, 3), doc="最小变动单位")
+    CONTRACTMULTIPLE = Column(BIGINT, doc="合约乘数")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+
+
+class ffut_pretrdinfo(Base):
+
+    __tablename__ = 'ffut_pretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    DECLAREDATE = Column(DateTime, doc="业务发生日期")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), primary_key=True, doc="交易代码")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    UPPERLMTPRC = Column(DECIMAL(9, 3), doc="涨停价格")
+    LOWERLMTPRC = Column(DECIMAL(9, 3), doc="跌停价格")
+    LATESTCLOSEPRICE = Column(DECIMAL(10, 3), doc="前收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(10, 3), doc="前结算价")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    CHANGERATIOLIMITTYPEID = Column(SMALLINT, doc="涨跌幅限制类型")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    BENCHMARKOPENPRICE = Column(DECIMAL(10, 3), doc="开盘基准价")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    CLIENTPOSITIONLIMIT = Column(DECIMAL(20, 0), doc="客户持仓量限制")
+    MINCHANGEUNIT = Column(DECIMAL(10, 3), doc="最小变动单位")
+    CONTRACTMULTIPLE = Column(BIGINT, doc="合约乘数")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+
+
+class ffut_pretrdinfohistory(Base):
+
+    __tablename__ = 'ffut_pretrdinfohistory'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    DECLAREDATE = Column(DateTime, doc="业务发生日期")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), primary_key=True, doc="交易代码")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    UPPERLMTPRC = Column(DECIMAL(9, 3), doc="涨停价格")
+    LOWERLMTPRC = Column(DECIMAL(9, 3), doc="跌停价格")
+    LATESTCLOSEPRICE = Column(DECIMAL(10, 3), doc="前收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(10, 3), doc="前结算价")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    CHANGERATIOLIMITTYPEID = Column(SMALLINT, doc="涨跌幅限制类型")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    BENCHMARKOPENPRICE = Column(DECIMAL(10, 3), doc="开盘基准价")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    CLIENTPOSITIONLIMIT = Column(DECIMAL(20, 0), doc="客户持仓量限制")
+    MINCHANGEUNIT = Column(DECIMAL(10, 3), doc="最小变动单位")
+    CONTRACTMULTIPLE = Column(BIGINT, doc="合约乘数")
 
 
 class fund_allocation(Base):
@@ -2085,10 +2112,6 @@ class fund_allocation(Base):
     OTHERSASSET = Column(DECIMAL(20, 2), doc="资产组合其他资产")
     TOTALASSET = Column(DECIMAL(20, 2), doc="资产组合合计")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     UPDATETIME_EN = Column(DateTime)
 
 
@@ -2107,10 +2130,6 @@ class fund_areaclass(Base):
     FAIRVALUE = Column(DECIMAL(20, 2), doc="公允价值")
     PROPORTION = Column(DECIMAL(10, 4), doc="占基金资产净值比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_bwardfactor(Base):
@@ -2123,10 +2142,27 @@ class fund_bwardfactor(Base):
     BWARDFACTOR = Column(DECIMAL(12, 6), doc="后复权因子")
     CUMULATEBWARDFACTOR = Column(DECIMAL(12, 6), doc="后累计复权因子")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class fund_calpretrdinfo(Base):
+
+    __tablename__ = 'fund_calpretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(20), primary_key=True, doc="证券代码")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    EXCHANGECODE = Column(String(12), doc="交易所代码")
+    SHORTNAME = Column(String(100), doc="基金简称")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    TRADINGSHORTNAME = Column(String(100), doc="证券简称")
+    INCEPTIONSHARES = Column(DECIMAL(20, 2), doc="基金成立时份额")
+    LATESTCLOSEPRICE = Column(DECIMAL(10, 4), doc="前收盘价")
+    MINTICKSIZE = Column(DECIMAL(10, 4), doc="价格档位")
+    LIMITDOWN = Column(DECIMAL(10, 4), doc="跌停价")
+    LIMITUP = Column(DECIMAL(10, 4), doc="涨停价")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    NAV = Column(DECIMAL(20, 4), doc="基金份额净值")
+    UPDATEID = Column(BIGINT, doc="数据ID")
 
 
 class fund_classinfochange(Base):
@@ -2146,10 +2182,6 @@ class fund_classinfochange(Base):
     CHANGEDATE = Column(DateTime, doc="实施日期")
     EVENTTYPE = Column(String(40), doc="事件类型编码")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     MASTERFUNDCODE = Column(String(40))
 
 
@@ -2180,10 +2212,6 @@ class fund_custodian(Base):
     APPROVALNO = Column(String(200), doc="基金托管业务批准文号")
     DISCLOSEPERSON = Column(String(100), doc="管理公司信息披露负责人")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_daynav(Base):
@@ -2200,10 +2228,6 @@ class fund_daynav(Base):
     MILLIONACHIEVERETURN = Column(DECIMAL(19, 4), doc="每百万份基金已实现收益")
     HUNDREDACHIEVERETURN = Column(DECIMAL(19, 4), doc="每百份基金已实现收益")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_etfconstitsec(Base):
@@ -2222,10 +2246,6 @@ class fund_etfconstitsec(Base):
     CASHSUBSTPREMPROP = Column(DECIMAL(10, 2), doc="申购现金替代溢价比例")
     FIXEDSUBSTAMOUNT = Column(DECIMAL(20, 2), doc="固定替代金额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     RDMCASHSUBSTPREMPROP = Column(DECIMAL(10, 2), doc="赎回现金替代溢价比例")
 
 
@@ -2252,10 +2272,6 @@ class fund_etfpchasredemlis(Base):
     REDEEMCEILING = Column(DECIMAL(20, 0), doc="当天累计可赎回的基金份额上限")
     SYNSECURNUM = Column(BIGINT, doc="申购赎回组合证券数")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     NAV = Column(DECIMAL(10, 4), doc="基金份额净值")
     IOPV = Column(DECIMAL(10, 4), doc="基金份额参考净值")
     OVERFLOWRATE = Column(DECIMAL(10, 4), doc="溢折率")
@@ -2311,10 +2327,6 @@ class fund_evl_dayahay(Base):
     CLSTKSLCTRNK = Column(INTEGER, doc="CL模型选股能力同类基金排名")
     NUMBERTORNKCLSTKSLCT = Column(INTEGER, doc="参与CL模型选股能力alpha排名的同类基金数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_evl_dayamth(Base):
@@ -2366,10 +2378,6 @@ class fund_evl_dayamth(Base):
     CLSTKSLCTRNK = Column(INTEGER, doc="CL模型选股能力同类基金排名")
     NUMBERTORNKCLSTKSLCT = Column(INTEGER, doc="参与CL模型选股能力alpha排名的同类基金数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_evl_dayasen(Base):
@@ -2421,10 +2429,6 @@ class fund_evl_dayasen(Base):
     CLSTKSLCTRNK = Column(INTEGER, doc="CL模型选股能力同类基金排名")
     NUMBERTORNKCLSTKSLCT = Column(INTEGER, doc="参与CL模型选股能力alpha排名的同类基金数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_evl_dayayear(Base):
@@ -2476,10 +2480,6 @@ class fund_evl_dayayear(Base):
     CLSTKSLCTRNK = Column(INTEGER, doc="CL模型选股能力同类基金排名")
     NUMBERTORNKCLSTKSLCT = Column(INTEGER, doc="参与CL模型选股能力alpha排名的同类基金数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_evl_daythryear(Base):
@@ -2531,10 +2531,6 @@ class fund_evl_daythryear(Base):
     CLSTKSLCTRNK = Column(INTEGER, doc="CL模型选股能力同类基金排名")
     NUMBERTORNKCLSTKSLCT = Column(INTEGER, doc="参与CL模型选股能力alpha排名的同类基金数")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_evl_weekahay(Base):
@@ -2586,10 +2582,6 @@ class fund_evl_weekahay(Base):
     CLSTKSLCTRNK = Column(INTEGER, doc="CL模型选股能力同类基金排名")
     NUMBERTORNKCLSTKSLCT = Column(INTEGER, doc="参与CL模型选股能力alpha排名的同类基金数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_evl_weekayear(Base):
@@ -2641,10 +2633,6 @@ class fund_evl_weekayear(Base):
     CLSTKSLCTRNK = Column(INTEGER, doc="CL模型选股能力同类基金排名")
     NUMBERTORNKCLSTKSLCT = Column(INTEGER, doc="参与CL模型选股能力alpha排名的同类基金数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_evl_weekthryear(Base):
@@ -2696,10 +2684,6 @@ class fund_evl_weekthryear(Base):
     CLSTKSLCTRNK = Column(INTEGER, doc="CL模型选股能力同类基金排名")
     NUMBERTORNKCLSTKSLCT = Column(INTEGER, doc="参与CL模型选股能力alpha排名的同类基金数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_feeschange(Base):
@@ -2718,10 +2702,6 @@ class fund_feeschange(Base):
     EFFECTIVEDATE = Column(DateTime, doc="有效起始日")
     EXPIREDDATE = Column(DateTime, doc="失效日期")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_fundcodeinfo(Base):
@@ -2739,10 +2719,6 @@ class fund_fundcodeinfo(Base):
     FREQUENCY = Column(String(100), doc="频度属性")
     NOTE = Column(String(4000), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_fundcompany(Base):
@@ -2775,10 +2751,6 @@ class fund_fundcompany(Base):
     CLOSEFUNDNUM = Column(INTEGER, doc="公司管理封闭式基金数量")
     CLOSEFULLNAME = Column(String(400), doc="公司管理封闭式基金名称")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     OPENFULLNAME = Column(LONGTEXT)
 
 
@@ -2808,10 +2780,6 @@ class fund_funddividend(Base):
     ISCHANGEPLAN = Column(String(4), doc="方案是否变更")
     CONTENT_CHANGEPLAN = Column(String(1000), doc="方案更改内容")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     DISTRIBUTIONPLAN = Column(String(4000), doc="分配方案")
 
 
@@ -2839,10 +2807,6 @@ class fund_fundmanager(Base):
     BUSINESSDURATION = Column(SMALLINT, doc="证券从业年限")
     RESUME = Column(LONGTEXT, doc="简历")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     FUNDMANAGERID = Column(DECIMAL(20, 0), doc="基金经理ID")
 
 
@@ -2856,10 +2820,6 @@ class fund_fwardfactor(Base):
     FWARDFACTOR = Column(DECIMAL(12, 6), doc="前复权因子")
     CUMULATEFWARDFACTOR = Column(DECIMAL(12, 6), doc="前累计复权因子")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_holderstructure(Base):
@@ -2891,10 +2851,6 @@ class fund_holderstructure(Base):
     TOTALPRACTITIONERSRATIO = Column(DECIMAL(10, 4), doc="总产品基金从业人员持有基金份额占总份额比例")
     RELATIONCODE = Column(String(100), doc="基金关系编码")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_indexreturn(Base):
@@ -2914,10 +2870,6 @@ class fund_indexreturn(Base):
     AMOUNT = Column(DECIMAL(18, 2), doc="交易金额")
     INDEXRETURN = Column(DECIMAL(12, 6), doc="基金指数回报率(%)")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_industrystockclass(Base):
@@ -2936,10 +2888,6 @@ class fund_industrystockclass(Base):
     FAIRVALUE = Column(DECIMAL(20, 2), doc="行业分类公允价值")
     FAIRVALUETONAV = Column(DECIMAL(20, 2), doc="占基金资产净值比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_jajxrate(Base):
@@ -2963,10 +2911,6 @@ class fund_jajxrate(Base):
     JARATE = Column(SMALLINT, doc="济安最新评级")
     CHANGERATE = Column(String(20), doc="评级变动")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_listing(Base):
@@ -3001,10 +2945,6 @@ class fund_listing(Base):
     DELISTEDDATE = Column(DateTime, doc="退市日期")
     DELISTEDEXPLANATION = Column(String(4000), doc="退市说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mainpersonnel(Base):
@@ -3037,10 +2977,6 @@ class fund_mainpersonnel(Base):
     BUSINESSDURATION = Column(SMALLINT, doc="证券从业年限")
     RESUME = Column(LONGTEXT, doc="简历")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     PERSONID = Column(DECIMAL(20, 0), doc="人员ID")
 
 
@@ -3071,10 +3007,6 @@ class fund_mkt_bwardquotation(Base):
     LIMITDOWN = Column(DECIMAL(10, 4), doc="跌停价")
     LIMITUP = Column(DECIMAL(10, 4), doc="涨停价")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_fwardquotation(Base):
@@ -3104,10 +3036,6 @@ class fund_mkt_fwardquotation(Base):
     LIMITDOWN = Column(DECIMAL(10, 4), doc="跌停价")
     LIMITUP = Column(DECIMAL(10, 4), doc="涨停价")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_lastbwardquotem(Base):
@@ -3141,10 +3069,6 @@ class fund_mkt_lastbwardquotem(Base):
     CHANGERATIO = Column(DECIMAL(10, 6), doc="月涨跌幅")
     AMPLITUDE = Column(DECIMAL(10, 2), doc="月振幅")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_lastbwardquotew(Base):
@@ -3178,10 +3102,6 @@ class fund_mkt_lastbwardquotew(Base):
     CHANGERATIO = Column(DECIMAL(10, 6), doc="周涨跌幅")
     AMPLITUDE = Column(DECIMAL(10, 2), doc="周振幅")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_lastbwardquotey(Base):
@@ -3215,10 +3135,6 @@ class fund_mkt_lastbwardquotey(Base):
     CHANGERATIO = Column(DECIMAL(10, 6), doc="年涨跌幅")
     AMPLITUDE = Column(DECIMAL(10, 2), doc="年振幅")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_lastfwardquotem(Base):
@@ -3252,10 +3168,6 @@ class fund_mkt_lastfwardquotem(Base):
     CHANGERATIO = Column(DECIMAL(10, 6), doc="月涨跌幅")
     AMPLITUDE = Column(DECIMAL(10, 2), doc="月振幅")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_lastfwardquotew(Base):
@@ -3289,10 +3201,6 @@ class fund_mkt_lastfwardquotew(Base):
     CHANGERATIO = Column(DECIMAL(10, 6), doc="周涨跌幅")
     AMPLITUDE = Column(DECIMAL(10, 2), doc="周振幅")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_lastfwardquotey(Base):
@@ -3326,10 +3234,6 @@ class fund_mkt_lastfwardquotey(Base):
     CHANGERATIO = Column(DECIMAL(10, 6), doc="年涨跌幅")
     AMPLITUDE = Column(DECIMAL(10, 2), doc="年振幅")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_lastquotationmonth(Base):
@@ -3369,10 +3273,6 @@ class fund_mkt_lastquotationmonth(Base):
     RETURNDAILY = Column(DECIMAL(10, 6), doc="考虑现金红利基金日回报率")
     SIMPLERETURNDAILY = Column(DECIMAL(10, 6), doc="不考虑现金红利基金日回报率")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_lastquotationweek(Base):
@@ -3412,10 +3312,6 @@ class fund_mkt_lastquotationweek(Base):
     RETURNDAILY = Column(DECIMAL(10, 6), doc="考虑现金红利基金日回报率")
     SIMPLERETURNDAILY = Column(DECIMAL(10, 6), doc="不考虑现金红利基金日回报率")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_lastquotationyear(Base):
@@ -3455,10 +3351,6 @@ class fund_mkt_lastquotationyear(Base):
     RETURNDAILY = Column(DECIMAL(10, 6), doc="考虑现金红利基金日回报率")
     SIMPLERETURNDAILY = Column(DECIMAL(10, 6), doc="不考虑现金红利基金日回报率")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_quotation(Base):
@@ -3495,10 +3387,6 @@ class fund_mkt_quotation(Base):
     COMPARABLEPRICE = Column(DECIMAL(10, 6), doc="考虑现金红利的收盘价可比价格")
     SIMPLECOMPARABLEPRICE = Column(DECIMAL(10, 6), doc="不考虑现金红利的收盘价可比价格")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     MARKETVALUE = Column(DECIMAL(20, 2), doc="总市值")
     CIRCULATEDSHARE = Column(DECIMAL(20, 2), doc="场内流通份额")
 
@@ -3536,10 +3424,6 @@ class fund_mkt_quotationlatest(Base):
     COMPARABLEPRICE = Column(DECIMAL(10, 6), doc="考虑现金红利的收盘价可比价格")
     SIMPLECOMPARABLEPRICE = Column(DECIMAL(10, 6), doc="不考虑现金红利的收盘价可比价格")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     MARKETVALUE = Column(DECIMAL(20, 2), doc="总市值")
     CIRCULATEDSHARE = Column(DECIMAL(20, 2), doc="场内流通份额")
 
@@ -3581,10 +3465,6 @@ class fund_mkt_quotationmonth(Base):
     RETURNDAILY = Column(DECIMAL(10, 6), doc="考虑现金红利基金日回报率")
     SIMPLERETURNDAILY = Column(DECIMAL(10, 6), doc="不考虑现金红利基金日回报率")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_quotationweek(Base):
@@ -3624,10 +3504,6 @@ class fund_mkt_quotationweek(Base):
     RETURNDAILY = Column(DECIMAL(10, 6), doc="考虑现金红利基金日回报率")
     SIMPLERETURNDAILY = Column(DECIMAL(10, 6), doc="不考虑现金红利基金日回报率")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mkt_quotationyear(Base):
@@ -3667,10 +3543,6 @@ class fund_mkt_quotationyear(Base):
     RETURNDAILY = Column(DECIMAL(10, 6), doc="考虑现金红利基金日回报率")
     SIMPLERETURNDAILY = Column(DECIMAL(10, 6), doc="不考虑现金红利基金日回报率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mktdayreturn(Base):
@@ -3689,10 +3561,6 @@ class fund_mktdayreturn(Base):
     DAYWHTRETREINV = Column(DECIMAL(10, 6), doc="考虑现金红利再投资的日市场回报率（总市值加权平均法）")
     DAYWHTRETNONREINV = Column(DECIMAL(10, 6), doc="不考虑现金红利再投资的日市场回报率（总市值加权平均法）")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mktmonthreturn(Base):
@@ -3713,10 +3581,6 @@ class fund_mktmonthreturn(Base):
     MTHWHTRETREINV = Column(DECIMAL(10, 6), doc="考虑现金红利再投资的月市场回报率（总市值加权平均法）")
     MTHWHTRETNONREINV = Column(DECIMAL(10, 6), doc="不考虑现金红利再投资的月市场回报率（总市值加权平均法）")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mktpf_pfm(Base):
@@ -3732,10 +3596,6 @@ class fund_mktpf_pfm(Base):
     MINMKTZERO = Column(DECIMAL(18, 6), doc="市场组合日风险溢价与0孰小")
     MAXMKTZERO = Column(DECIMAL(18, 6), doc="市场组合日风险溢价与0孰大")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mktpf_pfm_week(Base):
@@ -3751,10 +3611,6 @@ class fund_mktpf_pfm_week(Base):
     MINMKTZERO = Column(DECIMAL(18, 6), doc="市场组合周风险溢价与0孰小")
     MAXMKTZERO = Column(DECIMAL(18, 6), doc="市场组合周风险溢价与0孰大")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mktweekreturn(Base):
@@ -3775,10 +3631,6 @@ class fund_mktweekreturn(Base):
     WKWHTRETREINV = Column(DECIMAL(10, 6), doc="考虑现金红利再投资的周市场回报率（总市值加权平均法）")
     WKWHTRETNONREINV = Column(DECIMAL(10, 6), doc="不考虑现金红利再投资的周市场回报率（总市值加权平均法）")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_mktyearreturn(Base):
@@ -3799,10 +3651,6 @@ class fund_mktyearreturn(Base):
     YRWHTRETREINV = Column(DECIMAL(10, 6), doc="考虑现金红利再投资的年市场回报率（总市值加权平均法）")
     YRWHTRETNONREINV = Column(DECIMAL(10, 6), doc="不考虑现金红利再投资的年市场回报率（总市值加权平均法）")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_nav(Base):
@@ -3819,10 +3667,6 @@ class fund_nav(Base):
     FREQUENCY = Column(String(100), doc="频度属性")
     MARKETSTATUS = Column(String(100), doc="时间属性")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     MILLIONACHIEVERETURN = Column(DECIMAL(19, 4), doc="每百万份基金已实现收益")
     CURRENCYCODE = Column(String(6), doc="货币编码")
     CURRENCY = Column(String(100), doc="币种")
@@ -3851,10 +3695,6 @@ class fund_nav_month(Base):
     ANNUALIZEDYIELD = Column(DECIMAL(10, 4), doc="月7日月化收益率")
     TRADINGDAYS = Column(SMALLINT, doc="月净值批露天数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_nav_pfm(Base):
@@ -3874,10 +3714,6 @@ class fund_nav_pfm(Base):
     ADJUSTEDNAVGROWTH = Column(DECIMAL(20, 6), doc="复权单位净值日增长率")
     RISKPREMIUM = Column(DECIMAL(20, 6), doc="复权净值日风险溢价")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_nav_pfm_month(Base):
@@ -3894,10 +3730,6 @@ class fund_nav_pfm_month(Base):
     ADJUSTEDNAVGROWTH = Column(DECIMAL(20, 6), doc="复权单位净值月增长率")
     RISKPREMIUM = Column(DECIMAL(20, 6), doc="复权净值月风险溢价")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     TRADINGMONTH = Column(String(14), doc="交易月份")
 
 
@@ -3915,10 +3747,6 @@ class fund_nav_pfm_week(Base):
     ADJUSTEDNAVGROWTH = Column(DECIMAL(20, 6), doc="复权单位净值周增长率")
     RISKPREMIUM = Column(DECIMAL(20, 6), doc="复权净值周风险溢价")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     TRADINGWEEK = Column(String(14), doc="交易周份")
 
 
@@ -3936,10 +3764,6 @@ class fund_nav_pfm_year(Base):
     ADJUSTEDNAVGROWTH = Column(DECIMAL(20, 6), doc="复权单位净值年增长率")
     RISKPREMIUM = Column(DECIMAL(20, 6), doc="复权净值年风险溢价")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     TRADINGYEAR = Column(String(8), doc="交易年份")
 
 
@@ -3964,10 +3788,6 @@ class fund_nav_week(Base):
     ANNUALIZEDYIELD = Column(DECIMAL(10, 4), doc="周7日年化收益率")
     TRADINGDAYS = Column(SMALLINT, doc="周净值批露天数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_nav_year(Base):
@@ -3991,10 +3811,6 @@ class fund_nav_year(Base):
     ANNUALIZEDYIELD = Column(DECIMAL(10, 4), doc="年7日年化收益率")
     TRADINGDAYS = Column(SMALLINT, doc="年净值批露天数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_performance_compare(Base):
@@ -4017,10 +3833,6 @@ class fund_performance_compare(Base):
     RETURNMINUSBENCHMARK = Column(DECIMAL(13, 4), doc="净值收益率减去业绩比较基准收益率")
     RETURNSTDEVMINUSBENCHMARK = Column(DECIMAL(13, 4), doc="净值收益率标准差减去业绩比较基准收益率标准差")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     SYMBOL = Column(String(20), doc="基金代码")
 
 
@@ -4039,10 +3851,6 @@ class fund_performance_deviation(Base):
     MINDEVIATION = Column(DECIMAL(10, 4), doc="报告期内偏离度的最低值")
     MEANDEVIATION = Column(DECIMAL(10, 4), doc="报告期内每个工作日偏离度的绝对值的简单平均值")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_portfolio_abs(Base):
@@ -4061,10 +3869,6 @@ class fund_portfolio_abs(Base):
     MARKETVALUE = Column(DECIMAL(20, 2), doc="持有市值")
     PROPORTION = Column(DECIMAL(10, 4), doc="占净值比例 （%）")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_portfolio_bondcredit(Base):
@@ -4080,10 +3884,6 @@ class fund_portfolio_bondcredit(Base):
     FAIRVALUE = Column(DECIMAL(19, 2), doc="公允价值")
     FAIRTONAV = Column(DECIMAL(18, 2), doc="占基金资产净值的比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_portfolio_bondvariety(Base):
@@ -4108,10 +3908,6 @@ class fund_portfolio_bondvariety(Base):
     TOTALBOND = Column(DECIMAL(20, 2), doc="债券合计")
     FLOATINGRATEBONDS = Column(DECIMAL(20, 2), doc="剩余存续期超过397天的浮动利率债券")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CROSSNAME = Column(String(30))
     UPDATETIME_EN = Column(DateTime)
 
@@ -4138,10 +3934,6 @@ class fund_portfolio_currency(Base):
     DAY397 = Column(DECIMAL(10, 4), doc="180天(含)-397天(含)资产占基金资产净值的比例")
     DAY397MATURITY397 = Column(DECIMAL(10, 4), doc="其中：180天(含)-397天(含)剩余存续期超过397天的浮动利率债占基金资产净值的比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     DAY120 = Column(DECIMAL(10, 4), doc="90天(含)-120天资产占基金资产净值的比例（%）")
     DAY120MATURITY397 = Column(DECIMAL(10, 4), doc="其中：90天(含)-120天剩余存续期超过397天的浮动利率债占基金资产净值的比例（%）")
     DAY397TWO = Column(DECIMAL(10, 4), doc="120天(含)-397天(含)资产占基金资产净值的比例（%）")
@@ -4163,12 +3955,50 @@ class fund_portfolio_stock(Base):
     MARKETVALUE = Column(DECIMAL(20, 2), doc="持股市值")
     PROPORTION = Column(DECIMAL(10, 4), doc="占净值比例 ")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     STOCKNAME = Column(String(400), doc="股票名称")
     MASTERFUNDCODE = Column(String(40), doc="基金主代码")
+
+
+class fund_pretrdinfo(Base):
+
+    __tablename__ = 'fund_pretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(20), primary_key=True, doc="证券代码")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    SHORTNAME = Column(String(100), doc="基金简称")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    TRADINGSHORTNAME = Column(String(100), doc="证券简称")
+    INCEPTIONSHARES = Column(DECIMAL(20, 2), doc="基金成立时份额")
+    LATESTCLOSEPRICE = Column(DECIMAL(10, 4), doc="前收盘价")
+    MINTICKSIZE = Column(DECIMAL(10, 4), doc="价格档位")
+    LIMITDOWN = Column(DECIMAL(10, 4), doc="跌停价")
+    LIMITUP = Column(DECIMAL(10, 4), doc="涨停价")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    NAV = Column(DECIMAL(20, 4), doc="基金份额净值")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class fund_pretrdinfohistory(Base):
+
+    __tablename__ = 'fund_pretrdinfohistory'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(20), primary_key=True, doc="证券代码")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    SHORTNAME = Column(String(100), doc="基金简称")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    TRADINGSHORTNAME = Column(String(100), doc="证券简称")
+    INCEPTIONSHARES = Column(DECIMAL(20, 2), doc="基金成立时份额")
+    LATESTCLOSEPRICE = Column(DECIMAL(10, 4), doc="前收盘价")
+    MINTICKSIZE = Column(DECIMAL(10, 4), doc="价格档位")
+    LIMITDOWN = Column(DECIMAL(10, 4), doc="跌停价")
+    LIMITUP = Column(DECIMAL(10, 4), doc="涨停价")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    NAV = Column(DECIMAL(20, 4), doc="基金份额净值")
+    UPDATEID = Column(BIGINT, doc="数据ID")
 
 
 class fund_promoter(Base):
@@ -4195,10 +4025,6 @@ class fund_promoter(Base):
     BUSINESSLICENSENO = Column(String(40), doc="公司营业执照注册号")
     MAIL = Column(String(80), doc="公司电子邮箱")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CONTACTS = Column(String(100))
 
 
@@ -4237,10 +4063,6 @@ class fund_prospectuses(Base):
     OVERSUBSCRIPTIONRATIO = Column(DECIMAL(20, 4), doc="发行超额认购倍数")
     RELEASECOORDINATOR = Column(String(100), doc="发行协调人")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     ISSUEMODEID = Column(String(40), doc="募集方式编码")
     MAXISSUESIZE = Column(DECIMAL(20, 2), doc="募集规模上限")
 
@@ -4259,10 +4081,6 @@ class fund_ptf_bondspe(Base):
     AMORTIZEDCOST = Column(DECIMAL(20, 2), doc="摊余成本")
     FAIRVALUETONAV = Column(DECIMAL(20, 2), doc="占基金资产净值比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_ptf_bsstock(Base):
@@ -4283,10 +4101,6 @@ class fund_ptf_bsstock(Base):
     BSVALUE = Column(DECIMAL(20, 2), doc="买卖金额")
     PROPORTION = Column(DECIMAL(10, 4), doc="占基金资产净值比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_ptf_bsstocktotal(Base):
@@ -4301,10 +4115,6 @@ class fund_ptf_bsstocktotal(Base):
     BUYVALUE = Column(DECIMAL(20, 2), doc="买入股票的成本总额")
     SELLVALUE = Column(DECIMAL(20, 2), doc="卖出股票的收入总额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_ptf_der(Base):
@@ -4324,10 +4134,6 @@ class fund_ptf_der(Base):
     FAIRVALUE = Column(DECIMAL(20, 2), doc="公允价值")
     PROPORTION = Column(DECIMAL(10, 4), doc="占基金资产净值比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_ptf_fund(Base):
@@ -4350,10 +4156,6 @@ class fund_ptf_fund(Base):
     FAIRVALUE = Column(DECIMAL(20, 2), doc="公允价值")
     PROPORTION = Column(DECIMAL(10, 4), doc="占基金资产净值比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     SYMBOL = Column(String(20), doc="基金代码")
 
 
@@ -4371,10 +4173,6 @@ class fund_purchredchg(Base):
     SUSPLARGEPURMAX = Column(DECIMAL(20, 2), doc="暂停大额申购上限")
     CHANGEDATE = Column(DateTime, doc="变更日期")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CURRENCY = Column(String(3), doc="币种")
 
 
@@ -4396,10 +4194,6 @@ class fund_quotation(Base):
     CHANGERATIO = Column(DECIMAL(10, 6), doc="涨跌幅")
     AMPLITUDE = Column(DECIMAL(10, 6), doc="振幅")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_reportdate(Base):
@@ -4412,10 +4206,6 @@ class fund_reportdate(Base):
     ENDDATE = Column(DateTime, doc="统计截止日期")
     DECLAREDATE = Column(DateTime, doc="公告日期")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     MASTERFUNDCODE = Column(String(40), doc="基金主代码")
 
 
@@ -4440,10 +4230,6 @@ class fund_resolution(Base):
     SPLITRATIO = Column(DECIMAL(19, 6), doc="基金份额分拆比例")
     SPLITDESCRIPTION = Column(String(4000), doc="拆分说明")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CONVERSIONRATIO = Column(DECIMAL(19, 10), doc="折算比例")
 
 
@@ -4464,10 +4250,6 @@ class fund_sharechange(Base):
     FUNDSPLITCHANGESHARE = Column(DECIMAL(20, 2), doc="本期基金拆分变动份额")
     ENDDATESHARES = Column(DECIMAL(20, 2), doc="期末总份额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_shareholdercompany(Base):
@@ -4486,10 +4268,6 @@ class fund_shareholdercompany(Base):
     SHARES = Column(DECIMAL(20, 2), doc="管理公司股东持股数量")
     PERCENTAGEHOLDING = Column(DECIMAL(10, 4), doc="持股比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_shsecrate(Base):
@@ -4528,10 +4306,6 @@ class fund_shsecrate(Base):
     TIMINGABI5YR = Column(SMALLINT, doc="择时能力(五年)")
     SHARP5YR = Column(SMALLINT, doc="夏普比率(五年)")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_stracontract(Base):
@@ -4544,10 +4318,6 @@ class fund_stracontract(Base):
     IMPLEMENTATIONDATE = Column(DateTime, doc="实施日期")
     CONTRACTRETURNRATE = Column(DECIMAL(10, 6), doc="约定年基准收益率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_stractshare(Base):
@@ -4561,10 +4331,6 @@ class fund_stractshare(Base):
     SYMBOL = Column(String(40), doc="指数代码")
     ACTIVESHARE = Column(DECIMAL(10, 6), doc="主动份额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strader(Base):
@@ -4581,10 +4347,6 @@ class fund_strader(Base):
     CONTRACTRETURNRATE = Column(DECIMAL(10, 6), doc="约定收益率")
     IMPLICITYIELD = Column(DECIMAL(10, 6), doc="隐含收益率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strainfo(Base):
@@ -4613,10 +4375,6 @@ class fund_strainfo(Base):
     PURCHASESTATUS = Column(String(40), doc="申购状态")
     REDEEMSTATUS = Column(String(40), doc="赎回状态")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_stranav(Base):
@@ -4637,10 +4395,6 @@ class fund_stranav(Base):
     CURRENCYCODE = Column(String(6), doc="货币编码")
     CURRENCY = Column(String(100), doc="币种")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_straquotation(Base):
@@ -4660,10 +4414,6 @@ class fund_straquotation(Base):
     AMOUNT = Column(DECIMAL(20, 4), doc="成交金额")
     LATESTCLOSEPRICE = Column(DECIMAL(10, 4), doc="前收盘价")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strbder(Base):
@@ -4680,10 +4430,6 @@ class fund_strbder(Base):
     NAVLEVERAGE = Column(DECIMAL(10, 6), doc="净值杠杆率")
     CPLEVERAGE = Column(DECIMAL(10, 6), doc="价格杠杆率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strbinfo(Base):
@@ -4712,10 +4458,6 @@ class fund_strbinfo(Base):
     PURCHASESTATUS = Column(String(40), doc="申购状态")
     REDEEMSTATUS = Column(String(40), doc="赎回状态")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strbnav(Base):
@@ -4736,10 +4478,6 @@ class fund_strbnav(Base):
     CURRENCYCODE = Column(String(6), doc="货币编码")
     CURRENCY = Column(String(100), doc="币种")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strbquotation(Base):
@@ -4759,10 +4497,6 @@ class fund_strbquotation(Base):
     AMOUNT = Column(DECIMAL(20, 4), doc="成交金额")
     LATESTCLOSEPRICE = Column(DECIMAL(10, 4), doc="前收盘价")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strinfo(Base):
@@ -4798,10 +4532,6 @@ class fund_strinfo(Base):
     INDEXCODE = Column(String(20), doc="挂钩指数代码")
     INDEXFULLNAME = Column(String(200), doc="指数中文全称")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strmder(Base):
@@ -4820,10 +4550,6 @@ class fund_strmder(Base):
     NAVTRACKINGERROR = Column(DECIMAL(10, 6), doc="净值增长相对指数偏离")
     CPTRACKINGERROR = Column(DECIMAL(10, 6), doc="收盘涨跌相对指数偏离")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strmnav(Base):
@@ -4844,10 +4570,6 @@ class fund_strmnav(Base):
     FREQUENCY = Column(String(100), doc="频度属性")
     MARKETSTATUS = Column(String(100), doc="时间属性")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strmquotation(Base):
@@ -4867,10 +4589,6 @@ class fund_strmquotation(Base):
     AMOUNT = Column(DECIMAL(20, 0), doc="成交金额")
     LASTCLOSE = Column(DECIMAL(10, 3), doc="昨收盘价")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strtrackamonth(Base):
@@ -4884,10 +4602,6 @@ class fund_strtrackamonth(Base):
     INDEXCODE = Column(String(40), doc="挂钩指数代码")
     CPTRACKINGERROR = Column(DECIMAL(10, 6), doc="不考虑现金红利收盘涨跌相对指数偏离")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strtrackaweek(Base):
@@ -4901,10 +4615,6 @@ class fund_strtrackaweek(Base):
     INDEXCODE = Column(String(40), doc="挂钩指数代码")
     CPTRACKINGERROR = Column(DECIMAL(10, 6), doc="不考虑现金红利收盘涨跌相对指数偏离")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strtrackbmonth(Base):
@@ -4918,10 +4628,6 @@ class fund_strtrackbmonth(Base):
     INDEXCODE = Column(String(40), doc="挂钩指数代码")
     CPTRACKINGERROR = Column(DECIMAL(10, 6), doc="不考虑现金红利收盘涨跌相对指数偏离")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_strtrackbweek(Base):
@@ -4935,10 +4641,6 @@ class fund_strtrackbweek(Base):
     INDEXCODE = Column(String(40), doc="挂钩指数代码")
     CPTRACKINGERROR = Column(DECIMAL(10, 6), doc="不考虑现金红利收盘涨跌相对指数偏离")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_tenholders(Base):
@@ -4956,10 +4658,6 @@ class fund_tenholders(Base):
     HOLDERSSHARE = Column(DECIMAL(19, 2), doc="持有份额")
     HOLDEROFLISTING = Column(DECIMAL(10, 4), doc="占上市总份额的比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class fund_unitclassinfo(Base):
@@ -4998,15 +4696,102 @@ class fund_unitclassinfo(Base):
     PURCHASESTATUS = Column(String(40), doc="申购状态;1=开放;2=暂停")
     REDEEMSTATUS = Column(String(40), doc="赎回状态;1=开放;2=暂停")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     PYSHORTNAME = Column(String(100), doc="拼音简称")
     MASTERFUNDCODE = Column(String(40), doc="基金主代码")
     GTASYMBOL = Column(String(100), doc="国泰安代码")
     EXPANDSHORTNAME = Column(String(100), doc="扩位证券简称")
     TRANSEXPLANATION = Column(String(4000), doc="基金转型说明")
+
+
+class fut_calpretrdinfo(Base):
+
+    __tablename__ = 'fut_calpretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    DECLAREDATE = Column(DateTime, doc="业务发生日期")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), primary_key=True, doc="交易代码")
+    EXCHANGESYMBOL = Column(String(20), doc="交易所原始代码")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    UPPERLMTPRC = Column(DECIMAL(9, 3), doc="涨停价格")
+    LOWERLMTPRC = Column(DECIMAL(9, 3), doc="跌停价格")
+    LATESTCLOSEPRICE = Column(DECIMAL(10, 3), doc="前收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(10, 3), doc="前结算价")
+    BENCHMARKOPENPRICE = Column(DECIMAL(10, 3), doc="开盘基准价")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    CHANGERATIOLIMITTYPEID = Column(SMALLINT, doc="涨跌幅限制类型")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    MINCHANGEUNIT = Column(DECIMAL(10, 3), doc="最小变动单位")
+    CONTRACTMULTIPLE = Column(BIGINT, doc="合约乘数")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+
+
+class fut_pretrdinfo(Base):
+
+    __tablename__ = 'fut_pretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    DECLAREDATE = Column(DateTime, doc="业务发生日期")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), doc="交易代码")
+    EXCHANGESYMBOL = Column(String(20), primary_key=True, doc="交易所原始代码")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    UPPERLMTPRC = Column(DECIMAL(9, 3), doc="涨停价格")
+    LOWERLMTPRC = Column(DECIMAL(9, 3), doc="跌停价格")
+    LATESTCLOSEPRICE = Column(DECIMAL(10, 3), doc="前收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(10, 3), doc="前结算价")
+    BENCHMARKOPENPRICE = Column(DECIMAL(10, 3), doc="开盘基准价")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    CHANGERATIOLIMITTYPEID = Column(SMALLINT, doc="涨跌幅限制类型")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    CLIENTPOSITIONLIMIT = Column(DECIMAL(20, 0), doc="客户持仓量限制")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    MINCHANGEUNIT = Column(DECIMAL(10, 3), doc="最小变动单位")
+    CONTRACTMULTIPLE = Column(BIGINT, doc="合约乘数")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+
+
+class fut_pretrdinfohistory(Base):
+
+    __tablename__ = 'fut_pretrdinfohistory'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    DECLAREDATE = Column(DateTime, doc="业务发生日期")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    SYMBOL = Column(String(20), doc="交易代码")
+    EXCHANGESYMBOL = Column(String(20), primary_key=True, doc="交易所原始代码")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    UPPERLMTPRC = Column(DECIMAL(9, 3), doc="涨停价格")
+    LOWERLMTPRC = Column(DECIMAL(9, 3), doc="跌停价格")
+    LATESTCLOSEPRICE = Column(DECIMAL(10, 3), doc="前收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(10, 3), doc="前结算价")
+    BENCHMARKOPENPRICE = Column(DECIMAL(10, 3), doc="开盘基准价")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    CHANGERATIOLIMITTYPEID = Column(SMALLINT, doc="涨跌幅限制类型")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    CLIENTPOSITIONLIMIT = Column(DECIMAL(20, 0), doc="客户持仓量限制")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    MINCHANGEUNIT = Column(DECIMAL(10, 3), doc="最小变动单位")
+    CONTRACTMULTIPLE = Column(BIGINT, doc="合约乘数")
 
 
 class idx_closeweight(Base):
@@ -5019,10 +4804,6 @@ class idx_closeweight(Base):
     SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
     WEIGHT = Column(DECIMAL(10, 4), doc="权重")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class idx_closeweightfree(Base):
@@ -5034,10 +4815,75 @@ class idx_closeweightfree(Base):
     SAMPLESECURITYCODE = Column(String(20), doc="样本证券代码")
     WEIGHT = Column(DECIMAL(10, 4), doc="权重")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class idx_indexinfo(Base):
+
+    __tablename__ = 'idx_indexinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), primary_key=True, doc="指数ID")
+    SYMBOL = Column(String(30), doc="指数代码")
+    INDEXFULLNAME = Column(String(200), doc="指数中文名称")
+    INDEXFULLNAME_EN = Column(String(400), doc="指数英文名称")
+    INDEXSHORTNAME = Column(String(100), doc="指数中文简称")
+    INDEXSHORTNAME_EN = Column(String(200), doc="指数英文简称")
+    LAUNCHDATE = Column(DateTime, doc="推出日期")
+    BENCHMARKDATE = Column(DateTime, doc="指数基期")
+    BENCHMARKPOINT = Column(DECIMAL(18, 4), doc="指数基点")
+    WEIGHTINGMETHODID = Column(String(12), doc="加权方式编码")
+    WEIGHTINGMETHOD = Column(String(100), doc="加权方式")
+    FORMULATIONINSTITUTIONID = Column(DECIMAL(20, 0), doc="编制机构ID")
+    FORMULATIONINSTITUTION = Column(String(200), doc="编制机构")
+    RELEASINGINSTITUTIONID = Column(DECIMAL(20, 0), doc="发布机构ID")
+    RELEASINGINSTITUTION = Column(String(200), doc="发布机构")
+    SAMPLETYPEID = Column(String(12), doc="按样本分类编码")
+    SAMPLETYPE = Column(String(100), doc="按样本分类")
+    INDEXTYPEID = Column(String(12), doc="指数类型编码")
+    INDEXTYPE = Column(String(100), doc="指数类型")
+    EXCHANGEID = Column(String(100), doc="样本所属市场编码")
+    EXCHANGENAME = Column(String(200), doc="样本所属市场名称")
+    CALCULATINGMETHOD = Column(String(2000), doc="计算方法")
+    ADJUSTINGCYCLE = Column(String(12), doc="样本调整周期")
+    ISIN = Column(String(40), doc="ISIN编码")
+    ENDDATE = Column(DateTime, doc="停用日期")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    SAMPLESCOPE = Column(String(4000), doc="样本范围")
+    PYSHORTNAME = Column(String(100))
+    COUNTRYCODE_3 = Column(String(12))
+    CURRENCYCODE = Column(String(12))
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class idx_mkt_lastquotationweek(Base):
+
+    __tablename__ = 'idx_mkt_lastquotationweek'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="指数ID")
+    SYMBOL = Column(String(30), doc="指数代码")
+    TRADINGDATE = Column(DateTime, doc="交易日期")
+    TRADINGWEEK = Column(String(16), doc="交易周份")
+    FILLING = Column(SMALLINT, doc="填充标识")
+    OPENDATE = Column(DateTime, doc="周开盘日期")
+    PRVCLOSEDATE = Column(DateTime, doc="上周收盘日")
+    PRVCLOSEPRICE = Column(DECIMAL(18, 3), doc="上周收盘价")
+    OPENPRICE = Column(DECIMAL(18, 3), doc="周开盘价")
+    HIGHPRICE = Column(DECIMAL(18, 3), doc="周最高价")
+    LOWPRICE = Column(DECIMAL(18, 3), doc="周最低价")
+    HIGHDATE = Column(DateTime, doc="周最高价日")
+    LOWDATE = Column(DateTime, doc="周最低价日")
+    CLOSEPRICE = Column(DECIMAL(18, 3), doc="周收盘价")
+    CLOSEDATE = Column(DateTime, doc="周收盘日期")
+    HIGHCLOSEPRICE = Column(DECIMAL(18, 3), doc="周最高收盘价")
+    LOWCLOSEPRICE = Column(DECIMAL(18, 3), doc="周最低收盘价")
+    HIGHCLOSEDATE = Column(DateTime, doc="周最高收盘价日")
+    LOWCLOSEDATE = Column(DateTime, doc="周最低收盘价日")
+    VOLUME = Column(DECIMAL(20, 2), doc="周成交量")
+    AMOUNT = Column(DECIMAL(20, 2), doc="周成交额")
+    CHANGE = Column(DECIMAL(18, 3), doc="周涨跌")
+    CHANGERATIO = Column(DECIMAL(18, 6), doc="周涨跌幅")
+    TRADINGDAYS = Column(SMALLINT, doc="周交易天数")
+    EXCHANGECODE = Column(String(40), doc="市场编码")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class idx_mkt_quotation(Base):
@@ -5058,16 +4904,45 @@ class idx_mkt_quotation(Base):
     CHANGE = Column(DECIMAL(18, 2), doc="涨跌")
     CHANGERATIO = Column(DECIMAL(18, 6), doc="涨跌幅")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     TOTALSHARES = Column(DECIMAL(30, 0))
     TOTALMARKETVALUE = Column(DECIMAL(30, 2))
     CRICULATIONSHARES = Column(DECIMAL(30, 0))
     CRICULATIONMARKETVALUE = Column(DECIMAL(30, 2))
     SAMPLENUMBER = Column(DECIMAL(20, 0))
     EXCHANGECODE = Column(String(40), doc="市场编码")
+
+
+class idx_samplechange(Base):
+
+    __tablename__ = 'idx_samplechange'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="指数ID")
+    SYMBOL = Column(String(30), doc="指数代码")
+    CHANGEDATE = Column(DateTime, doc="变更日期")
+    DECLAREDATE = Column(DateTime, doc="公告日期")
+    SAMPLESECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SAMPLESECURITYCODE = Column(String(20), doc="样本证券代码")
+    CHANGINGMETHODID = Column(String(12), doc="变动方式编码")
+    CHANGINGMETHOD = Column(String(100), doc="变动方式")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    SAMPLESECURITYNAME = Column(String(200), doc="样本证券简称")
+    SAMPLETYPEID = Column(String(12), doc="样本分类编码")
+    SAMPLETYPE = Column(String(100), doc="样本分类")
+
+
+class idx_samplelatest(Base):
+
+    __tablename__ = 'idx_samplelatest'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="指数ID")
+    SYMBOL = Column(String(30), doc="指数代码")
+    TRADINGDATE = Column(DateTime, doc="交易日期")
+    SAMPLESECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SAMPLESECURITYCODE = Column(String(20), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    SAMPLETYPEID = Column(String(12), doc="样本分类编码")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    WEIGHT = Column(DECIMAL(10, 4), doc="权重")
 
 
 class idx_weight(Base):
@@ -5081,11 +4956,161 @@ class idx_weight(Base):
     TRADINGDATE = Column(DateTime, doc="交易日期")
     WEIGHT = Column(DECIMAL(10, 4), doc="权重")
     UPDATEID = Column(BIGINT, primary_key=True)
-    UPDATESTATE = Column(SMALLINT)
-    UPDATETIME = Column(DateTime)
-    BUSINESSTIME = Column(DateTime)
-    UTSID = Column(DECIMAL(20, 0))
     SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+
+
+class idx_weightnextday(Base):
+
+    __tablename__ = 'idx_weightnextday'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="指数ID")
+    SYMBOL = Column(String(20), doc="指数代码")
+    SAMPLESECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SAMPLESECURITYCODE = Column(String(20), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    TRADINGDATE = Column(DateTime, doc="交易日期")
+    EXCHANGECODE = Column(String(40), doc="样本证券所属交易所")
+    TRADINGCURRENCY = Column(String(6), doc="交易货币")
+    EXCHANGERATE = Column(DECIMAL(9, 4), doc="汇率")
+    TOTALSHARES = Column(BIGINT, doc="总股本")
+    CATEGORIZEDINCLUSIONFACTOR = Column(DECIMAL(10, 6), doc="归档后自由流通比例")
+    SHARESININDEX = Column(BIGINT, doc="计算用股本")
+    CAPFACTOR = Column(DECIMAL(9, 6), doc="权重因子")
+    CLOSE = Column(DECIMAL(12, 3), doc="前一日收盘价")
+    REFERENCEOPENPRICE = Column(DECIMAL(12, 3), doc="调整后开盘参考价")
+    TOTALMARKETCAPITALIZATION = Column(DECIMAL(20, 2), doc="总市值")
+    MARKETCAPININDEX = Column(DECIMAL(20, 2), doc="计算用市值")
+    WEIGHT = Column(DECIMAL(10, 4), doc="权重")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class io_calpretrdinfo(Base):
+
+    __tablename__ = 'io_calpretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), primary_key=True, doc="证券ID")
+    EXCHANGECODE = Column(String(20), primary_key=True, doc="交易所代码")
+    SYMBOL = Column(String(40), doc="交易代码")
+    CONTRACTCODE = Column(String(40), doc="合约编码")
+    SHORTNAME = Column(String(60), doc="合约简称")
+    PYSHORTNAME = Column(String(40), doc="拼音简称")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    UNDERLYINGSECURITYID = Column(DECIMAL(20, 0), doc="标的证券ID")
+    UNDERLYINGSYMBOL = Column(String(20), doc="标的证券交易代码")
+    UNDERLYINGSHORTNAME = Column(String(100), doc="标的证券简称")
+    UNDERLYINGNAME = Column(String(40), doc="标的证券名称")
+    UNDERLYINGINDEXTYPEID = Column(String(12), doc="标的指数分类编码")
+    UNDERLYINGINDEXTYPE = Column(String(100), doc="标的指数类型")
+    UNDERLYINGPRECLOSEPRICE = Column(DECIMAL(11, 4), doc="标的证券前收盘")
+    OPTIONTYPE = Column(String(20), doc="欧式美式")
+    CALLORPUT = Column(String(20), doc="认购认沽")
+    CONTRACTMULTIPLIERUNIT = Column(BIGINT, doc="合约乘数")
+    STRIKEPRICE = Column(DECIMAL(11, 4), doc="行权价")
+    LISTEDDATE = Column(DateTime, doc="首日上市日期")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    EXERCISEDATE = Column(DateTime, doc="行权日")
+    DELIVERYDATE = Column(DateTime, doc="交收日")
+    EXPIREDATE = Column(DateTime, doc="到期日")
+    LATESTCLOSEPRICE = Column(DECIMAL(11, 4), doc="昨收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(11, 4), doc="昨结算价")
+    PREPOSITION = Column(DECIMAL(20, 3), doc="昨持仓量")
+    PREVOLUME = Column(DECIMAL(20, 0), doc="昨成交量")
+    UPPERLMTPRC = Column(DECIMAL(11, 4), doc="涨停价")
+    LOWERLMTPRC = Column(DECIMAL(11, 4), doc="跌停价")
+    MARGINUNIT = Column(DECIMAL(11, 4), doc="当日单张初始保证金")
+    MINCHANGEUNIT = Column(DECIMAL(11, 4), doc="最小变动单位")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    BENCHMARKOPENPRICE = Column(DECIMAL(11, 4), doc="开盘基准价")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    INTERESTRATE = Column(DECIMAL(18, 6), doc="无风险利率")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class io_pretrdinfo(Base):
+
+    __tablename__ = 'io_pretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), primary_key=True, doc="证券ID")
+    EXCHANGECODE = Column(String(20), primary_key=True, doc="交易所代码")
+    SYMBOL = Column(String(40), doc="交易代码")
+    CONTRACTCODE = Column(String(40), doc="合约编码")
+    SHORTNAME = Column(String(60), doc="合约简称")
+    PYSHORTNAME = Column(String(40), doc="拼音简称")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    UNDERLYINGSECURITYID = Column(DECIMAL(20, 0), doc="标的证券ID")
+    UNDERLYINGSYMBOL = Column(String(20), doc="标的证券交易代码")
+    UNDERLYINGSHORTNAME = Column(String(100), doc="标的证券简称")
+    UNDERLYINGNAME = Column(String(40), doc="标的证券名称")
+    UNDERLYINGINDEXTYPEID = Column(String(12), doc="标的指数分类编码")
+    UNDERLYINGINDEXTYPE = Column(String(100), doc="标的指数类型")
+    UNDERLYINGPRECLOSEPRICE = Column(DECIMAL(11, 4), doc="标的证券前收盘")
+    OPTIONTYPE = Column(String(20), doc="欧式美式")
+    CALLORPUT = Column(String(20), doc="认购认沽")
+    CONTRACTMULTIPLIERUNIT = Column(BIGINT, doc="合约乘数")
+    STRIKEPRICE = Column(DECIMAL(11, 4), doc="行权价")
+    LISTEDDATE = Column(DateTime, doc="首日上市日期")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    EXERCISEDATE = Column(DateTime, doc="行权日")
+    DELIVERYDATE = Column(DateTime, doc="交收日")
+    EXPIREDATE = Column(DateTime, doc="到期日")
+    LATESTCLOSEPRICE = Column(DECIMAL(11, 4), doc="昨收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(11, 4), doc="昨结算价")
+    PREPOSITION = Column(DECIMAL(20, 3), doc="昨持仓量")
+    PREVOLUME = Column(DECIMAL(20, 0), doc="昨成交量")
+    UPPERLMTPRC = Column(DECIMAL(11, 4), doc="涨停价")
+    LOWERLMTPRC = Column(DECIMAL(11, 4), doc="跌停价")
+    MARGINUNIT = Column(DECIMAL(11, 4), doc="当日单张初始保证金")
+    MINCHANGEUNIT = Column(DECIMAL(11, 4), doc="最小变动单位")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    BENCHMARKOPENPRICE = Column(DECIMAL(11, 4), doc="开盘基准价")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    INTERESTRATE = Column(DECIMAL(18, 6), doc="无风险利率")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class io_pretrdinfohistory(Base):
+
+    __tablename__ = 'io_pretrdinfohistory'
+
+    SECURITYID = Column(DECIMAL(20, 0), primary_key=True, doc="证券ID")
+    EXCHANGECODE = Column(String(20), primary_key=True, doc="交易所代码")
+    SYMBOL = Column(String(40), doc="交易代码")
+    CONTRACTCODE = Column(String(40), doc="合约编码")
+    SHORTNAME = Column(String(60), doc="合约简称")
+    PYSHORTNAME = Column(String(40), doc="拼音简称")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    UNDERLYINGSECURITYID = Column(DECIMAL(20, 0), doc="标的证券ID")
+    UNDERLYINGSYMBOL = Column(String(20), doc="标的证券交易代码")
+    UNDERLYINGSHORTNAME = Column(String(100), doc="标的证券简称")
+    UNDERLYINGNAME = Column(String(40), doc="标的证券名称")
+    UNDERLYINGINDEXTYPEID = Column(String(12), doc="标的指数分类编码")
+    UNDERLYINGINDEXTYPE = Column(String(100), doc="标的指数类型")
+    UNDERLYINGPRECLOSEPRICE = Column(DECIMAL(11, 4), doc="标的证券前收盘")
+    OPTIONTYPE = Column(String(20), doc="欧式美式")
+    CALLORPUT = Column(String(20), doc="认购认沽")
+    CONTRACTMULTIPLIERUNIT = Column(BIGINT, doc="合约乘数")
+    STRIKEPRICE = Column(DECIMAL(11, 4), doc="行权价")
+    LISTEDDATE = Column(DateTime, doc="首日上市日期")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    EXERCISEDATE = Column(DateTime, doc="行权日")
+    DELIVERYDATE = Column(DateTime, doc="交收日")
+    EXPIREDATE = Column(DateTime, doc="到期日")
+    LATESTCLOSEPRICE = Column(DECIMAL(11, 4), doc="昨收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(11, 4), doc="昨结算价")
+    PREPOSITION = Column(DECIMAL(20, 3), doc="昨持仓量")
+    PREVOLUME = Column(DECIMAL(20, 0), doc="昨成交量")
+    UPPERLMTPRC = Column(DECIMAL(11, 4), doc="涨停价")
+    LOWERLMTPRC = Column(DECIMAL(11, 4), doc="跌停价")
+    MARGINUNIT = Column(DECIMAL(11, 4), doc="当日单张初始保证金")
+    MINCHANGEUNIT = Column(DECIMAL(11, 4), doc="最小变动单位")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    BENCHMARKOPENPRICE = Column(DECIMAL(11, 4), doc="开盘基准价")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    INTERESTRATE = Column(DECIMAL(18, 6), doc="无风险利率")
+    UPDATEID = Column(BIGINT, doc="数据ID")
 
 
 class mac_area_ampimonth(Base):
@@ -5101,10 +5126,6 @@ class mac_area_ampimonth(Base):
     AMPI = Column(DECIMAL(10, 4), doc="农业生产资料价格指数")
     AMPIMOM = Column(DECIMAL(10, 4), doc="农业生产资料价格环比指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_ampiyear(Base):
@@ -5118,10 +5139,6 @@ class mac_area_ampiyear(Base):
     ITEM = Column(String(100), doc="农业生产资料项目名称")
     AMPI = Column(DECIMAL(10, 4), doc="农业生产资料价格指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_cpimonth(Base):
@@ -5137,10 +5154,6 @@ class mac_area_cpimonth(Base):
     CPI = Column(DECIMAL(10, 4), doc="居民消费价格指数")
     CPIMOM = Column(DECIMAL(10, 4), doc="居民消费价格环比指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_cpiyear(Base):
@@ -5156,10 +5169,6 @@ class mac_area_cpiyear(Base):
     ITEM = Column(String(100), doc="居民消费项目名称")
     CPI = Column(DECIMAL(10, 4), doc="居民消费价格指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_fixedassetsidx(Base):
@@ -5175,10 +5184,6 @@ class mac_area_fixedassetsidx(Base):
     EQUIPMENTIDX = Column(DECIMAL(10, 4), doc="设备工器具购置价格指数")
     OTHERSIDX = Column(DECIMAL(10, 4), doc="其他费用价格指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_fixedassetsidxyear(Base):
@@ -5193,10 +5198,6 @@ class mac_area_fixedassetsidxyear(Base):
     EQUIPMENTIDX = Column(DECIMAL(10, 4), doc="设备工器具购置价格指数")
     OTHERSIDX = Column(DECIMAL(10, 4), doc="其他费用价格指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_gdpquarter(Base):
@@ -5216,10 +5217,6 @@ class mac_area_gdpquarter(Base):
     GDP_TERTIARYYOY = Column(DECIMAL(10, 4), doc="国内生产总值同比-第三产业")
     GDPMOM = Column(DECIMAL(10, 4), doc="国内生产总值环比")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_gdpyear(Base):
@@ -5246,10 +5243,36 @@ class mac_area_gdpyear(Base):
     COMPOSIT_TERIND = Column(DECIMAL(10, 4), doc="第三产业占比")
     GDP_PERCAPITA = Column(DECIMAL(18, 4), doc="人均国内生产总值")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class mac_area_industrysalevalue(Base):
+
+    __tablename__ = 'mac_area_industrysalevalue'
+
+    SGNMONTH = Column(String(14), doc="统计月度")
+    DATASIGN = Column(String(4), doc="数据标识")
+    AREACODE = Column(String(20), doc="地区代码")
+    AREANAME = Column(String(100), doc="地区名称")
+    INDUSTRYID = Column(String(20), doc="行业内部编码")
+    INDUSTRY = Column(String(100), doc="行业名称")
+    SALEVALUE = Column(DECIMAL(18, 4), doc="工业销售产值")
+    SALEVALUEYOY = Column(DECIMAL(10, 4), doc="工业销售产值同比")
+    EXPORTDELIVERY = Column(DECIMAL(18, 4), doc="出口交货值")
+    EXPORTDELIVERYYOY = Column(DECIMAL(10, 4), doc="出口交货值同比")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class mac_area_industryvalueadd(Base):
+
+    __tablename__ = 'mac_area_industryvalueadd'
+
+    SGNMONTH = Column(String(14), doc="统计月度")
+    DATASIGN = Column(String(4), doc="数据标识")
+    AREACODE = Column(String(20), doc="地区代码")
+    AREANAME = Column(String(100), doc="地区名称")
+    VALUEADD = Column(DECIMAL(18, 4), doc="工业增加值")
+    VALUEADDYOY = Column(DECIMAL(10, 4), doc="工业增加值同比")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class mac_area_ppimonth(Base):
@@ -5266,10 +5289,6 @@ class mac_area_ppimonth(Base):
     PPI = Column(DECIMAL(10, 4), doc="工业品出厂价格指数")
     PPIMOM = Column(DECIMAL(10, 4), doc="工业品出厂价格环比指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_ppiyear(Base):
@@ -5283,10 +5302,41 @@ class mac_area_ppiyear(Base):
     ITEM = Column(String(100), doc="工业品项目名称")
     PPI = Column(DECIMAL(10, 4), doc="工业品出厂价格指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class mac_area_productoutputmonth(Base):
+
+    __tablename__ = 'mac_area_productoutputmonth'
+
+    SGNMONTH = Column(String(14), doc="统计月度")
+    DATASIGN = Column(String(4), doc="数据标识")
+    AREACODE = Column(String(20), doc="地区代码")
+    AREANAME = Column(String(100), doc="地区名称")
+    PRODID = Column(BIGINT, doc="产品内部编码")
+    PORDNAME = Column(String(200), doc="产品名称")
+    UNITNAME = Column(String(40), doc="单位名称")
+    PRODOUTPUT = Column(DECIMAL(18, 4), doc="产量")
+    PRODOUTPUTYOY = Column(DECIMAL(15, 4), doc="产量同比")
+    PERIODOUTPUT = Column(DECIMAL(18, 4), doc="上年同期产量")
+    PERIODOUTPUTYOY = Column(DECIMAL(10, 4), doc="上年同期产量同比")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class mac_area_productoutputyear(Base):
+
+    __tablename__ = 'mac_area_productoutputyear'
+
+    SGNYEAR = Column(String(8), doc="统计年度")
+    AREACODE = Column(String(20), doc="地区代码")
+    AREANAME = Column(String(100), doc="地区名称")
+    PRODID = Column(BIGINT, doc="产品内部编码")
+    PORDNAME = Column(String(200), doc="产品名称")
+    UNITNAME = Column(String(40), doc="单位名称")
+    PRODOUTPUT = Column(DECIMAL(18, 4), doc="产量")
+    PRODOUTPUTYOY = Column(DECIMAL(10, 4), doc="产量同比")
+    PERIODOUTPUT = Column(DECIMAL(18, 4), doc="上年同期产量")
+    PERIODOUTPUTYOY = Column(DECIMAL(10, 4), doc="上年同期产量同比")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class mac_area_purchaseidxmonth(Base):
@@ -5303,10 +5353,6 @@ class mac_area_purchaseidxmonth(Base):
     PURCHASEIDX = Column(DECIMAL(10, 4), doc="工业品购进价格指数")
     PURCHASEIDXMOM = Column(DECIMAL(10, 4), doc="工业品购进价格环比指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_purchaseidxyear(Base):
@@ -5320,10 +5366,6 @@ class mac_area_purchaseidxyear(Base):
     ITEM = Column(String(100), doc="工业品项目名称")
     PURCHASEIDX = Column(DECIMAL(10, 4), doc="工业品购进价格指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_rpimonth(Base):
@@ -5340,10 +5382,6 @@ class mac_area_rpimonth(Base):
     ITEM = Column(String(100), doc="商品零售项目名称")
     RPI = Column(DECIMAL(10, 4), doc="商品零售价格指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_area_rpiyear(Base):
@@ -5359,10 +5397,6 @@ class mac_area_rpiyear(Base):
     ITEM = Column(String(100), doc="商品零售项目名称")
     RPI = Column(DECIMAL(10, 4), doc="商品零售价格指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_areagdp_expendyear(Base):
@@ -5384,10 +5418,6 @@ class mac_areagdp_expendyear(Base):
     FINALCOMSUMRATE = Column(DECIMAL(10, 4), doc="最终消费率")
     CAPITALFORMATRATE = Column(DECIMAL(10, 4), doc="资本形成率")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_areagdp_idx1978year(Base):
@@ -5410,10 +5440,6 @@ class mac_areagdp_idx1978year(Base):
     GDP_OTHERS = Column(DECIMAL(10, 4), doc="国内生产总值指数-其他")
     GDP_PERCAPITA = Column(DECIMAL(10, 4), doc="人均国内生产总值指数")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_areagdp_idxyear(Base):
@@ -5437,10 +5463,6 @@ class mac_areagdp_idxyear(Base):
     GDP_OTHERS = Column(DECIMAL(10, 4), doc="国内生产总值指数-其他")
     GDP_PERCAPITA = Column(DECIMAL(10, 4), doc="人均国内生产总值指数")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_areagdp_incomeyear(Base):
@@ -5455,10 +5477,6 @@ class mac_areagdp_incomeyear(Base):
     GDP_FADEPRECIAT = Column(DECIMAL(18, 4), doc="固定资产折旧")
     GDP_OPERATSURPLUS = Column(DECIMAL(18, 4), doc="营业盈余")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_bondyieldsd(Base):
@@ -5469,10 +5487,6 @@ class mac_bondyieldsd(Base):
     ONEYEARBONDYIELD = Column(DECIMAL(10, 4), doc="1年期国债收益率")
     TENYEARBONDYIELD = Column(DECIMAL(10, 4), doc="10年期国债收益率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_fixedbaseidx(Base):
@@ -5483,10 +5497,50 @@ class mac_fixedbaseidx(Base):
     ITEMID = Column(String(20), doc="价格指数编码")
     FIXEDBASEIDX = Column(DECIMAL(10, 4), doc="定基指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class mac_industry_financialyear(Base):
+
+    __tablename__ = 'mac_industry_financialyear'
+
+    SGNYEAR = Column(String(8), doc="统计年度")
+    AREACODE = Column(String(20), doc="地区代码")
+    AREANAME = Column(String(100), doc="地区名称")
+    INDUSTRYID = Column(String(20), doc="行业内部编码")
+    INDUSTRY = Column(String(100), doc="行业名称")
+    SCALETYPEID = Column(String(4), doc="统计规模类型代码")
+    SCALETYPE = Column(String(100), doc="统计规模类型")
+    REGISTEREDTYPEID = Column(String(4), doc="统计经济类型代码")
+    REGISTEREDTYPE = Column(String(100), doc="统计经济类型")
+    ENTERPRISENUM = Column(DECIMAL(18, 4), doc="企业单位数")
+    TOTALINDUSTRY = Column(DECIMAL(18, 4), doc="工业总产值")
+    TOTALASSETS = Column(DECIMAL(18, 4), doc="资产总计")
+    TOTALCURRENTASSETS = Column(DECIMAL(18, 4), doc="流动资产合计")
+    FIXEDASSETSPRICE = Column(DECIMAL(18, 4), doc="固定资产原价")
+    FIXEDASSETSNETVALUE = Column(DECIMAL(18, 4), doc="固定资产净值")
+    TOTALLIABILITIES = Column(DECIMAL(18, 4), doc="负债合计")
+    TOTALCURRENTLIABILITIES = Column(DECIMAL(18, 4), doc="流动负债合计")
+    TOTALOWNEREQUITY = Column(DECIMAL(18, 4), doc="所有者权益")
+    SALEREVENUE = Column(DECIMAL(18, 4), doc="主营业务收入")
+    SALECOST = Column(DECIMAL(18, 4), doc="主营业务成本")
+    SALETAXADD = Column(DECIMAL(18, 4), doc="主营业务税金及附加")
+    TOTALPROFIT = Column(DECIMAL(18, 4), doc="利润总额")
+    VALUEADDTAX = Column(DECIMAL(18, 4), doc="本年应交增值税")
+    EMPLOYNUM = Column(DECIMAL(18, 4), doc="全部从业人员年平均人数")
+    AVGCURRENTASSETS = Column(DECIMAL(18, 4), doc="流动资产平均余额")
+    AVGFIXEDASSETS = Column(DECIMAL(18, 4), doc="固定资产净值平均余额")
+    PAIDCAPITAL = Column(DECIMAL(18, 4), doc="实收资本")
+    LONGTERMLIABILITY = Column(DECIMAL(18, 4), doc="长期负债合计")
+    SALEPROFIT = Column(DECIMAL(18, 4), doc="产品销售利润")
+    VALUEADD = Column(DECIMAL(18, 4), doc="工业增加值")
+    ASSETSCONTRIBUTIONRATIO = Column(DECIMAL(10, 4), doc="总资产贡献率")
+    ASSETLIABILITYRATIO = Column(DECIMAL(10, 4), doc="资产负债率")
+    CURRENTASSETTURNOVER = Column(DECIMAL(10, 4), doc="流动资产周转次数")
+    COSTRATIO = Column(DECIMAL(10, 4), doc="成本费用利润率")
+    SALERATIO = Column(DECIMAL(10, 4), doc="产品销售率")
+    EMPLOYRATIO = Column(DECIMAL(10, 4), doc="全员劳动生产率")
+    VALUEADDRATE = Column(DECIMAL(10, 4), doc="工业增加值率")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class mac_industry_ppimonth(Base):
@@ -5499,10 +5553,6 @@ class mac_industry_ppimonth(Base):
     INDUSTRYNAME = Column(String(200), doc="行业")
     PPI = Column(DECIMAL(10, 4), doc="工业品出厂价格指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class mac_industry_ppiyear(Base):
@@ -5515,10 +5565,63 @@ class mac_industry_ppiyear(Base):
     INDUSTRYNAME = Column(String(200), doc="行业")
     PPI = Column(DECIMAL(10, 4), doc="工业品出厂价格指数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class mac_industry_saleinventory(Base):
+
+    __tablename__ = 'mac_industry_saleinventory'
+
+    SGNQUARTER = Column(String(14), primary_key=True, doc="统计季度")
+    PRODID = Column(BIGINT, primary_key=True, doc="产品内部编码")
+    PORDNAME = Column(String(200), doc="产品名称")
+    UNITNAME = Column(String(40), doc="单位名称")
+    SALEVOLUME = Column(DECIMAL(18, 4), doc="累计销售量")
+    SALEOUTPUTRATIO = Column(DECIMAL(10, 4), doc="按实物量计算产销率")
+    STOCKINCRSRATIO = Column(DECIMAL(10, 4), doc="期末库存比年初增长")
+    CHANGESALEOUTPUTRATIO = Column(DECIMAL(10, 4), doc="产销率比上年同期增减")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class mac_industry_valueadd(Base):
+
+    __tablename__ = 'mac_industry_valueadd'
+
+    SGNMONTH = Column(String(14), doc="统计月度")
+    DATASIGN = Column(String(4), doc="数据标识")
+    INDUSTRYID = Column(String(20), doc="行业内部编码")
+    INDUSTRY = Column(String(100), doc="行业名称")
+    VALUEADD = Column(DECIMAL(18, 4), doc="工业增加值")
+    VALUEADDYOY = Column(DECIMAL(10, 4), doc="工业增加值同比")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class mac_industryvalueadd(Base):
+
+    __tablename__ = 'mac_industryvalueadd'
+
+    DECLAREDATE = Column(DateTime, doc="公布日期")
+    SGNMONTH = Column(String(14), doc="统计月度")
+    DATASIGN = Column(String(4), doc="数据标识")
+    VALUEADD = Column(DECIMAL(18, 4), doc="工业增加值")
+    LIGHTINDUSTRY = Column(DECIMAL(18, 4), doc="工业增加值-轻工业")
+    HEAVYINDUSTRY = Column(DECIMAL(18, 4), doc="工业增加值-重工业")
+    STATEOWNED = Column(DECIMAL(18, 4), doc="工业增加值-国有及国有控股企业")
+    PRIVATE = Column(DECIMAL(18, 4), doc="工业增加值-私营企业")
+    COLLECTIVE = Column(DECIMAL(18, 4), doc="工业增加值-集体企业")
+    STOCKCOOPERATE = Column(DECIMAL(18, 4), doc="工业增加值-股份合作企业")
+    JOINTSTOCK = Column(DECIMAL(18, 4), doc="工业增加值-股份制企业")
+    FOREIGN = Column(DECIMAL(18, 4), doc="工业增加值-外商及港台投资企业")
+    VALUEADDYOY = Column(DECIMAL(10, 4), doc="工业增加值同比")
+    LIGHTINDUSTYOY = Column(DECIMAL(10, 4), doc="工业增加值同比-轻工业")
+    HEAVYINDUSTYOY = Column(DECIMAL(10, 4), doc="工业增加值同比-重工业")
+    STATEOWNEDYOY = Column(DECIMAL(10, 4), doc="工业增加值同比-国有及国有控股企业")
+    PRIVATEYOY = Column(DECIMAL(10, 4), doc="工业增加值同比-私营企业")
+    COLLECTIVEYOY = Column(DECIMAL(10, 4), doc="工业增加值同比-集体企业")
+    STOCKCOOPERATEYOY = Column(DECIMAL(10, 4), doc="工业增加值同比-股份合作企业")
+    JOINTSTOCKYOY = Column(DECIMAL(10, 4), doc="工业增加值同比-股份制企业")
+    FOREIGNYOY = Column(DECIMAL(10, 4), doc="工业增加值同比-外商及港台投资企业")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    VALUEADDMOM = Column(DECIMAL(10, 4), doc="工业增加值环比")
 
 
 class mac_statsinfo_calendar(Base):
@@ -5529,10 +5632,318 @@ class mac_statsinfo_calendar(Base):
     WEEKMARK = Column(String(2), doc="星期标示")
     CONTENT = Column(String(100), primary_key=True, doc="信息发布内容")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class plate_bondchange(Base):
+
+    __tablename__ = 'plate_bondchange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(20), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_bondchangelatest(Base):
+
+    __tablename__ = 'plate_bondchangelatest'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(20), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_bondsamplechange(Base):
+
+    __tablename__ = 'plate_bondsamplechange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(20), doc="样本证券代码")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码")
+    ENTERDATE = Column(DateTime, doc="纳入日期")
+    OUTDATE = Column(DateTime, doc="纳出日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_concept(Base):
+
+    __tablename__ = 'plate_concept'
+
+    CONCEPTID = Column(DECIMAL(22, 0), doc="概念编码")
+    CONCEPTNAME = Column(String(100), doc="概念名称")
+    CONCEPTNAME_EN = Column(String(200), doc="概念英文名称")
+    SECURITYID = Column(DECIMAL(20, 0), doc="概念成分股代码ID")
+    SYMBOL = Column(String(20), doc="概念成分股代码")
+    USESIGN = Column(SMALLINT, doc="使用标识")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    UPDATETIME_EN = Column(DateTime)
+
+
+class plate_fundchange(Base):
+
+    __tablename__ = 'plate_fundchange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(20), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码 ")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_fundchangelatest(Base):
+
+    __tablename__ = 'plate_fundchangelatest'
+
+    PLATEID = Column(DECIMAL(22, 0), primary_key=True, doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(20), primary_key=True, doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码 ")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_fundsamplechange(Base):
+
+    __tablename__ = 'plate_fundsamplechange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(20), doc="样本证券代码")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码")
+    ENTERDATE = Column(DateTime, doc="纳入日期")
+    OUTDATE = Column(DateTime, doc="纳出日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_futurechange(Base):
+
+    __tablename__ = 'plate_futurechange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(String(40), doc="样本证券ID")
+    SYMBOL = Column(String(12), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码 ")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_futurechangelatest(Base):
+
+    __tablename__ = 'plate_futurechangelatest'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(String(40), doc="样本证券ID")
+    SYMBOL = Column(String(12), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码 ")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_futuresamplechange(Base):
+
+    __tablename__ = 'plate_futuresamplechange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(20), doc="样本证券代码")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码")
+    ENTERDATE = Column(DateTime, doc="纳入日期")
+    OUTDATE = Column(DateTime, doc="纳出日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_indexchange(Base):
+
+    __tablename__ = 'plate_indexchange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(30), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码 ")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_indexchangelatest(Base):
+
+    __tablename__ = 'plate_indexchangelatest'
+
+    PLATEID = Column(DECIMAL(22, 0), primary_key=True, doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(30), primary_key=True, doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码 ")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_indexsamplechange(Base):
+
+    __tablename__ = 'plate_indexsamplechange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(30), doc="样本证券代码")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码")
+    ENTERDATE = Column(DateTime, doc="纳入日期")
+    OUTDATE = Column(DateTime, doc="纳出日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_platetree(Base):
+
+    __tablename__ = 'plate_platetree'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    PLATETREEID = Column(DECIMAL(22, 0), doc="板块树PID")
+    PLATETITLE = Column(String(200), doc="板块名称")
+    PLATECODE = Column(String(40), doc="板块代码")
+    PLATETYPECODE = Column(String(12), doc="板块种类编码")
+    SECURITYTYPECODE = Column(String(12), doc="证券分类编码")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    NODELEVEL = Column(String(12))
+    ISLASTNODE = Column(String(2))
+    UPDATETIME_EN = Column(DateTime)
+    PLATETITLE_EN = Column(String(40), doc="板块树英文名称")
+
+
+class plate_platetree_state2(Base):
+
+    __tablename__ = 'plate_platetree_state2'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYTYPECODE = Column(String(12), doc="证券分类编码")
+    PLATETYPECODE = Column(String(12), doc="板块种类编码")
+    PLATETREEID = Column(DECIMAL(22, 0), doc="板块树PID")
+    PLATETITLE = Column(String(200), doc="板块名称")
+    PLATETITLE_EN = Column(String(40), doc="板块树英文名称")
+    PLATECODE = Column(String(40), doc="板块代码")
+    NODELEVEL = Column(String(12), doc="节点级别")
+    ISLASTNODE = Column(String(2), doc="是否为叶子节点")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    UPDATETIME_EN = Column(DateTime)
+
+
+class plate_sochange(Base):
+
+    __tablename__ = 'plate_sochange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(40), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_sochangelatest(Base):
+
+    __tablename__ = 'plate_sochangelatest'
+
+    PLATEID = Column(DECIMAL(22, 0), primary_key=True, doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(40), primary_key=True, doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_sosamplechange(Base):
+
+    __tablename__ = 'plate_sosamplechange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(40), doc="样本证券代码")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码")
+    ENTERDATE = Column(DateTime, doc="纳入日期")
+    OUTDATE = Column(DateTime, doc="纳出日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_stockchange(Base):
+
+    __tablename__ = 'plate_stockchange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(20), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码 ")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_stockchangelatest(Base):
+
+    __tablename__ = 'plate_stockchangelatest'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(20), doc="样本证券代码")
+    SAMPLESECURITYNAME = Column(String(100), doc="样本证券简称")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码 ")
+    CHANGETYPECODE = Column(String(12), doc="变动类型编码")
+    CHANGEDATE = Column(DateTime, doc="变动日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class plate_stocksamplechange(Base):
+
+    __tablename__ = 'plate_stocksamplechange'
+
+    PLATEID = Column(DECIMAL(22, 0), doc="板块树ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="样本证券ID")
+    SYMBOL = Column(String(20), doc="样本证券代码")
+    EXCHANGECODE = Column(String(100), doc="上市市场编码")
+    ENTERDATE = Column(DateTime, doc="纳入日期")
+    OUTDATE = Column(DateTime, doc="纳出日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
 
 
 class pled_agrrepamt(Base):
@@ -5544,10 +5955,6 @@ class pled_agrrepamt(Base):
     INITIALAMOUNT = Column(DECIMAL(15, 2), doc="初始交易金额")
     REPAMOUNT = Column(DECIMAL(15, 2), doc="购回交易金额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class pled_agrrepdetl(Base):
@@ -5589,10 +5996,6 @@ class pled_agrrepdetl(Base):
     AMOUNT = Column(DECIMAL(12, 4), doc="金额")
     NOTE = Column(String(4000), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class pled_amtstat(Base):
@@ -5604,10 +6007,6 @@ class pled_amtstat(Base):
     INITIALAMOUNT = Column(DECIMAL(15, 2), doc="初始交易金额")
     REPAMOUNT = Column(DECIMAL(15, 2), doc="购回交易金额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class pled_ltvratio(Base):
@@ -5621,10 +6020,6 @@ class pled_ltvratio(Base):
     TRADABLESHARESLTVRATIO = Column(DECIMAL(5, 2), doc="无限售条件股份质押率")
     LOCKEDSHARESLTVRATIO = Column(DECIMAL(5, 2), doc="有限售条件股份质押率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class pled_repbysecco(Base):
@@ -5640,10 +6035,6 @@ class pled_repbysecco(Base):
     NUMDURATIONTYPE = Column(SMALLINT, doc="存续期限品种数量")
     DURATIONTYPE = Column(String(1000), doc="具体存续期限品种")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class pled_sectrdvol(Base):
@@ -5663,10 +6054,6 @@ class pled_sectrdvol(Base):
     UNREPLOCKEDSHARES = Column(BIGINT, doc="待购回有限售条件证券余量")
     UNREPSHARES = Column(BIGINT, doc="待购回余量")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class pled_stkfrzdetl(Base):
@@ -5722,10 +6109,6 @@ class pled_stkfrzdetl(Base):
     DESCRIPTION = Column(String(4000), doc="事件描述")
     NOTE = Column(String(4000), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class pled_stkratio(Base):
@@ -5748,10 +6131,6 @@ class pled_stkratio(Base):
     PLEDTIMES = Column(INTEGER, doc="质押笔数")
     PLEDRATIO = Column(DECIMAL(5, 2), doc="质押比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
 
 
@@ -5765,10 +6144,6 @@ class pled_stktrdvol(Base):
     PLEDTIMES = Column(INTEGER, doc="本期办理质押笔数")
     PLEDVOLUME = Column(DECIMAL(12, 2), doc="本期办理质押数量")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class pled_trddetl(Base):
@@ -5817,10 +6192,375 @@ class pled_trddetl(Base):
     JOINTPLEDGESEQ = Column(INTEGER, doc="联合质押序列")
     NOTE = Column(String(4000), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class pub_chnadmdivisioncode(Base):
+
+    __tablename__ = 'pub_chnadmdivisioncode'
+
+    DIVISIONCODE = Column(String(12), primary_key=True, doc="行政区划代码")
+    DIVISIONNAME = Column(String(100), doc="区划名称")
+    DIVISIONNAME_EN = Column(String(200), doc="区划英文名称")
+    P_DIVISIONCODE = Column(String(12), doc="上级区划代码")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    ADM_LEVEL = Column(String(4))
+    AREAID = Column(BIGINT)
+    ENDDATE = Column(DateTime, primary_key=True)
+
+
+class pub_codingschema(Base):
+
+    __tablename__ = 'pub_codingschema'
+
+    CODE = Column(String(12), primary_key=True, doc="编码")
+    CODINGSCHEMAID = Column(String(6), primary_key=True, doc="编码体系ID")
+    CODINGSCHEMA = Column(String(40), doc="编码体系")
+    VALUE = Column(String(200), doc="编码中文值")
+    VALUE_EN = Column(String(800), doc="编码英文值")
+    PARENTCODE = Column(String(12), doc="父编码")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class pub_continuingcontract(Base):
+
+    __tablename__ = 'pub_continuingcontract'
+
+    SECURITYID = Column(DECIMAL(20, 0))
+    SYMBOL = Column(String(20))
+    EXCHANGECODE = Column(String(40))
+    TRADINGDATE = Column(DateTime)
+    UNDERLYINGASSETSCODE = Column(String(20))
+    OLDUNDERLYINGASSETSCODE = Column(String(20))
+    CONTINUESIGN = Column(String(20))
+    UPDATEID = Column(BIGINT, primary_key=True)
+    VARIETYID = Column(DECIMAL(20, 0))
+
+
+class pub_eventtype(Base):
+
+    __tablename__ = 'pub_eventtype'
+
+    EVENTTYPECODE = Column(String(12), primary_key=True, doc="事件类型编码")
+    SUBJECT = Column(String(20), doc="主题代码")
+    EVENTTYPE = Column(String(40), doc="事件类型中文")
+    EVENTTYPE_EN = Column(String(100), doc="事件类型英文")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class pub_exchangeinfo(Base):
+
+    __tablename__ = 'pub_exchangeinfo'
+
+    EXCHANGECODE = Column(String(20), primary_key=True, doc="交易所|市场编码")
+    EXCHANGE = Column(String(40), doc="交易所|市场中文名称")
+    EXCHANGE_EN = Column(String(100), doc="交易所|市场英文名称")
+    COUNTRYREGIONCODE = Column(String(6), doc="国家区域3位英文代码")
+    NOTE = Column(String(1000), doc="备注")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class pub_indclassifysets(Base):
+
+    __tablename__ = 'pub_indclassifysets'
+
+    INDUSTRYCODE = Column(String(20), primary_key=True, doc="行业编码")
+    INDCLASSIFYSYSTEM = Column(String(100), doc="行业分类标准")
+    INDCLASSIFYSYSTEMCODE = Column(String(40), primary_key=True, doc="行业分类标准编码")
+    INDUSTRYNAME = Column(String(200), doc="行业中文名称")
+    INDUSTRYNAME_EN = Column(String(400), doc="行业英文名称")
+    P_INDUSTRYCODE = Column(String(20), doc="父类行业编码")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    INDUSTRYID = Column(INTEGER, doc="行业ID")
+    RANK = Column(SMALLINT, doc="行业层级")
+
+
+class pub_indclassifyversion(Base):
+
+    __tablename__ = 'pub_indclassifyversion'
+
+    INDCLASSIFYSYSTEMCODE = Column(String(40), primary_key=True, doc="行业分类标准编码")
+    INDCLASSIFYSYSTEM = Column(String(100), doc="行业分类标准")
+    INDCLASSIFYSYSTEM_EN = Column(String(200), doc="行业分类标准英文")
+    IMPLEMENTDATE = Column(DateTime, doc="标准实行日期")
+    ABANDONDATE = Column(DateTime, doc="标准中止日期")
+    INSTITUTIONID = Column(String(40), doc="行业分类标准发布机构id")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class pub_institutionidchange(Base):
+
+    __tablename__ = 'pub_institutionidchange'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="机构ID")
+    INSTITUTIONNAME = Column(String(200), doc="机构名称")
+    CHANGEDATE = Column(DateTime, doc="变更日期")
+    REASON = Column(String(100), doc="变更原因")
+    STATUS = Column(String(100), doc="机构状态")
+    INSTITUTIONID2 = Column(DECIMAL(20, 0), doc="变更前机构ID")
+    INSTITUTIONNAME2 = Column(String(200), doc="变更前机构名称")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class pub_institutioninfo(Base):
+
+    __tablename__ = 'pub_institutioninfo'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0), primary_key=True, doc="机构ID")
+    SHORTNAME = Column(String(100), doc="机构简称")
+    FULLNAME = Column(String(200), doc="机构名称")
+    ENSHORTNAME = Column(String(400), doc="英文简称")
+    ENNAME = Column(String(400), doc="英文名称")
+    CATEGORY = Column(String(100), doc="机构分类")
+    CATEGORYID = Column(String(12), doc="机构分类代码")
+    OWNSHIP = Column(String(100), doc="所有权性质")
+    OWNSHIPID = Column(String(12), doc="所有权性质编码")
+    ESTABLISHDATE = Column(DateTime, doc="成立日期")
+    LEGALREPRESENTATIVE = Column(String(100), doc="法人代表")
+    REGISTERCAPITAL = Column(BIGINT, doc="注册资本")
+    CURRENCY = Column(String(100), doc="货币种类")
+    CURRENCYCODE = Column(String(12), doc="货币编码")
+    REGISTERADDRESS = Column(String(400), doc="注册地址")
+    OFFICEADDRESS = Column(String(400), doc="办公地址")
+    ZIPCODE = Column(String(20), doc="办公地邮政编码")
+    WEBSITE = Column(String(400), doc="网址")
+    EMAIL = Column(String(400), doc="电子邮箱")
+    ISLISTED = Column(String(2), doc="是否上市公司")
+    REGION = Column(String(100), doc="区域（国家）名称")
+    REGIONCODE = Column(String(6), doc="区域（国家）编码")
+    MAINBUSINESS = Column(String(2000), doc="主营业务")
+    BUSINESSSCOPE = Column(String(4000), doc="经营范围")
+    DESCRIPTION = Column(String(4000), doc="机构简介")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class pub_isocontrycode(Base):
+
+    __tablename__ = 'pub_isocontrycode'
+
+    COUNTRYCODE_3 = Column(String(6), primary_key=True, doc="国家区域3位英文代码")
+    COUNTRYCODE_NUM = Column(String(12), doc="国家区域数字代码")
+    COUNTRYREGIONNAME = Column(String(100), doc="国家区域名称")
+    COUNTRYREGIONNAME_EN = Column(String(200), doc="国家区域英文名称")
+    COUNTRYCODE_2 = Column(String(12), doc="国家区域2位英文代码")
+    CURRENCYCODE = Column(String(6), doc="货币三位英文编码")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class pub_isocurrencycode(Base):
+
+    __tablename__ = 'pub_isocurrencycode'
+
+    CURRENCYCODE = Column(String(6), primary_key=True, doc="货币三位英文编码")
+    CURRENCYCODENUM = Column(String(6), doc="货币数字代码")
+    CURRENCYNAME = Column(String(200), doc="货币中文名称")
+    CURRENCYNAME_EN = Column(String(200), doc="货币英文名称")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class pub_mainconcontract(Base):
+
+    __tablename__ = 'pub_mainconcontract'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    TRADINGDATE = Column(DateTime, doc="交易日期")
+    SYMBOL = Column(String(20), doc="交易代码")
+    SHORTNAME = Column(String(20), doc="证券简称")
+    SIGNTYPEID = Column(SMALLINT, doc="主力连续分类")
+    EXCHANGECODE = Column(String(40), doc="交易所代码")
+    UNDERLYINGSECURITYID = Column(DECIMAL(20, 0), doc="标的证券ID")
+    UNDERLYINGSYMBOL = Column(String(20), doc="标的证券代码")
+    VARIETYID = Column(DECIMAL(20, 0), doc="品种ID")
+    UNDERLYINGASSETSCODE = Column(String(20), doc="标的品种编码")
+    OLDUNDERLYINGASSETSCODE = Column(String(20), doc="标的品种编码(旧)")
+    MODEID = Column(String(20), doc="主力合约规则ID")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class pub_maincontract(Base):
+
+    __tablename__ = 'pub_maincontract'
+
+    SECURITYID = Column(DECIMAL(20, 0))
+    SYMBOL = Column(String(20))
+    EXCHANGECODE = Column(String(40))
+    TRADINGDATE = Column(DateTime)
+    UNDERLYINGASSETSCODE = Column(String(20))
+    OLDUNDERLYINGASSETSCODE = Column(String(20))
+    NEXTTRADINGDATE = Column(DateTime)
+    MODEID = Column(String(20))
+    UPDATEID = Column(BIGINT, primary_key=True)
+    VARIETYID = Column(DECIMAL(20, 0))
+
+
+class pub_personnelinfo(Base):
+
+    __tablename__ = 'pub_personnelinfo'
+
+    PERSONID = Column(DECIMAL(21, 0), doc="人员id")
+    FULLNAME = Column(String(200), doc="人员名称")
+    FULLNAME_EN = Column(String(400), doc="人员英文名称")
+    GENDER = Column(String(2), doc="性别")
+    BIRTHYEAR = Column(SMALLINT, doc="出生年份")
+    BEGINYEARSECURITY = Column(SMALLINT, doc="从事证券开始年份")
+    DEGREEID_H = Column(String(12), doc="最高学历id")
+    DEGREE_H = Column(String(100), doc="最高学历")
+    PROFESSIONALTITLEID = Column(String(200), doc="职称id")
+    PROFESSIONALTITLE = Column(String(200), doc="职称")
+    CERTIFICATEID = Column(String(200), doc="专业技术资格id")
+    CERTIFICATE = Column(String(200), doc="专业技术资格")
+    NATIONALITYCODE = Column(String(6), doc="国籍编码")
+    NATIONALITY = Column(String(100), doc="国籍")
+    RESUME = Column(LONGTEXT, doc="个人简历")
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="相关机构id")
+    COMMENTS = Column(String(4000), doc="备注")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class pub_pretradinginfo(Base):
+
+    __tablename__ = 'pub_pretradinginfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    DECLAREDATE = Column(DateTime, doc="业务发生日期")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    FUNDSHORTNAME = Column(String(100), doc="基金简称")
+    SYMBOL = Column(String(40), primary_key=True, doc="交易代码")
+    EXCHANGESYMBOL = Column(String(40), doc="交易所原始代码")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    UPLIMIT = Column(DECIMAL(11, 4), doc="涨停价格")
+    DOWNLIMIT = Column(DECIMAL(11, 4), doc="跌停价格")
+    LATESTCLOSEPRICE = Column(DECIMAL(11, 4), doc="前收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(11, 4), doc="前结算价")
+    BENCHMARKOPENPRICE = Column(DECIMAL(11, 4), doc="开盘基准价")
+    EXDIVIDENDPRICE = Column(DECIMAL(10, 3), doc="除权除息后的前收盘价")
+    ISSUEPRICE = Column(DECIMAL(7, 2), doc="发行价格")
+    PARVALUERATE = Column(DECIMAL(7, 3), doc="票面利率")
+    INTERESTSTARTDATE = Column(DateTime, doc="计息日期")
+    INTERESTDAYS = Column(INTEGER, doc="计息天数")
+    ACCRUEDINTEREST = Column(DECIMAL(16, 6), doc="应计利息")
+    MINTICKSIZE = Column(DECIMAL(11, 4), doc="价格档位")
+    ISEXDIVIDENDDATE = Column(SMALLINT, doc="是否付息日")
+    INCEPTIONSHARES = Column(DECIMAL(20, 2), doc="基金成立时份额")
+    NAV = Column(DECIMAL(20, 4), doc="基金份额净值")
+    CIRCULATEDSHARE = Column(DECIMAL(20, 0), doc="流通股本")
+    TOTALSHARE = Column(DECIMAL(20, 0), doc="总股本")
+    INDUSTRYCODE = Column(String(40), doc="所属行业")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    ISTRADE = Column(SMALLINT, doc="是否交易")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    CHANGERATIOLIMITTYPEID = Column(SMALLINT, doc="涨跌幅限制类型")
+    ISLASTTRADINGDATE = Column(SMALLINT, doc="是否最后交易日")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    SECURITYTYPECODE = Column(String(20), doc="证券分类编码")
+    CONTRACTCODE = Column(String(40), doc="合约编码")
+    UNDERLYINGSECURITYID = Column(DECIMAL(20, 0), doc="标的证券ID")
+    UNDERLYINGSECURITYSYMBOL = Column(String(20), doc="标的证券交易代码")
+    UNDERLYINGSHORTNAME = Column(String(20), doc="标的证券简称")
+    UNDERLYINGTYPE = Column(String(20), doc="标的证券类型")
+    UNDERLYINGPRECLOSEPRICE = Column(DECIMAL(11, 4), doc="标的证券前收盘")
+    OPTIONTYPE = Column(String(20), doc="欧式美式")
+    CALLORPUT = Column(String(20), doc="认购认沽")
+    CONTRACTMULTIPLIERUNIT = Column(BIGINT, doc="合约单位")
+    STRIKEPRICE = Column(DECIMAL(11, 4), doc="行权价")
+    LISTEDDATE = Column(DateTime, doc="首日上市日期")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    EXERCISEDATE = Column(DateTime, doc="行权日")
+    DELIVERYDATE = Column(DateTime, doc="交收日")
+    EXPIREDATE = Column(DateTime, doc="到期日")
+    MARGINUNIT = Column(DECIMAL(11, 4), doc="单位保证金")
+    SECURITYSTATUSUSFLAG = Column(String(20), doc="期权合约状态信息标签")
+    CLIENTPOSITIONLIMIT = Column(DECIMAL(20, 0), doc="客户持仓量限制")
+    UNDERLYINGNAME = Column(String(40))
+    UNDERLYINGINDEXTYPEID = Column(String(12))
+    MINCHANGEUNIT = Column(DECIMAL(11, 4))
+    PREVOLUME = Column(DECIMAL(20, 0), doc="昨成交量")
+    INTERESTRATE = Column(DECIMAL(18, 6), doc="无风险利率")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    EPS = Column(DECIMAL(8, 4), doc="本年每股利润")
+    ENDDATE = Column(DateTime, doc="截止日期")
+    NAVPERSHARE = Column(DECIMAL(8, 4), doc="每股净资产")
+    PARENTEPS = Column(DECIMAL(8, 4), doc="归属于母公司股东每股利润")
+
+
+class pub_securityconstant(Base):
+
+    __tablename__ = 'pub_securityconstant'
+
+    SECURITYTYPECODE = Column(String(20), doc="证券类别编码")
+    EXCHANGECODE = Column(String(12), doc="交易所代码")
+    SECURITYSUBTYPECODE = Column(String(20), doc="证券分类明细品种编码")
+    INDEXNAME = Column(String(100), doc="常量指标名称")
+    INDEXID = Column(String(16), doc="常量指标编码")
+    INDEXVALUE = Column(String(100), doc="常量指标值")
+    INDEXUNIT = Column(String(20), doc="常量指标单位")
+    STARTDATE = Column(DateTime, doc="启用日期")
+    ENDDATE = Column(DateTime, doc="失效日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class pub_securityinfo(Base):
+
+    __tablename__ = 'pub_securityinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0))
+    SYMBOL = Column(String(40))
+    EXCHANGECODE = Column(String(36))
+    TYPEID = Column(String(12))
+    SHORTNAME = Column(String(100))
+    FULLNAME = Column(String(200))
+    ENSHORTNAME = Column(String(300))
+    ENNAME = Column(String(600))
+    INSTITUTIONID = Column(DECIMAL(20, 0))
+    LISTEDDATE = Column(DateTime)
+    DELISTEDDATE = Column(DateTime)
+    CURRENCYCODE = Column(String(6))
+    ISIN = Column(String(40))
+    STATUSID = Column(String(12))
+    ISSUEPRICE = Column(DECIMAL(12, 4))
+    UPDATEID = Column(BIGINT, primary_key=True)
+    EXCHANGESYMBOL = Column(String(40), doc="交易所原始代码")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class sh_securityinfo(Base):
+
+    __tablename__ = 'sh_securityinfo'
+
+    SYMBOL = Column(String(20), doc="证券代码")
+    ISIN = Column(String(40), doc="ISIN代码")
+    UPDATEDATE = Column(DateTime, doc="记录更新日期")
+    UPDATETIME1 = Column(String(10), doc="记录更新时间")
+    SYMBOLNAME = Column(String(100), doc="中文证券名称")
+    SYMBOLNAME_EN = Column(String(100), doc="英文证券名称")
+    UNDERLYINGSECURITYSYMBOL = Column(String(20), doc="基础证券代码")
+    MARKETTYPE = Column(String(20), doc="市场种类")
+    SYMBOLTYPE = Column(String(20), doc="证券类别")
+    SUBSYMBOLTYPE = Column(String(12), doc="证券子类别")
+    CURRENCYTYPE = Column(String(6), doc="货币种类")
+    LISTEDSHARES = Column(DECIMAL(30, 0), doc="可流通证券已上市数量")
+    UNLISTEDSHARES = Column(DECIMAL(30, 0), doc="可流通证券未上市数量")
+    UNCRICULATIONSHARES = Column(DECIMAL(30, 0), doc="非流通股数量")
+    LISTEDDATE = Column(String(20), doc="上市日期")
+    SETCODE = Column(String(12), doc="产品集SET编号")
+    BUYPERSHARES = Column(DECIMAL(20, 0), doc="买数量单位")
+    SELLPERSHARES = Column(DECIMAL(20, 0), doc="卖数量单位")
+    DECLAREFLOOR = Column(DECIMAL(20, 0), doc="申报数量下限")
+    DECLARECEILING = Column(DECIMAL(20, 0), doc="申报数量上限")
+    LATESTCLOSE = Column(DECIMAL(20, 3), doc="前收盘价格")
+    PRICESTALL = Column(DECIMAL(20, 3), doc="价格档位")
+    CHANGELIMITTYPE = Column(String(4), doc="涨跌幅限制类型")
+    RISECEILINGPRICE = Column(DECIMAL(20, 3), doc="涨幅上限价格")
+    DECLINEFLOORPRICE = Column(DECIMAL(20, 3), doc="跌幅下限价格")
+    EXRSCALE = Column(DECIMAL(20, 6), doc="除权比例")
+    EXDAMOUNT = Column(DECIMAL(20, 6), doc="除息金额")
+    FINANCING = Column(String(4), doc="融资标的标志")
+    SECURITIESLENDING = Column(String(4), doc="融券标的标志")
+    PRODSTATUSID = Column(String(40), doc="产品状态标志")
+    NOTE = Column(String(200), doc="备注")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class smt_collateral(Base):
@@ -5833,10 +6573,6 @@ class smt_collateral(Base):
     SECURITYSUBTYPE = Column(String(120), doc="证券类别细分  ")
     HIGHESTDISCOUNT = Column(DECIMAL(6, 2), doc="最高折算率    ")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0))
     FINANCETRADINGMARGIN = Column(DECIMAL(6, 2), doc="融资保证金比例")
     SHORTTRADINGMARGIN = Column(DECIMAL(6, 2), doc="融券保证金比例")
 
@@ -5853,10 +6589,6 @@ class smt_collaterald(Base):
     SECURITYTYPEID = Column(String(12), doc="证券类型编码")
     HIGHESTDISCOUNT = Column(DECIMAL(6, 2), doc="最高折算率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class smt_traded(Base):
@@ -5877,10 +6609,6 @@ class smt_traded(Base):
     BALANCESHARESVALUE = Column(BIGINT, doc="融券余额     ")
     SMTBALANCEVALUE = Column(BIGINT, doc="融资融券余额 ")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0))
 
 
 class smt_tradesumd(Base):
@@ -5900,10 +6628,6 @@ class smt_tradesumd(Base):
     FINANCESTOCKNUMBER = Column(BIGINT, doc="当日发生融资的股票数量  ")
     LENDINGSTOCKNUMBER = Column(BIGINT, doc="当日发生融券的股票数量  ")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0))
 
 
 class smt_underlyingsd(Base):
@@ -5918,12 +6642,274 @@ class smt_underlyingsd(Base):
     FINANCEAVAILABLE = Column(String(2), doc="可融资标识     ")
     SHORTAVAILABLE = Column(String(2), doc="可融券标识     ")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0))
     TODAYFINANCEAVAILABLE = Column(String(2), doc="当日可融资标识")
     TODAYSHORTAVAILABLE = Column(String(2), doc="当日可融券标识")
+
+
+class so_calpretrdinfo(Base):
+
+    __tablename__ = 'so_calpretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    SYMBOL = Column(String(40), primary_key=True, doc="交易代码")
+    CONTRACTCODE = Column(String(40), doc="合约编码")
+    SHORTNAME = Column(String(40), doc="合约简称")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    UNDERLYINGSECURITYID = Column(DECIMAL(20, 0), doc="标的证券ID")
+    UNDERLYINGSECURITYSYMBOL = Column(String(20), doc="标的证券交易代码")
+    UNDERLYINGSHORTNAME = Column(String(20), doc="标的证券简称")
+    UNDERLYINGTYPE = Column(String(20), doc="标的证券类型")
+    UNDERLYINGPRECLOSEPRICE = Column(DECIMAL(11, 4), doc="标的证券前收盘")
+    OPTIONTYPE = Column(String(20), doc="欧式美式")
+    CALLORPUT = Column(String(20), doc="认购认沽")
+    CONTRACTMULTIPLIERUNIT = Column(BIGINT, doc="合约单位")
+    STRIKEPRICE = Column(DECIMAL(11, 4), doc="行权价")
+    LISTEDDATE = Column(DateTime, doc="首日上市日期")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    EXERCISEDATE = Column(DateTime, doc="行权日")
+    DELIVERYDATE = Column(DateTime, doc="交收日")
+    EXPIREDATE = Column(DateTime, doc="到期日")
+    PRECLOSEPRICE = Column(DECIMAL(10, 4), doc="昨收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(11, 4), doc="昨结算价")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    LIMITUP = Column(DECIMAL(10, 4), doc="涨停价")
+    LIMITDOWN = Column(DECIMAL(10, 4), doc="跌停价")
+    MARGINUNIT = Column(DECIMAL(11, 4), doc="单位保证金")
+    BENCHMARKOPENPRICE = Column(DECIMAL(11, 4), doc="开盘基准价")
+    SECURITYSTATUSUSFLAG = Column(String(20), doc="期权合约状态信息标签")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    PREVOLUME = Column(DECIMAL(20, 0), doc="昨成交量")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    INTERESTRATE = Column(DECIMAL(18, 6), doc="无风险利率")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    TICKSIZE = Column(DECIMAL(10, 4), doc="最小变动单位")
+
+
+class so_pretrdinfo(Base):
+
+    __tablename__ = 'so_pretrdinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    SYMBOL = Column(String(40), primary_key=True, doc="交易代码")
+    CONTRACTCODE = Column(String(40), doc="合约编码")
+    SHORTNAME = Column(String(40), doc="合约简称")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    UNDERLYINGSECURITYID = Column(DECIMAL(20, 0), doc="标的证券ID")
+    UNDERLYINGSECURITYSYMBOL = Column(String(20), doc="标的证券交易代码")
+    UNDERLYINGSHORTNAME = Column(String(20), doc="标的证券简称")
+    UNDERLYINGTYPE = Column(String(20), doc="标的证券类型")
+    UNDERLYINGPRECLOSEPRICE = Column(DECIMAL(11, 4), doc="标的证券前收盘")
+    OPTIONTYPE = Column(String(20), doc="欧式美式")
+    CALLORPUT = Column(String(20), doc="认购认沽")
+    CONTRACTMULTIPLIERUNIT = Column(BIGINT, doc="合约单位")
+    STRIKEPRICE = Column(DECIMAL(11, 4), doc="行权价")
+    LISTEDDATE = Column(DateTime, doc="首日上市日期")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    EXERCISEDATE = Column(DateTime, doc="行权日")
+    DELIVERYDATE = Column(DateTime, doc="交收日")
+    EXPIREDATE = Column(DateTime, doc="到期日")
+    PRECLOSEPRICE = Column(DECIMAL(10, 4), doc="昨收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(11, 4), doc="昨结算价")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    LIMITUP = Column(DECIMAL(10, 4), doc="涨停价")
+    LIMITDOWN = Column(DECIMAL(10, 4), doc="跌停价")
+    MARGINUNIT = Column(DECIMAL(11, 4), doc="单位保证金")
+    BENCHMARKOPENPRICE = Column(DECIMAL(11, 4), doc="开盘基准价")
+    SECURITYSTATUSUSFLAG = Column(String(20), doc="期权合约状态信息标签")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    PREVOLUME = Column(DECIMAL(20, 0), doc="昨成交量")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    INTERESTRATE = Column(DECIMAL(18, 6), doc="无风险利率")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    TICKSIZE = Column(DECIMAL(10, 4), doc="最小报价单位")
+    UPDATEVERSION = Column(String(20), doc="合约版本号")
+    MARGINRATIOPARAM1 = Column(DECIMAL(10, 3), doc="保证金计算比例参数一")
+    MARGINRATIOPARAM2 = Column(DECIMAL(10, 3), doc="保证金计算比例参数二")
+    ROUNDLOT = Column(BIGINT, doc="整手数")
+    LMTORDMINFLOOR = Column(BIGINT, doc="单笔限价申报下限")
+    LMTORDMAXFLOOR = Column(BIGINT, doc="单笔限价申报上限")
+    MKTORDMINFLOOR = Column(BIGINT, doc="单笔市价申报下限")
+    MKTORDMAXFLOOR = Column(BIGINT, doc="单笔市价申报上限")
+
+
+class so_pretrdinfohistory(Base):
+
+    __tablename__ = 'so_pretrdinfohistory'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    EXCHANGECODE = Column(String(12), primary_key=True, doc="交易所代码")
+    SYMBOL = Column(String(40), primary_key=True, doc="交易代码")
+    CONTRACTCODE = Column(String(40), doc="合约编码")
+    SHORTNAME = Column(String(40), doc="合约简称")
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    UNDERLYINGSECURITYID = Column(DECIMAL(20, 0), doc="标的证券ID")
+    UNDERLYINGSECURITYSYMBOL = Column(String(20), doc="标的证券交易代码")
+    UNDERLYINGSHORTNAME = Column(String(20), doc="标的证券简称")
+    UNDERLYINGTYPE = Column(String(20), doc="标的证券类型")
+    UNDERLYINGPRECLOSEPRICE = Column(DECIMAL(11, 4), doc="标的证券前收盘")
+    OPTIONTYPE = Column(String(20), doc="欧式美式")
+    CALLORPUT = Column(String(20), doc="认购认沽")
+    CONTRACTMULTIPLIERUNIT = Column(BIGINT, doc="合约单位")
+    STRIKEPRICE = Column(DECIMAL(11, 4), doc="行权价")
+    LISTEDDATE = Column(DateTime, doc="首日上市日期")
+    LASTTRADINGDATE = Column(DateTime, doc="最后交易日")
+    EXERCISEDATE = Column(DateTime, doc="行权日")
+    DELIVERYDATE = Column(DateTime, doc="交收日")
+    EXPIREDATE = Column(DateTime, doc="到期日")
+    PRECLOSEPRICE = Column(DECIMAL(10, 4), doc="昨收盘价")
+    PRESETTLEPRICE = Column(DECIMAL(11, 4), doc="昨结算价")
+    PREPOSITION = Column(DECIMAL(20, 0), doc="昨持仓量")
+    LIMITUP = Column(DECIMAL(10, 4), doc="涨停价")
+    LIMITDOWN = Column(DECIMAL(10, 4), doc="跌停价")
+    MARGINUNIT = Column(DECIMAL(11, 4), doc="单位保证金")
+    BENCHMARKOPENPRICE = Column(DECIMAL(11, 4), doc="开盘基准价")
+    SECURITYSTATUSUSFLAG = Column(String(20), doc="期权合约状态信息标签")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    PREVOLUME = Column(DECIMAL(20, 0), doc="昨成交量")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    INTERESTRATE = Column(DECIMAL(18, 6), doc="无风险利率")
+    REMAININGDAYS = Column(INTEGER, doc="剩余天数")
+    TICKSIZE = Column(DECIMAL(10, 4), doc="最小报价单位")
+    UPDATEVERSION = Column(String(20), doc="合约版本号")
+    MARGINRATIOPARAM1 = Column(DECIMAL(10, 3), doc="保证金计算比例参数一")
+    MARGINRATIOPARAM2 = Column(DECIMAL(10, 3), doc="保证金计算比例参数二")
+    ROUNDLOT = Column(BIGINT, doc="整手数")
+    LMTORDMINFLOOR = Column(BIGINT, doc="单笔限价申报下限")
+    LMTORDMAXFLOOR = Column(BIGINT, doc="单笔限价申报上限")
+    MKTORDMINFLOOR = Column(BIGINT, doc="单笔市价申报下限")
+    MKTORDMAXFLOOR = Column(BIGINT, doc="单笔市价申报上限")
+
+
+class stk_af_analystrank(Base):
+
+    __tablename__ = 'stk_af_analystrank'
+
+    RATINGYEAR = Column(SMALLINT, doc="评比年度")
+    INDUSTRYCODE = Column(String(20), doc="行业编码")
+    INDUSTRYNAME = Column(String(100), doc="行业名称")
+    INDUSTRYNAME_EN = Column(String(200), doc="行业名称_英")
+    RANKING = Column(SMALLINT, doc="排名")
+    INSTITUTIONNAME = Column(String(200), doc="研究机构")
+    INSTITUTIONNAME_EN = Column(String(400), doc="研究机构_英")
+    INSTITUTIONID = Column(String(200), doc="研究机构ID")
+    ANALYST = Column(String(200), doc="分析师")
+    ANALYST_EN = Column(String(600), doc="分析师_英")
+    ANALYSTID = Column(String(2000), doc="分析师ID")
+    COMMENTS = Column(String(400), doc="备注")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    UPDATETIME_EN = Column(DateTime)
+
+
+class stk_af_forecast(Base):
+
+    __tablename__ = 'stk_af_forecast'
+
+    REPORTID = Column(DECIMAL(20, 0), doc="研究报告ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(20), doc="股票代码")
+    REPORTDATE = Column(DateTime, doc="报告日")
+    FORECASTYEAR = Column(DateTime, doc="预测年度")
+    FORECASTTARGETID = Column(String(20), doc="预测指标编码")
+    FORECASTTARGET = Column(String(100), doc="预测指标")
+    FORECASTTARGET_EN = Column(String(200), doc="预测指标_EN")
+    TARGETVALUE = Column(DECIMAL(24, 6), doc="指标值")
+    LASTTARGETVALUE = Column(DECIMAL(24, 6), doc="上期指标值")
+    INSTITUTIONNAME = Column(String(200), doc="研究机构")
+    INSTITUTIONNAME_EN = Column(String(400))
+    INSTITUTIONID = Column(String(200))
+    ANALYST = Column(String(200), doc="分析师")
+    ANALYST_EN = Column(String(600))
+    ANALYSTID = Column(String(2000))
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    LASTREPORTDATE = Column(DateTime, doc="上期报告日")
+
+
+class stk_af_ratingchange(Base):
+
+    __tablename__ = 'stk_af_ratingchange'
+
+    REPORTID = Column(DECIMAL(20, 0), primary_key=True, doc="研究报告ID")
+    SECURITYID = Column(DECIMAL(20, 0), primary_key=True, doc="证券ID")
+    SYMBOL = Column(String(20), doc="股票代码")
+    SHORTNAME = Column(String(20), doc="证券简称")
+    SHORTNAME_EN = Column(String(40), doc="证券简称_英")
+    REPORTDATE = Column(DateTime, doc="报告日")
+    RATERESULT = Column(String(100), doc="评级结论")
+    STANDARDRATING = Column(String(12), doc="标准化评级")
+    STANDARDRATING_EN = Column(String(100), doc="标准化评级_英")
+    RATERESULTID = Column(String(20), doc="标准化评级编码")
+    RATINGCHANGE = Column(String(20), doc="评级变动")
+    RATINGCHANGE_EN = Column(String(40), doc="评级变动_英")
+    RATINGCHANGEID = Column(String(20), doc="评级变动编码")
+    RATINGMARK = Column(String(4000), doc="评级基准")
+    INSTITUTIONNAME = Column(String(200), doc="研究机构")
+    INSTITUTIONNAME_EN = Column(String(400), doc="研究机构_英")
+    INSTITUTIONID = Column(String(200), doc="研究机构ID")
+    ANALYST = Column(String(200), doc="分析师")
+    ANALYST_EN = Column(String(600), doc="分析师_英")
+    ANALYSTID = Column(String(2000), doc="分析师ID")
+    SUMMARY = Column(String(4000), doc="摘要")
+    FILESTORAGEPATH = Column(String(400), doc="报告存贮路径")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class stk_af_ratingstatistic(Base):
+
+    __tablename__ = 'stk_af_ratingstatistic'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(20), doc="股票代码")
+    STATISTICDATE = Column(DateTime, doc="统计日")
+    STATISTICDAYS = Column(String(20), doc="统计区间")
+    STATISTICDAYSID = Column(String(20), doc="统计区间ID")
+    BUY = Column(INTEGER, doc="买入")
+    OUTPERFORM = Column(INTEGER, doc="增持")
+    NEUTRAL = Column(INTEGER, doc="中性")
+    UNDERPERFORM = Column(INTEGER, doc="减持")
+    SELL = Column(INTEGER, doc="卖出")
+    RATESUM = Column(INTEGER, doc="评级数")
+    MASSRATING = Column(String(12), doc="众数评级")
+    MASSRATINGID = Column(String(20), doc="众数评级ID")
+    RATERESULT = Column(String(12), doc="综合评级")
+    RATERESULTID = Column(String(20), doc="综合评级ID")
+    RATINGCHANGE = Column(String(20), doc="综合评级变动")
+    RATINGCHANGEID = Column(String(20), doc="综合评级变动ID")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    AVGRATE = Column(DECIMAL(8, 4))
+
+
+class stk_af_targetvalue(Base):
+
+    __tablename__ = 'stk_af_targetvalue'
+
+    REPORTID = Column(DECIMAL(20, 0), doc="研究报告ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(20), doc="股票代码")
+    REPORTDATE = Column(DateTime, doc="报告日")
+    OBJECTPRICEMAX = Column(DECIMAL(6, 2), doc="目标价格上限")
+    OBJECTPRICEMIN = Column(DECIMAL(6, 2), doc="目标价格下限")
+    PRICETERM = Column(String(100), doc="目标价期限")
+    PRICETERMID = Column(String(20), doc="目标价期限编码")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    INSTITUTIONNAME = Column(String(200), doc="研究机构")
+    INSTITUTIONNAME_EN = Column(String(400))
+    INSTITUTIONID = Column(String(200))
+    ANALYST = Column(String(200), doc="分析师")
+    ANALYST_EN = Column(String(600))
+    ANALYSTID = Column(String(2000))
+
+
+class stk_calendard(Base):
+
+    __tablename__ = 'stk_calendard'
+
+    CALENDARDATE = Column(DateTime, primary_key=True, doc="日历日期")
+    EXCHANGECODE = Column(String(40), primary_key=True, doc="交易所编码")
+    ISOPEN = Column(String(2), doc="开市与否")
+    WEEKDAY = Column(SMALLINT, doc="星期")
+    UPDATEID = Column(BIGINT)
 
 
 class stk_dividend(Base):
@@ -5967,10 +6953,6 @@ class stk_dividend(Base):
     ADDSHARES = Column(DECIMAL(20, 2))
     TOTALDIVIDENDDISTRI = Column(DECIMAL(20, 4))
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     EVENTID = Column(BIGINT, doc="事件ID")
     PROPOSDATE = Column(DateTime, doc="提议日期")
     PROPOSER = Column(String(1000), doc="提议人")
@@ -5980,6 +6962,332 @@ class stk_dividend(Base):
     PROPOSCONTENT = Column(String(1000), doc="提议内容")
     PROPOSCONTENT_EN = Column(String(1000), doc="提议内容(英文)")
     INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+
+
+class stk_eq_ipo_coinfo(Base):
+
+    __tablename__ = 'stk_eq_ipo_coinfo'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(12), doc="股票代码")
+    SECURITYTYPEID = Column(String(12), doc="股票种类ID")
+    CROSSSYMBOL = Column(String(12), doc="AB股交叉码")
+    SHORTNAME = Column(String(16), doc="证券简称")
+    INDUSTRYID = Column(String(8), doc="行业代码A")
+    INDUSTRYOLDNAME = Column(String(100), doc="行业名称A")
+    INDUSTRYCODE = Column(String(10), doc="行业代码B")
+    INDUSTRYNAME = Column(String(100), doc="行业名称B")
+    EXCHANGECODE = Column(String(20), doc="上市交易所")
+    FULLNAME = Column(String(160), doc="公司名称")
+    ENNAME = Column(String(300), doc="公司英文名称")
+    ESTABLISHDATE = Column(DateTime, doc="公司成立日期")
+    IPODATE = Column(DateTime, doc="首次招股日期")
+    LISTEDDATE = Column(DateTime, doc="公司上市日期")
+    REGISTERADDRESS = Column(String(400), doc="公司注册地")
+    REGISTERCITY = Column(String(100), doc="公司注册所在地")
+    LEGALREPRESENTATIVE = Column(String(40), doc="法定代表人")
+    RETIREDNUMBER = Column(INTEGER, doc="上市时公司职工人数")
+    DIRECTORNUMBER = Column(INTEGER, doc="上市时公司董事会人数")
+    SUPERVISORNUMBER = Column(INTEGER, doc="上市时公司监事会人数")
+    INDCLASSIFYSYSTEMCODE = Column(String(40), doc="行业分类标准编码")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    REGISTEREDCAPITAL = Column(BIGINT, doc="注册资本")
+    MAINBUSSINESS = Column(String(2000), doc="主营业务")
+    BUSSINESSRANGE = Column(String(4000), doc="公司经营范围")
+    COHISTORY = Column(String(4000), doc="公司历史沿革")
+    SOCIALCREDITCODE = Column(String(20), doc="统一社会信用代码")
+
+
+class stk_eq_ipo_employeeinfo(Base):
+
+    __tablename__ = 'stk_eq_ipo_employeeinfo'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(12), doc="股票代码")
+    EVENTID = Column(String(40), doc="权益融资事件ID")
+    SECURITYTYPEID = Column(String(12), doc="股票种类ID")
+    SECURITYTYPE = Column(String(12), doc="股票种类")
+    STATISTICALSCOPEID = Column(String(20), doc="统计范围ID")
+    STATISTICALSCOPE = Column(String(20), doc="统计范围")
+    STATISTICALCOVERAGEID = Column(String(20), doc="统计口径ID")
+    STATISTICALCOVERAGE = Column(String(20), doc="统计口径")
+    POSITIONTYPE = Column(String(100), doc="人员类型名称")
+    POSITIONTYPE_EN = Column(String(400), doc="人员类型名称_英")
+    EMPLOYEENUMBER = Column(INTEGER, doc="人数")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    UPDATETIME_EN = Column(DateTime)
+
+
+class stk_eq_ipo_info(Base):
+
+    __tablename__ = 'stk_eq_ipo_info'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(12), doc="股票代码")
+    EVENTID = Column(String(40), doc="权益融资事件ID")
+    SECURITYTYPEID = Column(String(12), doc="股票种类ID")
+    SECURITYTYPE = Column(String(12), doc="股票种类")
+    ISIPO = Column(String(2), doc="是否首次发行")
+    IPO1DECLAREDATE = Column(DateTime, doc="招股意向书公告日期")
+    SIGNDATE = Column(DateTime, doc="招股说明书签署日期")
+    IPO2DECLAREDATE = Column(DateTime, doc="招股说明书发表日期")
+    PUBLICATIONS = Column(String(200), doc="招股说明书发表刊物")
+    PUBLICATIONS_EN = Column(String(400), doc="招股说明书发表刊物_英")
+    WEBSITE = Column(String(200), doc="招股说明书发表网站")
+    ROADSHOWWEBSITE = Column(String(400), doc="路演网站")
+    ROADSHOWSTARTDATE = Column(DateTime, doc="路演开始日期")
+    ROADSHOWENDDATE = Column(DateTime, doc="路演截止日期")
+    STARTDATE = Column(DateTime, doc="招股开始日期")
+    ENDDATE = Column(DateTime, doc="招股截至日期")
+    ONLINESTARTDATE = Column(DateTime, doc="网上申购开始日期")
+    ONLINEENDDATE = Column(DateTime, doc="网上申购截止日期")
+    OFFLINESTARTDATE = Column(DateTime, doc="网下配售起始日")
+    OFFLINEENDDATE = Column(DateTime, doc="网下配售截止日")
+    SECONDARYMARKETISSUEDATE = Column(DateTime, doc="二级市场配售日期")
+    IPO3DECLAREDATE = Column(DateTime, doc="发行定价公告日期")
+    OTHERISSUEDATE = Column(DateTime, doc="其他发行日期")
+    CALCULATIONDATE = Column(DateTime, doc="市值计算日")
+    IPO4DECLAREDATE = Column(DateTime, doc="上市公告书发表日期")
+    PUBLICATIONS2 = Column(String(200), doc="上市公告书发表刊物")
+    PUBLICATIONS2_EN = Column(String(400), doc="上市公告书发表刊物_英")
+    WEBSITE2 = Column(String(200), doc="上市公告书发表网站")
+    LISTEDDATE = Column(DateTime, doc="上市日期")
+    PARVALUE = Column(DECIMAL(10, 2), doc="每股面值")
+    CURRENCYCODE = Column(String(12), doc="货币编码")
+    CURRENCY = Column(String(20), doc="货币")
+    ISSUESHARES = Column(DECIMAL(20, 0), doc="总发行规模")
+    ISSUESHARESPRIVATE = Column(DECIMAL(20, 0), doc="非公开发行股份数")
+    ISSUESHARESPUBLIC = Column(DECIMAL(20, 0), doc="公开招股数量")
+    OPTIONSIGN = Column(String(2), doc="超额配售选择权标志")
+    PRICE = Column(DECIMAL(10, 2), doc="招股价格人民币")
+    PRICEPUBLIC = Column(DECIMAL(10, 2), doc="发行价格人民币")
+    PRICESPECIAL = Column(DECIMAL(10, 2), doc="特别发行价格人民币")
+    ISSUEOBJECT = Column(String(1000), doc="发行对象")
+    ISSUEMODEID = Column(String(100), doc="发行方式ID")
+    ISSUEMODE = Column(String(100), doc="发行方式")
+    PRICEMODEID = Column(String(40), doc="发行定价方式ID")
+    PRICEMODE = Column(String(40), doc="发行定价方式")
+    UNDERWRITEDMETHODSID = Column(String(12), doc="承销方式ID")
+    UNDERWRITEDMETHODS = Column(String(20), doc="承销方式")
+    PE1 = Column(DECIMAL(10, 4), doc="发行前加权平均市盈率")
+    PE1CEILING = Column(DECIMAL(10, 4), doc="发行前加权平均市盈率上限")
+    PE1FLOOR = Column(DECIMAL(10, 4), doc="发行前加权平均市盈率下限")
+    PE2 = Column(DECIMAL(10, 4), doc="发行前全面摊薄市盈率")
+    PE2CEILING = Column(DECIMAL(10, 4), doc="发行前全面摊薄市盈率上限")
+    PE2FLOOR = Column(DECIMAL(10, 4), doc="发行前全面摊薄市盈率下限")
+    PE3 = Column(DECIMAL(10, 4), doc="加权发行市盈率")
+    PE4 = Column(DECIMAL(10, 4), doc="摊薄发行市盈率")
+    NAV1 = Column(DECIMAL(10, 4), doc="发行前每股净资产")
+    NAV2 = Column(DECIMAL(10, 4), doc="发行后每股净资产")
+    EPS1 = Column(DECIMAL(10, 4), doc="发行前每股收益")
+    EPS2 = Column(DECIMAL(10, 4), doc="发行后每股收益")
+    PB = Column(DECIMAL(10, 4), doc="发行市净率")
+    ACTUALISSUESHARES = Column(DECIMAL(20, 0), doc="实际发行总量")
+    ACTUALRAISEDSHARESPRIVATE = Column(DECIMAL(20, 0), doc="实际非公开发行总股数")
+    ACTUALRAISEDSHARESLEGALENTITY = Column(DECIMAL(20, 0), doc="定向募集法人股")
+    ACTUALRAISEDSHARESSTAFF = Column(DECIMAL(20, 0), doc="定向募集职工股")
+    ACTUALRAISEDSHARESSPECIAL = Column(DECIMAL(20, 0), doc="特别发行数量")
+    ACTUALRAISEDSHARESPUBLIC = Column(DECIMAL(20, 0), doc="实际公开发行总股数")
+    EXPECTRAISEFUND = Column(DECIMAL(20, 2), doc="预计募集资金总额")
+    EXPECTRAISENETFUND = Column(DECIMAL(20, 2), doc="预计募集资金净额")
+    EXPECTEXPENSE = Column(DECIMAL(20, 2), doc="预计发行总费用")
+    RAISEFUND = Column(DECIMAL(20, 2), doc="实际募集资金总额人民币")
+    RAISENETFUND = Column(DECIMAL(20, 2), doc="实际募集资金净额人民币")
+    EXPENSE = Column(DECIMAL(20, 2), doc="实际发行总费用人民币")
+    EXPENSEPERSHARE = Column(DECIMAL(10, 4), doc="每股发行费用人民币")
+    PRICESPECIALINFOREIGN = Column(DECIMAL(10, 2), doc="特别发行价格外币")
+    CURRENCYCODE1 = Column(String(12), doc="特别发行价格外币编码")
+    CURRENCY1 = Column(String(100), doc="特别发行价格外币币种")
+    PRICEPUBLICINFOREIGN = Column(DECIMAL(10, 2), doc="公开发行价格外币")
+    CURRENCYCODE2 = Column(String(12), doc="公开发行价格外币编码")
+    CURRENCY2 = Column(String(100), doc="公开发行价格外币币种")
+    RAISEFUNDINFOREIGN = Column(DECIMAL(20, 2), doc="实际募集资金总额外币")
+    RAISENETFUNDINFOREIGN = Column(DECIMAL(20, 2), doc="实际募集资金净额外币")
+    EXPENSEINFOREIGN = Column(DECIMAL(20, 2), doc="实际发行总费用外币")
+    EXPENSEPERSHAREINFOREIGN = Column(DECIMAL(10, 4), doc="每股发行费用外币")
+    REGISTEREDCAPITAL1 = Column(DECIMAL(20, 2), doc="公司招股时注册资本")
+    REGISTEREDCAPITAL2 = Column(DECIMAL(20, 2), doc="公司上市时注册资本")
+    BANK = Column(String(400), doc="公司的收款银行")
+    BANK_EN = Column(String(1000))
+    ACCOUNTS = Column(String(400), doc="公司的银行帐号")
+    TAXRATE = Column(DECIMAL(8, 2), doc="发行时所得税税率")
+    TAXRATETYPEID = Column(String(20), doc="发行时所得税税率类型ID")
+    TAXRATETYPE = Column(String(20), doc="发行时所得税税率类型")
+    TAXRATETYPE_EN = Column(String(100), doc="发行时所得税税率类型_英")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    UPDATETIME_EN = Column(DateTime)
+    INQUIRYDECLAREDATE = Column(DateTime, doc="初步询价公告日")
+    INQUIRYSTARTDATE = Column(DateTime, doc="初步询价起始日")
+    INQUIRYENDDATE = Column(DateTime, doc="初步询价截止日")
+    OFFLINEPRICEDATE = Column(DateTime, doc="网下定价日")
+    ROADSHOWDECLAREDATE = Column(DateTime, doc="网上路演公告日")
+    ISSUEDECLAREDATE = Column(DateTime, doc="发行公告日")
+    DIVIDENDPOLICY = Column(String(4000), doc="股利分配政策")
+
+
+class stk_eq_ipo_ipocg(Base):
+
+    __tablename__ = 'stk_eq_ipo_ipocg'
+
+    SYMBOL = Column(String(6), doc="股票代码")
+    IPODATE = Column(DateTime, doc="招股日期")
+    CONATURE = Column(String(100), doc="公司性质")
+    ISPE = Column(String(1), doc="是否有私募（或风投）")
+    FIRSTPENAME = Column(String(100), doc="第一大私募名称")
+    FIRSTPESHARES = Column(DECIMAL(20, 0), doc="第一大私募持股数")
+    FIRSTPESHARERATIO = Column(DECIMAL(10, 4), doc="第一大私募持股比率")
+    DIRECTORNUMBER = Column(SMALLINT, doc="董事会成员数量")
+    INDDIRECTORNUM = Column(SMALLINT, doc="独立董事数量")
+    ISPARTTIME = Column(String(1), doc="董事长与总经理兼任情况")
+    AUDITCOMMEMBERNUM = Column(SMALLINT, doc="审计委员会成员数量")
+    AUDITCOMINDDIRNUM = Column(SMALLINT, doc="审计委员会独立董事数量")
+    REMASSCOMMEMBERNUM = Column(SMALLINT, doc="薪酬与考核委员会成员数量")
+    REMASSCOMINDDIRNUM = Column(SMALLINT, doc="薪酬与考核委员会独立董事数量")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+
+
+class stk_eq_ipo_marketexhibit(Base):
+
+    __tablename__ = 'stk_eq_ipo_marketexhibit'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(12), doc="股票代码")
+    EVENTID = Column(String(40), doc="权益融资事件ID")
+    SECURITYTYPEID = Column(String(12), doc="股票种类ID")
+    SECURITYTYPE = Column(String(12), doc="股票种类")
+    LISTEDDATE = Column(DateTime, doc="上市日期")
+    CURRENCYCODE = Column(String(12), doc="币种编码")
+    CURRENCY = Column(String(12))
+    OPENPRICE = Column(DECIMAL(9, 3), doc="首日开盘价")
+    HIGHPRICE = Column(DECIMAL(9, 3), doc="首日最高价")
+    LOWPRICE = Column(DECIMAL(9, 3), doc="首日最低价")
+    CLOSEPRICE = Column(DECIMAL(9, 3), doc="首日收盘价")
+    VOLUME = Column(BIGINT, doc="首日交易股数")
+    AMOUNT = Column(DECIMAL(16, 2), doc="首日交易金额")
+    RETURN = Column(DECIMAL(12, 6), doc="上市首日的个股回报率")
+    ADJUSTEDRETURN = Column(DECIMAL(12, 6), doc="上市首日经市场调整的个股回报率")
+    PE = Column(DECIMAL(8, 2), doc="上市首日市盈率")
+    PB = Column(DECIMAL(8, 2), doc="上市首日市净率")
+    TURNOVERRATE = Column(DECIMAL(10, 5), doc="上市首日换手率")
+    MARKETRETURN = Column(DECIMAL(12, 6), doc="上市首日的市场回报率")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class stk_eq_ipo_overallot(Base):
+
+    __tablename__ = 'stk_eq_ipo_overallot'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(12), doc="股票代码")
+    EVENTID = Column(String(40), doc="权益融资事件ID")
+    SECURITYTYPEID = Column(String(12), doc="股票种类ID")
+    SECURITYTYPE = Column(String(12), doc="股票种类")
+    DECLAREDATE = Column(DateTime, doc="公告日期")
+    ENDDATE = Column(DateTime, doc="最后行使日期")
+    AVERAGEPRICE = Column(DECIMAL(10, 2), doc="行权中竞价交易购买股票均价")
+    SHARES = Column(DECIMAL(20, 0), doc="行权中竞价交易购买股票数量")
+    OVERALLOTMENTSHARES = Column(DECIMAL(20, 0), doc="超额发行股份数")
+    OVERALLOTMENTRATIO = Column(DECIMAL(8, 4), doc="超额配售率")
+    ISFULLAMOUNT = Column(String(2), doc="是否全额")
+    FUNDADDED = Column(DECIMAL(20, 2), doc="增加的募集资金")
+    EXPENSEADDED = Column(DECIMAL(20, 2), doc="增加的募集资金费用")
+    RAISEFUND = Column(DECIMAL(20, 2), doc="行权后募集资金总额人民币")
+    RAISENETFUND = Column(DECIMAL(20, 2), doc="行权后募集资金净额人民币")
+    RAISEFUNDINFOREIGNCURRENCY = Column(DECIMAL(20, 2), doc="行权后募集资金总额外币")
+    RAISENETFUNDINFOREIGNCURRENCY = Column(DECIMAL(20, 2), doc="行权后募集资金净额外币")
+    CURRENCYCODE = Column(String(12), doc="外币币种编码")
+    CURRENCY = Column(String(20), doc="外币币种")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class stk_eq_ipo_result(Base):
+
+    __tablename__ = 'stk_eq_ipo_result'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(12), doc="股票代码")
+    EVENTID = Column(String(40), doc="权益融资事件ID")
+    SECURITYTYPEID = Column(String(12), doc="股票种类ID")
+    SECURITYTYPE = Column(String(12), doc="股票种类")
+    SUBSCRIPTIONCODE1 = Column(String(16), doc="申购代码1")
+    SHORTNAME1 = Column(String(40), doc="申购简称1")
+    SHORTNAME1_EN = Column(String(40), doc="申购简称1_英")
+    SUBSCRIPTIONCODE2 = Column(String(16), doc="申购代码2")
+    SHORTNAME2 = Column(String(40), doc="申购简称2")
+    SHORTNAME2_EN = Column(String(40), doc="申购简称2_英")
+    SUBSCRIPTIONCODE3 = Column(String(16), doc="申购代码3")
+    SHORTNAME3 = Column(String(40), doc="申购简称3")
+    SHORTNAME3_EN = Column(String(40), doc="申购简称3_英")
+    LISTEDDATE = Column(DateTime, doc="上市日期")
+    DECLAREDATE = Column(DateTime, doc="中签率公告日期")
+    PRICESCOPE = Column(String(100), doc="申购价格范围")
+    ONLINEISSUE = Column(DECIMAL(20, 0), doc="网上发行数量")
+    ONLINEISSUETOTOTALISSUE = Column(DECIMAL(10, 4), doc="网上发行占发行总量的比例")
+    ONLINEPURCHASEHOUSEHOLDERS = Column(BIGINT, doc="网上有效申购户数")
+    ONLINEPURCHASESHARES = Column(DECIMAL(20, 0), doc="网上有效申购股数")
+    ONLINESUCCESSRATE = Column(DECIMAL(12, 6), doc="网上发行中签率")
+    ONLINEOVERSUBSCRIPTIONRATIO = Column(DECIMAL(10, 4), doc="网上超额认购倍数")
+    OFFLINEISSUE = Column(DECIMAL(20, 0), doc="网下配售数量")
+    OFFLINEISSUETOTOTALISSUE = Column(DECIMAL(10, 4), doc="网下配售占发行总量的比例")
+    OFFLINEPURCHASESHARES = Column(DECIMAL(20, 0), doc="网下有效申购股数")
+    OFFLINEPURCHASEHOUSEHOLDERS = Column(BIGINT, doc="网下有效申购户数")
+    OFFLINESUCCESSRATE = Column(DECIMAL(12, 6), doc="网下配售比例")
+    OFFLINEOVERSUBSCRIPTIONRATIO = Column(DECIMAL(10, 4), doc="网下配售超额认购倍数")
+    ISSUEMARKET = Column(DECIMAL(20, 0), doc="市值配售数量")
+    ISSUEMARKETTOTOTALISSUE = Column(DECIMAL(10, 4), doc="市值配售占发行总量的比例")
+    PURCHASESHARESMARKET = Column(DECIMAL(20, 0), doc="市值配售有效申购股数")
+    PURCHASEHOUSEHOLDERSMARKET = Column(BIGINT, doc="市值配售有效申购户数")
+    SUCCESSRATEMARKET = Column(DECIMAL(12, 6), doc="市值配售中签率")
+    OVERSUBSCRIPTIONRATIOMARKET = Column(DECIMAL(10, 4), doc="市值配售超额认购倍数")
+    ISSUESTRATEGIC = Column(DECIMAL(20, 0), doc="战略投资者配售数量")
+    ISSUESTRATEGICTOTOTALISSUE = Column(DECIMAL(10, 4), doc="战略投资者配售占发行总量的比例")
+    OVERALLOTMENTSHARES = Column(DECIMAL(20, 0), doc="超额配售股份数")
+    OBJECTOVERALLOTMENT = Column(String(400), doc="超额配售发行对象")
+    OBJECTOVERALLOTMENT_EN = Column(String(800), doc="超额配售发行对象_英")
+    PURCHASESHARES = Column(DECIMAL(20, 0), doc="总有效申购股数")
+    PURCHASEHOUSEHOLDERS = Column(BIGINT, doc="总有效申购户数")
+    OVERSUBSCRIPTIONRATIO = Column(DECIMAL(10, 4), doc="总超额认购倍数")
+    SUCCESSRATE = Column(DECIMAL(12, 6), doc="总中签率")
+    CALLBACKSIGN = Column(String(2), doc="回拨机制适用性")
+    CALLBACKTYPEID = Column(String(12), doc="回拨方式ID")
+    CALLBACKTYPE = Column(String(40), doc="回拨方式")
+    CALLBACKSHARES = Column(DECIMAL(20, 0), doc="回拨数量")
+    STOPISSUESIGN = Column(String(2), doc="发行中止标志")
+    LISTEDSHARES = Column(DECIMAL(20, 0), doc="本次上市流通股数")
+    EXISTINGSTATEOWNEDSHARES = Column(DECIMAL(16, 4), doc="其中：国有股存量实际发行数量")
+    PUBLICSHARES = Column(DECIMAL(16, 4), doc="其中：社会公众实际发行数量")
+    STAFFSHARES = Column(DECIMAL(16, 4), doc="其中：员工实际发行数量")
+    STRATEGICINVESTORSHARES = Column(DECIMAL(16, 4), doc="其中：战略投资者实际配售数量")
+    FUNDSHARES = Column(DECIMAL(16, 4), doc="其中：基金实际配售数量")
+    INSURANCECOMPANYSHARES = Column(DECIMAL(16, 4), doc="其中：保险公司实际配售数量")
+    LEGALENTITYSHARES = Column(DECIMAL(16, 4), doc="其中：一般法人实际配售数量")
+    UNDERWRITINGBALANCESHARES = Column(DECIMAL(20, 0), doc="承销余额")
+    OTHERSHARES = Column(DECIMAL(16, 4), doc="其中：其他发行数量")
+    LOCKUPPERIODLEGALENTITY = Column(String(40), doc="向一般法人配售股份锁定期")
+    LOCKUPPERIODINSURANCE = Column(String(40), doc="向保险公司配售股份锁定期")
+    LOCKUPPERIODFUND = Column(String(40), doc="向基金配售股份锁定期")
+    LOCKUPPERIODSTRATEGICINVESTOR = Column(String(40), doc="向战略投资者配售股份锁定期")
+    LOCKUPPERIODOTHERSHARES = Column(String(40), doc="其他发行股份锁定期")
+    FUNDSHARESTOTOTAL = Column(DECIMAL(12, 8), doc="被基金所持比率")
+    SHAREHOLDERS = Column(BIGINT, doc="持股户数")
+    SHAREHOLDERSOVER1000 = Column(BIGINT, doc="持有1000股以上户数")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    UPDATETIME_EN = Column(DateTime)
+    ONLINEDISTRNUM = Column(DECIMAL(20, 0), doc="网上发行配号总数")
+    OFFLINEDECLAREDATE = Column(DateTime, doc="网下配售结果公告日")
+    ONLINEVERIFICDATE = Column(DateTime, doc="网上申购资金验资日")
+    OFFLINEVERIFICDATE = Column(DateTime, doc="网下申购资金验资日")
+    OFFLINEISSUEPAYMENTDATE = Column(DateTime, doc="网下发行缴款日")
+    ISSUERESULTDECLAREDATE = Column(DateTime, doc="发行结果公告日")
+    RAISEFUNDARRIVALDATE = Column(DateTime, doc="募集资金到帐日期")
+    RAISEFUNDARRIVAAMOUNT = Column(DECIMAL(20, 2), doc="募集资金到帐金额")
 
 
 class stk_eq_rs_info(Base):
@@ -6028,10 +7336,6 @@ class stk_eq_rs_info(Base):
     EQUITYPERSHARESAFTER = Column(DECIMAL(10, 4), doc="发行后每股净资产")
     INVESTPROJECT = Column(String(4000), doc="募集资金用途")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     UPDATETIME_EN = Column(DateTime)
 
 
@@ -6067,10 +7371,6 @@ class stk_eq_rs_plan(Base):
     DECLAREDATE2 = Column(DateTime, doc="配股说明书公告日期")
     COMMENTS = Column(String(600), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_eq_rs_result(Base):
@@ -6108,10 +7408,6 @@ class stk_eq_rs_result(Base):
     SUBSCRIPTIONMAJORHOLDERS = Column(String(40), doc="大股东认购方式")
     SUCCESSFULSIGN = Column(String(2), doc="发行成功标志")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     UPDATETIME_EN = Column(DateTime)
     ACTPLACINGRATIO = Column(DECIMAL(12, 6), doc="实际配股比例")
 
@@ -6147,10 +7443,6 @@ class stk_eq_seo_plan(Base):
     PROJECTACTUALIZE = Column(String(20), doc="方案进度")
     COMMENTS = Column(String(600), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_eq_seo_private(Base):
@@ -6185,10 +7477,6 @@ class stk_eq_seo_private(Base):
     EQUITYPERSHAREAFTER = Column(DECIMAL(10, 4), doc="发行后每股净资产")
     COMMENTS = Column(String(1000), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_eq_seo_publicinfo(Base):
@@ -6249,10 +7537,6 @@ class stk_eq_seo_publicinfo(Base):
     INVESTPROJECT = Column(String(4000), doc="募集资金用途")
     STAFFNUMBER = Column(INTEGER, doc="公司职工总人数")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     UPDATETIME_EN = Column(DateTime)
 
 
@@ -6302,11 +7586,23 @@ class stk_eq_seo_publicresult(Base):
     OVERSUBSCRIPTIONRATIO = Column(DECIMAL(10, 4), doc="总超额认购倍数")
     SUCCESSRATE = Column(DECIMAL(12, 6), doc="总中签率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     UPDATETIME_EN = Column(DateTime)
+
+
+class stk_eventlist(Base):
+
+    __tablename__ = 'stk_eventlist'
+
+    SYMBOL = Column(String(20), doc="证券代码")
+    EVENTTYPECODE = Column(String(12), doc="事件类型编码")
+    EVENTTYPE = Column(String(100), doc="事件类型")
+    SCHEDULECODE = Column(String(12), doc="方案进度编码")
+    SCHEDULE = Column(String(100), doc="方案进度")
+    SCHEDULEDATE = Column(DateTime, doc="进度日期")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="公司ID")
+    EVENTID = Column(DECIMAL(20, 0), doc="事件ID")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class stk_fin_balance(Base):
@@ -6441,10 +7737,6 @@ class stk_fin_balance(Base):
     A003 = Column(DECIMAL(20, 2))
     A004 = Column(DECIMAL(20, 2))
     UPDATEID = Column(BIGINT, primary_key=True)
-    UPDATETIME = Column(DateTime)
-    UPDATESTATE = Column(SMALLINT)
-    BUSINESSTIME = Column(DateTime)
-    UTSID = Column(BIGINT, doc="UTS更新字段")
     REPORTTYPEID = Column(SMALLINT)
     A002127 = Column(DECIMAL(20, 2), doc="递延收益-流动负债")
     A002210 = Column(DECIMAL(20, 2), doc="递延收益-非流动负债")
@@ -6540,10 +7832,6 @@ class stk_fin_cashflow(Base):
     C008 = Column(DECIMAL(20, 2))
     C006 = Column(DECIMAL(20, 2))
     UPDATEID = Column(BIGINT, primary_key=True)
-    UPDATETIME = Column(DateTime)
-    UPDATESTATE = Column(SMALLINT)
-    BUSINESSTIME = Column(DateTime)
-    UTSID = Column(BIGINT, doc="UTS更新字段")
     REPORTTYPEID = Column(SMALLINT)
 
 
@@ -6606,10 +7894,6 @@ class stk_fin_cashflowindex(Base):
     CASHREINVESTMENTRATIO = Column(DECIMAL(20, 6), doc="现金再投资比率")
     OPERATINGNCFTOMAINCASHNEEDEDB = Column(DECIMAL(20, 6), doc="现金满足投资比率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_cashflowindrect(Base):
@@ -6650,10 +7934,6 @@ class stk_fin_cashflowindrect(Base):
     D000207 = Column(DECIMAL(20, 2))
     D0002 = Column(DECIMAL(20, 2))
     UPDATEID = Column(BIGINT, primary_key=True)
-    UPDATETIME = Column(DateTime)
-    UPDATESTATE = Column(SMALLINT)
-    BUSINESSTIME = Column(DateTime)
-    UTSID = Column(BIGINT, doc="UTS更新字段")
     REPORTTYPEID = Column(SMALLINT)
     D000118 = Column(DECIMAL(20, 2), doc="信用减值损失")
 
@@ -6695,10 +7975,6 @@ class stk_fin_cashflowindrectttm(Base):
     BEGINCASHEQUIVALENT = Column(DECIMAL(20, 2), doc="现金等价物的期初余额")
     CASHEQUIVALENTCHANGE = Column(DECIMAL(20, 2), doc="现金及现金等价物净增加额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_cashflowttm(Base):
@@ -6778,10 +8054,6 @@ class stk_fin_cashflowttm(Base):
     BEGINCASHEQUIVALENT = Column(DECIMAL(20, 2), doc="期初现金及现金等价物余额")
     ENDCASHEQUIVALENT = Column(DECIMAL(20, 2), doc="期末现金及现金等价物余额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_construct(Base):
@@ -6829,10 +8101,6 @@ class stk_fin_construct(Base):
     MINORITYCOMPREHENSIVERATIO = Column(DECIMAL(20, 6), doc="归属于少数股东综合收益占比")
     PARENTEQUITYTOINVESTRATIO = Column(DECIMAL(20, 6), doc="母公司所有者权益与投入资本比")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_debtpay(Base):
@@ -6870,10 +8138,6 @@ class stk_fin_debtpay(Base):
     INTERESLIABILITYCOVERAGE = Column(DECIMAL(20, 6), doc="经营活动产生的现金流量净额／带息债务")
     LIABILITYTOMARKETVALUE = Column(DECIMAL(20, 6), doc="负债与权益市价比率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_development(Base):
@@ -6927,10 +8191,6 @@ class stk_fin_development(Base):
     FINANCINGNCFGROWTHB = Column(DECIMAL(20, 6), doc="筹资活动产生的现金流量增长率B")
     SUSTAINABLEGROWTHRATE = Column(DECIMAL(20, 6), doc="可持续增长率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     EQUITYGROWTHA = Column(DECIMAL(20, 6), doc="所有者权益增长率A ")
     EQUITYGROWTHB = Column(DECIMAL(20, 6), doc="所有者权益增长率B")
     EQUITYGROWTHC = Column(DECIMAL(20, 6), doc="所有者权益增长率C")
@@ -6967,10 +8227,6 @@ class stk_fin_dividistrib(Base):
     DIVIDENDCOVERAGERATIOB = Column(DECIMAL(20, 6), doc="股利倍数")
     PROFITRETENTIONRATE = Column(DECIMAL(20, 6), doc="收益留存率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     DISTRIBUTIONRATEB = Column(DECIMAL(20, 6), doc="股利分配率2")
     DIVIDENDCOVERAGERATIOC = Column(DECIMAL(20, 6), doc="现金股利保障倍数2")
     DIVIDENDCOVERAGERATIOD = Column(DECIMAL(20, 6), doc="股利倍数2")
@@ -7061,10 +8317,6 @@ class stk_fin_earnpower(Base):
     ROEPARENTCOMPREHENSIVEC = Column(DECIMAL(20, 6), doc="归属于母公司综合收益率C")
     ROEPARENTCOMPREHENSIVETTM = Column(DECIMAL(20, 6), doc="归属于母公司综合收益率TTM")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     RETURNONINVESTMENT = Column(DECIMAL(20, 6), doc="投资收益率")
 
 
@@ -7155,10 +8407,6 @@ class stk_fin_financialindexq(Base):
     CASHEQUIVALENTCHANGEGROWTHA = Column(DECIMAL(20, 6), doc="现金净流量环比增长率")
     CASHEQUIVALENTCHANGEGROWTHB = Column(DECIMAL(20, 6), doc="现金净流量同比增长率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_forecfin(Base):
@@ -7191,10 +8439,6 @@ class stk_fin_forecfin(Base):
     CHANGEREASON = Column(LONGTEXT, doc="业绩变动原因")
     MODIFYREASON = Column(LONGTEXT, doc="业绩修正原因")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
 class stk_fin_forecfinnew(Base):
@@ -7227,10 +8471,6 @@ class stk_fin_forecfinnew(Base):
     CHANGEREASON = Column(LONGTEXT, doc="业绩变动原因")
     MODIFYREASON = Column(LONGTEXT, doc="业绩修正原因")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_income(Base):
@@ -7304,10 +8544,6 @@ class stk_fin_income(Base):
     B0061 = Column(DECIMAL(20, 2))
     B0062 = Column(DECIMAL(20, 2))
     UPDATEID = Column(BIGINT, primary_key=True)
-    UPDATETIME = Column(DateTime)
-    UPDATESTATE = Column(SMALLINT)
-    BUSINESSTIME = Column(DateTime)
-    UTSID = Column(BIGINT, doc="UTS更新字段")
     REPORTTYPEID = Column(SMALLINT)
     B00140010 = Column(DECIMAL(20, 2), doc="其中：非流动资产处置利得")
     B00150020 = Column(DECIMAL(20, 2), doc="其中：非流动资产处置损失")
@@ -7393,10 +8629,6 @@ class stk_fin_incomettm(Base):
     PARENTCOMPREHENSIVEINCOME = Column(DECIMAL(20, 2), doc="归属于母公司所有者的综合收益总额")
     MINORITYCOMPREHENSIVEINCOME = Column(DECIMAL(20, 2), doc="归属于少数股东的综合收益总额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_ipodiscloseindex(Base):
@@ -7428,10 +8660,6 @@ class stk_fin_ipodiscloseindex(Base):
     ASSETTURNOVER = Column(DECIMAL(20, 4), doc="总资产周转率")
     NETCASHFLOWPERSHARE = Column(DECIMAL(20, 2), doc="每股净现金流量")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
 class stk_fin_lcdiscloseindex(Base):
@@ -7453,10 +8681,6 @@ class stk_fin_lcdiscloseindex(Base):
     NAVPARENT = Column(DECIMAL(20, 4), doc="归属于上市公司股东的每股净资产")
     DEBTTOASSETRATIO = Column(DECIMAL(20, 4), doc="资产负债率")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
 class stk_fin_operate(Base):
@@ -7536,10 +8760,6 @@ class stk_fin_operate(Base):
     EEQUITYTURNOVERD = Column(DECIMAL(20, 6), doc="股东权益周转率D")
     EEQUITYTURNOVERTTM = Column(DECIMAL(20, 6), doc="股东权益周转率TTM")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_pershare(Base):
@@ -7606,10 +8826,6 @@ class stk_fin_pershare(Base):
     CASHINCREASEPERSHAREB = Column(DECIMAL(20, 6), doc="每股现金净流量2")
     CASHINCREASEPERSHARETTMB = Column(DECIMAL(20, 6), doc="每股现金净流量TTM2")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     PARENTEPSC = Column(DECIMAL(20, 6), doc="归属于母公司每股收益2")
     PARENTEPSTTMC = Column(DECIMAL(20, 6), doc="归属于母公司每股收益TTM2")
     PARENTEPSD = Column(DECIMAL(20, 6), doc="归属于母公司每股综合收益2")
@@ -7695,10 +8911,6 @@ class stk_fin_quitrafin(Base):
     NAVPSCHANGERATIO = Column(DECIMAL(20, 4), doc="每股净资产变动幅度%")
     MODIFYREASON = Column(LONGTEXT, doc="业绩修正原因")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
 class stk_fin_quitrafinnew(Base):
@@ -7747,10 +8959,6 @@ class stk_fin_quitrafinnew(Base):
     NAVPSCHANGERATIO = Column(DECIMAL(20, 4), doc="每股净资产变动幅度%")
     MODIFYREASON = Column(LONGTEXT, doc="业绩修正原因")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_quitrasimfin(Base):
@@ -7785,10 +8993,6 @@ class stk_fin_quitrasimfin(Base):
     EQUITYCHANGERATIO = Column(DECIMAL(20, 2), doc="所有者权益变动幅度%")
     ABSTRACT = Column(LONGTEXT, doc="业绩简要说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(BIGINT, doc="UTS更新字段")
 
 
 class stk_fin_relativevalue(Base):
@@ -7827,10 +9031,6 @@ class stk_fin_relativevalue(Base):
     RETURNA = Column(DECIMAL(20, 6), doc="普通股获利率A")
     RETURNB = Column(DECIMAL(20, 6), doc="普通股获利率B")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     EVTOEBITDA = Column(DECIMAL(20, 6), doc="企业价值倍数")
     EVTOEBITDATTM = Column(DECIMAL(20, 6), doc="企业价值倍数TTM")
     PE1C = Column(DECIMAL(20, 6), doc="市盈率3")
@@ -7869,10 +9069,6 @@ class stk_fin_relforcdate(Base):
     ACTRELDATE = Column(DateTime, doc="实际批露日期")
     ACTRELWEEKDAY = Column(String(2), doc="实际批露星期")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_risk(Base):
@@ -7888,10 +9084,6 @@ class stk_fin_risk(Base):
     DOL = Column(DECIMAL(20, 6), doc="经营杠杆")
     DTL = Column(DECIMAL(20, 6), doc="综合杠杆")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_fin_simforecfin(Base):
@@ -7908,10 +9100,32 @@ class stk_fin_simforecfin(Base):
     PROFITCHANGERATIOCEILING = Column(DECIMAL(20, 2), doc="预告净利润最大变动幅度")
     ABSTRACT = Column(LONGTEXT, doc="业绩预告摘要")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(BIGINT, doc="UTS更新字段")
+
+
+class stk_forecast(Base):
+
+    __tablename__ = 'stk_forecast'
+
+    REPORTID = Column(DECIMAL(20, 0), doc="研究报告ID")
+    SYMBOL = Column(String(20), doc="股票代码")
+    REPORTDATE = Column(DateTime, doc="报告日")
+    ANALYST = Column(String(200), doc="分析师")
+    INSTITUTIONNAME = Column(String(200), doc="研究机构")
+    FORECASTYEAR = Column(DateTime, doc="预测年度")
+    FEPS = Column(DECIMAL(20, 4), doc="每股收益")
+    FPE = Column(DECIMAL(24, 6), doc="市盈率")
+    FNETPRO = Column(DECIMAL(20, 2), doc="净利润")
+    FEBIT = Column(DECIMAL(20, 2), doc="息税前收入")
+    FEBITDA = Column(DECIMAL(20, 2), doc="扣除息、税、折旧及摊销前收入")
+    FTURNOVER = Column(DECIMAL(20, 2), doc="主营业务收入")
+    FCFPS = Column(DECIMAL(20, 2), doc="每股经营现金流")
+    FBM = Column(DECIMAL(12, 4), doc="账面市值比")
+    FBPS = Column(DECIMAL(12, 2), doc="每股净资产")
+    FROA = Column(DECIMAL(12, 4), doc="总资产收益率")
+    FROE = Column(DECIMAL(12, 4), doc="净资产收益率")
+    FPB = Column(DECIMAL(24, 6), doc="市净率")
+    FTOTALASSETSTURNOVER = Column(DECIMAL(12, 4), doc="总资产周转率")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class stk_guarantee_main(Base):
@@ -7968,10 +9182,6 @@ class stk_guarantee_main(Base):
     ACCUMULATIVETOTAL = Column(DECIMAL(20, 6), doc="累计担保总额")
     TOTALTONETASSETS = Column(DECIMAL(18, 4), doc="上市公司累计担保占净资产比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     SOURCE = Column(String(12), doc="数据来源")
     RANK = Column(SMALLINT, doc="序号")
 
@@ -7996,10 +9206,6 @@ class stk_guarantee_son(Base):
     BOOKVALUE = Column(DECIMAL(20, 6), doc="质押物账面价值")
     MARKETVALUE = Column(DECIMAL(20, 6), doc="质押物公允价值")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
     SYMBOL = Column(String(20), doc="股票代码")
     DECLAREDATE = Column(DateTime, doc="公告日期")
@@ -8033,10 +9239,6 @@ class stk_guarantee_statistics(Base):
     ILLEGALAMOUNT = Column(DECIMAL(20, 6), doc="违规担保数额累计")
     LIABILITYEXPLAIN = Column(String(4000), doc="未到期担保可能承担连带清偿责任说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_holder_controlchart(Base):
@@ -8049,10 +9251,6 @@ class stk_holder_controlchart(Base):
     CONTROLLINGRELATIONCHART = Column(LargeBinary(16777216), doc="控股关系图")
     FILETTYE = Column(String(20), doc="文件类型")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_holder_controller(Base):
@@ -8079,10 +9277,6 @@ class stk_holder_controller(Base):
     SEPARATIONDEGREE = Column(DECIMAL(20, 4), doc="两权分离度")
     COMMENTS = Column(LONGTEXT, doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     SHAREHOLDERID = Column(String(200), doc="股东ID")
 
 
@@ -8113,10 +9307,6 @@ class stk_holder_detail(Base):
     INDUSTRYNAME = Column(String(200), doc="行业名称")
     SOURCE = Column(String(2), doc="数据来源")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_holder_equitynatureall(Base):
@@ -8154,10 +9344,6 @@ class stk_holder_equitynatureall(Base):
     FOUNDER = Column(String(1200), doc="创始人")
     ORIGINATOR = Column(String(4000), doc="发起人")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_holder_incrordesr(Base):
@@ -8172,10 +9358,6 @@ class stk_holder_incrordesr(Base):
     SHARES = Column(DECIMAL(20, 2), doc="机构持股数量")
     PROPORTION = Column(DECIMAL(20, 6), doc="机构持股比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_holder_number(Base):
@@ -8194,10 +9376,6 @@ class stk_holder_number(Base):
     FLOATINGSHAREHOLDERS = Column(DECIMAL(20, 0), doc="已流通股东户数")
     COMMENTS = Column(String(4000), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_holder_pledge(Base):
@@ -8216,10 +9394,6 @@ class stk_holder_pledge(Base):
     CUSTODYNUMBER = Column(DECIMAL(20, 2), doc="其中：托管股份")
     COMMENTS = Column(LONGTEXT, doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_holder_relation(Base):
@@ -8239,10 +9413,6 @@ class stk_holder_relation(Base):
     SPECIALEXPLANATION = Column(String(4000), doc="特殊说明")
     RELATIONDETAILED = Column(String(400), doc="关系详情")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_holder_systematics(Base):
@@ -8271,10 +9441,6 @@ class stk_holder_systematics(Base):
     NONFINANCEHOLDSHARES = Column(DECIMAL(20, 2), doc="非金融类上市公司持股数量")
     NONFINANCEHOLDPROPORTION = Column(DECIMAL(10, 4), doc="非金融类上市公司持股比例")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     OTHERHOLDSHARES = Column(DECIMAL(20, 2), doc="其他机构持股数量")
     OTHERHOLDPROPORTION = Column(DECIMAL(10, 4), doc="其他机构持股比例")
 
@@ -8301,10 +9467,6 @@ class stk_holder_top10(Base):
     RANK = Column(INTEGER, doc="持股排名")
     COMMENTS = Column(String(4000), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CHANGETYPE = Column(String(2), doc="变动方向")
     CHANGENUM = Column(DECIMAL(20, 4), doc="变动数量")
     CHANGEPERCENTAGE = Column(DECIMAL(20, 4), doc="变动比例")
@@ -8333,10 +9495,6 @@ class stk_holder_top10floating(Base):
     RANK = Column(INTEGER, doc="持股排名")
     COMMENTS = Column(String(4000), doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CHANGETYPE = Column(String(2), doc="变动方向")
     CHANGENUM = Column(DECIMAL(20, 4), doc="变动数量")
     CHANGEPERCENTAGE = Column(DECIMAL(20, 4), doc="变动比例")
@@ -8426,10 +9584,6 @@ class stk_indfi_basis(Base):
     MARKETVALUEA = Column(DECIMAL(30, 6), doc="行业市值A")
     MARKETVALUEB = Column(DECIMAL(30, 6), doc="行业市值B")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_cashflow(Base):
@@ -8454,10 +9608,6 @@ class stk_indfi_cashflow(Base):
     MUTABLERATE = Column(DECIMAL(20, 6), doc="行业易变现率")
     NETRATIOTOSHORTTERM = Column(DECIMAL(20, 6), doc="行业短期融资净值结构比")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_construct(Base):
@@ -8495,10 +9645,6 @@ class stk_indfi_construct(Base):
     COMPREHENSIVERATIO = Column(DECIMAL(20, 6), doc="行业净利润与综合收益比")
     OTHERCOMPREHENSIVERATIO = Column(DECIMAL(20, 6), doc="行业其他综合收益占比")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_crn(Base):
@@ -8523,10 +9669,6 @@ class stk_indfi_crn(Base):
     CR_10B = Column(DECIMAL(20, 6), doc="CR_10（营业收入）")
     CR_20B = Column(DECIMAL(20, 6), doc="CR_20（营业收入）")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_debtpay(Base):
@@ -8562,10 +9704,6 @@ class stk_indfi_debtpay(Base):
     LIABILITYCOVERAGE = Column(DECIMAL(20, 6), doc="行业经营活动产生的现金流量净额与负债合计比")
     INTERESLIABILITYCOVERAGE = Column(DECIMAL(20, 6), doc="行业经营活动产生的现金流量净额与带息债务比")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_development(Base):
@@ -8598,10 +9736,6 @@ class stk_indfi_development(Base):
     EQUITYGROWTH = Column(DECIMAL(20, 6), doc="行业所有者权益增长率")
     NAVGROWTH = Column(DECIMAL(20, 6), doc="行业每股净资产增长率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_dividistrib(Base):
@@ -8619,10 +9753,6 @@ class stk_indfi_dividistrib(Base):
     DISTRIBUTIONRATE = Column(DECIMAL(20, 6), doc="行业股利分配率")
     PROFITRETENTIONRATE = Column(DECIMAL(20, 6), doc="行业收益留存率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_earnpower(Base):
@@ -8662,10 +9792,6 @@ class stk_indfi_earnpower(Base):
     RETURNONINVESTMENT = Column(DECIMAL(20, 6), doc="行业投资收益率")
     PRICECOSTPROFIT = Column(DECIMAL(20, 6), doc="行业价格成本费用利润率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_hhi(Base):
@@ -8684,10 +9810,6 @@ class stk_indfi_hhi(Base):
     HHI_C = Column(DECIMAL(20, 6), doc="HHI(C)")
     HHI_D = Column(DECIMAL(20, 6), doc="HHI(D)")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_indtrajectory(Base):
@@ -8701,10 +9823,6 @@ class stk_indfi_indtrajectory(Base):
     ENDDATE = Column(DateTime, doc="截止日期")
     CROSSSYMBOL = Column(String(6), doc="AB股交叉码")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_lernerindex(Base):
@@ -8720,10 +9838,6 @@ class stk_indfi_lernerindex(Base):
     INDUSTRYLERNERINDEX = Column(DECIMAL(20, 6), doc="行业勒纳指数")
     STATUS = Column(String(1), doc="交易状态")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_lpesv(Base):
@@ -8770,10 +9884,6 @@ class stk_indfi_lpesv(Base):
     PERIODCOSTTOMAININCOME = Column(DECIMAL(20, 2), doc="期间费用占主营营业收入的比率")
     EQUITYGROWTHRATIO = Column(DECIMAL(20, 2), doc="资本积累率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_npesv(Base):
@@ -8820,10 +9930,6 @@ class stk_indfi_npesv(Base):
     PERIODCOSTTOMAININCOME = Column(DECIMAL(20, 2), doc="期间费用占主营营业收入的比率")
     EQUITYGROWTHRATIO = Column(DECIMAL(20, 2), doc="资本积累率")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_operate(Base):
@@ -8865,10 +9971,6 @@ class stk_indfi_operate(Base):
     EEQUITYTURNOVERA = Column(DECIMAL(20, 6), doc="行业股东权益周转率A")
     EEQUITYTURNOVERB = Column(DECIMAL(20, 6), doc="行业股东权益周转率B")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_pershare(Base):
@@ -8912,10 +10014,6 @@ class stk_indfi_pershare(Base):
     CASHINCREASEPERSHAREA = Column(DECIMAL(20, 6), doc="行业每股现金净流量A")
     CASHINCREASEPERSHAREB = Column(DECIMAL(20, 6), doc="行业每股现金净流量B")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_relativevalue(Base):
@@ -8941,10 +10039,6 @@ class stk_indfi_relativevalue(Base):
     NETASSETTOMARKETVALUEA = Column(DECIMAL(20, 6), doc="行业账面市值比A")
     NETASSETTOMARKETVALUEB = Column(DECIMAL(20, 6), doc="行业账面市值比B")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_indfi_risk(Base):
@@ -8963,10 +10057,18 @@ class stk_indfi_risk(Base):
     DOL = Column(DECIMAL(20, 6), doc="行业经营杠杆")
     DTL = Column(DECIMAL(20, 6), doc="行业总杠杆")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class stk_industryclass(Base):
+
+    __tablename__ = 'stk_industryclass'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+    SYMBOL = Column(String(20), doc="股票代码")
+    INDUSTRYCLASSIFICATIONID = Column(String(40), doc="行业分类标准编码")
+    CHANGEDATE = Column(DateTime, doc="变更日期")
+    INDUSTRYCODE = Column(String(20), doc="行业代码")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class stk_institutionholderalias(Base):
@@ -8980,10 +10082,98 @@ class stk_institutionholderalias(Base):
     COMMENTS = Column(String(4000), doc="备注")
     ISSTANDARDFULLNAME = Column(String(2), doc="是否为标准名称")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class stk_institutioninfo(Base):
+
+    __tablename__ = 'stk_institutioninfo'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0))
+    FULLNAME = Column(String(200))
+    ENNAME = Column(String(400))
+    SYMBOL = Column(String(20))
+    OWNSHIPID = Column(String(12))
+    ESTABLISHWAYID = Column(String(12))
+    ESTABLISHDATE = Column(DateTime)
+    IPODATE = Column(DateTime)
+    EXCHANGECODE = Column(String(100))
+    LEGALREPRESENTATIVE = Column(String(100))
+    GENERALMANAGER = Column(String(100))
+    SECRETARY = Column(String(100))
+    SECRETARYTEL = Column(String(100))
+    SECRETARYFAX = Column(String(100))
+    SECRETARYEMAIL = Column(String(200))
+    SECURITYCONSULTANT = Column(String(100))
+    REGISTERCAPITAL = Column(BIGINT)
+    CURRENCYCODE = Column(String(12))
+    REGISTERADDRESS = Column(String(400))
+    LATESTREGISTERDATE = Column(DateTime)
+    OFFICEADDRESS = Column(String(400))
+    ZIPCODE = Column(String(20))
+    BUSINESSLICENSENUMBER = Column(String(100))
+    TAXREGISTRYNO = Column(String(100))
+    WEBSITE = Column(String(200))
+    EMAIL = Column(String(200))
+    DISCLOSEPAPER = Column(String(200))
+    DISCLOSEWEBSITE = Column(String(200))
+    REPORTPLACE = Column(String(200))
+    CITYCODE = Column(String(12))
+    PROVINCECODE = Column(String(12))
+    REGIONCODE = Column(String(6))
+    MAINBUSINESS = Column(String(2000))
+    BUSINESSSCOPE = Column(String(4000))
+    HISTORY = Column(String(4000))
+    INDUSTRYCLASSIFICATIONID = Column(String(40))
+    INDUSTRYCODE = Column(String(20))
+    CHANGEDATE = Column(DateTime)
+    UPDATEID = Column(BIGINT, primary_key=True)
+    SHORTNAME = Column(String(80), doc="英文简称")
+    ENSHORTNAME = Column(String(100))
+    CORPESTABLISHEDDATE = Column(DateTime, doc="股份公司设立日期")
+    SOCIALCREDITCODE = Column(String(20), doc="统一社会信用代码")
+
+
+class stk_itemchange(Base):
+
+    __tablename__ = 'stk_itemchange'
+
+    INSTITUTIONID = Column(DECIMAL(20, 0), doc="机构ID")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(20), doc="股票代码")
+    DECLAREDATE = Column(DateTime, doc="公告日期")
+    CHANGEDATE = Column(DateTime, doc="实施日期")
+    CHANGEDITEM = Column(String(100), doc="变更属性")
+    VALUEBEFORE = Column(String(1000), doc="变更前值")
+    CODEBEFORE = Column(String(200), doc="变更前(编码|英文)")
+    VALUEAFTER = Column(String(1000), doc="变更后值")
+    CODEAFTER = Column(String(200), doc="变更后(编码|英文)")
+    REASON = Column(String(200), doc="变更原因")
+    REASONID = Column(String(100), doc="变更原因编码")
+    STATEIDCHANGE = Column(String(100), doc="状态前后编码变动")
+    COMMENTS = Column(LONGTEXT, doc="备注")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class stk_listedcoinfochg(Base):
+
+    __tablename__ = 'stk_listedcoinfochg'
+
+    LISTEDCOID = Column(DECIMAL(20, 0), doc="上市公司ID")
+    ANNOUNCEMENTDATE = Column(DateTime, doc="公告日期")
+    CHANGEDITEM = Column(String(100), doc="变更属性")
+    EVENTTYPE = Column(String(40), doc="事件类型编码")
+    VALUE_BEFORE = Column(String(4000), doc="变更前值")
+    CODE_BEFORE = Column(String(4000), doc="变更前(编码|英文)")
+    VALUE_AFTER = Column(String(4000), doc="变更后值")
+    CODE_AFTER = Column(String(4000), doc="变更后(编码|英文)")
+    IMPLEMENTDATE = Column(DateTime, doc="实施日期")
+    DESCRIPVALUE_BEFORE = Column(String(100), doc="变更前属性描述")
+    DESCRIPVALUE_AFTER = Column(String(100), doc="变更后属性描述")
+    SYMBOL = Column(String(20), doc="证券代码")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    TRADINGSTATE = Column(String(20), doc="变更后简称状态标识")
+    NOTE = Column(String(1000), doc="备注")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class stk_lock_shares(Base):
@@ -9008,10 +10198,6 @@ class stk_lock_shares(Base):
     THIRDLISTEDSHARES = Column(DECIMAL(20, 2), doc="期后第三批解禁数量")
     THIRDLISTEDDATE = Column(DateTime, doc="期后第三批解禁日期")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     INSTITUTIONID = Column(DECIMAL(20, 0))
     UPDATETIME_EN = Column(DateTime)
 
@@ -9031,10 +10217,6 @@ class stk_lockshares_summary(Base):
     PROPORTION3 = Column(DECIMAL(10, 4), doc="占总股本比例")
     REMAINEDLOCKSHARES = Column(DECIMAL(20, 4), doc="剩余限售股数量")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_ma_assetreplace(Base):
@@ -9060,10 +10242,6 @@ class stk_ma_assetreplace(Base):
     SAPPRSREPTNO = Column(String(100), doc="置出资产披露文档号")
     RAPPRSREPTNO = Column(String(100), doc="置入资产披露文档号")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_ma_assetstopay(Base):
@@ -9086,10 +10264,6 @@ class stk_ma_assetstopay(Base):
     EVALUATIONINSTITUTION = Column(String(100), doc="评估机构")
     OTHERNOTES = Column(String(4000), doc="其他情况说明")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_ma_assettrans(Base):
@@ -9115,10 +10289,6 @@ class stk_ma_assettrans(Base):
     OFFEREXEMPTIONORNOT = Column(SMALLINT, doc="是否豁免要约")
     TRANSFERDATE = Column(DateTime, doc="资产过户日期")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_ma_cashpayment(Base):
@@ -9132,10 +10302,6 @@ class stk_ma_cashpayment(Base):
     FINANCETYPESID = Column(String(40), doc="融资方式编码")
     FINANCETYPES = Column(String(200), doc="融资方式")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_ma_cdr(Base):
@@ -9154,10 +10320,6 @@ class stk_ma_cdr(Base):
     DEBTRESTRUCTURINGTYPE = Column(String(200), doc="债务重组方式")
     AMOUNTINVOLVED = Column(DECIMAL(20, 4), doc="重组涉及金额")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_ma_equitytransfer(Base):
@@ -9186,10 +10348,6 @@ class stk_ma_equitytransfer(Base):
     TSHARESRATIO = Column(DECIMAL(10, 4), doc="转让时的流通股比例")
     MAINSEQUITYRATIOA = Column(DECIMAL(10, 4), doc="变动后控股股东的持股比例")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     ISCHGACTUALCONTROLLER = Column(SMALLINT, doc="实际控制人是否变更")
     ACTUALCONTROLLERBEFORE = Column(String(200), doc="变动前实际控制人名称")
     ACTUALCONTROLLERAFTER = Column(String(200), doc="变动后实际控制人名称")
@@ -9215,10 +10373,6 @@ class stk_ma_merger(Base):
     LISTEDDATE = Column(DateTime, doc="新增股份上市日期")
     ISSUESHARES = Column(BIGINT, doc="本次换股增加股份数量")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_ma_otherparty(Base):
@@ -9250,10 +10404,6 @@ class stk_ma_otherparty(Base):
     BUSINESSSCOPE = Column(String(4000), doc="经营范围")
     RANK = Column(BIGINT, doc="序号")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     UPDATEID1 = Column(BIGINT, doc="源表STK_MA_InvolvedParty.UPDATEID")
     UPDATEID2 = Column(BIGINT, doc="源表STK_MA_TradingMain.UPDATEID")
 
@@ -9296,10 +10446,6 @@ class stk_ma_participant(Base):
     ACCOUNTINGFIRM = Column(String(200), doc="聘请会计师事务所")
     RANK = Column(BIGINT, doc="序号")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_ma_stockpayment(Base):
@@ -9314,10 +10460,6 @@ class stk_ma_stockpayment(Base):
     SOURCEID = Column(String(40), doc="股票来源编码")
     SOURCE = Column(String(200), doc="股票来源")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_ma_tenderoffer(Base):
@@ -9354,10 +10496,6 @@ class stk_ma_tenderoffer(Base):
     NONTSHARESRATIO = Column(DECIMAL(10, 4), doc="成交非流通股比例")
     PAYTYPE = Column(SMALLINT, doc="付款方式")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_ma_tradingmain(Base):
@@ -9386,10 +10524,6 @@ class stk_ma_tradingmain(Base):
     LAWFIRM = Column(String(400), doc="上市公司聘请的律师事务所")
     OUTLINE = Column(LONGTEXT, doc="交易概述")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     LATESTDECLAREDATE = Column(DateTime, doc="最新公告日期")
     PAYTYPEID = Column(String(40), doc="支付方式编码")
     LATESTPROGRAMSCHEDULE = Column(String(40), doc="最新进度")
@@ -9425,10 +10559,6 @@ class stk_ma_tradingschedule(Base):
     PROGRAMSCHEDULE = Column(String(100), doc="方案进度")
     PROGRAMSCHEDULEID = Column(String(100), doc="方案进度编码")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     PROGRAMCONTENT = Column(LONGTEXT, doc="进度内容")
     RANK = Column(SMALLINT, doc="序号")
 
@@ -9471,10 +10601,6 @@ class stk_ma_underlying(Base):
     SSTATUSAFTER = Column(String(200), doc="卖后地位")
     APPRSREPTNO = Column(String(100), doc="资产评估披露文档号")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     EVALUATIONCHANGE = Column(DECIMAL(20, 4), doc="评估增值")
     EVALUATIONRATIO = Column(DECIMAL(20, 4), doc="评估增值率")
     EVALUATIONMETHOD = Column(String(200), doc="评估方法")
@@ -9492,10 +10618,6 @@ class stk_mkt_adjustfactor(Base):
     CUMULATEFWARDFACTOR = Column(DECIMAL(12, 6), doc="前累计复权因子")
     CUMULATEBWARDFACTOR = Column(DECIMAL(12, 6), doc="后累计复权因子")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="UTS更新字段")
-    UTSID = Column(DECIMAL(20, 0))
 
 
 class stk_mkt_blocktrade(Base):
@@ -9521,10 +10643,124 @@ class stk_mkt_blocktrade(Base):
     BUYER = Column(String(160), doc="买方营业部名称")
     EVENTID = Column(DECIMAL(20, 0), doc="事件ID")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class stk_mkt_capitalflow(Base):
+
+    __tablename__ = 'stk_mkt_capitalflow'
+
+    SECURITYID = Column(DECIMAL(20, 0))
+    SYMBOL = Column(String(12))
+    TRADINGDATE = Column(DateTime)
+    MAINBUYAMOUNT = Column(DECIMAL(20, 2))
+    MAINSELLAMOUNT = Column(DECIMAL(20, 2))
+    INSBUYAMOUNT = Column(DECIMAL(20, 2))
+    INSSELLAMOUNT = Column(DECIMAL(20, 2))
+    BIGBUYAMOUNT = Column(DECIMAL(20, 2))
+    BIGSELLAMOUNT = Column(DECIMAL(20, 2))
+    MIDBUYAMOUNT = Column(DECIMAL(20, 2))
+    MIDSELLAMOUNT = Column(DECIMAL(20, 2))
+    SMALLBUYAMOUNT = Column(DECIMAL(20, 2))
+    SMALLSELLAMOUNT = Column(DECIMAL(20, 2))
+    MAINBUYVOLUME = Column(DECIMAL(20, 0))
+    MAINSELLVOLUME = Column(DECIMAL(20, 0))
+    INSBUYVOLUME = Column(DECIMAL(20, 0))
+    INSSELLVOLUME = Column(DECIMAL(20, 0))
+    BIGBUYVOLUME = Column(DECIMAL(20, 0))
+    BIGSELLVOLUME = Column(DECIMAL(20, 0))
+    MIDBUYVOLUME = Column(DECIMAL(20, 0))
+    MIDSELLVOLUME = Column(DECIMAL(20, 0))
+    SMALLBUYVOLUME = Column(DECIMAL(20, 0))
+    SMALLSELLVOLUME = Column(DECIMAL(20, 0))
+    MAININTBUYAMOUNT = Column(DECIMAL(20, 2))
+    MAININTSELLAMOUNT = Column(DECIMAL(20, 2))
+    INSINTBUYAMOUNT = Column(DECIMAL(20, 2))
+    INSINTSELLAMOUNT = Column(DECIMAL(20, 2))
+    BIGINTBUYAMOUNT = Column(DECIMAL(20, 2))
+    BIGINTSELLAMOUNT = Column(DECIMAL(20, 2))
+    MIDINTBUYAMOUNT = Column(DECIMAL(20, 2))
+    MIDINTSELLAMOUNT = Column(DECIMAL(20, 2))
+    SMALLINTBUYAMOUNT = Column(DECIMAL(20, 2))
+    SMALLINTSELLAMOUNT = Column(DECIMAL(20, 2))
+    MAININTBUYVOLUME = Column(DECIMAL(20, 0))
+    MAININTSELLVOLUME = Column(DECIMAL(20, 0))
+    INSINTBUYVOLUME = Column(DECIMAL(20, 0))
+    INSINTSELLVOLUME = Column(DECIMAL(20, 0))
+    BIGINTBUYVOLUME = Column(DECIMAL(20, 0))
+    BIGINTSELLVOLUME = Column(DECIMAL(20, 0))
+    MIDINTBUYVOLUME = Column(DECIMAL(20, 0))
+    MIDINTSELLVOLUME = Column(DECIMAL(20, 0))
+    SMALLINTBUYVOLUME = Column(DECIMAL(20, 0))
+    SMALLINTSELLVOLUME = Column(DECIMAL(20, 0))
+    TICKNUMBER = Column(DECIMAL(20, 0))
+    MAINBUYORDER = Column(DECIMAL(20, 0))
+    MAINSELLORDER = Column(DECIMAL(20, 0))
+    INSBUYORDER = Column(DECIMAL(20, 0))
+    INSSELLORDER = Column(DECIMAL(20, 0))
+    BIGBUYORDER = Column(DECIMAL(20, 0))
+    BIGSELLORDER = Column(DECIMAL(20, 0))
+    MIDBUYORDER = Column(DECIMAL(20, 0))
+    MIDSELLORDER = Column(DECIMAL(20, 0))
+    SMALLBUYORDER = Column(DECIMAL(20, 0))
+    SMALLSELLORDER = Column(DECIMAL(20, 0))
+    MAINNETBUYVOLUME = Column(DECIMAL(20, 0))
+    MAININTNETBUYVOLUME = Column(DECIMAL(20, 0))
+    INSNETBUYVOLUME = Column(DECIMAL(20, 0))
+    INSINTNETBUYVOLUME = Column(DECIMAL(20, 0))
+    BIGNETBUYVOLUME = Column(DECIMAL(20, 0))
+    BIGINTNETBUYVOLUME = Column(DECIMAL(20, 0))
+    MIDNETBUYVOLUME = Column(DECIMAL(20, 0))
+    MIDINTNETBUYVOLUME = Column(DECIMAL(20, 0))
+    SMALLNETBUYVOLUME = Column(DECIMAL(20, 0))
+    SMALLINTNETBUYVOLUME = Column(DECIMAL(20, 0))
+    MAINNETBUYAMOUNT = Column(DECIMAL(20, 2))
+    MAININTNETBUYAMOUNT = Column(DECIMAL(20, 2))
+    INSNETBUYAMOUNT = Column(DECIMAL(20, 2))
+    INSINTNETBUYAMOUNT = Column(DECIMAL(20, 2))
+    BIGNETBUYAMOUNT = Column(DECIMAL(20, 2))
+    BIGINTNETBUYAMOUNT = Column(DECIMAL(20, 2))
+    MIDNETBUYAMOUNT = Column(DECIMAL(20, 2))
+    MIDINTNETBUYAMOUNT = Column(DECIMAL(20, 2))
+    SMALLNETBUYAMOUNT = Column(DECIMAL(20, 2))
+    SMALLINTNETBUYAMOUNT = Column(DECIMAL(20, 2))
+    NETVOLUME = Column(DECIMAL(20, 0))
+    NETVOLUMERATIO = Column(DECIMAL(6, 4))
+    OPENNETVOLUME = Column(DECIMAL(20, 0))
+    OPENNETVOLUMERATIO = Column(DECIMAL(6, 4))
+    CLOSENETVOLUME = Column(DECIMAL(20, 0))
+    CLOSENETVOLUMERATIO = Column(DECIMAL(6, 4))
+    NETAMOUNT = Column(DECIMAL(20, 2))
+    NETAMOUNTRATIO = Column(DECIMAL(6, 4))
+    OPENNETAMOUNT = Column(DECIMAL(20, 2))
+    OPENNETAMOUNTRATIO = Column(DECIMAL(6, 4))
+    CLOSENETAMOUNT = Column(DECIMAL(20, 2))
+    CLOSENETAMOUNTRATIO = Column(DECIMAL(6, 4))
+    COMMITBUYVOLUME = Column(DECIMAL(20, 0))
+    COMMITSELLVOLUME = Column(DECIMAL(20, 0))
+    VOLUMEFLOWRATIO = Column(DECIMAL(6, 4))
+    OPENVOLUMEFLOWRATIO = Column(DECIMAL(6, 4))
+    CLOSEVOLUMEFLOWRATIO = Column(DECIMAL(6, 4))
+    AMOUNTFLOWRATIO = Column(DECIMAL(6, 4))
+    OPENAMOUNTFLOWRATIO = Column(DECIMAL(6, 4))
+    CLOSEAMOUNTFLOWRATIO = Column(DECIMAL(6, 4))
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class stk_mkt_capitalflows(Base):
+
+    __tablename__ = 'stk_mkt_capitalflows'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SYMBOL = Column(String(12), doc="股票代码")
+    EXCHANGECODE = Column(String(40), doc="市场代码")
+    TRADINGDATE = Column(DateTime, doc="交易日期")
+    BUYORSELL = Column(String(2), doc="内外盘标识")
+    M_SMALL = Column(DECIMAL(20, 3), doc="小单")
+    M_MID = Column(DECIMAL(20, 3), doc="中单")
+    M_BIG = Column(DECIMAL(20, 3), doc="大单")
+    M_BIGGER = Column(DECIMAL(20, 3), doc="超大单")
+    M_SUPER = Column(DECIMAL(20, 3), doc="巨额成交单")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class stk_mkt_divident(Base):
@@ -9546,10 +10782,6 @@ class stk_mkt_divident(Base):
     BONUSRATIO = Column(DECIMAL(10, 6), doc="送股比例")
     CONVERSIONRATIO = Column(DECIMAL(10, 6), doc="转增比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="UTS更新字段")
-    UTSID = Column(DECIMAL(20, 0))
     INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
 
 
@@ -9572,12 +10804,42 @@ class stk_mkt_dividentnew(Base):
     BONUSRATIO = Column(DECIMAL(12, 6), doc="送股比例")
     SPLITRATIO = Column(DECIMAL(12, 6), doc="拆分比例")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     LISTEDDATE = Column(DateTime, doc="上市日期")
     INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
+
+
+class stk_mkt_exchangerate(Base):
+
+    __tablename__ = 'stk_mkt_exchangerate'
+
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    WEEKDAY = Column(SMALLINT, doc="星期")
+    CNYTOUSD = Column(DECIMAL(10, 4), doc="人民币对美元")
+    HKDTOCNY = Column(DECIMAL(10, 4), doc="人民币对港元")
+    HKDTOUSD = Column(DECIMAL(10, 4), doc="港元对美元")
+    CROSSHKDTOCNY = Column(DECIMAL(10, 4), doc="人民币对港元换算后")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+
+
+class stk_mkt_nightcale(Base):
+
+    __tablename__ = 'stk_mkt_nightcale'
+
+    CALENDARDATE = Column(DateTime, doc="日历日期")
+    EXCHANGECODE = Column(String(40), doc="交易所编码")
+    ISOPEN = Column(String(2), doc="开市与否")
+    WEEKDAY = Column(SMALLINT, doc="星期")
+    SECURITYTYPE = Column(String(100), doc="证券品种")
+    TRADINGTYPE = Column(String(100), doc="交易品种")
+    VARIETYID = Column(DECIMAL(20, 0), doc="品种ID")
+    ISNIGHTTRADING = Column(SMALLINT, doc="夜盘标识")
+    NIGHTTRADINGSTARTTIMEA = Column(String(100), doc="夜盘交易夜晚开始时间")
+    NIGHTTRADINGENDTIMEA = Column(String(100), doc="夜盘交易夜晚结束时间")
+    NIGHTTRADINGDATEA = Column(DateTime, doc="夜盘夜晚交易所属业务日期")
+    NIGHTTRADINGSTARTTIMEB = Column(String(100), doc="夜盘交易白天开始时间")
+    NIGHTTRADINGENDTIMEB = Column(String(100), doc="夜盘交易白天结束时间")
+    NIGHTTRADINGDATEB = Column(DateTime, doc="夜盘白天交易所属业务日期")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 class stk_mkt_quotation(Base):
@@ -9613,10 +10875,6 @@ class stk_mkt_quotation(Base):
     RELATIVEIPOCHANGE = Column(DECIMAL(10, 3), doc="相对发行价涨跌")
     RELATIVEIPOCHANGERATIO = Column(DECIMAL(10, 5), doc="相对发行价涨跌幅")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="UTS更新字段")
-    UTSID = Column(DECIMAL(20, 0))
     MINTICKSIZE = Column(DECIMAL(16, 4), doc="价格档位")
     LIMITDOWN = Column(DECIMAL(10, 3), doc="跌停价格")
     LIMITUP = Column(DECIMAL(10, 3), doc="涨停价")
@@ -9661,10 +10919,6 @@ class stk_mkt_quotationlatest(Base):
     RELATIVEIPOCHANGE = Column(DECIMAL(10, 3), doc="相对发行价涨跌")
     RELATIVEIPOCHANGERATIO = Column(DECIMAL(10, 5), doc="相对发行价涨跌幅")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="UTS更新字段")
-    UTSID = Column(DECIMAL(20, 0))
     MINTICKSIZE = Column(DECIMAL(10, 2), doc="价格档位")
     LIMITDOWN = Column(DECIMAL(10, 3), doc="跌停价格")
     LIMITUP = Column(DECIMAL(10, 3), doc="涨停价")
@@ -9701,10 +10955,6 @@ class stk_mkt_repricefactor(Base):
     EXDIVIDENDBWARDFACTOR2 = Column(DECIMAL(12, 6), doc="不考虑现金分红、拆分、股改的后复权因子")
     EXDIVIDENDCUMULATEBFACTOR2 = Column(DECIMAL(12, 6), doc="不考虑现金分红、拆分、股改的后累计复权因子")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_accountingpolicy(Base):
@@ -9718,10 +10968,6 @@ class stk_notes_accountingpolicy(Base):
     ITEMID = Column(String(400), doc="项目编码")
     ITEMEXPLANATION = Column(LONGTEXT, doc="项目说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_adminexpense(Base):
@@ -9739,10 +10985,6 @@ class stk_notes_adminexpense(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(String(4000), doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_afsfinassect(Base):
@@ -9761,10 +11003,6 @@ class stk_notes_afsfinassect(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_ap(Base):
@@ -9785,10 +11023,6 @@ class stk_notes_ap(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_apsd(Base):
@@ -9813,10 +11047,6 @@ class stk_notes_apsd(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     RANK = Column(SMALLINT, doc="排名")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_ar(Base):
@@ -9849,10 +11079,6 @@ class stk_notes_ar(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_arsd(Base):
@@ -9879,10 +11105,6 @@ class stk_notes_arsd(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     RANK = Column(SMALLINT, doc="排名")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_assetimpairment(Base):
@@ -9904,10 +11126,6 @@ class stk_notes_assetimpairment(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_basiccontent(Base):
@@ -9920,10 +11138,6 @@ class stk_notes_basiccontent(Base):
     SOURCE = Column(SMALLINT, doc="数据来源")
     GENERALSITUATION = Column(LONGTEXT, doc="公司基本情况")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_billrandp(Base):
@@ -9943,10 +11157,6 @@ class stk_notes_billrandp(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_billrandpspecial(Base):
@@ -9969,10 +11179,6 @@ class stk_notes_billrandpspecial(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_bondspayable(Base):
@@ -10009,10 +11215,6 @@ class stk_notes_bondspayable(Base):
     SPARECCHA = Column(String(400), doc="备用3（CHA）")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_businesstaxappend(Base):
@@ -10030,10 +11232,6 @@ class stk_notes_businesstaxappend(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_capitalreserve(Base):
@@ -10053,10 +11251,6 @@ class stk_notes_capitalreserve(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_capitalstock(Base):
@@ -10088,10 +11282,6 @@ class stk_notes_capitalstock(Base):
     SPAREBNUM = Column(DECIMAL(20, 4), doc="备用2（NUM）")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_cbd(Base):
@@ -10124,10 +11314,6 @@ class stk_notes_cbd(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_cbdsd(Base):
@@ -10154,10 +11340,6 @@ class stk_notes_cbdsd(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     RANK = Column(SMALLINT, doc="排名")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_cip(Base):
@@ -10182,10 +11364,6 @@ class stk_notes_cip(Base):
     REASONSINSTRUCTIONS = Column(String(1000), doc="减值准备计提原因")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_cipchange(Base):
@@ -10216,10 +11394,6 @@ class stk_notes_cipchange(Base):
     CAPITALSOURCE = Column(String(1000), doc="资金来源")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_deferredincometax(Base):
@@ -10238,10 +11412,6 @@ class stk_notes_deferredincometax(Base):
     CURRENCY = Column(String(12), doc="币种")
     PICTUREEXPLANATION = Column(LargeBinary(16777216), doc="图片说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_devexpense(Base):
@@ -10263,10 +11433,6 @@ class stk_notes_devexpense(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_dividendpayable(Base):
@@ -10284,10 +11450,6 @@ class stk_notes_dividendpayable(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_dr(Base):
@@ -10308,10 +11470,6 @@ class stk_notes_dr(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_drsd(Base):
@@ -10336,10 +11494,6 @@ class stk_notes_drsd(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     RANK = Column(SMALLINT, doc="排名")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_equityinvest(Base):
@@ -10363,10 +11517,6 @@ class stk_notes_equityinvest(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     PICTUREEXPLANATION = Column(LargeBinary(16777216), doc="图片说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_equityinvestcoinfo(Base):
@@ -10386,10 +11536,6 @@ class stk_notes_equityinvestcoinfo(Base):
     PROFITFORTHEYEAR = Column(DECIMAL(20, 4), doc="本年净利润")
     CURRENCY = Column(String(12), doc="币种")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_fairvalueb(Base):
@@ -10413,10 +11559,6 @@ class stk_notes_fairvalueb(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     OTHERCHANGES = Column(DECIMAL(20, 2), doc="其他变动")
 
 
@@ -10434,10 +11576,6 @@ class stk_notes_financecosts(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_fixedassect(Base):
@@ -10466,10 +11604,6 @@ class stk_notes_fixedassect(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     IMAGEREMARK = Column(LargeBinary(16777216), doc="图片说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_goodwill(Base):
@@ -10493,10 +11627,6 @@ class stk_notes_goodwill(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     CATEGORY = Column(SMALLINT, doc="科目类别")
     OTHER = Column(DECIMAL(20, 2), doc="其他")
 
@@ -10516,10 +11646,6 @@ class stk_notes_govgrants(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(String(4000), doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     ISDAILY = Column(SMALLINT, doc="是否与日常活动相关")
 
 
@@ -10557,10 +11683,6 @@ class stk_notes_impjntfin(Base):
     RECEIVEDDIVIDEND = Column(DECIMAL(20, 2), doc="本年度收到的来自联营/合营企业的股利")
     CURRENCY = Column(String(1000), doc="币种")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_interestpayable(Base):
@@ -10580,10 +11702,6 @@ class stk_notes_interestpayable(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_invassect(Base):
@@ -10606,10 +11724,6 @@ class stk_notes_invassect(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     IMAGEREMARK = Column(LargeBinary(16777216), doc="图片说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_inventories(Base):
@@ -10638,10 +11752,6 @@ class stk_notes_inventories(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     IMAGEREMARK = Column(LargeBinary(16777216), doc="图片说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_investmentinc(Base):
@@ -10659,10 +11769,6 @@ class stk_notes_investmentinc(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(String(4000), doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_invexit(Base):
@@ -10681,10 +11787,6 @@ class stk_notes_invexit(Base):
     DISPOSALEQUITY = Column(DECIMAL(10, 2), doc="股权处置比例")
     CURRENCY = Column(String(100), doc="币种")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
 
 
@@ -10703,10 +11805,6 @@ class stk_notes_longtermloan(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_longtermprepaidfee(Base):
@@ -10727,10 +11825,6 @@ class stk_notes_longtermprepaidfee(Base):
     CURRENCY = Column(String(12), doc="币种")
     PICTUREEXPLANATION = Column(LargeBinary(16777216), doc="图片说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     EXPLANATION = Column(String(4000), doc="说明")
 
 
@@ -10752,10 +11846,6 @@ class stk_notes_machabalance(Base):
     CHANGEINSTRUCTIONS = Column(String(1000), doc="重大变动说明")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_monetaryfunds(Base):
@@ -10780,10 +11870,6 @@ class stk_notes_monetaryfunds(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     IMAGEREMARK = Column(LargeBinary(16777216), doc="图片说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_nldoneyear(Base):
@@ -10801,10 +11887,6 @@ class stk_notes_nldoneyear(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_nomtaxrate(Base):
@@ -10820,10 +11902,6 @@ class stk_notes_nomtaxrate(Base):
     TAXEXPLANATION = Column(String(4000), doc="税项说明")
     REMARK = Column(LONGTEXT, doc="备注")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_nonbusexp(Base):
@@ -10841,10 +11919,6 @@ class stk_notes_nonbusexp(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_nonbusinc(Base):
@@ -10862,10 +11936,6 @@ class stk_notes_nonbusinc(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_nonrecurring(Base):
@@ -10882,10 +11952,6 @@ class stk_notes_nonrecurring(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_oar(Base):
@@ -10918,10 +11984,6 @@ class stk_notes_oar(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_oarsd(Base):
@@ -10948,10 +12010,6 @@ class stk_notes_oarsd(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     RANK = Column(SMALLINT, doc="排名")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_ocassect(Base):
@@ -10969,10 +12027,6 @@ class stk_notes_ocassect(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_op(Base):
@@ -10993,10 +12047,6 @@ class stk_notes_op(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_operateincomecosts(Base):
@@ -11032,10 +12082,6 @@ class stk_notes_operateincomecosts(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     PICTUREEXPLANATION = Column(LargeBinary(16777216), doc="图片说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_opsd(Base):
@@ -11060,10 +12106,6 @@ class stk_notes_opsd(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     RANK = Column(SMALLINT, doc="排名")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_payrecbus(Base):
@@ -11081,10 +12123,6 @@ class stk_notes_payrecbus(Base):
     CURRENCY = Column(String(6), doc="币种")
     EXPLANATION = Column(String(4000), doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     INSTITUTIONID = Column(DECIMAL(20, 0), doc="上市公司ID")
 
 
@@ -11105,10 +12143,6 @@ class stk_notes_paysalary(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(String(4000), doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_realestate(Base):
@@ -11130,10 +12164,6 @@ class stk_notes_realestate(Base):
     EXPLANATION = Column(LONGTEXT, doc="说明")
     IMAGEREMARK = Column(LargeBinary(16777216), doc="图片说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_sellexpense(Base):
@@ -11151,10 +12181,6 @@ class stk_notes_sellexpense(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(String(4000), doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_shorttermloan(Base):
@@ -11172,10 +12198,6 @@ class stk_notes_shorttermloan(Base):
     CURRENCY = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_subjoint(Base):
@@ -11208,10 +12230,6 @@ class stk_notes_subjoint(Base):
     CORPORATEINCOMETAX = Column(String(20), doc="关联公司企业所得税率")
     COUNTRYCODE3 = Column(String(3), doc="关联公司所在国别代码")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_surplusreserve(Base):
@@ -11231,10 +12249,6 @@ class stk_notes_surplusreserve(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_taxpayable(Base):
@@ -11253,10 +12267,6 @@ class stk_notes_taxpayable(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_topfivebp(Base):
@@ -11278,10 +12288,6 @@ class stk_notes_topfivebp(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_tradfinassect(Base):
@@ -11300,10 +12306,6 @@ class stk_notes_tradfinassect(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_notes_udp(Base):
@@ -11334,10 +12336,6 @@ class stk_notes_udp(Base):
     CURRENCYCODE = Column(String(12), doc="币种")
     EXPLANATION = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_originalholders(Base):
@@ -11358,10 +12356,6 @@ class stk_originalholders(Base):
     LISTEDSHARES = Column(DECIMAL(20, 2), doc="实际解禁数量")
     COMMENTS = Column(String(1000), doc="备注")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     INSTITUTIONID = Column(DECIMAL(20, 0), primary_key=True)
     UPDATETIME_EN = Column(DateTime)
 
@@ -11377,10 +12371,60 @@ class stk_personalholderalias(Base):
     COMMENTS = Column(String(4000), doc="备注")
     ISSTANDARDFULLNAME = Column(String(2), doc="是否为标准名称")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class stk_pretrdinfo(Base):
+
+    __tablename__ = 'stk_pretrdinfo'
+
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    SYMBOL = Column(String(12), primary_key=True, doc="证券代码")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    EXCHANGECODE = Column(String(40), doc="交易所编码")
+    CIRCULATEDSHARE = Column(DECIMAL(20, 0), doc="流通股本")
+    TOTALSHARE = Column(DECIMAL(20, 0), doc="总股本")
+    INDUSTRYCODE = Column(String(40), doc="所属行业")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    PRECLOSE = Column(DECIMAL(8, 4), doc="前收盘价")
+    EXDIVIDENDPRECLOSE = Column(DECIMAL(8, 4), doc="除权除息后的前收盘价")
+    UPLIMIT = Column(DECIMAL(8, 4), doc="涨停价")
+    DOWNLIMIT = Column(DECIMAL(8, 4), doc="跌停价")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    PRICESHIFTUNIT = Column(DECIMAL(8, 4), doc="价格档位")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    EPS = Column(DECIMAL(8, 4), doc="本年每股利润")
+    ENDDATE = Column(DateTime, doc="截止日期")
+    NAVPERSHARE = Column(DECIMAL(8, 4), doc="每股净资产")
+    PARENTEPS = Column(DECIMAL(8, 4), doc="归属于母公司股东每股利润")
+
+
+class stk_pretrdinfohistory(Base):
+
+    __tablename__ = 'stk_pretrdinfohistory'
+
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    SYMBOL = Column(String(12), primary_key=True, doc="证券代码")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SHORTNAME = Column(String(100), doc="证券简称")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    EXCHANGECODE = Column(String(40), doc="交易所编码")
+    CIRCULATEDSHARE = Column(DECIMAL(20, 0), doc="流通股本")
+    TOTALSHARE = Column(DECIMAL(20, 0), doc="总股本")
+    INDUSTRYCODE = Column(String(40), doc="所属行业")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    PRECLOSE = Column(DECIMAL(8, 4), doc="前收盘价")
+    EXDIVIDENDPRECLOSE = Column(DECIMAL(8, 4), doc="除权除息后的前收盘价")
+    UPLIMIT = Column(DECIMAL(8, 4), doc="涨停价")
+    DOWNLIMIT = Column(DECIMAL(8, 4), doc="跌停价")
+    STATUSID = Column(SMALLINT, doc="交易状态编码")
+    PRICESHIFTUNIT = Column(DECIMAL(8, 4), doc="价格档位")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    EPS = Column(DECIMAL(8, 4), doc="本年每股利润")
+    ENDDATE = Column(DateTime, doc="截止日期")
+    NAVPERSHARE = Column(DECIMAL(8, 4), doc="每股净资产")
+    PARENTEPS = Column(DECIMAL(8, 4), doc="归属于母公司股东每股利润")
 
 
 class stk_relationship_background(Base):
@@ -11402,10 +12446,6 @@ class stk_relationship_background(Base):
     SPECIALEXPLANATION = Column(String(4000), doc="特殊说明")
     CURRENCYCODE = Column(String(12), doc="币种")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_rpt_ralatedparty(Base):
@@ -11437,10 +12477,6 @@ class stk_rpt_ralatedparty(Base):
     ORGANIZATIONCODE = Column(String(20), doc="组织机构代码")
     NOTE = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_rpt_transactions(Base):
@@ -11481,10 +12517,6 @@ class stk_rpt_transactions(Base):
     PROFITINFLUENCE = Column(LONGTEXT, doc="交易对利润的影响")
     NOTE = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_rpt_transfer(Base):
@@ -11510,10 +12542,6 @@ class stk_rpt_transfer(Base):
     CURRENCYCODE = Column(String(40), doc="货币编码")
     NOTE = Column(LONGTEXT, doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_shares_structure(Base):
@@ -11558,10 +12586,6 @@ class stk_shares_structure(Base):
     TOTAL = Column(DECIMAL(20, 0), doc="总股本")
     COMMENTS = Column(String(800), doc="备注")
     UPDATEID = Column(BIGINT, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     ALLOCATIONLESHARES = Column(DECIMAL(20, 0), doc="配售法人股")
 
 
@@ -11606,10 +12630,6 @@ class stk_shares_structure_daily(Base):
     TRADESHARESTOTAL = Column(DECIMAL(20, 0), doc="流通股合计")
     TOTAL = Column(DECIMAL(20, 0), doc="总股本")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     ALLOCATIONLESHARES = Column(DECIMAL(20, 0), doc="配售法人股")
 
 
@@ -11629,10 +12649,6 @@ class stk_sr_difference(Base):
     ACTUALTOTAL = Column(DECIMAL(20, 4), doc="实际回购支出总额")
     ACTUALREPURATIO = Column(DECIMAL(10, 4), doc="实际回购支出总额占市值的比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_sr_equitychange(Base):
@@ -11652,10 +12668,6 @@ class stk_sr_equitychange(Base):
     AFTERCHANGINGSHARES = Column(DECIMAL(16, 2), doc="本次变动后数量")
     AFTERCHANGINGRATIO = Column(DECIMAL(10, 4), doc="本次变动后比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_sr_implement(Base):
@@ -11684,10 +12696,6 @@ class stk_sr_implement(Base):
     CURRENCY = Column(String(6), doc="币种")
     EXPLANATION = Column(String(4000), doc="说明")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_sr_indexm(Base):
@@ -11703,10 +12711,6 @@ class stk_sr_indexm(Base):
     REPUSCALE = Column(DECIMAL(20, 4), doc="回购规模")
     REPUSCALERATIO = Column(DECIMAL(10, 4), doc="回购规模占市值的比例")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
 
 
 class stk_sr_repumain(Base):
@@ -11740,10 +12744,6 @@ class stk_sr_repumain(Base):
     STARTDATE = Column(DateTime, doc="拟回购起始日期")
     ENDDATE = Column(DateTime, doc="拟回购终止日期")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
     EXPLANATION = Column(LONGTEXT)
 
 
@@ -11759,10 +12759,253 @@ class stk_sr_schedule(Base):
     REPUSCHEDULE = Column(String(100), doc="回购进度")
     CONTENT = Column(String(4000), doc="进度内容")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class stk_stockinfo(Base):
+
+    __tablename__ = 'stk_stockinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0))
+    SYMBOL = Column(String(20))
+    INSTITUTIONID = Column(DECIMAL(20, 0))
+    SHORTNAME = Column(String(100))
+    PYSHORTNAME = Column(String(100))
+    ENSHORTNAME = Column(String(400))
+    ENNAME = Column(String(200))
+    LISTEDDATE = Column(DateTime)
+    DELISTEDDATE = Column(DateTime)
+    IPOSHARES = Column(DECIMAL(20, 0))
+    PARVALUE = Column(DECIMAL(20, 10))
+    ISSUEPRICE = Column(DECIMAL(10, 4))
+    CURRENCYCODE = Column(String(40))
+    EXCHANGECODE = Column(String(40))
+    BOARDID = Column(String(40))
+    SHARETYPE = Column(String(6))
+    ISIN = Column(String(40))
+    STATUSID = Column(String(40))
+    UPDATEID = Column(BIGINT, primary_key=True)
+    FORMERNAME = Column(String(1000), doc="股票简称曾用名")
+    CURRENCY = Column(String(40), doc="面值币种")
+    GTASYMBOL = Column(String(100), doc="国泰安代码")
+
+
+class stk_suspentioninfo(Base):
+
+    __tablename__ = 'stk_suspentioninfo'
+
+    SYMBOL = Column(String(20))
+    SHORTNAME = Column(String(100))
+    SUSPENTIONTYPECODE = Column(String(12))
+    ANNOUNCEMENTDATE = Column(DateTime)
+    SUSPENTIONDATE = Column(DateTime)
+    SUSPENSTIONTIME = Column(String(12))
+    RESUMPTIONDATE = Column(DateTime)
+    RESUMPTIONTIME = Column(String(12))
+    SUSPENTIONTERM = Column(DECIMAL(8, 2))
+    REASONID = Column(String(100))
+    REASON = Column(String(400))
+    UPDATEID = Column(BIGINT, primary_key=True)
+
+
+class stk_view_stockinfo(Base):
+
+    __tablename__ = 'stk_view_stockinfo'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SHORTNAME = Column(String(100), doc="证券名称")
+    SYMBOL = Column(String(12), doc="证券代码")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    EXCHANGECODE = Column(String(40), doc="交易所编码")
+    CIRCULATEDSHARE = Column(DECIMAL(20, 0), doc="流通股本")
+    TOTALSHARE = Column(DECIMAL(20, 0), doc="总股本")
+    INDUSTRYCODE = Column(String(40), doc="所属行业")
+    TRADINGVOLUME = Column(DECIMAL(20, 0), doc="前5天总成交量")
+    NAVPERSHARE = Column(DECIMAL(8, 4), doc="每股净资产")
+    PRECLOSE = Column(DECIMAL(8, 4), doc="昨收盘价")
+    LASTYEAREPS = Column(DECIMAL(8, 4), doc="上年每股利润")
+    CURRENTEPS = Column(DECIMAL(8, 4), doc="本年每股利润")
+    UPLIMIT = Column(DECIMAL(8, 4), doc="涨停价")
+    DOWNLIMIT = Column(DECIMAL(8, 4), doc="跌停价")
+    PRICESHIFTUNIT = Column(DECIMAL(8, 4), doc="价格档位")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    TRADINGDATE = Column(DateTime)
+    CLOSE = Column(DECIMAL(8, 4))
+    LASTENDDATE = Column(DateTime)
+    EXDIVIDENDPRECLOSE = Column(DECIMAL(8, 4))
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5))
+    ENDDATE = Column(DateTime)
+    PARENTEPS = Column(DECIMAL(8, 4), doc="归属于母公司股东每股利润")
+
+
+class stk_view_stockinfohistory(Base):
+
+    __tablename__ = 'stk_view_stockinfohistory'
+
+    TRADINGDATE = Column(DateTime, primary_key=True, doc="交易日期")
+    SYMBOL = Column(String(12), primary_key=True, doc="证券代码")
+    SECURITYID = Column(DECIMAL(20, 0), doc="证券ID")
+    SHORTNAME = Column(String(100), doc="证券名称")
+    PYSHORTNAME = Column(String(100), doc="拼音简称")
+    EXCHANGECODE = Column(String(40), doc="交易所编码")
+    CIRCULATEDSHARE = Column(DECIMAL(20, 0), doc="流通股本")
+    TOTALSHARE = Column(DECIMAL(20, 0), doc="总股本")
+    INDUSTRYCODE = Column(String(40), doc="所属行业")
+    PERMINTRADINGVOLUME = Column(DECIMAL(21, 5), doc="前5天平均每分钟成交量")
+    TRADINGVOLUME = Column(DECIMAL(20, 0), doc="前5天总成交量")
+    CLOSE = Column(DECIMAL(8, 4), doc="收盘价")
+    PRECLOSE = Column(DECIMAL(8, 4), doc="昨收盘价")
+    EXDIVIDENDPRECLOSE = Column(DECIMAL(8, 4), doc="除权除息后的昨收盘价")
+    UPLIMIT = Column(DECIMAL(8, 4), doc="涨停价")
+    DOWNLIMIT = Column(DECIMAL(8, 4), doc="跌停价")
+    PRICESHIFTUNIT = Column(DECIMAL(8, 4), doc="价格档位")
+    NAVPERSHARE = Column(DECIMAL(8, 4), doc="每股净资产")
+    LASTYEAREPS = Column(DECIMAL(8, 4), doc="上年每股利润")
+    CURRENTEPS = Column(DECIMAL(8, 4), doc="本年每股利润")
+    LASTENDDATE = Column(DateTime, doc="上年每股利润指标所处会计期间的截止时间")
+    ENDDATE = Column(DateTime, doc="本年每股利润指标所处会计期间的截止时间")
+    UPDATEID = Column(BIGINT, doc="数据ID")
+    PARENTEPS = Column(DECIMAL(8, 4), doc="归属于母公司股东每股利润")
+
+
+class sz_securityinfo(Base):
+
+    __tablename__ = 'sz_securityinfo'
+
+    SYMBOL = Column(String(20), doc="证券代码")
+    SYMBOLNAME = Column(String(100), doc="中文证券名称")
+    UPDATEDATE = Column(DateTime, doc="记录更新日期")
+    UPDATETIME1 = Column(String(12), doc="记录更新时间")
+    NAMEPREFIX = Column(String(20), doc="证券简称前缀")
+    SYMBOLNAME_EN = Column(String(100), doc="英文证券名称")
+    UNDERLYINGSECURITYSYMBOL = Column(String(20), doc="基础证券代码")
+    ISIN = Column(String(40), doc="ISIN代码")
+    INDUSTRYCODE = Column(String(20), doc="行业代码")
+    CURRENCYTYPE = Column(String(6), doc="货币种类")
+    PARVALUE = Column(DECIMAL(7, 2), doc="每股面值")
+    ISSUEVOLUME = Column(BIGINT, doc="发行数量")
+    CIRCULATEDSHARE = Column(BIGINT, doc="流通股数")
+    PERSHRPROFITLASTYEAR = Column(DECIMAL(9, 4), doc="上年每股利润")
+    PERSHRPROFITCURRENTYEAR = Column(DECIMAL(9, 4), doc="本年每股利润")
+    ACCUMULATIVENAV = Column(DECIMAL(9, 4), doc="基金份额累计净值")
+    TRADINGFEERATE = Column(DECIMAL(7, 6), doc="经手费率")
+    STAMPTAXRATE = Column(DECIMAL(7, 6), doc="印花税率")
+    TRANSFERRINGFEERATE = Column(DECIMAL(7, 6), doc="过户费率")
+    LISTEDDATE = Column(DateTime, doc="上市日期")
+    INTERESTSTARTDATE = Column(DateTime, doc="债券起息日")
+    EXPIRYDATE = Column(DateTime, doc="到期/交割日")
+    TRADINGUNIT = Column(INTEGER, doc="交易单位")
+    BUYPERSHARES = Column(DECIMAL(20, 0), doc="买数量单位")
+    SELLPERSHARES = Column(DECIMAL(20, 0), doc="卖数量单位")
+    SINGLEDESIGNATEVOLLIMIT = Column(BIGINT, doc="每笔委托限量")
+    PRICESTALL = Column(DECIMAL(10, 3), doc="价格档位")
+    CALLAUCTIONPRICELIMITPAR = Column(DECIMAL(10, 3), doc="集合竞价限价参数")
+    CONTAUCTIONPRICELIMITPAR = Column(DECIMAL(10, 3), doc="连续竞价限价参数")
+    PRICELIMITPARNATURE = Column(SMALLINT, doc="限价参数性质")
+    RISECEILINGPRICE = Column(DECIMAL(10, 3), doc="涨幅上限价格")
+    DECLINEFLOORPRICE = Column(DECIMAL(10, 3), doc="跌幅下限价格")
+    BLOCKTRADINGPRICECEILING = Column(DECIMAL(10, 3), doc="大宗交易价格上限")
+    BLOCKTRADINGPRICEFLOOR = Column(DECIMAL(10, 3), doc="大宗交易价格下限")
+    CONVERSIONRATE = Column(DECIMAL(5, 2), doc="债券折合比例")
+    GUARANTYDISCOUNTRATE = Column(DECIMAL(5, 2), doc="担保物折算率")
+    FINANCING = Column(String(2), doc="融资标的标志")
+    SECURITIESLENDING = Column(String(2), doc="融券标的标志")
+    SAMPLESTOCKSIGN = Column(String(2), doc="成份股标志")
+    MARKETMAKERSIGN = Column(String(2), doc="做市商标志")
+    MARKETTYPE = Column(String(20), doc="市场种类")
+    SYMBOLTYPE = Column(String(20), doc="证券类别")
+    SYMBOLLEVEL = Column(String(2), doc="证券级别")
+    PRODSTATUSID = Column(String(2), doc="产品状态标志")
+    TRANSACTIONTYPE = Column(String(2), doc="交易类型")
+    PRODTRADINGSTAGE = Column(String(2), doc="产品交易阶段")
+    SUSPENDEDTRADINGSIGN = Column(String(2), doc="暂停交易标志")
+    FINANCIALTRDSTATUS = Column(String(2), doc="融资交易状态")
+    SECURITYCREDITTRDSTATUS = Column(String(2), doc="融券交易状态")
+    SECURITYCREDITSELLLIMIT = Column(String(2), doc="融券卖出价格限制")
+    NETWORKVOTINGSIGN = Column(String(2), doc="网络投票标志")
+    OTHBUSINESSSTATUS = Column(String(16), doc="其他业务状态")
+    RESERVEFIELD = Column(String(24), doc="备用字段")
+    RESERVEFSIGN = Column(String(2), doc="备用标志")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class sz_securityinfohistory(Base):
+
+    __tablename__ = 'sz_securityinfohistory'
+
+    TRADINGDATE = Column(DateTime, doc="交易日期")
+    SYMBOL = Column(String(10), doc="证券代码")
+    SECURITYNAME = Column(String(100), doc="证劵名称")
+    SYMBOLSOURCE = Column(String(10), doc="证券代码源")
+    SECURITYEN = Column(String(100), doc="证券英文简称")
+    ISIN = Column(String(20), doc="ISIN代码")
+    SYMBOLUNDERLYING = Column(String(10), doc="基础证券代码")
+    UNDERLYINGSECURITYIDSOURCE = Column(String(10), doc="基础证券代码源")
+    SECURITYTYPE = Column(String(10), doc="证券类别代码")
+    SECURITYSTATUSTAG = Column(String(20), doc="证券状态标识")
+    PRECLOSEPRICE = Column(DECIMAL(10, 3), doc="昨收盘价")
+    LISTINGDATE = Column(DateTime, doc="上市日期")
+    CURRENCY = Column(String(3), doc="币种")
+    PARVALUE = Column(DECIMAL(7, 2), doc="每股面值")
+    ISSUEDVOLUME = Column(BIGINT, doc="总发行量")
+    OUTSTANDINGSHARE = Column(BIGINT, doc="流通股数")
+    INDUSTRYTYPE = Column(String(10), doc="行业种类")
+    PREYEAREPS = Column(DECIMAL(9, 4), doc="上年每股利润")
+    YEAREPS = Column(DECIMAL(9, 4), doc="本年每股利润")
+    OFFERINGFLAG = Column(String(1), doc="收购（转股、行权）标志")
+    NAV = Column(DECIMAL(9, 4), doc="基金T-1日累计净值")
+    COUPONRATE = Column(DECIMAL(9, 4), doc="票面利率")
+    ISSUEPRICE = Column(DECIMAL(9, 4), doc="贴现发行价")
+    INTEREST = Column(DECIMAL(9, 4), doc="每百元应计利息")
+    INTERESTACCRUALDATE = Column(DateTime, doc="起息日")
+    MATURITYDATE = Column(DateTime, doc="到期交割日")
+    CONVERSIONPRICE = Column(DECIMAL(9, 4), doc="行权价格")
+    CONVERSIONRATIO = Column(DECIMAL(9, 4), doc="行权比例")
+    CONVERSIONBEGINDATE = Column(DateTime, doc="行权开始日")
+    CONVERSIONENDDATE = Column(DateTime, doc="行权结束日")
+    CALLORPUT = Column(String(1), doc="认购认沽")
+    WARRANTCLEARINGTYPE = Column(String(1), doc="权证结算方式")
+    CLEARINGPRICE = Column(DECIMAL(9, 4), doc="结算价格")
+    OPTIONTYPE = Column(String(1), doc="行权类型")
+    ENDDATE = Column(DateTime, doc="最后交易日")
+    EXPIRATIONDAYS = Column(String(10), doc="购回期限")
+    DAYTRADING = Column(String(1), doc="回转交易标志")
+    GAGEFLAG = Column(String(1), doc="保证金证券标志")
+    GAGERATE = Column(DECIMAL(5, 2), doc="担保品折算率")
+    CRDBUYUNDERLYING = Column(String(1), doc="融资标的标志")
+    CRDSELLUNDERLYING = Column(String(1), doc="融券标的标志")
+    CRDPRICECHECKTYPE = Column(String(1), doc="提价检查方式")
+    PLEDGEFLAG = Column(String(1), doc="质押入库标志")
+    CONTRACTMULTIPLIER = Column(DECIMAL(5, 2), doc="债券折合回购标准券比例")
+    REGULARSHARE = Column(String(20), doc="对应回购标准券")
+    QUALIFICATIONFLAG = Column(String(1), doc="投资者适当性管理标志")
+    MARKETMAKERFLAG = Column(String(1), doc="做市商标志")
+    ROUNDLOT = Column(INTEGER, doc="整手数")
+    TICKSIZE = Column(DECIMAL(10, 3), doc="最小报价单位")
+    BUYQTYUPPERLIMIT = Column(DECIMAL(15, 2), doc="买数量上限")
+    SELLQTYUPPERLIMIT = Column(DECIMAL(15, 2), doc="卖数量上限")
+    BUYVOLUMEUNIT = Column(DECIMAL(20, 0), doc="买数量单位")
+    SELLVOLUMEUNIT = Column(DECIMAL(20, 0), doc="卖数量单位")
+    LIMITUPRATEO = Column(DECIMAL(10, 3), doc="开盘集合竞价上涨幅度")
+    LIMITDOWNRATEO = Column(DECIMAL(10, 3), doc="开盘集合竞价下跌幅度")
+    LIMITUPABSOLUTEO = Column(DECIMAL(10, 3), doc="开盘集合竞价上涨限价")
+    LIMITDOWNABSOLUTEO = Column(DECIMAL(10, 3), doc="开盘集合竞价下跌限价")
+    AUCTIONUPDOWNRATEO = Column(DECIMAL(10, 3), doc="开盘集合竞价有效范围涨跌幅度")
+    AUCTIONUPDOWNABSOLUTEO = Column(DECIMAL(10, 3), doc="开盘集合竞价有效范围涨跌价格")
+    LIMITUPRATET = Column(DECIMAL(10, 3), doc="连续竞价上涨幅度")
+    LIMITDOWNRATET = Column(DECIMAL(10, 3), doc="连续竞价下跌幅度")
+    LIMITUPABSOLUTET = Column(DECIMAL(10, 3), doc="连续竞价上涨限价")
+    LIMITDOWNABSOLUTET = Column(DECIMAL(10, 3), doc="连续竞价下跌限价")
+    AUCTIONUPDOWNRATET = Column(DECIMAL(10, 3), doc="连续竞价有效范围涨跌幅度")
+    AUCTIONUPDOWNABSOLUTET = Column(DECIMAL(10, 3), doc="连续竞价有效范围涨跌价格")
+    LIMITUPRATEC = Column(DECIMAL(10, 3), doc="收盘集合竞价上涨幅度")
+    LIMITDOWNRATEC = Column(DECIMAL(10, 3), doc="收盘集合竞价下跌幅度")
+    LIMITUPABSOLUTEC = Column(DECIMAL(10, 3), doc="收盘集合竞价上涨限价")
+    LIMITDOWNABSOLUTEC = Column(DECIMAL(10, 3), doc="收盘集合竞价下跌限价")
+    AUCTIONUPDOWNRATEC = Column(DECIMAL(10, 3), doc="收盘集合竞价有效范围涨跌幅度")
+    AUCTIONUPDOWNABSOLUTEC = Column(DECIMAL(10, 3), doc="收盘集合竞价有效范围涨跌价格")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+    PRICEUPLIMIT = Column(DECIMAL(20, 4), doc="涨停价格")
+    PRICEDOWNLIMIT = Column(DECIMAL(20, 4), doc="跌停价格")
 
 
 class tbl_chn_bond_infochg(Base):
@@ -11784,10 +13027,74 @@ class tbl_chn_bond_infochg(Base):
     DESCRIPVALUE_BEFORE = Column(String(100), doc="变更前属性描述")
     DESCRIPVALUE_AFTER = Column(String(100), doc="变更后属性描述")
     UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
-    UPDATESTATE = Column(SMALLINT, doc="Update状态")
-    UPDATETIME = Column(DateTime, doc="Update时间")
-    BUSINESSTIME = Column(DateTime, doc="通讯组件专用字段")
-    UTSID = Column(DECIMAL(20, 0), doc="UTS专用字段")
+
+
+class zz_bondcloseweight(Base):
+
+    __tablename__ = 'zz_bondcloseweight'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="指数ID")
+    SYMBOL = Column(String(20), doc="指数代码")
+    TRADINGDATE = Column(DateTime, doc="日期")
+    SHHCODE = Column(String(20), doc="沪市代码")
+    SHHSECURITYID = Column(DECIMAL(20, 0), doc="沪市证券ID")
+    SHZCODE = Column(String(20), doc="深市代码")
+    SHZSECURITYID = Column(DECIMAL(20, 0), doc="深市证券ID")
+    INTERBANKCODE = Column(String(20), doc="银行间代码")
+    INTERBANKSECURITYID = Column(DECIMAL(20, 0), doc="银行间证券ID")
+    CONSTITUENTCODE = Column(String(40), doc="所在交易所交易代码")
+    TRADINGCURRENCY = Column(String(6), doc="交易所使用的币种")
+    EXCHANGERATE = Column(DECIMAL(9, 4), doc="交易货币对指数币种汇率")
+    WEIGHT = Column(DECIMAL(10, 3), doc="权重")
+    RESERVE = Column(String(20), doc="保留字段")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class zz_bondtermstructure(Base):
+
+    __tablename__ = 'zz_bondtermstructure'
+
+    CURVENAME = Column(String(160), doc="曲线名称")
+    TRADINGDATE = Column(DateTime, doc="日期")
+    TERM = Column(DECIMAL(10, 2), doc="年限")
+    SPOTRATE = Column(DECIMAL(10, 4), doc="即期利率")
+    HPRETURN = Column(DECIMAL(10, 4), doc="到期收益率")
+    FORWARDRATE = Column(DECIMAL(10, 4), doc="远期利率")
+    RESERVE = Column(String(20), doc="保留字段")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class zz_bondvaluation(Base):
+
+    __tablename__ = 'zz_bondvaluation'
+
+    TRADINGDATE = Column(DateTime, doc="日期")
+    SHHCODE = Column(String(20), doc="沪市代码")
+    SHHSECURITYID = Column(DECIMAL(20, 0), doc="沪市证券ID")
+    SHZCODE = Column(String(20), doc="深市代码")
+    SHZSECURITYID = Column(DECIMAL(20, 0), doc="深市证券ID")
+    INTERBANKCODE = Column(String(20), doc="银行间代码")
+    INTERBANKSECURITYID = Column(DECIMAL(20, 0), doc="银行间证券ID")
+    CALCULAPRICE = Column(DECIMAL(10, 4), doc="计算价格")
+    HPRETURN = Column(DECIMAL(10, 4), doc="计算收益率")
+    ADJDURATION = Column(DECIMAL(10, 4), doc="修正久期")
+    CONVEXITY = Column(DECIMAL(10, 4), doc="凸性")
+    CLEANPRICE = Column(DECIMAL(10, 4), doc="净价")
+    ACCRUEINTEREST = Column(DECIMAL(10, 4), doc="应计利息")
+    RESERVE = Column(String(20), doc="保留字段")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
+
+
+class zz_divisoradjustment(Base):
+
+    __tablename__ = 'zz_divisoradjustment'
+
+    SECURITYID = Column(DECIMAL(20, 0), doc="指数ID")
+    SYMBOL = Column(String(30), doc="指数代码")
+    EFFECTIVEDATE = Column(DateTime, doc="生效日期")
+    CURRENTDIVISOR = Column(DECIMAL(24, 4), doc="原除数")
+    NEWDIVISOR = Column(DECIMAL(24, 4), doc="调整后除数")
+    UPDATEID = Column(BIGINT, primary_key=True, doc="数据ID")
 
 
 csmar_class_dict = {
@@ -11796,6 +13103,7 @@ csmar_class_dict = {
     'bond_basicinfo': bond_basicinfo,
     'bond_bondtype': bond_bondtype,
     'bond_bs': bond_bs,
+    'bond_calpretrdinfo': bond_calpretrdinfo,
     'bond_cfdm': bond_cfdm,
     'bond_cfets_dquote_his_dq': bond_cfets_dquote_his_dq,
     'bond_cfets_pledgedrepo_hdq': bond_cfets_pledgedrepo_hdq,
@@ -11828,6 +13136,8 @@ csmar_class_dict = {
     'bond_otc_quotationhis': bond_otc_quotationhis,
     'bond_otc_quotationoptimal': bond_otc_quotationoptimal,
     'bond_payment': bond_payment,
+    'bond_pretrdinfo': bond_pretrdinfo,
+    'bond_pretrdinfohistory': bond_pretrdinfohistory,
     'bond_quotation': bond_quotation,
     'bond_quotationderivative': bond_quotationderivative,
     'bond_quotationlatest': bond_quotationlatest,
@@ -11848,9 +13158,16 @@ csmar_class_dict = {
     'bond_tenderissue': bond_tenderissue,
     'bond_tenderresult': bond_tenderresult,
     'bond_treasyield': bond_treasyield,
+    'cmo_pretrdinfo': cmo_pretrdinfo,
+    'cmo_pretrdinfohistory': cmo_pretrdinfohistory,
+    'cost_riskfree': cost_riskfree,
+    'ffut_calpretrdinfo': ffut_calpretrdinfo,
+    'ffut_pretrdinfo': ffut_pretrdinfo,
+    'ffut_pretrdinfohistory': ffut_pretrdinfohistory,
     'fund_allocation': fund_allocation,
     'fund_areaclass': fund_areaclass,
     'fund_bwardfactor': fund_bwardfactor,
+    'fund_calpretrdinfo': fund_calpretrdinfo,
     'fund_classinfochange': fund_classinfochange,
     'fund_custodian': fund_custodian,
     'fund_daynav': fund_daynav,
@@ -11913,6 +13230,8 @@ csmar_class_dict = {
     'fund_portfolio_bondvariety': fund_portfolio_bondvariety,
     'fund_portfolio_currency': fund_portfolio_currency,
     'fund_portfolio_stock': fund_portfolio_stock,
+    'fund_pretrdinfo': fund_pretrdinfo,
+    'fund_pretrdinfohistory': fund_pretrdinfohistory,
     'fund_promoter': fund_promoter,
     'fund_prospectuses': fund_prospectuses,
     'fund_ptf_bondspe': fund_ptf_bondspe,
@@ -11947,10 +13266,21 @@ csmar_class_dict = {
     'fund_strtrackbweek': fund_strtrackbweek,
     'fund_tenholders': fund_tenholders,
     'fund_unitclassinfo': fund_unitclassinfo,
+    'fut_calpretrdinfo': fut_calpretrdinfo,
+    'fut_pretrdinfo': fut_pretrdinfo,
+    'fut_pretrdinfohistory': fut_pretrdinfohistory,
     'idx_closeweight': idx_closeweight,
     'idx_closeweightfree': idx_closeweightfree,
+    'idx_indexinfo': idx_indexinfo,
+    'idx_mkt_lastquotationweek': idx_mkt_lastquotationweek,
     'idx_mkt_quotation': idx_mkt_quotation,
+    'idx_samplechange': idx_samplechange,
+    'idx_samplelatest': idx_samplelatest,
     'idx_weight': idx_weight,
+    'idx_weightnextday': idx_weightnextday,
+    'io_calpretrdinfo': io_calpretrdinfo,
+    'io_pretrdinfo': io_pretrdinfo,
+    'io_pretrdinfohistory': io_pretrdinfohistory,
     'mac_area_ampimonth': mac_area_ampimonth,
     'mac_area_ampiyear': mac_area_ampiyear,
     'mac_area_cpimonth': mac_area_cpimonth,
@@ -11959,8 +13289,12 @@ csmar_class_dict = {
     'mac_area_fixedassetsidxyear': mac_area_fixedassetsidxyear,
     'mac_area_gdpquarter': mac_area_gdpquarter,
     'mac_area_gdpyear': mac_area_gdpyear,
+    'mac_area_industrysalevalue': mac_area_industrysalevalue,
+    'mac_area_industryvalueadd': mac_area_industryvalueadd,
     'mac_area_ppimonth': mac_area_ppimonth,
     'mac_area_ppiyear': mac_area_ppiyear,
+    'mac_area_productoutputmonth': mac_area_productoutputmonth,
+    'mac_area_productoutputyear': mac_area_productoutputyear,
     'mac_area_purchaseidxmonth': mac_area_purchaseidxmonth,
     'mac_area_purchaseidxyear': mac_area_purchaseidxyear,
     'mac_area_rpimonth': mac_area_rpimonth,
@@ -11971,9 +13305,34 @@ csmar_class_dict = {
     'mac_areagdp_incomeyear': mac_areagdp_incomeyear,
     'mac_bondyieldsd': mac_bondyieldsd,
     'mac_fixedbaseidx': mac_fixedbaseidx,
+    'mac_industry_financialyear': mac_industry_financialyear,
     'mac_industry_ppimonth': mac_industry_ppimonth,
     'mac_industry_ppiyear': mac_industry_ppiyear,
+    'mac_industry_saleinventory': mac_industry_saleinventory,
+    'mac_industry_valueadd': mac_industry_valueadd,
+    'mac_industryvalueadd': mac_industryvalueadd,
     'mac_statsinfo_calendar': mac_statsinfo_calendar,
+    'plate_bondchange': plate_bondchange,
+    'plate_bondchangelatest': plate_bondchangelatest,
+    'plate_bondsamplechange': plate_bondsamplechange,
+    'plate_concept': plate_concept,
+    'plate_fundchange': plate_fundchange,
+    'plate_fundchangelatest': plate_fundchangelatest,
+    'plate_fundsamplechange': plate_fundsamplechange,
+    'plate_futurechange': plate_futurechange,
+    'plate_futurechangelatest': plate_futurechangelatest,
+    'plate_futuresamplechange': plate_futuresamplechange,
+    'plate_indexchange': plate_indexchange,
+    'plate_indexchangelatest': plate_indexchangelatest,
+    'plate_indexsamplechange': plate_indexsamplechange,
+    'plate_platetree': plate_platetree,
+    'plate_platetree_state2': plate_platetree_state2,
+    'plate_sochange': plate_sochange,
+    'plate_sochangelatest': plate_sochangelatest,
+    'plate_sosamplechange': plate_sosamplechange,
+    'plate_stockchange': plate_stockchange,
+    'plate_stockchangelatest': plate_stockchangelatest,
+    'plate_stocksamplechange': plate_stocksamplechange,
     'pled_agrrepamt': pled_agrrepamt,
     'pled_agrrepdetl': pled_agrrepdetl,
     'pled_amtstat': pled_amtstat,
@@ -11984,12 +13343,46 @@ csmar_class_dict = {
     'pled_stkratio': pled_stkratio,
     'pled_stktrdvol': pled_stktrdvol,
     'pled_trddetl': pled_trddetl,
+    'pub_chnadmdivisioncode': pub_chnadmdivisioncode,
+    'pub_codingschema': pub_codingschema,
+    'pub_continuingcontract': pub_continuingcontract,
+    'pub_eventtype': pub_eventtype,
+    'pub_exchangeinfo': pub_exchangeinfo,
+    'pub_indclassifysets': pub_indclassifysets,
+    'pub_indclassifyversion': pub_indclassifyversion,
+    'pub_institutionidchange': pub_institutionidchange,
+    'pub_institutioninfo': pub_institutioninfo,
+    'pub_isocontrycode': pub_isocontrycode,
+    'pub_isocurrencycode': pub_isocurrencycode,
+    'pub_mainconcontract': pub_mainconcontract,
+    'pub_maincontract': pub_maincontract,
+    'pub_personnelinfo': pub_personnelinfo,
+    'pub_pretradinginfo': pub_pretradinginfo,
+    'pub_securityconstant': pub_securityconstant,
+    'pub_securityinfo': pub_securityinfo,
+    'sh_securityinfo': sh_securityinfo,
     'smt_collateral': smt_collateral,
     'smt_collaterald': smt_collaterald,
     'smt_traded': smt_traded,
     'smt_tradesumd': smt_tradesumd,
     'smt_underlyingsd': smt_underlyingsd,
+    'so_calpretrdinfo': so_calpretrdinfo,
+    'so_pretrdinfo': so_pretrdinfo,
+    'so_pretrdinfohistory': so_pretrdinfohistory,
+    'stk_af_analystrank': stk_af_analystrank,
+    'stk_af_forecast': stk_af_forecast,
+    'stk_af_ratingchange': stk_af_ratingchange,
+    'stk_af_ratingstatistic': stk_af_ratingstatistic,
+    'stk_af_targetvalue': stk_af_targetvalue,
+    'stk_calendard': stk_calendard,
     'stk_dividend': stk_dividend,
+    'stk_eq_ipo_coinfo': stk_eq_ipo_coinfo,
+    'stk_eq_ipo_employeeinfo': stk_eq_ipo_employeeinfo,
+    'stk_eq_ipo_info': stk_eq_ipo_info,
+    'stk_eq_ipo_ipocg': stk_eq_ipo_ipocg,
+    'stk_eq_ipo_marketexhibit': stk_eq_ipo_marketexhibit,
+    'stk_eq_ipo_overallot': stk_eq_ipo_overallot,
+    'stk_eq_ipo_result': stk_eq_ipo_result,
     'stk_eq_rs_info': stk_eq_rs_info,
     'stk_eq_rs_plan': stk_eq_rs_plan,
     'stk_eq_rs_result': stk_eq_rs_result,
@@ -11997,6 +13390,7 @@ csmar_class_dict = {
     'stk_eq_seo_private': stk_eq_seo_private,
     'stk_eq_seo_publicinfo': stk_eq_seo_publicinfo,
     'stk_eq_seo_publicresult': stk_eq_seo_publicresult,
+    'stk_eventlist': stk_eventlist,
     'stk_fin_balance': stk_fin_balance,
     'stk_fin_cashflow': stk_fin_cashflow,
     'stk_fin_cashflowindex': stk_fin_cashflowindex,
@@ -12024,6 +13418,7 @@ csmar_class_dict = {
     'stk_fin_relforcdate': stk_fin_relforcdate,
     'stk_fin_risk': stk_fin_risk,
     'stk_fin_simforecfin': stk_fin_simforecfin,
+    'stk_forecast': stk_forecast,
     'stk_guarantee_main': stk_guarantee_main,
     'stk_guarantee_son': stk_guarantee_son,
     'stk_guarantee_statistics': stk_guarantee_statistics,
@@ -12055,7 +13450,11 @@ csmar_class_dict = {
     'stk_indfi_pershare': stk_indfi_pershare,
     'stk_indfi_relativevalue': stk_indfi_relativevalue,
     'stk_indfi_risk': stk_indfi_risk,
+    'stk_industryclass': stk_industryclass,
     'stk_institutionholderalias': stk_institutionholderalias,
+    'stk_institutioninfo': stk_institutioninfo,
+    'stk_itemchange': stk_itemchange,
+    'stk_listedcoinfochg': stk_listedcoinfochg,
     'stk_lock_shares': stk_lock_shares,
     'stk_lockshares_summary': stk_lockshares_summary,
     'stk_ma_assetreplace': stk_ma_assetreplace,
@@ -12074,8 +13473,12 @@ csmar_class_dict = {
     'stk_ma_underlying': stk_ma_underlying,
     'stk_mkt_adjustfactor': stk_mkt_adjustfactor,
     'stk_mkt_blocktrade': stk_mkt_blocktrade,
+    'stk_mkt_capitalflow': stk_mkt_capitalflow,
+    'stk_mkt_capitalflows': stk_mkt_capitalflows,
     'stk_mkt_divident': stk_mkt_divident,
     'stk_mkt_dividentnew': stk_mkt_dividentnew,
+    'stk_mkt_exchangerate': stk_mkt_exchangerate,
+    'stk_mkt_nightcale': stk_mkt_nightcale,
     'stk_mkt_quotation': stk_mkt_quotation,
     'stk_mkt_quotationlatest': stk_mkt_quotationlatest,
     'stk_mkt_repricefactor': stk_mkt_repricefactor,
@@ -12144,6 +13547,8 @@ csmar_class_dict = {
     'stk_notes_udp': stk_notes_udp,
     'stk_originalholders': stk_originalholders,
     'stk_personalholderalias': stk_personalholderalias,
+    'stk_pretrdinfo': stk_pretrdinfo,
+    'stk_pretrdinfohistory': stk_pretrdinfohistory,
     'stk_relationship_background': stk_relationship_background,
     'stk_rpt_ralatedparty': stk_rpt_ralatedparty,
     'stk_rpt_transactions': stk_rpt_transactions,
@@ -12156,5 +13561,15 @@ csmar_class_dict = {
     'stk_sr_indexm': stk_sr_indexm,
     'stk_sr_repumain': stk_sr_repumain,
     'stk_sr_schedule': stk_sr_schedule,
+    'stk_stockinfo': stk_stockinfo,
+    'stk_suspentioninfo': stk_suspentioninfo,
+    'stk_view_stockinfo': stk_view_stockinfo,
+    'stk_view_stockinfohistory': stk_view_stockinfohistory,
+    'sz_securityinfo': sz_securityinfo,
+    'sz_securityinfohistory': sz_securityinfohistory,
     'tbl_chn_bond_infochg': tbl_chn_bond_infochg,
+    'zz_bondcloseweight': zz_bondcloseweight,
+    'zz_bondtermstructure': zz_bondtermstructure,
+    'zz_bondvaluation': zz_bondvaluation,
+    'zz_divisoradjustment': zz_divisoradjustment,
 }

@@ -11,10 +11,16 @@ from pymysql.converters import conversions, escape_item, encoders
 
 from simonsc.object.wind_table import *
 from simonsc.object.csmar_table import *
+from simonsc.object.simons_csmar_table import *
 from sqlalchemy.sql import compiler
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.dialects import mysql as mysql_dialetct
 from sqlalchemy.orm.query import Query
+from sqlalchemy import and_, between
+
+
+def is_str(s):
+    return isinstance(s, six.string_types)
 
 
 def _get_session():
@@ -40,13 +46,44 @@ def export_as_api(func):
 
 def assert_auth(func):
     @wraps(func)
-    def _wrapper(*args, **kwargs):        
+    def _wrapper(*args, **kwargs):
         from .client import SimonsClient
         if not SimonsClient.instance():
             print("run simonsc.auth first")
         else:
             return func(*args, **kwargs)
     return _wrapper
+
+
+class ParamsError(Exception):
+    pass
+
+
+class FundamentalUtil(object):
+
+    def __init__(self):
+        pass
+
+
+quarter_time_dict = {
+    "1": ["%s-01-01 00:00:00", "%s-03-31 00:00:00"],
+    "2": ["%s-04-01 00:00:00", "%s-06-30 00:00:00"],
+    "3": ["%s-07-01 00:00:00", "%s-09-30 00:00:00"],
+    "4": ["%s-10-01 00:00:00", "%s-12-31 00:00:00"],
+    "5": ["%s-01-01 00:00:00", "%s-06-30 00:00:00"],
+    "6": ["%s-01-01 00:00:00", "%s-12-31 00:00:00"],
+    "7": ["%s-01-01 00:00:00", "%s-09-30 00:00:00"],
+}
+
+
+def get_symbol_list(query_object):
+    comp = get_sql_and_param(query_object)
+    keys = comp.positiontup
+    symbol_list = list()
+    for key in keys:
+        if "SYMBOL" in key:
+            symbol_list.append(comp.params[key])
+    return symbol_list
 
 
 def convert_datetime_to_str(dt):
@@ -63,7 +100,7 @@ def convert_datetime_to_str(dt):
 
 
 def get_tables_from_sql(sql):
-    all_tables = wind_tables + csmar_tables
+    all_tables = wind_tables + csmar_tables + simons_csmar_tables
     table_str = "|".join(all_tables)
     # r'Cash_Flow|Balance_Sheet|Income_Statement|Financial_Indicator'
     m = re.findall(table_str, sql)
@@ -72,8 +109,8 @@ def get_tables_from_sql(sql):
 
 def get_table_class(tablename):
     for class_dict in [csmar_class_dict, wind_class_dict]:
-        if tablename.upper() in class_dict:
-            return class_dict[tablename.upper()]
+        if tablename.lower() in class_dict:
+            return class_dict[tablename.lower()]
 
 
 def get_fundamentals_sql_from_query(query_object, date=None, statDate=None):
@@ -88,12 +125,16 @@ def get_fundamentals_sql_from_query(query_object, date=None, statDate=None):
     return sql
 
 
-def compile_query(query):
+def get_sql_and_param(query):
     dialect = mysql_dialetct.dialect()
     statement = query.statement
     comp = compiler.SQLCompiler(dialect, statement)
     comp.compile()
-    enc = dialect.encoding
+    return comp
+
+
+def compile_query(query):
+    comp = get_sql_and_param(query)
     comp_params = comp.params
     params = []
     for k in comp.positiontup:
@@ -104,3 +145,38 @@ def compile_query(query):
         params.append(v)
     return (comp.string % tuple(params))
 
+
+def stat_date_process(stat_date):
+    year = stat_date[:4]
+    if "q" not in stat_date:
+        start_date, end_date = quarter_time_dict["6"]
+    else:
+        start_date, end_date = quarter_time_dict[stat_date[-1]]
+    start_date = start_date % year
+    end_date = end_date % year
+    return start_date[:10], end_date[:10]
+
+
+
+def to_date(date):
+    """
+    >>> convert_date('2015-1-1')
+    datetime.date(2015, 1, 1)
+    >>> convert_date('2015-01-01 00:00:00')
+    datetime.date(2015, 1, 1)
+    >>> convert_date(datetime.datetime(2015, 1, 1))
+    datetime.date(2015, 1, 1)
+    >>> convert_date(datetime.date(2015, 1, 1))
+    datetime.date(2015, 1, 1)
+    """
+    if is_str(date):
+        if ':' in date:
+            date = date[:10]
+        return datetime.datetime.strptime(date, '%Y-%m-%d').date()
+    elif isinstance(date, datetime.datetime):
+        return date.date()
+    elif isinstance(date, datetime.date):
+        return date
+    elif date is None:
+        return None
+    raise ParamsError("type error")
