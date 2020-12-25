@@ -70,4 +70,5 @@ simons的设计哲学主要关注在统一性
    data_dictionary/bond
    data_dictionary/macroeconomic
    data_dictionary/quantitative_factor
+   data_dictionary/factor_returns
    
