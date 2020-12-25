@@ -363,3 +363,53 @@ def get_factor_exposure(
     dt = convert_datetime_to_str(dt)
    
     return SimonsClient.instance().get_factor_exposure(**locals())  
+
+
+@assert_auth
+@export_as_api
+def get_factor_returns(
+    bar_count: int,
+    dt: datetime.datetime,
+    fields: List[str]=None,
+    frequency: str='1d',
+) -> pd.DataFrame:
+
+    """获取指定合约的历史因子收益率，支持频率1d(日), 1w(周), 1M(月)历史因子数据
+    
+    :param bar_count: 获取的历史数据数量，必填项
+    :param dt: 获取数据的截止日期时间，e.g. “2020-09-18”
+    :param fields: 返回数据字段。必填项。见因子收益率数据字典。
+    :param frequency: 获取数据什么样的频率进行。'1d'或'1m'分别表示每日和每分钟，默认为1d
+    
+    Example1::
+    
+    获取Fama-French 5因子 2020-09-18之前10天的SMB_5和HML_5因子收益率
+    
+    ..  code-block:: python3
+        
+        import pandas as pd
+        from simonsc.api import get_factor_returns
+    
+        # 
+        >>> dt = pd.Timestamp("2020-09-18")
+        >>> fields=["SMB_5","HML_5"]
+        >>> factor_returns = get_factor_returns(dt=dt, bar_count=10, fields=fields, frequency="1d")
+        >>> print(factor_returns)
+                             SMB_5     HML_5
+            datetime                          
+            20200907000000  0.036871  0.015527
+            20200908000000  0.020943  0.016531
+            20200909000000 -0.002040  0.024283
+            20200910000000 -0.085072 -0.000579
+            20200911000000  0.012589 -0.012224
+            20200914000000  0.033144 -0.007565
+            20200915000000 -0.014592 -0.006376
+            20200916000000 -0.005519  0.008924
+            20200917000000  0.012206  0.000091
+            20200918000000 -0.019927  0.004799
+    """
+    
+    dt = convert_datetime_to_str(dt)
+   
+    return SimonsClient.instance().get_factor_returns(**locals())  
+
