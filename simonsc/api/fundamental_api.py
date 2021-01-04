@@ -136,6 +136,7 @@ def get_financial_report(query_object, stat_date):
     return res
 
 
+@export_as_api
 def get_financial_report_continuously(query_object, stat_date, count):
     """
 
@@ -145,7 +146,8 @@ def get_financial_report_continuously(query_object, stat_date, count):
     :return:
     """
     table_included = get_tables_from_sql(str(query_object.statement))
-    start_date = (stat_date, count)
+    start_date = get_previous_trading_date(stat_date, count)
+    start_date = str(start_date)[:10]
     first_table = table_included[0]
     for table in table_included:
         query_object = query_object.filter(simons_csmar_class_dict[table].date.between(start_date, stat_date))
@@ -184,4 +186,9 @@ def get_current_financial_report_fast(query_object, date):
     return res
 
 
-
+if __name__ == '__main__':
+    from simonsc import auth
+    auth("quantresearch", "quantresearch")
+    q_ = query(simons_csmar_balance_sheet).filter(simons_csmar_balance_sheet.SYMBOL.in_(["000001", "000002", "000004"]))
+    data = get_financial_report_continuously(q_, "2020-12-25", 10)
+    data.to_csv("~/demo.csv")

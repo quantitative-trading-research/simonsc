@@ -31,8 +31,20 @@ def get_simons_csmar_table():
     #
 
 
+def get_simons_financial_data():
+
+    from simonsc.object.simons_csmar_table import simons_csmar_balance_sheet
+    from simons.api import get_financial_report_continuously
+    auth("quantresearch", "quantresearch")
+    q_ = query(simons_csmar_balance_sheet).filter(simons_csmar_balance_sheet.SYMBOL.in_(["000001", "000002", "000004"]))
+    # --------------- get financial report pit history data -----------------
+    data = get_financial_report_continuously(q_, "2020-12-25", 10)
+    print(data)
+
+
 if __name__ == '__main__':
     auth("quantresearch", "quantresearch")
 
-    get_csmar_table()
-    get_simons_csmar_table()
+    # get_csmar_table()
+    # get_simons_csmar_table()
+    get_simons_financial_data()
