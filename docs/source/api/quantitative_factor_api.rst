@@ -15,7 +15,7 @@ get_factor_exposure -获取公司历史因子暴露
 
 因子收益率接口
 ================
-get_factor_returns - 获取因子因子收益率
+get_factor_returns - 获取因子收益率
 ------------------------------------------
 
 .. autofunction:: get_factor_returns
