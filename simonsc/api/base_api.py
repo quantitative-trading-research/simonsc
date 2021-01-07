@@ -413,3 +413,12 @@ def get_factor_returns(
    
     return SimonsClient.instance().get_factor_returns(**locals())  
 
+
+@assert_auth
+@export_as_api
+def available_factor_names(frequency="1d"):
+    """获取所有因子字段名
+    """
+    return SimonsClient.instance().available_factor_names(**locals())
+
+
